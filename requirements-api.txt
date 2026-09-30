@@ -1,0 +1,4 @@
+-r requirements-app.txt
+
+fastapi>=0.120,<1
+httpx>=0.28,<1

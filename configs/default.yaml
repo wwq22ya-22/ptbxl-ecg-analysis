@@ -1,0 +1,51 @@
+project:
+  name: ptbxl-ecg-system
+  random_seed: 42
+
+dataset:
+  root: data/ptb-xl
+  sampling_rate_hz: 100
+  train_folds: [1, 2, 3, 4, 5, 6, 7, 8]
+  validation_fold: 9
+  test_fold: 10
+
+signal_processing:
+  baseline_windows_s: [0.2, 0.6]
+  lowcut_hz: 0.5
+  highcut_hz: 40.0
+  bandpass_order: 4
+  notch_hz: null
+  notch_quality_factor: 30.0
+  normalization: zscore
+  rpeak_minimum_rr_s: 0.25
+  rpeak_integration_window_s: 0.12
+  rpeak_t_wave_window_s: 0.36
+  rpeak_t_wave_max_ratio: 0.75
+  rr_min_valid_s: 0.3
+  rr_max_valid_s: 2.0
+
+labels:
+  superclasses: [NORM, MI, STTC, CD, HYP]
+  default_threshold: 0.5
+
+model:
+  type: cnn1d
+  dropout: 0.2
+
+training:
+  epochs: 20
+  batch_size: 32
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  early_stopping_patience: 5
+  num_workers: 0
+  use_amp: true
+  random_seed: 42
+
+outputs:
+  split_dir: outputs/splits
+  figure_dir: outputs/figures
+  cache_dir: outputs/cache
+  checkpoint_dir: outputs/checkpoints
+  metrics_dir: outputs/metrics
+  predictions_dir: outputs/predictions

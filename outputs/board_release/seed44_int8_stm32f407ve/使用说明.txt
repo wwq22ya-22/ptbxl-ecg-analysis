@@ -1,0 +1,24 @@
+﻿STM32F407VE / seed44 蒸馏 CNN INT8 烧录包
+生成日期：2026-10-03
+
+1. ECG_Student_INT8_STM32F407VE.hex 是已编译完成的烧录文件。
+   使用 STM32CubeProgrammer 通过 ST-LINK/SWD 打开 HEX 并下载。
+   HEX 内含地址，从 0x08000000 开始，无需自行转换 ONNX。
+   SWD 接口为 PA13/SWDIO、PA14/SWCLK、GND，按下载器要求接目标电压参考。
+2. ECG_Student_INT8_源码工程.zip 包含模型 C 源码、权重、串口程序、
+   标准外设库、启动代码、Cube.AI Cortex-M4 库以及 Keil 工程。
+   解压后打开 MDK_Project/ECG_Student_INT8.uvprojx。
+   编译器为 ARM Compiler 5.06 update 4；下载器按实际 ST-LINK 设置。
+3. 时钟沿用参考工程：8 MHz 外部晶振，PLL 主频 168 MHz。
+   芯片型号不能确定板载晶振频率；若板上晶振不同，修改 HSE_VALUE 和
+   PLL_M 后重新编译，勿直接使用这个 HEX。工程界面 CLOCK 字段不参与时钟初始化。
+4. 波形串口：PA9/TX 接 USB 转串口 RX，PA10/RX 接 USB 转串口 TX，
+   GND 共地，3.3 V TTL，115200 / 8N1 / 无流控，开发板正常供电。
+5. 在本 ECG 项目中双击 start_ecg_student_viz.cmd，选择实际串口，
+   连接后发送波形。务必使用“学生”启动器，保证模型、预处理与阈值一致。
+   界面显示所选一条导联，发送完整十二导联，电脑预处理，芯片分类。
+6. 输出顺序 NORM / MI / STTC / CD / HYP，各类独立判断，可同时阳性。
+   阈值 0.55 / 0.60 / 0.55 / 0.75 / 0.65。
+7. 资源、哈希和本轮检查记录见 release_manifest.json。
+   已通过转换、电脑 C 输出核对、固件编译及 HEX 格式检查。
+   本轮尚未烧录或测试实板，板上耗时与运行时栈峰值待实测。

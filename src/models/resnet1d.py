@@ -61,3 +61,17 @@ class ECGResNet1D(nn.Module):
         if signal.ndim != 3 or signal.shape[1] != self.num_leads:
             raise ValueError(f"Expected ECG input [batch, {self.num_leads}, time].")
         return self.classifier(self.pool(self.blocks(self.stem(signal))))
+
+
+class ECGResNetAvgMax1D(ECGResNet1D):
+    """Same residual feature extractor with both mean and peak pooling."""
+
+    def __init__(self, *, num_leads=12, num_classes=5, dropout=0.2):
+        super().__init__(num_leads=num_leads, num_classes=num_classes, dropout=dropout)
+        self.classifier = nn.Sequential(nn.Dropout(dropout), nn.Linear(256, num_classes))
+
+    def forward(self, signal):
+        if signal.ndim != 3 or signal.shape[1] != self.num_leads:
+            raise ValueError(f"Expected ECG input [batch, {self.num_leads}, time].")
+        features = self.blocks(self.stem(signal))
+        return self.classifier(torch.cat([features.mean(dim=-1), features.amax(dim=-1)], dim=1))

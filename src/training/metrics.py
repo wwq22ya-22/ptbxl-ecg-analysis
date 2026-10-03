@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Sequence
 
 import numpy as np
-from sklearn.metrics import confusion_matrix, f1_score, precision_recall_fscore_support, roc_auc_score
+from sklearn.metrics import confusion_matrix, f1_score, precision_recall_curve, precision_recall_fscore_support, roc_auc_score
 
 from src.data.ptbxl import SUPERCLASSES
 
@@ -88,3 +88,63 @@ def calculate_multilabel_metrics(
         "macro_f1": float(np.mean(f1_values)),
         "classes_with_defined_auroc": len(auc_values),
     }
+
+
+def constrained_pr_thresholds(targets, probabilities, *, precision_floor, recall_floor, time_limit=30):
+    """Select PR-curve points jointly with macro precision/recall constraints.
+
+    A mixed-integer program chooses exactly one threshold for each class and
+    maximizes macro F1. PR points dominated in both precision and recall can be
+    removed without changing the optimum. This uses calibration labels only.
+    Return solver diagnostics; do not call a time-limited incumbent optimal.
+    """
+    from scipy.optimize import Bounds, LinearConstraint, milp
+    truth, scores = _validate_arrays(targets, probabilities)
+    if not 0 <= precision_floor <= 1 or not 0 <= recall_floor <= 1 or time_limit <= 0:
+        raise ValueError('Invalid precision/recall floors or solver time limit.')
+    curves = []
+    for index in range(5):
+        if np.unique(truth[:, index]).size != 2:
+            raise ValueError('Constrained calibration requires positives and negatives in every class.')
+        p, r, thresholds = precision_recall_curve(truth[:, index], scores[:, index])
+        valid = (thresholds > 0) & (thresholds < 1)
+        points = [(float(pp), float(rr), float(tt)) for pp, rr, tt in zip(p[:-1][valid], r[:-1][valid], thresholds[valid])]
+        # Higher recall first, then higher precision; discard dominated points.
+        points.sort(key=lambda point: (-point[1], -point[0], abs(point[2]-0.5)))
+        frontier, best_precision = [], -1.0
+        for pp, rr, tt in points:
+            if pp > best_precision:
+                frontier.append((pp, rr, tt, 2*pp*rr/max(pp+rr, 1e-12)))
+                best_precision = pp
+        if not frontier:
+            raise ValueError('No valid threshold candidates for calibration.')
+        curves.append(frontier)
+    count = sum(map(len, curves))
+    constraints = np.zeros((7, count), dtype=np.float64)
+    objective = np.zeros(count, dtype=np.float64)
+    offset = 0
+    for index, curve in enumerate(curves):
+        end = offset + len(curve)
+        constraints[index, offset:end] = 1
+        constraints[5, offset:end] = [point[0] for point in curve]
+        constraints[6, offset:end] = [point[1] for point in curve]
+        objective[offset:end] = [-point[3]/5 for point in curve]
+        offset = end
+    lower = np.array([1]*5 + [5*precision_floor, 5*recall_floor], dtype=np.float64)
+    upper = np.array([1]*5 + [np.inf, np.inf], dtype=np.float64)
+    solution = milp(objective, integrality=np.ones(count), bounds=Bounds(0, 1), constraints=LinearConstraint(constraints, lower, upper), options={'time_limit': float(time_limit), 'mip_rel_gap': 0})
+    diagnostics = {'status': int(solution.status), 'message': str(solution.message), 'optimal': bool(solution.success), 'frontier_points': [len(curve) for curve in curves], 'mip_gap': float(solution.mip_gap) if getattr(solution, 'mip_gap', None) is not None else None}
+    if solution.x is None:
+        return None, diagnostics
+    thresholds, offset = [], 0
+    for curve in curves:
+        segment = solution.x[offset:offset+len(curve)]
+        if not np.allclose(segment, np.round(segment), atol=1e-6) or not np.isclose(segment.sum(), 1):
+            return None, diagnostics
+        thresholds.append(curve[int(np.argmax(segment))][2])
+        offset += len(curve)
+    actual = calculate_multilabel_metrics(truth, scores, thresholds)
+    if actual['macro_precision'] + 1e-9 < precision_floor or actual['macro_recall'] + 1e-9 < recall_floor:
+        return None, diagnostics
+    diagnostics['calibration_macro_f1'] = actual['macro_f1']
+    return thresholds, diagnostics

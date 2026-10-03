@@ -1,0 +1,8 @@
+# Preserve deployable files byte for byte across clones and GitHub downloads.
+*.hex -text
+*.onnx -text
+*.pt -text
+*.npz -text
+*.npy -text
+*.zip -text
+*.lib -text

@@ -1,0 +1,1970 @@
+{
+  "dataset": "Chapman-Shaoxing-Ningbo 1.0.0",
+  "mapping_version": "chapman-snomed-positive-v1-20261001",
+  "headers_scanned": 45152,
+  "waveforms_evaluated": 45053,
+  "waveforms_excluded": 99,
+  "waveform_errors": [
+    {
+      "record": "WFDBRecords/01/019/JS01052",
+      "error": "ValueError: ValueError: time data '/' does not match format '%d/%m/%Y'"
+    },
+    {
+      "record": "WFDBRecords/11/113/JS10765",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/11/113/JS10767",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/11/114/JS10890",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/11/115/JS10951",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/12/124/JS11887",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/12/124/JS11897",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/12/125/JS11956",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/13/133/JS12751",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/13/137/JS13181",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/14/147/JS14161",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/14/149/JS14343",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/15/152/JS14627",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/15/152/JS14659",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/16/162/JS15624",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/16/167/JS16169",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/16/168/JS16222",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/17/174/JS16813",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/19/199/JS19309",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/20/203/JS19708",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/20/209/JS20330",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/21/212/JS20656",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/21/217/JS21144",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/22/222/JS21617",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/22/222/JS21668",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/22/223/JS21701",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/22/224/JS21853",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/22/224/JS21881",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/23/236/JS23074",
+      "error": "ValueError: ValueError: Input spec is not 12 standard leads / 500 Hz / 5000 samples"
+    },
+    {
+      "record": "WFDBRecords/23/237/JS23116",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/24/240/JS23450",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/24/240/JS23482",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/24/241/JS23588",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/24/243/JS23786",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/24/245/JS23950",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/24/246/JS24016",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/25/257/JS25106",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/25/259/JS25322",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/26/260/JS25458",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/26/266/JS26009",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/26/267/JS26130",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/26/267/JS26145",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/26/268/JS26245",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/27/272/JS26605",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/27/273/JS26793",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/27/274/JS26843",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/27/275/JS26977",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/27/276/JS27034",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/27/277/JS27170",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/27/278/JS27271",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/27/278/JS27278",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/28/280/JS27407",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/28/280/JS27460",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/28/284/JS27835",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/28/285/JS27985",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/28/286/JS28075",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/29/292/JS28648",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/29/293/JS28757",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/33/338/JS33280",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/35/350/JS34479",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/35/351/JS34509",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/35/353/JS34788",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/35/354/JS34868",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/35/354/JS34879",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/35/356/JS35050",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/35/356/JS35065",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/35/357/JS35192",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/36/362/JS35654",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/36/363/JS35727",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/36/366/JS36015",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/36/366/JS36018",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/36/367/JS36189",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/36/368/JS36244",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/37/371/JS36568",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/37/373/JS36731",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/37/377/JS37105",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/37/377/JS37173",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/37/377/JS37176",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/38/380/JS37439",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/38/381/JS37592",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/38/382/JS37609",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/38/383/JS37781",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/38/388/JS38231",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/38/388/JS38252",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/42/424/JS41844",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/42/425/JS41908",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/42/425/JS41935",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/42/426/JS42026",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/42/429/JS42330",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/43/430/JS42400",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/43/430/JS42415",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/43/432/JS42614",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/43/432/JS42631",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/43/432/JS42676",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/43/439/JS43330",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/44/440/JS43400",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/44/441/JS43569",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/44/443/JS43710",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    },
+    {
+      "record": "WFDBRecords/45/451/JS44571",
+      "error": "ValueError: ECG contains NaN or infinite samples."
+    }
+  ],
+  "checksum_verification_stamp": "verified 90759 files",
+  "dataset_sha256_manifest": "dfad0c26a276ce7e450e5002051f4c749304552d9add4d592928bbdcb6e4f31c",
+  "official_dictionary_sha256": {
+    "D:\\MyProject\\college\\ecg1\\outputs\\external_validation\\chapman_data\\ConditionNames_SNOMED-CT.csv": "05d6fa23acdcbb466b378310ccfad22ea6cef4d3abfa83e8f660c77016be028d",
+    "D:\\MyProject\\college\\ecg1\\outputs\\dataset_compatibility\\challenge_scored.csv": "fad13ad9f7ca230e7e6392ac8a264cb7cd157879525129f964c5f708eabb41d0",
+    "D:\\MyProject\\college\\ecg1\\outputs\\dataset_compatibility\\challenge_unscored.csv": "ce53c9e35406e922f1634a38bb13c31e8cf7603291641a16c201d8e679f4fe94"
+  },
+  "preprocessing_parity": [
+    {
+      "model": "baseline_seed42",
+      "samples": 10,
+      "max_abs_error": 0.0
+    },
+    {
+      "model": "distilled_seed44",
+      "samples": 10,
+      "max_abs_error": 0.0
+    },
+    {
+      "model": "teacher_inception",
+      "samples": 10,
+      "max_abs_error": 0.0
+    },
+    {
+      "model": "old_deployed_resnet",
+      "samples": 10,
+      "max_abs_error": 0.0
+    },
+    {
+      "model": "original_cnn",
+      "samples": 10,
+      "max_abs_error": 0.0
+    }
+  ],
+  "no_external_training_or_threshold_tuning": true,
+  "model_selection_on_external_data": false,
+  "negative_truth_clinically_verified": false,
+  "model_hashes_unchanged": {
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\baseline_seed42\\checkpoint\\cnn1d_best.pt": "be8e22b1f3cfc04b9e302f8f7cb824f79ea9f7ab12fa7c34d4f64bfca27eceeb",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_seed44\\checkpoint\\cnn1d_best.pt": "857ed01b867ec8342c6162bd819875f72e4d090a20d3c9effb6fbdab6509a08e",
+    "D:\\MyProject\\college\\ecg1\\outputs\\optimization\\optimized_best.pt": "29ffa3ad10e2081fd3749679e195e894edcda40a4851c8db3dc9081f6762a717",
+    "D:\\MyProject\\college\\ecg1\\outputs\\optimization\\01_global_norm\\checkpoint\\resnet1d_best.pt": "14f1104375f4a420620976c2d41b7d61bcc388023bab6b9adedcd5ce4600d0f4",
+    "D:\\MyProject\\college\\ecg1\\outputs\\checkpoints\\baseline_best.pt": "5835d1f38defe9b2bcaea8a8f5c0cf097bfeb2c5abf486a54ce12d6a6d0df2eb"
+  },
+  "results": [
+    {
+      "name": "baseline_seed42_float32",
+      "checkpoint": "outputs/distillation/baseline_seed42/checkpoint/cnn1d_best.pt",
+      "artifact": "outputs/distillation/baseline_seed42/checkpoint/cnn1d_best.pt",
+      "checkpoint_sha256": "be8e22b1f3cfc04b9e302f8f7cb824f79ea9f7ab12fa7c34d4f64bfca27eceeb",
+      "artifact_sha256": "be8e22b1f3cfc04b9e302f8f7cb824f79ea9f7ab12fa7c34d4f64bfca27eceeb",
+      "record_audit_sha256": "1cd3987639f90dec01762e9e7e91de0c2c7e68667cdfe37f9716073c24bc3782",
+      "mapping_source_sha256": "5fb2e3176e95f59e6a4741418a974b016aec0d58f1df8aacfaf02dc8cac22ade",
+      "preprocessing_source_sha256": "c70cd5aa6a412dfe051e2780ed09376806d912a49389ac4d8a76ca6115fb1137",
+      "cache_settings_sha256": "07f0b2801933b76555cac8a2ef8edcf12a2de555e8008b339dc2de2247dd5cb9",
+      "normalization": "train_global",
+      "thresholds": [
+        0.5000000000000001,
+        0.5500000000000002,
+        0.7500000000000002,
+        0.5500000000000002,
+        0.7500000000000002
+      ],
+      "positive_only_metrics": {
+        "label_policy": "positive_only",
+        "per_class": {
+          "NORM": {
+            "positive_records": 0,
+            "negative_records": 0,
+            "unknown_records": 45053,
+            "threshold": 0.5000000000000001,
+            "true_positive": 0,
+            "false_negative": 0,
+            "recall": null,
+            "positive_recall_95ci_wilson": null,
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": null,
+            "positive_score_max": null
+          },
+          "MI": {
+            "positive_records": 205,
+            "negative_records": 0,
+            "unknown_records": 44848,
+            "threshold": 0.5500000000000002,
+            "true_positive": 192,
+            "false_negative": 13,
+            "recall": 0.9365853658536586,
+            "positive_recall_95ci_wilson": [
+              0.8945403769853417,
+              0.9625691309198141
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.9775811433792114,
+            "positive_score_max": 0.9998898506164551
+          },
+          "STTC": {
+            "positive_records": 12916,
+            "negative_records": 0,
+            "unknown_records": 32137,
+            "threshold": 0.7500000000000002,
+            "true_positive": 9469,
+            "false_negative": 3447,
+            "recall": 0.7331217095075875,
+            "positive_recall_95ci_wilson": [
+              0.7254248975108591,
+              0.740679893263383
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.9298365116119385,
+            "positive_score_max": 0.9999382495880127
+          },
+          "CD": {
+            "positive_records": 5069,
+            "negative_records": 0,
+            "unknown_records": 39984,
+            "threshold": 0.5500000000000002,
+            "true_positive": 3652,
+            "false_negative": 1417,
+            "recall": 0.7204576839613336,
+            "positive_recall_95ci_wilson": [
+              0.7079400808854277,
+              0.7326413995615446
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.9388857483863831,
+            "positive_score_max": 0.9999982118606567
+          },
+          "HYP": {
+            "positive_records": 768,
+            "negative_records": 0,
+            "unknown_records": 44285,
+            "threshold": 0.7500000000000002,
+            "true_positive": 640,
+            "false_negative": 128,
+            "recall": 0.8333333333333334,
+            "positive_recall_95ci_wilson": [
+              0.8053303952628527,
+              0.8580182680523974
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.9871113300323486,
+            "positive_score_max": 0.9999978542327881
+          }
+        },
+        "NORM_scored": false,
+        "negative_truth_clinically_verified": false,
+        "ptbxl_five_class_macro_directly_comparable": false,
+        "macro_auroc": null,
+        "macro_precision": null,
+        "macro_recall": 0.8058745231639782,
+        "macro_f1": null
+      },
+      "conditional_metrics": {
+        "label_policy": "conditional_absence_negative",
+        "per_class": {
+          "NORM": {
+            "positive_records": 0,
+            "negative_records": 0,
+            "unknown_records": 45053,
+            "threshold": 0.5000000000000001,
+            "true_positive": 0,
+            "false_negative": 0,
+            "recall": null,
+            "positive_recall_95ci_wilson": null,
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": null,
+            "positive_score_max": null
+          },
+          "MI": {
+            "positive_records": 205,
+            "negative_records": 18951,
+            "unknown_records": 25897,
+            "threshold": 0.5500000000000002,
+            "true_positive": 192,
+            "false_negative": 13,
+            "recall": 0.9365853658536586,
+            "positive_recall_95ci_wilson": [
+              0.8945403769853417,
+              0.9625691309198141
+            ],
+            "auroc": 0.9377783011643636,
+            "precision": 0.03731053245239021,
+            "f1": 0.0717622874229116,
+            "confusion_matrix_tn_fp_fn_tp": [
+              13997,
+              4954,
+              13,
+              192
+            ],
+            "positive_score_median": 0.9775811433792114,
+            "positive_score_max": 0.9998898506164551
+          },
+          "STTC": {
+            "positive_records": 12916,
+            "negative_records": 7606,
+            "unknown_records": 24531,
+            "threshold": 0.7500000000000002,
+            "true_positive": 9469,
+            "false_negative": 3447,
+            "recall": 0.7331217095075875,
+            "positive_recall_95ci_wilson": [
+              0.7254248975108591,
+              0.740679893263383
+            ],
+            "auroc": 0.8616576693661757,
+            "precision": 0.8869426751592356,
+            "f1": 0.8027297388945405,
+            "confusion_matrix_tn_fp_fn_tp": [
+              6399,
+              1207,
+              3447,
+              9469
+            ],
+            "positive_score_median": 0.9298365116119385,
+            "positive_score_max": 0.9999382495880127
+          },
+          "CD": {
+            "positive_records": 5069,
+            "negative_records": 15658,
+            "unknown_records": 24326,
+            "threshold": 0.5500000000000002,
+            "true_positive": 3652,
+            "false_negative": 1417,
+            "recall": 0.7204576839613336,
+            "positive_recall_95ci_wilson": [
+              0.7079400808854277,
+              0.7326413995615446
+            ],
+            "auroc": 0.8699808714588595,
+            "precision": 0.5969271003595946,
+            "f1": 0.6529006882989183,
+            "confusion_matrix_tn_fp_fn_tp": [
+              13192,
+              2466,
+              1417,
+              3652
+            ],
+            "positive_score_median": 0.9388857483863831,
+            "positive_score_max": 0.9999982118606567
+          },
+          "HYP": {
+            "positive_records": 768,
+            "negative_records": 14305,
+            "unknown_records": 29980,
+            "threshold": 0.7500000000000002,
+            "true_positive": 640,
+            "false_negative": 128,
+            "recall": 0.8333333333333334,
+            "positive_recall_95ci_wilson": [
+              0.8053303952628527,
+              0.8580182680523974
+            ],
+            "auroc": 0.9307083224105791,
+            "precision": 0.2736212056434374,
+            "f1": 0.4119729642742195,
+            "confusion_matrix_tn_fp_fn_tp": [
+              12606,
+              1699,
+              128,
+              640
+            ],
+            "positive_score_median": 0.9871113300323486,
+            "positive_score_max": 0.9999978542327881
+          }
+        },
+        "NORM_scored": false,
+        "negative_truth_clinically_verified": false,
+        "ptbxl_five_class_macro_directly_comparable": false,
+        "macro_auroc": 0.9000312910999946,
+        "macro_precision": 0.4487003784036645,
+        "macro_recall": 0.8058745231639782,
+        "macro_f1": 0.4848414197226475
+      }
+    },
+    {
+      "name": "distilled_seed44_float32",
+      "checkpoint": "outputs/distillation/distilled_seed44/checkpoint/cnn1d_best.pt",
+      "artifact": "outputs/distillation/distilled_seed44/checkpoint/cnn1d_best.pt",
+      "checkpoint_sha256": "857ed01b867ec8342c6162bd819875f72e4d090a20d3c9effb6fbdab6509a08e",
+      "artifact_sha256": "857ed01b867ec8342c6162bd819875f72e4d090a20d3c9effb6fbdab6509a08e",
+      "record_audit_sha256": "1cd3987639f90dec01762e9e7e91de0c2c7e68667cdfe37f9716073c24bc3782",
+      "mapping_source_sha256": "5fb2e3176e95f59e6a4741418a974b016aec0d58f1df8aacfaf02dc8cac22ade",
+      "preprocessing_source_sha256": "c70cd5aa6a412dfe051e2780ed09376806d912a49389ac4d8a76ca6115fb1137",
+      "cache_settings_sha256": "07f0b2801933b76555cac8a2ef8edcf12a2de555e8008b339dc2de2247dd5cb9",
+      "normalization": "train_global",
+      "thresholds": [
+        0.5500000000000002,
+        0.6000000000000002,
+        0.5500000000000002,
+        0.7500000000000002,
+        0.6500000000000001
+      ],
+      "positive_only_metrics": {
+        "label_policy": "positive_only",
+        "per_class": {
+          "NORM": {
+            "positive_records": 0,
+            "negative_records": 0,
+            "unknown_records": 45053,
+            "threshold": 0.5500000000000002,
+            "true_positive": 0,
+            "false_negative": 0,
+            "recall": null,
+            "positive_recall_95ci_wilson": null,
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": null,
+            "positive_score_max": null
+          },
+          "MI": {
+            "positive_records": 205,
+            "negative_records": 0,
+            "unknown_records": 44848,
+            "threshold": 0.6000000000000002,
+            "true_positive": 191,
+            "false_negative": 14,
+            "recall": 0.9317073170731708,
+            "positive_recall_95ci_wilson": [
+              0.8886458618419895,
+              0.95888700351674
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.981916069984436,
+            "positive_score_max": 0.9997261166572571
+          },
+          "STTC": {
+            "positive_records": 12916,
+            "negative_records": 0,
+            "unknown_records": 32137,
+            "threshold": 0.5500000000000002,
+            "true_positive": 9992,
+            "false_negative": 2924,
+            "recall": 0.773614122019201,
+            "positive_recall_95ci_wilson": [
+              0.7663161463022095,
+              0.780749390262444
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.8799892067909241,
+            "positive_score_max": 0.9999890327453613
+          },
+          "CD": {
+            "positive_records": 5069,
+            "negative_records": 0,
+            "unknown_records": 39984,
+            "threshold": 0.7500000000000002,
+            "true_positive": 3428,
+            "false_negative": 1641,
+            "recall": 0.6762675083842967,
+            "positive_recall_95ci_wilson": [
+              0.663257517551579,
+              0.6890105386268278
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.9520544409751892,
+            "positive_score_max": 0.9999910593032837
+          },
+          "HYP": {
+            "positive_records": 768,
+            "negative_records": 0,
+            "unknown_records": 44285,
+            "threshold": 0.6500000000000001,
+            "true_positive": 607,
+            "false_negative": 161,
+            "recall": 0.7903645833333334,
+            "positive_recall_95ci_wilson": [
+              0.7601666898180406,
+              0.8176721848667281
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.9694743156433105,
+            "positive_score_max": 0.999991774559021
+          }
+        },
+        "NORM_scored": false,
+        "negative_truth_clinically_verified": false,
+        "ptbxl_five_class_macro_directly_comparable": false,
+        "macro_auroc": null,
+        "macro_precision": null,
+        "macro_recall": 0.7929883827025005,
+        "macro_f1": null
+      },
+      "conditional_metrics": {
+        "label_policy": "conditional_absence_negative",
+        "per_class": {
+          "NORM": {
+            "positive_records": 0,
+            "negative_records": 0,
+            "unknown_records": 45053,
+            "threshold": 0.5500000000000002,
+            "true_positive": 0,
+            "false_negative": 0,
+            "recall": null,
+            "positive_recall_95ci_wilson": null,
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": null,
+            "positive_score_max": null
+          },
+          "MI": {
+            "positive_records": 205,
+            "negative_records": 18951,
+            "unknown_records": 25897,
+            "threshold": 0.6000000000000002,
+            "true_positive": 191,
+            "false_negative": 14,
+            "recall": 0.9317073170731708,
+            "positive_recall_95ci_wilson": [
+              0.8886458618419895,
+              0.95888700351674
+            ],
+            "auroc": 0.946077496393137,
+            "precision": 0.04615756404059932,
+            "f1": 0.08795763297259959,
+            "confusion_matrix_tn_fp_fn_tp": [
+              15004,
+              3947,
+              14,
+              191
+            ],
+            "positive_score_median": 0.981916069984436,
+            "positive_score_max": 0.9997261166572571
+          },
+          "STTC": {
+            "positive_records": 12916,
+            "negative_records": 7606,
+            "unknown_records": 24531,
+            "threshold": 0.5500000000000002,
+            "true_positive": 9992,
+            "false_negative": 2924,
+            "recall": 0.773614122019201,
+            "positive_recall_95ci_wilson": [
+              0.7663161463022095,
+              0.780749390262444
+            ],
+            "auroc": 0.854665575302118,
+            "precision": 0.8608598259670889,
+            "f1": 0.8149084532887494,
+            "confusion_matrix_tn_fp_fn_tp": [
+              5991,
+              1615,
+              2924,
+              9992
+            ],
+            "positive_score_median": 0.8799892067909241,
+            "positive_score_max": 0.9999890327453613
+          },
+          "CD": {
+            "positive_records": 5069,
+            "negative_records": 15658,
+            "unknown_records": 24326,
+            "threshold": 0.7500000000000002,
+            "true_positive": 3428,
+            "false_negative": 1641,
+            "recall": 0.6762675083842967,
+            "positive_recall_95ci_wilson": [
+              0.663257517551579,
+              0.6890105386268278
+            ],
+            "auroc": 0.8674679132909017,
+            "precision": 0.6285295196186286,
+            "f1": 0.651525230447591,
+            "confusion_matrix_tn_fp_fn_tp": [
+              13632,
+              2026,
+              1641,
+              3428
+            ],
+            "positive_score_median": 0.9520544409751892,
+            "positive_score_max": 0.9999910593032837
+          },
+          "HYP": {
+            "positive_records": 768,
+            "negative_records": 14305,
+            "unknown_records": 29980,
+            "threshold": 0.6500000000000001,
+            "true_positive": 607,
+            "false_negative": 161,
+            "recall": 0.7903645833333334,
+            "positive_recall_95ci_wilson": [
+              0.7601666898180406,
+              0.8176721848667281
+            ],
+            "auroc": 0.9208847157899335,
+            "precision": 0.29508993680116674,
+            "f1": 0.42973451327433626,
+            "confusion_matrix_tn_fp_fn_tp": [
+              12855,
+              1450,
+              161,
+              607
+            ],
+            "positive_score_median": 0.9694743156433105,
+            "positive_score_max": 0.999991774559021
+          }
+        },
+        "NORM_scored": false,
+        "negative_truth_clinically_verified": false,
+        "ptbxl_five_class_macro_directly_comparable": false,
+        "macro_auroc": 0.8972739251940225,
+        "macro_precision": 0.4576592116068709,
+        "macro_recall": 0.7929883827025005,
+        "macro_f1": 0.49603145749581906
+      }
+    },
+    {
+      "name": "distilled_seed44_int8",
+      "checkpoint": "outputs/distillation/distilled_seed44/checkpoint/cnn1d_best.pt",
+      "artifact": "outputs/distillation/distilled_export/ptbxl_cnn1d_int8.onnx",
+      "checkpoint_sha256": "857ed01b867ec8342c6162bd819875f72e4d090a20d3c9effb6fbdab6509a08e",
+      "artifact_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+      "record_audit_sha256": "1cd3987639f90dec01762e9e7e91de0c2c7e68667cdfe37f9716073c24bc3782",
+      "mapping_source_sha256": "5fb2e3176e95f59e6a4741418a974b016aec0d58f1df8aacfaf02dc8cac22ade",
+      "preprocessing_source_sha256": "c70cd5aa6a412dfe051e2780ed09376806d912a49389ac4d8a76ca6115fb1137",
+      "cache_settings_sha256": "07f0b2801933b76555cac8a2ef8edcf12a2de555e8008b339dc2de2247dd5cb9",
+      "normalization": "train_global",
+      "thresholds": [
+        0.5500000000000002,
+        0.6000000000000002,
+        0.5500000000000002,
+        0.7500000000000002,
+        0.6500000000000001
+      ],
+      "positive_only_metrics": {
+        "label_policy": "positive_only",
+        "per_class": {
+          "NORM": {
+            "positive_records": 0,
+            "negative_records": 0,
+            "unknown_records": 45053,
+            "threshold": 0.5500000000000002,
+            "true_positive": 0,
+            "false_negative": 0,
+            "recall": null,
+            "positive_recall_95ci_wilson": null,
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": null,
+            "positive_score_max": null
+          },
+          "MI": {
+            "positive_records": 205,
+            "negative_records": 0,
+            "unknown_records": 44848,
+            "threshold": 0.6000000000000002,
+            "true_positive": 192,
+            "false_negative": 13,
+            "recall": 0.9365853658536586,
+            "positive_recall_95ci_wilson": [
+              0.8945403769853417,
+              0.9625691309198141
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.9816547632217407,
+            "positive_score_max": 0.9997276663780212
+          },
+          "STTC": {
+            "positive_records": 12916,
+            "negative_records": 0,
+            "unknown_records": 32137,
+            "threshold": 0.5500000000000002,
+            "true_positive": 9985,
+            "false_negative": 2931,
+            "recall": 0.7730721585630226,
+            "positive_recall_95ci_wilson": [
+              0.7657682448201876,
+              0.780213687116296
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.8797361850738525,
+            "positive_score_max": 0.9997493624687195
+          },
+          "CD": {
+            "positive_records": 5069,
+            "negative_records": 0,
+            "unknown_records": 39984,
+            "threshold": 0.7500000000000002,
+            "true_positive": 3414,
+            "false_negative": 1655,
+            "recall": 0.6735056224107319,
+            "positive_recall_95ci_wilson": [
+              0.660469369847233,
+              0.6862790973143884
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.951887309551239,
+            "positive_score_max": 0.9997493624687195
+          },
+          "HYP": {
+            "positive_records": 768,
+            "negative_records": 0,
+            "unknown_records": 44285,
+            "threshold": 0.6500000000000001,
+            "true_positive": 606,
+            "false_negative": 162,
+            "recall": 0.7890625,
+            "positive_recall_95ci_wilson": [
+              0.7588061877270444,
+              0.816441481241649
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.9701823592185974,
+            "positive_score_max": 0.9997493624687195
+          }
+        },
+        "NORM_scored": false,
+        "negative_truth_clinically_verified": false,
+        "ptbxl_five_class_macro_directly_comparable": false,
+        "macro_auroc": null,
+        "macro_precision": null,
+        "macro_recall": 0.7930564117068533,
+        "macro_f1": null
+      },
+      "conditional_metrics": {
+        "label_policy": "conditional_absence_negative",
+        "per_class": {
+          "NORM": {
+            "positive_records": 0,
+            "negative_records": 0,
+            "unknown_records": 45053,
+            "threshold": 0.5500000000000002,
+            "true_positive": 0,
+            "false_negative": 0,
+            "recall": null,
+            "positive_recall_95ci_wilson": null,
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": null,
+            "positive_score_max": null
+          },
+          "MI": {
+            "positive_records": 205,
+            "negative_records": 18951,
+            "unknown_records": 25897,
+            "threshold": 0.6000000000000002,
+            "true_positive": 192,
+            "false_negative": 13,
+            "recall": 0.9365853658536586,
+            "positive_recall_95ci_wilson": [
+              0.8945403769853417,
+              0.9625691309198141
+            ],
+            "auroc": 0.9459074815538404,
+            "precision": 0.04552999762864596,
+            "f1": 0.08683853459972862,
+            "confusion_matrix_tn_fp_fn_tp": [
+              14926,
+              4025,
+              13,
+              192
+            ],
+            "positive_score_median": 0.9816547632217407,
+            "positive_score_max": 0.9997276663780212
+          },
+          "STTC": {
+            "positive_records": 12916,
+            "negative_records": 7606,
+            "unknown_records": 24531,
+            "threshold": 0.5500000000000002,
+            "true_positive": 9985,
+            "false_negative": 2931,
+            "recall": 0.7730721585630226,
+            "positive_recall_95ci_wilson": [
+              0.7657682448201876,
+              0.780213687116296
+            ],
+            "auroc": 0.8541176468073363,
+            "precision": 0.8602567416214354,
+            "f1": 0.8143375606573421,
+            "confusion_matrix_tn_fp_fn_tp": [
+              5984,
+              1622,
+              2931,
+              9985
+            ],
+            "positive_score_median": 0.8797361850738525,
+            "positive_score_max": 0.9997493624687195
+          },
+          "CD": {
+            "positive_records": 5069,
+            "negative_records": 15658,
+            "unknown_records": 24326,
+            "threshold": 0.7500000000000002,
+            "true_positive": 3414,
+            "false_negative": 1655,
+            "recall": 0.6735056224107319,
+            "positive_recall_95ci_wilson": [
+              0.660469369847233,
+              0.6862790973143884
+            ],
+            "auroc": 0.8675627156329635,
+            "precision": 0.6325736520289049,
+            "f1": 0.6523982419262373,
+            "confusion_matrix_tn_fp_fn_tp": [
+              13675,
+              1983,
+              1655,
+              3414
+            ],
+            "positive_score_median": 0.951887309551239,
+            "positive_score_max": 0.9997493624687195
+          },
+          "HYP": {
+            "positive_records": 768,
+            "negative_records": 14305,
+            "unknown_records": 29980,
+            "threshold": 0.6500000000000001,
+            "true_positive": 606,
+            "false_negative": 162,
+            "recall": 0.7890625,
+            "positive_recall_95ci_wilson": [
+              0.7588061877270444,
+              0.816441481241649
+            ],
+            "auroc": 0.9204967304555516,
+            "precision": 0.2938894277400582,
+            "f1": 0.4282685512367491,
+            "confusion_matrix_tn_fp_fn_tp": [
+              12849,
+              1456,
+              162,
+              606
+            ],
+            "positive_score_median": 0.9701823592185974,
+            "positive_score_max": 0.9997493624687195
+          }
+        },
+        "NORM_scored": false,
+        "negative_truth_clinically_verified": false,
+        "ptbxl_five_class_macro_directly_comparable": false,
+        "macro_auroc": 0.8970211436124229,
+        "macro_precision": 0.45806245475476115,
+        "macro_recall": 0.7930564117068533,
+        "macro_f1": 0.49546072210501424
+      }
+    },
+    {
+      "name": "teacher_inception_float32",
+      "checkpoint": "outputs/optimization/optimized_best.pt",
+      "artifact": "outputs/optimization/optimized_best.pt",
+      "checkpoint_sha256": "29ffa3ad10e2081fd3749679e195e894edcda40a4851c8db3dc9081f6762a717",
+      "artifact_sha256": "29ffa3ad10e2081fd3749679e195e894edcda40a4851c8db3dc9081f6762a717",
+      "record_audit_sha256": "1cd3987639f90dec01762e9e7e91de0c2c7e68667cdfe37f9716073c24bc3782",
+      "mapping_source_sha256": "5fb2e3176e95f59e6a4741418a974b016aec0d58f1df8aacfaf02dc8cac22ade",
+      "preprocessing_source_sha256": "c70cd5aa6a412dfe051e2780ed09376806d912a49389ac4d8a76ca6115fb1137",
+      "cache_settings_sha256": "07f0b2801933b76555cac8a2ef8edcf12a2de555e8008b339dc2de2247dd5cb9",
+      "normalization": "train_global",
+      "thresholds": [
+        0.3758639991283417,
+        0.5906484723091125,
+        0.61971515417099,
+        0.723528265953064,
+        0.6232462525367737
+      ],
+      "positive_only_metrics": {
+        "label_policy": "positive_only",
+        "per_class": {
+          "NORM": {
+            "positive_records": 0,
+            "negative_records": 0,
+            "unknown_records": 45053,
+            "threshold": 0.3758639991283417,
+            "true_positive": 0,
+            "false_negative": 0,
+            "recall": null,
+            "positive_recall_95ci_wilson": null,
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": null,
+            "positive_score_max": null
+          },
+          "MI": {
+            "positive_records": 205,
+            "negative_records": 0,
+            "unknown_records": 44848,
+            "threshold": 0.5906484723091125,
+            "true_positive": 193,
+            "false_negative": 12,
+            "recall": 0.9414634146341463,
+            "positive_recall_95ci_wilson": [
+              0.9004851705949164,
+              0.9662009798566655
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.9715167284011841,
+            "positive_score_max": 0.9996861219406128
+          },
+          "STTC": {
+            "positive_records": 12916,
+            "negative_records": 0,
+            "unknown_records": 32137,
+            "threshold": 0.61971515417099,
+            "true_positive": 10282,
+            "false_negative": 2634,
+            "recall": 0.7960668937751626,
+            "positive_recall_95ci_wilson": [
+              0.7890306530396255,
+              0.802927075263497
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.9341906309127808,
+            "positive_score_max": 0.9999918937683105
+          },
+          "CD": {
+            "positive_records": 5069,
+            "negative_records": 0,
+            "unknown_records": 39984,
+            "threshold": 0.723528265953064,
+            "true_positive": 3462,
+            "false_negative": 1607,
+            "recall": 0.6829749457486683,
+            "positive_recall_95ci_wilson": [
+              0.6700308711562222,
+              0.6956419012058062
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.935438334941864,
+            "positive_score_max": 0.9999961853027344
+          },
+          "HYP": {
+            "positive_records": 768,
+            "negative_records": 0,
+            "unknown_records": 44285,
+            "threshold": 0.6232462525367737,
+            "true_positive": 655,
+            "false_negative": 113,
+            "recall": 0.8528645833333334,
+            "positive_recall_95ci_wilson": [
+              0.8260557970584969,
+              0.8761609519978811
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.981396496295929,
+            "positive_score_max": 0.9999942779541016
+          }
+        },
+        "NORM_scored": false,
+        "negative_truth_clinically_verified": false,
+        "ptbxl_five_class_macro_directly_comparable": false,
+        "macro_auroc": null,
+        "macro_precision": null,
+        "macro_recall": 0.8183424593728277,
+        "macro_f1": null
+      },
+      "conditional_metrics": {
+        "label_policy": "conditional_absence_negative",
+        "per_class": {
+          "NORM": {
+            "positive_records": 0,
+            "negative_records": 0,
+            "unknown_records": 45053,
+            "threshold": 0.3758639991283417,
+            "true_positive": 0,
+            "false_negative": 0,
+            "recall": null,
+            "positive_recall_95ci_wilson": null,
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": null,
+            "positive_score_max": null
+          },
+          "MI": {
+            "positive_records": 205,
+            "negative_records": 18951,
+            "unknown_records": 25897,
+            "threshold": 0.5906484723091125,
+            "true_positive": 193,
+            "false_negative": 12,
+            "recall": 0.9414634146341463,
+            "positive_recall_95ci_wilson": [
+              0.9004851705949164,
+              0.9662009798566655
+            ],
+            "auroc": 0.9468553689811079,
+            "precision": 0.05092348284960422,
+            "f1": 0.09662077596996245,
+            "confusion_matrix_tn_fp_fn_tp": [
+              15354,
+              3597,
+              12,
+              193
+            ],
+            "positive_score_median": 0.9715167284011841,
+            "positive_score_max": 0.9996861219406128
+          },
+          "STTC": {
+            "positive_records": 12916,
+            "negative_records": 7606,
+            "unknown_records": 24531,
+            "threshold": 0.61971515417099,
+            "true_positive": 10282,
+            "false_negative": 2634,
+            "recall": 0.7960668937751626,
+            "positive_recall_95ci_wilson": [
+              0.7890306530396255,
+              0.802927075263497
+            ],
+            "auroc": 0.8495825022656968,
+            "precision": 0.8451421995725793,
+            "f1": 0.8198708236982697,
+            "confusion_matrix_tn_fp_fn_tp": [
+              5722,
+              1884,
+              2634,
+              10282
+            ],
+            "positive_score_median": 0.9341906309127808,
+            "positive_score_max": 0.9999918937683105
+          },
+          "CD": {
+            "positive_records": 5069,
+            "negative_records": 15658,
+            "unknown_records": 24326,
+            "threshold": 0.723528265953064,
+            "true_positive": 3462,
+            "false_negative": 1607,
+            "recall": 0.6829749457486683,
+            "positive_recall_95ci_wilson": [
+              0.6700308711562222,
+              0.6956419012058062
+            ],
+            "auroc": 0.8612790697469316,
+            "precision": 0.6029258098223615,
+            "f1": 0.6404587919711405,
+            "confusion_matrix_tn_fp_fn_tp": [
+              13378,
+              2280,
+              1607,
+              3462
+            ],
+            "positive_score_median": 0.935438334941864,
+            "positive_score_max": 0.9999961853027344
+          },
+          "HYP": {
+            "positive_records": 768,
+            "negative_records": 14305,
+            "unknown_records": 29980,
+            "threshold": 0.6232462525367737,
+            "true_positive": 655,
+            "false_negative": 113,
+            "recall": 0.8528645833333334,
+            "positive_recall_95ci_wilson": [
+              0.8260557970584969,
+              0.8761609519978811
+            ],
+            "auroc": 0.9222498325177676,
+            "precision": 0.21384263793666342,
+            "f1": 0.3419472722526755,
+            "confusion_matrix_tn_fp_fn_tp": [
+              11897,
+              2408,
+              113,
+              655
+            ],
+            "positive_score_median": 0.981396496295929,
+            "positive_score_max": 0.9999942779541016
+          }
+        },
+        "NORM_scored": false,
+        "negative_truth_clinically_verified": false,
+        "ptbxl_five_class_macro_directly_comparable": false,
+        "macro_auroc": 0.8949916933778759,
+        "macro_precision": 0.4282085325453021,
+        "macro_recall": 0.8183424593728277,
+        "macro_f1": 0.474724415973012
+      }
+    },
+    {
+      "name": "old_deployed_resnet_float32",
+      "checkpoint": "outputs/optimization/01_global_norm/checkpoint/resnet1d_best.pt",
+      "artifact": "outputs/optimization/01_global_norm/checkpoint/resnet1d_best.pt",
+      "checkpoint_sha256": "14f1104375f4a420620976c2d41b7d61bcc388023bab6b9adedcd5ce4600d0f4",
+      "artifact_sha256": "14f1104375f4a420620976c2d41b7d61bcc388023bab6b9adedcd5ce4600d0f4",
+      "record_audit_sha256": "1cd3987639f90dec01762e9e7e91de0c2c7e68667cdfe37f9716073c24bc3782",
+      "mapping_source_sha256": "5fb2e3176e95f59e6a4741418a974b016aec0d58f1df8aacfaf02dc8cac22ade",
+      "preprocessing_source_sha256": "c70cd5aa6a412dfe051e2780ed09376806d912a49389ac4d8a76ca6115fb1137",
+      "cache_settings_sha256": "07f0b2801933b76555cac8a2ef8edcf12a2de555e8008b339dc2de2247dd5cb9",
+      "normalization": "train_global",
+      "thresholds": [
+        0.6000000000000002,
+        0.6500000000000001,
+        0.5500000000000002,
+        0.7500000000000002,
+        0.7000000000000002
+      ],
+      "positive_only_metrics": {
+        "label_policy": "positive_only",
+        "per_class": {
+          "NORM": {
+            "positive_records": 0,
+            "negative_records": 0,
+            "unknown_records": 45053,
+            "threshold": 0.6000000000000002,
+            "true_positive": 0,
+            "false_negative": 0,
+            "recall": null,
+            "positive_recall_95ci_wilson": null,
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": null,
+            "positive_score_max": null
+          },
+          "MI": {
+            "positive_records": 205,
+            "negative_records": 0,
+            "unknown_records": 44848,
+            "threshold": 0.6500000000000001,
+            "true_positive": 184,
+            "false_negative": 21,
+            "recall": 0.8975609756097561,
+            "positive_recall_95ci_wilson": [
+              0.8484782063563565,
+              0.9320181611773886
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.9774201512336731,
+            "positive_score_max": 0.9998583793640137
+          },
+          "STTC": {
+            "positive_records": 12916,
+            "negative_records": 0,
+            "unknown_records": 32137,
+            "threshold": 0.5500000000000002,
+            "true_positive": 9789,
+            "false_negative": 3127,
+            "recall": 0.7578971817900279,
+            "positive_recall_95ci_wilson": [
+              0.7504338435554819,
+              0.7652071587922432
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.8731809258460999,
+            "positive_score_max": 0.9993488192558289
+          },
+          "CD": {
+            "positive_records": 5069,
+            "negative_records": 0,
+            "unknown_records": 39984,
+            "threshold": 0.7500000000000002,
+            "true_positive": 3701,
+            "false_negative": 1368,
+            "recall": 0.7301242848688104,
+            "positive_recall_95ci_wilson": [
+              0.7177335171643789,
+              0.7421665248413419
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.937225341796875,
+            "positive_score_max": 0.9995096921920776
+          },
+          "HYP": {
+            "positive_records": 768,
+            "negative_records": 0,
+            "unknown_records": 44285,
+            "threshold": 0.7000000000000002,
+            "true_positive": 685,
+            "false_negative": 83,
+            "recall": 0.8919270833333334,
+            "positive_recall_95ci_wilson": [
+              0.8679865949000967,
+              0.9119663256385373
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.9860206842422485,
+            "positive_score_max": 0.9999998807907104
+          }
+        },
+        "NORM_scored": false,
+        "negative_truth_clinically_verified": false,
+        "ptbxl_five_class_macro_directly_comparable": false,
+        "macro_auroc": null,
+        "macro_precision": null,
+        "macro_recall": 0.819377381400482,
+        "macro_f1": null
+      },
+      "conditional_metrics": {
+        "label_policy": "conditional_absence_negative",
+        "per_class": {
+          "NORM": {
+            "positive_records": 0,
+            "negative_records": 0,
+            "unknown_records": 45053,
+            "threshold": 0.6000000000000002,
+            "true_positive": 0,
+            "false_negative": 0,
+            "recall": null,
+            "positive_recall_95ci_wilson": null,
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": null,
+            "positive_score_max": null
+          },
+          "MI": {
+            "positive_records": 205,
+            "negative_records": 18951,
+            "unknown_records": 25897,
+            "threshold": 0.6500000000000001,
+            "true_positive": 184,
+            "false_negative": 21,
+            "recall": 0.8975609756097561,
+            "positive_recall_95ci_wilson": [
+              0.8484782063563565,
+              0.9320181611773886
+            ],
+            "auroc": 0.9393891306334309,
+            "precision": 0.05604629911666159,
+            "f1": 0.10550458715596331,
+            "confusion_matrix_tn_fp_fn_tp": [
+              15852,
+              3099,
+              21,
+              184
+            ],
+            "positive_score_median": 0.9774201512336731,
+            "positive_score_max": 0.9998583793640137
+          },
+          "STTC": {
+            "positive_records": 12916,
+            "negative_records": 7606,
+            "unknown_records": 24531,
+            "threshold": 0.5500000000000002,
+            "true_positive": 9789,
+            "false_negative": 3127,
+            "recall": 0.7578971817900279,
+            "positive_recall_95ci_wilson": [
+              0.7504338435554819,
+              0.7652071587922432
+            ],
+            "auroc": 0.8563583026049018,
+            "precision": 0.8672809426774165,
+            "f1": 0.8089079866132297,
+            "confusion_matrix_tn_fp_fn_tp": [
+              6108,
+              1498,
+              3127,
+              9789
+            ],
+            "positive_score_median": 0.8731809258460999,
+            "positive_score_max": 0.9993488192558289
+          },
+          "CD": {
+            "positive_records": 5069,
+            "negative_records": 15658,
+            "unknown_records": 24326,
+            "threshold": 0.7500000000000002,
+            "true_positive": 3701,
+            "false_negative": 1368,
+            "recall": 0.7301242848688104,
+            "positive_recall_95ci_wilson": [
+              0.7177335171643789,
+              0.7421665248413419
+            ],
+            "auroc": 0.861737874277114,
+            "precision": 0.5731763977079138,
+            "f1": 0.64220024292903,
+            "confusion_matrix_tn_fp_fn_tp": [
+              12902,
+              2756,
+              1368,
+              3701
+            ],
+            "positive_score_median": 0.937225341796875,
+            "positive_score_max": 0.9995096921920776
+          },
+          "HYP": {
+            "positive_records": 768,
+            "negative_records": 14305,
+            "unknown_records": 29980,
+            "threshold": 0.7000000000000002,
+            "true_positive": 685,
+            "false_negative": 83,
+            "recall": 0.8919270833333334,
+            "positive_recall_95ci_wilson": [
+              0.8679865949000967,
+              0.9119663256385373
+            ],
+            "auroc": 0.9331207037166492,
+            "precision": 0.20453866825918185,
+            "f1": 0.33276657760505224,
+            "confusion_matrix_tn_fp_fn_tp": [
+              11641,
+              2664,
+              83,
+              685
+            ],
+            "positive_score_median": 0.9860206842422485,
+            "positive_score_max": 0.9999998807907104
+          }
+        },
+        "NORM_scored": false,
+        "negative_truth_clinically_verified": false,
+        "ptbxl_five_class_macro_directly_comparable": false,
+        "macro_auroc": 0.897651502808024,
+        "macro_precision": 0.42526057694029346,
+        "macro_recall": 0.819377381400482,
+        "macro_f1": 0.4723448485758188
+      }
+    },
+    {
+      "name": "original_cnn_float32",
+      "checkpoint": "outputs/checkpoints/baseline_best.pt",
+      "artifact": "outputs/checkpoints/baseline_best.pt",
+      "checkpoint_sha256": "5835d1f38defe9b2bcaea8a8f5c0cf097bfeb2c5abf486a54ce12d6a6d0df2eb",
+      "artifact_sha256": "5835d1f38defe9b2bcaea8a8f5c0cf097bfeb2c5abf486a54ce12d6a6d0df2eb",
+      "record_audit_sha256": "1cd3987639f90dec01762e9e7e91de0c2c7e68667cdfe37f9716073c24bc3782",
+      "mapping_source_sha256": "5fb2e3176e95f59e6a4741418a974b016aec0d58f1df8aacfaf02dc8cac22ade",
+      "preprocessing_source_sha256": "c70cd5aa6a412dfe051e2780ed09376806d912a49389ac4d8a76ca6115fb1137",
+      "cache_settings_sha256": "07f0b2801933b76555cac8a2ef8edcf12a2de555e8008b339dc2de2247dd5cb9",
+      "normalization": "zscore",
+      "thresholds": [
+        0.5000000000000001,
+        0.6500000000000001,
+        0.5500000000000002,
+        0.6500000000000001,
+        0.7500000000000002
+      ],
+      "positive_only_metrics": {
+        "label_policy": "positive_only",
+        "per_class": {
+          "NORM": {
+            "positive_records": 0,
+            "negative_records": 0,
+            "unknown_records": 45053,
+            "threshold": 0.5000000000000001,
+            "true_positive": 0,
+            "false_negative": 0,
+            "recall": null,
+            "positive_recall_95ci_wilson": null,
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": null,
+            "positive_score_max": null
+          },
+          "MI": {
+            "positive_records": 205,
+            "negative_records": 0,
+            "unknown_records": 44848,
+            "threshold": 0.6500000000000001,
+            "true_positive": 182,
+            "false_negative": 23,
+            "recall": 0.8878048780487805,
+            "positive_recall_95ci_wilson": [
+              0.8372771127377602,
+              0.9240659697031323
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.9637649059295654,
+            "positive_score_max": 0.9997033476829529
+          },
+          "STTC": {
+            "positive_records": 12916,
+            "negative_records": 0,
+            "unknown_records": 32137,
+            "threshold": 0.5500000000000002,
+            "true_positive": 9733,
+            "false_negative": 3183,
+            "recall": 0.7535614741406008,
+            "positive_recall_95ci_wilson": [
+              0.7460549417745129,
+              0.7609172235478529
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.849997878074646,
+            "positive_score_max": 0.9988524913787842
+          },
+          "CD": {
+            "positive_records": 5069,
+            "negative_records": 0,
+            "unknown_records": 39984,
+            "threshold": 0.6500000000000001,
+            "true_positive": 3303,
+            "false_negative": 1766,
+            "recall": 0.6516078121917538,
+            "positive_recall_95ci_wilson": [
+              0.6383810811934622,
+              0.6646049301922184
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.8677480220794678,
+            "positive_score_max": 0.9992454051971436
+          },
+          "HYP": {
+            "positive_records": 768,
+            "negative_records": 0,
+            "unknown_records": 44285,
+            "threshold": 0.7500000000000002,
+            "true_positive": 539,
+            "false_negative": 229,
+            "recall": 0.7018229166666666,
+            "positive_recall_95ci_wilson": [
+              0.6685301414274103,
+              0.733106744564245
+            ],
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": 0.8968877792358398,
+            "positive_score_max": 0.9991739392280579
+          }
+        },
+        "NORM_scored": false,
+        "negative_truth_clinically_verified": false,
+        "ptbxl_five_class_macro_directly_comparable": false,
+        "macro_auroc": null,
+        "macro_precision": null,
+        "macro_recall": 0.7486992702619504,
+        "macro_f1": null
+      },
+      "conditional_metrics": {
+        "label_policy": "conditional_absence_negative",
+        "per_class": {
+          "NORM": {
+            "positive_records": 0,
+            "negative_records": 0,
+            "unknown_records": 45053,
+            "threshold": 0.5000000000000001,
+            "true_positive": 0,
+            "false_negative": 0,
+            "recall": null,
+            "positive_recall_95ci_wilson": null,
+            "auroc": null,
+            "precision": null,
+            "f1": null,
+            "confusion_matrix_tn_fp_fn_tp": null,
+            "positive_score_median": null,
+            "positive_score_max": null
+          },
+          "MI": {
+            "positive_records": 205,
+            "negative_records": 18951,
+            "unknown_records": 25897,
+            "threshold": 0.6500000000000001,
+            "true_positive": 182,
+            "false_negative": 23,
+            "recall": 0.8878048780487805,
+            "positive_recall_95ci_wilson": [
+              0.8372771127377602,
+              0.9240659697031323
+            ],
+            "auroc": 0.9327182682939699,
+            "precision": 0.04959128065395095,
+            "f1": 0.09393548387096774,
+            "confusion_matrix_tn_fp_fn_tp": [
+              15463,
+              3488,
+              23,
+              182
+            ],
+            "positive_score_median": 0.9637649059295654,
+            "positive_score_max": 0.9997033476829529
+          },
+          "STTC": {
+            "positive_records": 12916,
+            "negative_records": 7606,
+            "unknown_records": 24531,
+            "threshold": 0.5500000000000002,
+            "true_positive": 9733,
+            "false_negative": 3183,
+            "recall": 0.7535614741406008,
+            "positive_recall_95ci_wilson": [
+              0.7460549417745129,
+              0.7609172235478529
+            ],
+            "auroc": 0.8485254434751721,
+            "precision": 0.868010345135111,
+            "f1": 0.8067470678436736,
+            "confusion_matrix_tn_fp_fn_tp": [
+              6126,
+              1480,
+              3183,
+              9733
+            ],
+            "positive_score_median": 0.849997878074646,
+            "positive_score_max": 0.9988524913787842
+          },
+          "CD": {
+            "positive_records": 5069,
+            "negative_records": 15658,
+            "unknown_records": 24326,
+            "threshold": 0.6500000000000001,
+            "true_positive": 3303,
+            "false_negative": 1766,
+            "recall": 0.6516078121917538,
+            "positive_recall_95ci_wilson": [
+              0.6383810811934622,
+              0.6646049301922184
+            ],
+            "auroc": 0.8577999327759485,
+            "precision": 0.6277080957810718,
+            "f1": 0.6394347110637886,
+            "confusion_matrix_tn_fp_fn_tp": [
+              13699,
+              1959,
+              1766,
+              3303
+            ],
+            "positive_score_median": 0.8677480220794678,
+            "positive_score_max": 0.9992454051971436
+          },
+          "HYP": {
+            "positive_records": 768,
+            "negative_records": 14305,
+            "unknown_records": 29980,
+            "threshold": 0.7500000000000002,
+            "true_positive": 539,
+            "false_negative": 229,
+            "recall": 0.7018229166666666,
+            "positive_recall_95ci_wilson": [
+              0.6685301414274103,
+              0.733106744564245
+            ],
+            "auroc": 0.8258943460182919,
+            "precision": 0.1492661312655774,
+            "f1": 0.24617492578214203,
+            "confusion_matrix_tn_fp_fn_tp": [
+              11233,
+              3072,
+              229,
+              539
+            ],
+            "positive_score_median": 0.8968877792358398,
+            "positive_score_max": 0.9991739392280579
+          }
+        },
+        "NORM_scored": false,
+        "negative_truth_clinically_verified": false,
+        "ptbxl_five_class_macro_directly_comparable": false,
+        "macro_auroc": 0.8662344976408456,
+        "macro_precision": 0.4236439632089278,
+        "macro_recall": 0.7486992702619504,
+        "macro_f1": 0.44657304714014295
+      }
+    }
+  ],
+  "independent_audit": {
+    "prediction_sets_verified": 6,
+    "same_record_ids_and_masks": true,
+    "all_metrics_independently_reproduced": true,
+    "model_hashes_unchanged": true,
+    "NORM_never_scored": true,
+    "positive_only_never_claims_negatives": true,
+    "student_fp32_int8_probability_mae": 0.005031978245824575,
+    "student_fp32_int8_probability_max_abs_error": 0.6376500129699707,
+    "targeted_tests_passed": 15
+  },
+  "quantization_tail_audit": {
+    "all_five_output_threshold_agreement": 0.9959780702727898,
+    "all_five_labels_per_record_agreement": 0.9802898808070495,
+    "absolute_probability_difference_quantiles": {
+      "median": 0.0020862817764282227,
+      "90pct": 0.013460618257522585,
+      "95pct": 0.01921298503875731,
+      "99pct": 0.034601056575775044,
+      "99.9pct": 0.07577981638908503
+    },
+    "records_with_any_probability_difference_above_0_1": 78,
+    "records_above_0_25": 14,
+    "records_above_0_5": 5,
+    "largest_scored_class_difference": {
+      "record": "WFDBRecords/11/115/JS10949",
+      "class": "CD",
+      "FP32": 0.9646130800247192,
+      "INT8": 0.41783785820007324,
+      "normalized_input_min": -173.4261016845703,
+      "normalized_input_max": 135.77108764648438,
+      "int8_input_min": -25.70706558227539,
+      "int8_input_max": 25.506229132413864,
+      "fraction_outside_int8_input_range": 0.00525,
+      "causal_explanation_not_proven": true
+    }
+  }
+}

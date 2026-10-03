@@ -1,0 +1,21 @@
+{
+  "flash_bytes": 158876,
+  "ram_bytes": 43672,
+  "flash_limit_bytes": 524288,
+  "main_sram_limit_bytes": 131072,
+  "flash_margin_bytes": 365412,
+  "ram_margin_bytes": 87400,
+  "build_errors": 0,
+  "build_warnings": 0,
+  "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+  "physical_board_test": false,
+  "project": "outputs/distillation/stm32_student_project/MDK_Project/ECG_Student_INT8.uvprojx",
+  "date": "2026-10-03",
+  "chip": "STM32F407VE",
+  "chip_confirmed_by_user": true,
+  "stack_reserved_bytes": 8192,
+  "static_known_stack_bytes": 1504,
+  "stack_unknown_paths_present": true,
+  "external_crystal_hz": 8000000,
+  "core_clock_hz": 168000000
+}

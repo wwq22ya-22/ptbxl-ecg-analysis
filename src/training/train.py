@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import copy
 import json
 import os
 import random
@@ -18,8 +19,10 @@ from src.data.ptbxl import LEAD_NAMES, SUPERCLASSES, find_ptbxl_root
 from src.config import resolve_project_path
 from src.models import MODEL_TYPES, build_model
 from src.signal_processing.filters import FilterConfig
-from src.training.data import CachedPTBXLDataset, ensure_preprocessed_cache, load_labeled_splits
+from src.training.data import CachedPTBXLDataset, ensure_preprocessed_cache, load_labeled_splits, fit_training_normalization
 from src.training.metrics import calculate_multilabel_metrics, optimize_thresholds
+from src.training.strategies import TrainingAugmentation, build_loss
+from src.training.distillation import DistillationDataset, multilabel_distillation_loss
 from src.visualization.metrics_plot import plot_class_distribution, plot_training_curves
 
 
@@ -42,6 +45,8 @@ def _run_epoch(
     optimizer: torch.optim.Optimizer | None = None,
     scaler: torch.amp.GradScaler | None = None,
     use_amp: bool = False,
+    augmentation: TrainingAugmentation | None = None,
+    distillation: dict | None = None,
 ) -> tuple[float, np.ndarray | None, np.ndarray | None]:
     training = optimizer is not None
     model.train(training)
@@ -49,15 +54,29 @@ def _run_epoch(
     total_records = 0
     targets: list[np.ndarray] = []
     probabilities: list[np.ndarray] = []
-    for signals, labels in loader:
+    for batch in loader:
+        signals, labels = batch[:2]
+        teacher_logits = batch[2].to(device, non_blocking=True) if len(batch) == 3 else None
         signals = signals.to(device, non_blocking=True)
         labels = labels.to(device, non_blocking=True)
         if training:
             optimizer.zero_grad(set_to_none=True)
+        second_labels, coefficient = labels, 1.0
+        if training and augmentation is not None:
+            signals, labels, second_labels, coefficient = augmentation(signals, labels)
         with torch.set_grad_enabled(training):
             with torch.autocast(device_type=device.type, enabled=use_amp):
                 logits = model(signals)
-                loss = criterion(logits, labels)
+                loss = coefficient * criterion(logits, labels)
+                if isinstance(coefficient, torch.Tensor):
+                    loss = loss + (1 - coefficient) * criterion(logits, second_labels)
+                if training and distillation is not None:
+                    if teacher_logits is None:
+                        raise ValueError('Distillation requires record-aligned teacher logits.')
+                    alpha = float(distillation['alpha'])
+                    loss = (1 - alpha) * loss + alpha * multilabel_distillation_loss(
+                        logits, teacher_logits, float(distillation['temperature'])
+                    )
             if training:
                 assert scaler is not None
                 scaler.scale(loss).backward()
@@ -94,14 +113,16 @@ def train_baseline(
     max_samples: int | None = None,
     model_type: str | None = None,
 ) -> Path:
-    """Train a supported model on folds 1-8 and select it using fold 9."""
+    """Train on configured patient-safe folds; defaults to train 1-8 / validation 9."""
     dataset_cfg = config["dataset"]
     train_cfg = config["training"]
     output_cfg = config["outputs"]
     model_type = model_type or config["model"].get("type", "cnn1d")
     if model_type not in MODEL_TYPES:
         raise ValueError(f"Unsupported model type {model_type!r}; choose from {MODEL_TYPES}.")
-    run_config = {**config, "model": {**config["model"], "type": model_type}}
+    config = copy.deepcopy(config)
+    config["model"]["type"] = model_type
+    run_config = config
     fs = int(dataset_cfg["sampling_rate_hz"])
     root = find_ptbxl_root(
         dataset_root or resolve_project_path(dataset_cfg["root"], project_root),
@@ -123,15 +144,27 @@ def train_baseline(
     if device.type == "cuda":
         print(f"GPU: {torch.cuda.get_device_name(0)}", flush=True)
 
-    splits = load_labeled_splits(root, fs)
+    splits = load_labeled_splits(
+        root, fs, train_folds=dataset_cfg.get("train_folds", tuple(range(1, 9))),
+        validation_fold=int(dataset_cfg.get("validation_fold", 9)),
+        test_fold=int(dataset_cfg.get("test_fold", 10)), test_folds=dataset_cfg.get("test_folds"),
+        require_diagnostic_label=bool(dataset_cfg.get("require_diagnostic_label", False)),
+    )
     train_frame = splits["train"]
     validation_frame = splits["validation"]
     scope = "full" if max_samples is None else "smoke"
     if max_samples is not None:
         train_frame = train_frame.head(max_samples).copy()
         validation_frame = validation_frame.head(min(len(validation_frame), max(64, max_samples // 2))).copy()
-    filter_config = FilterConfig.from_mapping(config["signal_processing"])
     cache_dir = project_root / output_cfg["cache_dir"]
+    if config["signal_processing"].get("normalization") == "train_global":
+        raw_settings = {**config["signal_processing"], "normalization": "none"}
+        raw_settings.pop('training_mean', None)
+        raw_settings.pop('training_std', None)
+        raw_cache = ensure_preprocessed_cache(train_frame, root, cache_dir, split_name=f"train_{scope}", sampling_rate_hz=fs, config=FilterConfig.from_mapping(raw_settings))
+        mean, std = fit_training_normalization(raw_cache)
+        config["signal_processing"].update(training_mean=mean, training_std=std)
+    filter_config = FilterConfig.from_mapping(config["signal_processing"])
     train_cache = ensure_preprocessed_cache(
         train_frame, root, cache_dir, split_name=f"train_{scope}", sampling_rate_hz=fs, config=filter_config
     )
@@ -139,6 +172,16 @@ def train_baseline(
         validation_frame, root, cache_dir, split_name=f"validation_{scope}", sampling_rate_hz=fs, config=filter_config
     )
     train_dataset = CachedPTBXLDataset(train_cache, train_frame)
+    distillation = train_cfg.get('distillation')
+    if distillation is not None:
+        if not 0 < float(distillation['alpha']) < 1:
+            raise ValueError('Distillation alpha must be between zero and one.')
+        if any(float(train_cfg.get(key, 0)) for key in ('augmentation_gain', 'augmentation_noise', 'mixup_alpha')):
+            raise ValueError('Cached teacher logits require unchanged training waveforms.')
+        train_dataset = DistillationDataset(
+            train_dataset, train_frame.ecg_id.to_numpy(),
+            resolve_project_path(distillation['logits_path'], project_root),
+        )
     validation_dataset = CachedPTBXLDataset(validation_cache, validation_frame)
     generator = torch.Generator().manual_seed(seed)
     num_workers = int(train_cfg.get("num_workers", 0))
@@ -157,11 +200,27 @@ def train_baseline(
     pos_weight = np.ones(len(SUPERCLASSES), dtype=np.float32)
     np.divide(len(train_labels) - positives, positives, out=pos_weight, where=positives > 0)
     print(f"Training label positives: {dict(zip(SUPERCLASSES, positives.astype(int).tolist()))}", flush=True)
+    weight_power = float(train_cfg.get("pos_weight_power", 1.0))
+    if not 0 <= weight_power <= 1:
+        raise ValueError("pos_weight_power must be between zero and one")
+    pos_weight = pos_weight ** weight_power
     print(f"BCE positive weights: {dict(zip(SUPERCLASSES, pos_weight.round(3).tolist()))}", flush=True)
-    criterion = nn.BCEWithLogitsLoss(pos_weight=torch.tensor(pos_weight, device=device))
+    criterion = build_loss(train_cfg, pos_weight, device)
+    augmentation = TrainingAugmentation(train_cfg)
+    print(f"Loss: {train_cfg.get('loss', 'bce')}; augmentation: gain={augmentation.gain}, noise={augmentation.noise}, mixup={augmentation.mixup_alpha}", flush=True)
     optimizer = torch.optim.AdamW(
         model.parameters(), lr=learning_rate, weight_decay=float(train_cfg["weight_decay"])
     )
+    scheduler = None
+    if train_cfg.get("scheduler", "none") == "warmup_cosine":
+        warmup = int(train_cfg.get("warmup_epochs", 3))
+        import math
+        def lr_factor(index):
+            if index < warmup:
+                return (index + 1) / max(1, warmup)
+            progress = (index - warmup) / max(1, epochs - warmup - 1)
+            return 0.01 + 0.99 * 0.5 * (1 + math.cos(math.pi * min(1.0, progress)))
+        scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_factor)
     scaler = torch.amp.GradScaler("cuda", enabled=use_amp)
     checkpoint_dir = project_root / output_cfg["checkpoint_dir"]
     metrics_dir = project_root / output_cfg["metrics_dir"]
@@ -183,7 +242,8 @@ def train_baseline(
         started = time.monotonic()
         try:
             train_loss, _, _ = _run_epoch(
-                model, train_loader, criterion, device, optimizer=optimizer, scaler=scaler, use_amp=use_amp
+                model, train_loader, criterion, device, optimizer=optimizer, scaler=scaler, use_amp=use_amp, augmentation=augmentation,
+                distillation=distillation
             )
             val_loss, val_targets, val_scores = _run_epoch(
                 model, validation_loader, criterion, device, use_amp=use_amp
@@ -202,6 +262,7 @@ def train_baseline(
         history.append(
             {
                 "epoch": epoch,
+                "learning_rate": optimizer.param_groups[0]["lr"],
                 "train_loss": train_loss,
                 "validation_loss": val_loss,
                 "validation_macro_auroc": val_metrics["macro_auroc"],
@@ -216,6 +277,8 @@ def train_baseline(
             f"seconds={history[-1]['seconds']:.1f}",
             flush=True,
         )
+        if scheduler is not None:
+            scheduler.step()
         if score > best_score + 1e-4:
             best_score = float(score)
             best_epoch = epoch

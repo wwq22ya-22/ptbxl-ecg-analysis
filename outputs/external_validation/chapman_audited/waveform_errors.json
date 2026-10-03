@@ -1,0 +1,398 @@
+[
+  {
+    "record": "WFDBRecords/01/019/JS01052",
+    "error": "ValueError: ValueError: time data '/' does not match format '%d/%m/%Y'"
+  },
+  {
+    "record": "WFDBRecords/11/113/JS10765",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/11/113/JS10767",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/11/114/JS10890",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/11/115/JS10951",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/12/124/JS11887",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/12/124/JS11897",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/12/125/JS11956",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/13/133/JS12751",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/13/137/JS13181",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/14/147/JS14161",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/14/149/JS14343",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/15/152/JS14627",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/15/152/JS14659",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/16/162/JS15624",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/16/167/JS16169",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/16/168/JS16222",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/17/174/JS16813",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/19/199/JS19309",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/20/203/JS19708",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/20/209/JS20330",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/21/212/JS20656",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/21/217/JS21144",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/22/222/JS21617",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/22/222/JS21668",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/22/223/JS21701",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/22/224/JS21853",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/22/224/JS21881",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/23/236/JS23074",
+    "error": "ValueError: ValueError: Input spec is not 12 standard leads / 500 Hz / 5000 samples"
+  },
+  {
+    "record": "WFDBRecords/23/237/JS23116",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/24/240/JS23450",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/24/240/JS23482",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/24/241/JS23588",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/24/243/JS23786",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/24/245/JS23950",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/24/246/JS24016",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/25/257/JS25106",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/25/259/JS25322",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/26/260/JS25458",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/26/266/JS26009",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/26/267/JS26130",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/26/267/JS26145",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/26/268/JS26245",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/27/272/JS26605",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/27/273/JS26793",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/27/274/JS26843",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/27/275/JS26977",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/27/276/JS27034",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/27/277/JS27170",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/27/278/JS27271",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/27/278/JS27278",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/28/280/JS27407",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/28/280/JS27460",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/28/284/JS27835",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/28/285/JS27985",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/28/286/JS28075",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/29/292/JS28648",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/29/293/JS28757",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/33/338/JS33280",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/35/350/JS34479",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/35/351/JS34509",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/35/353/JS34788",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/35/354/JS34868",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/35/354/JS34879",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/35/356/JS35050",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/35/356/JS35065",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/35/357/JS35192",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/36/362/JS35654",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/36/363/JS35727",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/36/366/JS36015",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/36/366/JS36018",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/36/367/JS36189",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/36/368/JS36244",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/37/371/JS36568",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/37/373/JS36731",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/37/377/JS37105",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/37/377/JS37173",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/37/377/JS37176",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/38/380/JS37439",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/38/381/JS37592",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/38/382/JS37609",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/38/383/JS37781",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/38/388/JS38231",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/38/388/JS38252",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/42/424/JS41844",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/42/425/JS41908",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/42/425/JS41935",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/42/426/JS42026",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/42/429/JS42330",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/43/430/JS42400",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/43/430/JS42415",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/43/432/JS42614",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/43/432/JS42631",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/43/432/JS42676",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/43/439/JS43330",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/44/440/JS43400",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/44/441/JS43569",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/44/443/JS43710",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  },
+  {
+    "record": "WFDBRecords/45/451/JS44571",
+    "error": "ValueError: ECG contains NaN or infinite samples."
+  }
+]

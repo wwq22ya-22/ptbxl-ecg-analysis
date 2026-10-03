@@ -40,7 +40,13 @@ def evaluate_checkpoint(
         dataset_root or resolve_project_path(config["dataset"]["root"], project_root),
         sampling_rate_hz=fs,
     )
-    test_frame = load_labeled_splits(root, fs)["test"]
+    dataset_cfg = config["dataset"]
+    test_frame = load_labeled_splits(
+        root, fs, train_folds=dataset_cfg.get("train_folds", tuple(range(1, 9))),
+        validation_fold=int(dataset_cfg.get("validation_fold", 9)),
+        test_fold=int(dataset_cfg.get("test_fold", 10)), test_folds=dataset_cfg.get("test_folds"),
+        require_diagnostic_label=bool(dataset_cfg.get("require_diagnostic_label", False)),
+    )["test"]
     filter_config = FilterConfig.from_mapping(config["signal_processing"])
     output_cfg = config["outputs"]
     cache_path = ensure_preprocessed_cache(
@@ -74,6 +80,7 @@ def evaluate_checkpoint(
         "checkpoint_scope": checkpoint["scope"],
         "threshold_source": "validation_fold_9",
         "evaluation_device": str(device),
+        "require_diagnostic_label": bool(dataset_cfg.get("require_diagnostic_label", False)),
     })
     suffix = f"{model_type}_smoke" if checkpoint["scope"] != "full" else (
         "full" if model_type == "cnn1d" else f"{model_type}_full"

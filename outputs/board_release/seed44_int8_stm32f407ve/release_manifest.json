@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-03",
+  "chip": "STM32F407VE",
+  "chip_confirmed_by_user": true,
+  "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+  "checkpoint_sha256": "857ed01b867ec8342c6162bd819875f72e4d090a20d3c9effb6fbdab6509a08e",
+  "training_seed": 44,
+  "student_training_records": 17084,
+  "student_validation_records": 2146,
+  "require_diagnostic_label": true,
+  "input_shape": [
+    12,
+    1000
+  ],
+  "labels": [
+    "NORM",
+    "MI",
+    "STTC",
+    "CD",
+    "HYP"
+  ],
+  "thresholds": [
+    0.5500000000000002,
+    0.6000000000000002,
+    0.5500000000000002,
+    0.7500000000000002,
+    0.6500000000000001
+  ],
+  "input_scale": 0.2008364498615265,
+  "input_zero_point": 0,
+  "cubeai_engine": "ST Edge AI Core v2.2.0-20266 2adc00962 / STM32CubeAI 10.2.0-RC1",
+  "host_validation": {
+    "samples": 128,
+    "logits_rmse": 0.0,
+    "logits_max_error": 0.0,
+    "classification_agreement": 1.0,
+    "serial_reference_match": true
+  },
+  "firmware": {
+    "flash_bytes": 158876,
+    "ram_bytes": 43672,
+    "flash_limit_bytes": 524288,
+    "main_sram_limit_bytes": 131072,
+    "flash_margin_bytes": 365412,
+    "ram_margin_bytes": 87400,
+    "build_errors": 0,
+    "build_warnings": 0,
+    "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+    "physical_board_test": false,
+    "project": "outputs/distillation/stm32_student_project/MDK_Project/ECG_Student_INT8.uvprojx",
+    "date": "2026-10-03",
+    "chip": "STM32F407VE",
+    "chip_confirmed_by_user": true,
+    "stack_reserved_bytes": 8192,
+    "static_known_stack_bytes": 1504,
+    "stack_unknown_paths_present": true,
+    "external_crystal_hz": 8000000,
+    "core_clock_hz": 168000000
+  },
+  "hex_validation": {
+    "checksums_passed": true,
+    "address_range_passed": true,
+    "records": 9935,
+    "programmed_bytes": 158876,
+    "address_min": "0x8000000",
+    "address_max": "0x8026c9b",
+    "initial_stack_pointer": "0x2000aa98",
+    "reset_vector": "0x8000299"
+  },
+  "files": {
+    "ECG_Student_INT8_STM32F407VE.hex": "57d255b4dc08cce3ff8e7879ab3c37143865b384e93a31a1f182df4a959134b6",
+    "ECG_Student_INT8_源码工程.zip": "3ebe3e24ce6fa577797cb0e1e13a7855319ab4e5a69fe196f2fbecd5cdb27a5a"
+  },
+  "physical_board_test": false,
+  "build_log": "outputs/distillation/stm32_student_project/MDK_Project/student_build_20261003.log",
+  "host_report": "outputs/distillation/distilled_export/recheck_20261003/host_validation/ecg_network_validate_report.txt",
+  "additional_checks": {
+    "serial_protocol_tests_passed": 12,
+    "source_zip_integrity_passed": true,
+    "fresh_project_generation_passed": true,
+    "project_references_present": true,
+    "stack_configuration_regeneration_passed": true
+  }
+}

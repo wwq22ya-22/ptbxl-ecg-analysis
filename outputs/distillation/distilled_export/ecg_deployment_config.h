@@ -1,0 +1,8 @@
+/* Generated from the frozen Cube.AI C input contract. */
+#ifndef ECG_DEPLOYMENT_CONFIG_H
+#define ECG_DEPLOYMENT_CONFIG_H
+#define ECG_MODEL_SHA256 "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610"
+#define ECG_INPUT_SCALE 0.20083644986152649f
+#define ECG_INPUT_ZERO_POINT (0)
+static const float ECG_THRESHOLDS[5] = { 0.550000000f, 0.600000000f, 0.550000000f, 0.750000000f, 0.650000000f };
+#endif

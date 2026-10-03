@@ -1,0 +1,26 @@
+{
+  "all_five_output_threshold_agreement": 0.9959780702727898,
+  "all_five_labels_per_record_agreement": 0.9802898808070495,
+  "absolute_probability_difference_quantiles": {
+    "median": 0.0020862817764282227,
+    "90pct": 0.013460618257522585,
+    "95pct": 0.01921298503875731,
+    "99pct": 0.034601056575775044,
+    "99.9pct": 0.07577981638908503
+  },
+  "records_with_any_probability_difference_above_0_1": 78,
+  "records_above_0_25": 14,
+  "records_above_0_5": 5,
+  "largest_scored_class_difference": {
+    "record": "WFDBRecords/11/115/JS10949",
+    "class": "CD",
+    "FP32": 0.9646130800247192,
+    "INT8": 0.41783785820007324,
+    "normalized_input_min": -173.4261016845703,
+    "normalized_input_max": 135.77108764648438,
+    "int8_input_min": -25.70706558227539,
+    "int8_input_max": 25.506229132413864,
+    "fraction_outside_int8_input_range": 0.00525,
+    "causal_explanation_not_proven": true
+  }
+}

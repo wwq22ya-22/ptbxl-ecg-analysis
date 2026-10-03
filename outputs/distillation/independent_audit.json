@@ -1,0 +1,9 @@
+{
+  "prediction_sets_verified": 10,
+  "all_macro_metrics_reproduced": true,
+  "same_2158_test_records": true,
+  "normalization_fitted_filtered_training_only": true,
+  "same_training_only_calibration_ids": true,
+  "selection_validation_only_verified": true,
+  "tests_passed": 78
+}

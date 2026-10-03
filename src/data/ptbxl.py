@@ -241,6 +241,7 @@ def create_fold_splits(
     train_folds: Sequence[int] = tuple(range(1, 9)),
     validation_fold: int = 9,
     test_fold: int = 10,
+    test_folds: Sequence[int] | None = None,
 ) -> dict[str, pd.DataFrame]:
     """Create patient-safe train/validation/test subsets from official folds."""
     required = {"patient_id", "strat_fold"}
@@ -248,18 +249,21 @@ def create_fold_splits(
     if missing:
         raise PTBXLDataError(f"Metadata is missing split columns: {', '.join(missing)}")
     folds = set(metadata["strat_fold"].astype(int).unique())
-    requested = set(train_folds) | {validation_fold, test_fold}
+    evaluation_folds = tuple(test_folds) if test_folds is not None else (test_fold,)
+    if not train_folds or not evaluation_folds:
+        raise ValueError("Training and evaluation fold lists must not be empty.")
+    requested = set(train_folds) | {validation_fold} | set(evaluation_folds)
     absent = sorted(requested - folds)
     if absent:
         raise PTBXLDataError(f"Requested strat_fold values are absent from metadata: {absent}")
-    if set(train_folds) & {validation_fold, test_fold} or validation_fold == test_fold:
+    if set(train_folds) & ({validation_fold} | set(evaluation_folds)) or validation_fold in evaluation_folds:
         raise ValueError("Train, validation, and test fold assignments must be disjoint.")
 
     fold_values = metadata["strat_fold"].astype(int)
     split = {
         "train": metadata.loc[fold_values.isin(train_folds)].copy(),
         "validation": metadata.loc[fold_values.eq(validation_fold)].copy(),
-        "test": metadata.loc[fold_values.eq(test_fold)].copy(),
+        "test": metadata.loc[fold_values.isin(evaluation_folds)].copy(),
     }
     patient_sets = {name: set(part["patient_id"].dropna()) for name, part in split.items()}
     names = tuple(split)

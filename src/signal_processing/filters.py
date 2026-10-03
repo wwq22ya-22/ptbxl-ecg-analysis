@@ -9,7 +9,7 @@ import numpy as np
 from scipy.ndimage import median_filter
 from scipy.signal import butter, filtfilt, iirnotch, sosfiltfilt
 
-Normalization = Literal["none", "zscore", "minmax"]
+Normalization = Literal["none", "zscore", "minmax", "train_global"]
 
 
 @dataclass(frozen=True)
@@ -30,6 +30,9 @@ class FilterConfig:
     notch_hz: float | None = None
     notch_quality_factor: float = 30.0
     normalization: Normalization = "zscore"
+    training_mean: tuple[float, ...] = ()
+    training_std: tuple[float, ...] = ()
+    baseline_removal: bool = True
 
     @classmethod
     def from_mapping(cls, settings: Mapping[str, Any]) -> "FilterConfig":
@@ -45,6 +48,9 @@ class FilterConfig:
             notch_hz=None if settings.get("notch_hz") is None else float(settings["notch_hz"]),
             notch_quality_factor=float(settings.get("notch_quality_factor", 30.0)),
             normalization=settings.get("normalization", "zscore"),
+            training_mean=tuple(settings.get("training_mean", ())),
+            training_std=tuple(settings.get("training_std", ())),
+            baseline_removal=bool(settings.get("baseline_removal", True)),
         )
 
 
@@ -189,11 +195,8 @@ def preprocess_ecg(
 ) -> np.ndarray:
     """Run baseline removal, bandpass, optional notch, and normalization."""
     cfg = config or FilterConfig()
-    filtered = remove_baseline_wander(
-        signal,
-        sampling_rate_hz,
-        windows_s=cfg.baseline_windows_s,
-    )
+    filtered = (remove_baseline_wander(signal, sampling_rate_hz, windows_s=cfg.baseline_windows_s)
+                if cfg.baseline_removal else np.asarray(signal, dtype=np.float32))
     filtered = bandpass_filter(
         filtered,
         sampling_rate_hz,
@@ -208,4 +211,11 @@ def preprocess_ecg(
             cfg.notch_hz,
             quality_factor=cfg.notch_quality_factor,
         )
-    return normalize_signal(filtered, normalization or cfg.normalization)
+    method = normalization or cfg.normalization
+    if method == "train_global":
+        mean = np.asarray(cfg.training_mean, dtype=np.float64)
+        std = np.asarray(cfg.training_std, dtype=np.float64)
+        if mean.shape != (filtered.shape[1],) or std.shape != mean.shape or not np.isfinite(mean).all() or not np.isfinite(std).all() or np.any(std <= 0):
+            raise ValueError("train_global requires finite training-only lead means and positive standard deviations.")
+        return ((filtered - mean) / std).astype(np.float32)
+    return normalize_signal(filtered, method)

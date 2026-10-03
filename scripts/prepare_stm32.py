@@ -1,15 +1,17 @@
-"""Export and validate PTB-XL CNN artifacts for STM32Cube AI."""
+"""Export and validate a frozen PTB-XL single model for STM32Cube AI."""
 from __future__ import annotations
 import argparse, hashlib, json, sys
 from pathlib import Path
 import numpy as np
-import pandas as pd
 import torch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.data.ptbxl import LEAD_NAMES, SUPERCLASSES
-from src.models import build_model
+from src.models import MODEL_TYPES, build_model
+from src.config import resolve_project_path
+from src.signal_processing.filters import FilterConfig
+from src.training.data import load_labeled_splits, ensure_preprocessed_cache
 
 def digest(path):
     h = hashlib.sha256()
@@ -18,14 +20,21 @@ def digest(path):
             h.update(chunk)
     return h.hexdigest()
 
-def get_split(name):
-    candidates = sorted((ROOT / "outputs/cache").glob(f"{name}_full_*.npy"))
-    if len(candidates) != 1:
-        raise FileNotFoundError(f"Expected one full {name} cache; found {len(candidates)}.")
-    cache = candidates[0]
+def get_split(name, checkpoint):
+    cfg = checkpoint['config']
+    dataset_root = resolve_project_path(cfg['dataset']['root'], ROOT)
+    fs = int(checkpoint['sampling_rate_hz'])
+    frame = load_labeled_splits(
+        dataset_root, fs,
+        require_diagnostic_label=bool(cfg['dataset'].get('require_diagnostic_label', False)),
+    )[name]
+    cache = ensure_preprocessed_cache(
+        frame, dataset_root, resolve_project_path(cfg['outputs']['cache_dir'], ROOT),
+        split_name=f'{name}_full', sampling_rate_hz=fs,
+        config=FilterConfig.from_mapping(cfg['signal_processing']),
+    )
     metadata = json.loads(cache.with_suffix(".json").read_text(encoding="utf-8"))
     array = np.load(cache, mmap_mode="r")
-    frame = pd.read_csv(ROOT / "outputs/splits" / f"{name}.csv")
     if list(array.shape) != metadata.get("shape") or metadata.get("dtype") != "float32":
         raise ValueError(f"Invalid {name} cache metadata.")
     if array.shape != (len(frame), 12, 1000):
@@ -41,8 +50,9 @@ def select(array, frame, count, seed):
     x = np.ascontiguousarray(array[rows], dtype=np.float32)
     if not np.isfinite(x).all():
         raise ValueError("Selected input has non-finite values.")
-    y = frame.loc[rows, list(SUPERCLASSES)].to_numpy(dtype=np.uint8)
-    ids = frame.loc[rows, "ecg_id"].to_numpy(dtype=np.int64)
+    selected = frame.iloc[rows]
+    y = selected[list(SUPERCLASSES)].to_numpy(dtype=np.uint8)
+    ids = selected["ecg_id"].to_numpy(dtype=np.int64)
     return x, y, ids, rows
 
 def main():
@@ -51,28 +61,35 @@ def main():
     parser.add_argument("--validation-count", type=int, default=128)
     parser.add_argument("--seed", type=int, default=20260926)
     parser.add_argument("--opset", type=int, default=13)
+    parser.add_argument("--checkpoint", type=Path, default=ROOT / 'outputs/checkpoints/baseline_best.pt')
+    parser.add_argument("--output-dir", type=Path, default=ROOT / 'outputs/stm32')
     args = parser.parse_args()
-    out = ROOT / "outputs/stm32"
+    out = resolve_project_path(args.output_dir, ROOT)
     out.mkdir(parents=True, exist_ok=True)
-    checkpoint = torch.load(ROOT / "outputs/checkpoints/baseline_best.pt", map_location="cpu", weights_only=True)
-    if checkpoint.get("scope") != "full" or checkpoint.get("model_type") != "cnn1d":
-        raise ValueError("Expected the full cnn1d checkpoint.")
+    checkpoint_path = resolve_project_path(args.checkpoint, ROOT)
+    checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
+    kind = checkpoint.get('model_type')
+    if checkpoint.get("scope") != "full" or kind not in MODEL_TYPES:
+        raise ValueError("Expected a supported full-training single-model checkpoint.")
+    if int(checkpoint['sampling_rate_hz']) != 100:
+        raise ValueError('This deployment input contract requires 100 Hz records.')
     if tuple(checkpoint.get("lead_names", ())) != LEAD_NAMES or tuple(checkpoint.get("superclasses", ())) != SUPERCLASSES:
         raise ValueError("Checkpoint lead/class order differs from deployment contract.")
     thresholds = np.asarray(checkpoint.get("thresholds"), dtype=np.float64)
-    if thresholds.shape != (5,) or not np.isfinite(thresholds).all():
+    if thresholds.shape != (5,) or not np.isfinite(thresholds).all() or np.any((thresholds <= 0) | (thresholds >= 1)):
         raise ValueError("Expected five finite validation thresholds.")
 
-    train, train_frame = get_split("train")
-    valid, valid_frame = get_split("validation")
+    train, train_frame = get_split("train", checkpoint)
+    valid, valid_frame = get_split("validation", checkpoint)
     calib_x, _, calib_ids, calib_rows = select(train, train_frame, args.calibration_count, args.seed)
     valid_x, valid_y, valid_ids, valid_rows = select(valid, valid_frame, args.validation_count, args.seed + 1)
 
-    model = build_model("cnn1d", dropout=float(checkpoint["config"]["model"]["dropout"]))
+    torch.set_num_threads(4)
+    model = build_model(kind, dropout=float(checkpoint["config"]["model"]["dropout"]))
     model.load_state_dict(checkpoint["model_state"])
     model.eval().cpu()
     params = sum(p.numel() for p in model.parameters())
-    onnx_path = out / "ptbxl_cnn1d_float32.onnx"
+    onnx_path = out / f"ptbxl_{kind}_float32.onnx"
     torch.onnx.export(
         model, (torch.from_numpy(valid_x[:1]),), str(onnx_path),
         input_names=["ecg"], output_names=["logits"], opset_version=args.opset,
@@ -89,7 +106,10 @@ def main():
     in_shape, out_shape = dims(graph.graph.input[0]), dims(graph.graph.output[0])
     if in_shape != [1, 12, 1000] or out_shape != [1, 5]:
         raise ValueError(f"Unexpected ONNX shapes: {in_shape} -> {out_shape}.")
-    session = ort.InferenceSession(str(onnx_path), providers=["CPUExecutionProvider"])
+    options = ort.SessionOptions()
+    options.intra_op_num_threads = 4
+    options.inter_op_num_threads = 1
+    session = ort.InferenceSession(str(onnx_path), options, providers=["CPUExecutionProvider"])
     if session.get_inputs()[0].name != "ecg" or session.get_outputs()[0].name != "logits":
         raise ValueError("Unexpected ONNX input/output names.")
     with torch.inference_mode():
@@ -109,14 +129,14 @@ def main():
     probs = 1.0 / (1.0 + np.exp(-np.clip(pt, -80, 80)))
     np.savez_compressed(out / "validation_reference.npz", ecg=valid_x, targets=valid_y,
                         ecg_id=valid_ids, reference_logits=pt, reference_probabilities=probs)
-    weights = out / "cnn1d_weights_only.pt"
+    weights = out / f"{kind}_weights_only.pt"
     torch.save({k: v.detach().cpu() for k, v in checkpoint["model_state"].items()}, weights)
     (out / "onnx_parity.json").write_text(json.dumps(parity, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     files = [onnx_path, out / "calibration_train.npy", out / "calibration_train.npz",
              out / "validation_reference.npz", weights]
     manifest = {
-        "source_checkpoint": "outputs/checkpoints/baseline_best.pt",
-        "model_type": "cnn1d", "trainable_parameter_count": int(params),
+        "source_checkpoint": str(checkpoint_path), "source_checkpoint_sha256": digest(checkpoint_path),
+        "model_type": kind, "trainable_parameter_count": int(params),
         "onnx": {"file": onnx_path.name, "opset": args.opset, "input": {"name": "ecg", "dtype": "float32", "shape": in_shape},
                  "output": {"name": "logits", "dtype": "float32", "shape": out_shape},
                  "operators": sorted({n.op_type for n in graph.graph.node}), "preprocessing_in_graph": False},

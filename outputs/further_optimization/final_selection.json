@@ -1,0 +1,139 @@
+{
+  "name": "ensemble_equal",
+  "type": "probability_ensemble",
+  "superclasses": [
+    "NORM",
+    "MI",
+    "STTC",
+    "CD",
+    "HYP"
+  ],
+  "components": [
+    {
+      "checkpoint": "outputs/further_optimization/frozen_models/0_resnet1d.pt",
+      "source_checkpoint": "outputs/optimization/01_global_norm/checkpoint/resnet1d_best.pt",
+      "weight": 0.5,
+      "sha256": "e78becd7dc6d425aa4702347231afe3e4c0021e554b53224fd8b11049bdbf518"
+    },
+    {
+      "checkpoint": "outputs/further_optimization/frozen_models/1_inception1d.pt",
+      "source_checkpoint": "outputs/optimization/08_global_inception1d/checkpoint/inception1d_best.pt",
+      "weight": 0.5,
+      "sha256": "100d1df47b1bce21a4fc31bf01f5c26f0815a9f5b4f0957a0ae75a1ae48999d5"
+    }
+  ],
+  "thresholds": [
+    0.47202956676483154,
+    0.5887033939361572,
+    0.6001289486885071,
+    0.8037816286087036,
+    0.809538722038269
+  ],
+  "threshold_policy": {
+    "precision_floor": 0.7179231673241182,
+    "recall_floor": 0.8096266051939256,
+    "feasible": false
+  },
+  "validation_metrics": {
+    "records": 2183,
+    "per_class": {
+      "NORM": {
+        "support": 955,
+        "threshold": 0.47202956676483154,
+        "auroc": 0.9525052441291334,
+        "precision": 0.8235849056603773,
+        "recall": 0.9141361256544502,
+        "f1": 0.8665012406947891,
+        "confusion_matrix": [
+          [
+            1041,
+            187
+          ],
+          [
+            82,
+            873
+          ]
+        ]
+      },
+      "MI": {
+        "support": 540,
+        "threshold": 0.5887033939361572,
+        "auroc": 0.9355345911949685,
+        "precision": 0.7634011090573013,
+        "recall": 0.7648148148148148,
+        "f1": 0.7641073080481036,
+        "confusion_matrix": [
+          [
+            1515,
+            128
+          ],
+          [
+            127,
+            413
+          ]
+        ]
+      },
+      "STTC": {
+        "support": 528,
+        "threshold": 0.6001289486885071,
+        "auroc": 0.9391673532912204,
+        "precision": 0.7363945578231292,
+        "recall": 0.8200757575757576,
+        "f1": 0.7759856630824373,
+        "confusion_matrix": [
+          [
+            1500,
+            155
+          ],
+          [
+            95,
+            433
+          ]
+        ]
+      },
+      "CD": {
+        "support": 495,
+        "threshold": 0.8037816286087036,
+        "auroc": 0.931253291205898,
+        "precision": 0.7613412228796844,
+        "recall": 0.7797979797979798,
+        "f1": 0.7704590818363274,
+        "confusion_matrix": [
+          [
+            1567,
+            121
+          ],
+          [
+            109,
+            386
+          ]
+        ]
+      },
+      "HYP": {
+        "support": 268,
+        "threshold": 0.809538722038269,
+        "auroc": 0.914527882779315,
+        "precision": 0.5873015873015873,
+        "recall": 0.6902985074626866,
+        "f1": 0.6346483704974271,
+        "confusion_matrix": [
+          [
+            1785,
+            130
+          ],
+          [
+            83,
+            185
+          ]
+        ]
+      }
+    },
+    "macro_auroc": 0.934597672520107,
+    "macro_precision": 0.7344046765444159,
+    "macro_recall": 0.7938246370611377,
+    "macro_f1": 0.7623403328318169,
+    "classes_with_defined_auroc": 5
+  },
+  "cv_selection_rule": "mean F1 +0.001, wins>=3/4, AUC >= reference-0.001",
+  "description": "四折主结果选择ensemble_equal。全量模型seed42；最终阈值仅从fold9确定，并以第一轮最终模型和全量标准化ResNet的验证Precision/Recall较高值作下限；找到可行候选：False。不保证测试集也满足下限。"
+}

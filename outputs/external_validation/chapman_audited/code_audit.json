@@ -1,0 +1,1667 @@
+{
+  "mapping_version": "chapman-snomed-positive-v1-20261001",
+  "codes": [
+    {
+      "code": "426177001",
+      "record_count": 16559,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "Sinus Bradycardia",
+        "sinus bradycardia"
+      ],
+      "acronyms": [
+        "SB"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "426783006",
+      "record_count": 8125,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "Sinus Rhythm",
+        "sinus rhythm"
+      ],
+      "acronyms": [
+        "SR",
+        "NSR"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "164890007",
+      "record_count": 8060,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "Atrial Flutter",
+        "atrial flutter"
+      ],
+      "acronyms": [
+        "AF",
+        "AFL"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "427084000",
+      "record_count": 7254,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "Sinus Tachycardia",
+        "sinus tachycardia"
+      ],
+      "acronyms": [
+        "ST",
+        "STach"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "164934002",
+      "record_count": 7043,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "STTC"
+      ],
+      "names": [
+        "T wave Change",
+        "t wave abnormal"
+      ],
+      "acronyms": [
+        "TWC",
+        "TAb"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "55827005",
+      "record_count": 5401,
+      "role": "uncertain",
+      "affected_classes": [
+        "HYP"
+      ],
+      "names": [
+        "left ventricular high voltage"
+      ],
+      "acronyms": [
+        "LVHV"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "55930002",
+      "record_count": 4232,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "STTC"
+      ],
+      "names": [
+        "s t changes"
+      ],
+      "acronyms": [
+        "STC"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "59931005",
+      "record_count": 2877,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "STTC"
+      ],
+      "names": [
+        "T wave opposite",
+        "t wave inversion"
+      ],
+      "acronyms": [
+        "TWO",
+        "TInv"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "427393009",
+      "record_count": 2550,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "Sinus Irregularity",
+        "sinus arrhythmia"
+      ],
+      "acronyms": [
+        "SA"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "164889003",
+      "record_count": 1780,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "Atrial Fibrillation",
+        "atrial fibrillation"
+      ],
+      "acronyms": [
+        "AFIB",
+        "AF"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "429622005",
+      "record_count": 1668,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "STTC"
+      ],
+      "names": [
+        "ST drop down",
+        "st depression"
+      ],
+      "acronyms": [
+        "STDD",
+        "STD"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "39732003",
+      "record_count": 1545,
+      "role": "reviewed_other_morphology",
+      "affected_classes": [],
+      "names": [
+        "Axis left shift",
+        "left axis deviation"
+      ],
+      "acronyms": [
+        "ALS",
+        "LAD"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "284470004",
+      "record_count": 1312,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "atrial premature beats",
+        "premature atrial contraction"
+      ],
+      "acronyms": [
+        "APB",
+        "PAC"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "10370003",
+      "record_count": 1182,
+      "role": "uncertain",
+      "affected_classes": [
+        "MI",
+        "STTC",
+        "CD",
+        "HYP"
+      ],
+      "names": [
+        "pacing rhythm"
+      ],
+      "acronyms": [
+        "PR"
+      ],
+      "sources": [
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "428750005",
+      "record_count": 1158,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "STTC"
+      ],
+      "names": [
+        "ST-T Change",
+        "nonspecific st t abnormality"
+      ],
+      "acronyms": [
+        "STTC",
+        "NSSTTA"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "270492004",
+      "record_count": 1140,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "1 degree atrioventricular block",
+        "1st degree av block"
+      ],
+      "acronyms": [
+        "1AVB",
+        "IAVB"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "713427006",
+      "record_count": 1096,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "complete right bundle branch block"
+      ],
+      "acronyms": [
+        "CRBBB"
+      ],
+      "sources": [
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "427172004",
+      "record_count": 1091,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "premature ventricular contractions"
+      ],
+      "acronyms": [
+        "PVC"
+      ],
+      "sources": [
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "164917005",
+      "record_count": 1063,
+      "role": "uncertain",
+      "affected_classes": [
+        "MI"
+      ],
+      "names": [
+        "abnormal Q wave",
+        "qwave abnormal"
+      ],
+      "acronyms": [
+        "AQW",
+        "QAb"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "251146004",
+      "record_count": 1043,
+      "role": "reviewed_other_morphology",
+      "affected_classes": [],
+      "names": [
+        "lower voltage QRS in all lead",
+        "low qrs voltages"
+      ],
+      "acronyms": [
+        "LVQRSAL",
+        "LQRSV"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "47665007",
+      "record_count": 853,
+      "role": "reviewed_other_morphology",
+      "affected_classes": [],
+      "names": [
+        "Axis right shift",
+        "right axis deviation"
+      ],
+      "acronyms": [
+        "ARS",
+        "RAD"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "164930006",
+      "record_count": 801,
+      "role": "uncertain",
+      "affected_classes": [
+        "STTC"
+      ],
+      "names": [
+        "ST extension",
+        "st interval abnormal"
+      ],
+      "acronyms": [
+        "STE",
+        "STIAb"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "698252002",
+      "record_count": 771,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "Interior differences conduction",
+        "Intraventricular block",
+        "nonspecific intraventricular conduction disorder"
+      ],
+      "acronyms": [
+        "IDC",
+        "IVB",
+        "NSIVCB"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "426761007",
+      "record_count": 724,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "Supraventricular Tachycardia",
+        "supraventricular tachycardia"
+      ],
+      "acronyms": [
+        "SVT"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "61721007",
+      "record_count": 653,
+      "role": "reviewed_other_morphology",
+      "affected_classes": [],
+      "names": [
+        "clockwise or counterclockwise vectorcardiographic loop"
+      ],
+      "acronyms": [
+        "CVCL/CCVCL"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "59118001",
+      "record_count": 649,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "right bundle branch block"
+      ],
+      "acronyms": [
+        "RBBB"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "164873001",
+      "record_count": 647,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "HYP"
+      ],
+      "names": [
+        "left ventricle hypertrophy",
+        "left ventricular hypertrophy"
+      ],
+      "acronyms": [
+        "LVH"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "365413008",
+      "record_count": 638,
+      "role": "uncertain",
+      "affected_classes": [
+        "MI"
+      ],
+      "names": [
+        "poor R wave Progression"
+      ],
+      "acronyms": [
+        "PRWP"
+      ],
+      "sources": [
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "111975006",
+      "record_count": 394,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "STTC"
+      ],
+      "names": [
+        "QT interval extension",
+        "prolonged qt interval"
+      ],
+      "acronyms": [
+        "QTIE",
+        "LQT"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "6374002",
+      "record_count": 385,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "bundle branch block"
+      ],
+      "acronyms": [
+        "BBB"
+      ],
+      "sources": [
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "445118002",
+      "record_count": 380,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "left anterior fascicular block"
+      ],
+      "acronyms": [
+        "LAnFB"
+      ],
+      "sources": [
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "428417006",
+      "record_count": 366,
+      "role": "uncertain",
+      "affected_classes": [
+        "STTC"
+      ],
+      "names": [
+        "Early repolarization of the ventricles",
+        "early repolarization"
+      ],
+      "acronyms": [
+        "ERV",
+        "ERe"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "713422000",
+      "record_count": 297,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "Atrial Tachycardia",
+        "atrial tachycardia"
+      ],
+      "acronyms": [
+        "AT",
+        "ATach"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "17338001",
+      "record_count": 294,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "ventricular premature beat",
+        "ventricular premature beats"
+      ],
+      "acronyms": [
+        "VPB"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "713426002",
+      "record_count": 246,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "incomplete right bundle branch block"
+      ],
+      "acronyms": [
+        "IRBBB"
+      ],
+      "sources": [
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "233917008",
+      "record_count": 244,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "atrioventricular block",
+        "av block"
+      ],
+      "acronyms": [
+        "AVB"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "164909002",
+      "record_count": 240,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "left bundle branch block",
+        "left back bundle branch block",
+        "left front bundle branch block"
+      ],
+      "acronyms": [
+        "LBBB",
+        "LBBBB",
+        "LFBBB"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "251223006",
+      "record_count": 215,
+      "role": "uncertain",
+      "affected_classes": [
+        "HYP"
+      ],
+      "names": [
+        "tall p wave"
+      ],
+      "acronyms": [
+        "TPW"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "106068003",
+      "record_count": 215,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "atrial rhythm"
+      ],
+      "acronyms": [
+        "ARH"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "733534002",
+      "record_count": 213,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "complete left bundle branch block"
+      ],
+      "acronyms": [
+        "CLBBB"
+      ],
+      "sources": [
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "164931005",
+      "record_count": 176,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "STTC"
+      ],
+      "names": [
+        "ST tilt up",
+        "st elevation"
+      ],
+      "acronyms": [
+        "STTU",
+        "STE"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "251199005",
+      "record_count": 162,
+      "role": "reviewed_other_morphology",
+      "affected_classes": [],
+      "names": [
+        "countercolockwise rotation"
+      ],
+      "acronyms": [
+        "CCR"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "164912004",
+      "record_count": 142,
+      "role": "uncertain",
+      "affected_classes": [
+        "HYP"
+      ],
+      "names": [
+        "P wave Change",
+        "p wave change"
+      ],
+      "acronyms": [
+        "PWC"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "29320008",
+      "record_count": 139,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "atrioventricular junctional rhythm"
+      ],
+      "acronyms": [
+        "AVJR"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "164937009",
+      "record_count": 136,
+      "role": "uncertain",
+      "affected_classes": [
+        "STTC"
+      ],
+      "names": [
+        "U wave",
+        "u wave abnormal"
+      ],
+      "acronyms": [
+        "UW",
+        "UAb"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "164865005",
+      "record_count": 123,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "MI"
+      ],
+      "names": [
+        "myocardial infarction",
+        "myocardial infraction in back wall",
+        "Myocardial infgraction in the front wall",
+        "Myocardial infraction in the lower wall",
+        "Myocardial infraction in the side wall"
+      ],
+      "acronyms": [
+        "MI",
+        "MIBW",
+        "MIFW",
+        "MILW",
+        "MISW"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "13640000",
+      "record_count": 116,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "ventricular fusion wave",
+        "fusion beats"
+      ],
+      "acronyms": [
+        "VFW",
+        "FB"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "89792004",
+      "record_count": 110,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "HYP"
+      ],
+      "names": [
+        "right ventricle hypertrophy",
+        "right ventricular hypertrophy"
+      ],
+      "acronyms": [
+        "RVH"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "425856008",
+      "record_count": 109,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "paroxysmal ventricular tachycardia"
+      ],
+      "acronyms": [
+        "PVT"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "251205003",
+      "record_count": 106,
+      "role": "uncertain",
+      "affected_classes": [
+        "HYP"
+      ],
+      "names": [
+        "prolonged P wave"
+      ],
+      "acronyms": [
+        "PPW"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "81898007",
+      "record_count": 96,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "ventricular escape rhythm"
+      ],
+      "acronyms": [
+        "VEsR"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "251198002",
+      "record_count": 76,
+      "role": "reviewed_other_morphology",
+      "affected_classes": [],
+      "names": [
+        "colockwise rotation",
+        "clockwise rotation"
+      ],
+      "acronyms": [
+        "CR"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "27885002",
+      "record_count": 76,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "3 degree atrioventricular block",
+        "complete heart block"
+      ],
+      "acronyms": [
+        "3AVB",
+        "CHB"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "426995002",
+      "record_count": 75,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "junctional escape beat",
+        "junctional escape"
+      ],
+      "acronyms": [
+        "JEB",
+        "JE"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "74390002",
+      "record_count": 72,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "WPW",
+        "wolff parkinson white pattern"
+      ],
+      "acronyms": [
+        "WPW"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "195042002",
+      "record_count": 66,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "2 degree atrioventricular block",
+        "2nd degree av block"
+      ],
+      "acronyms": [
+        "2AVB",
+        "IIAVB"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "251170000",
+      "record_count": 62,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "blocked premature atrial contraction"
+      ],
+      "acronyms": [
+        "BPAC"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "50799005",
+      "record_count": 59,
+      "role": "uncertain",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "atrioventricular dissociation"
+      ],
+      "acronyms": [
+        "AVD"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "164896001",
+      "record_count": 59,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "ventricular fibrillation"
+      ],
+      "acronyms": [
+        "VF"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "54329005",
+      "record_count": 57,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "MI"
+      ],
+      "names": [
+        "anterior myocardial infarction"
+      ],
+      "acronyms": [
+        "AnMI"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "75532003",
+      "record_count": 56,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "ventricular escape beat"
+      ],
+      "acronyms": [
+        "VEB",
+        "VEsB"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "164947007",
+      "record_count": 52,
+      "role": "uncertain",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "PR interval extension",
+        "prolonged pr interval"
+      ],
+      "acronyms": [
+        "PRIE",
+        "LPR"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "57054005",
+      "record_count": 49,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "MI"
+      ],
+      "names": [
+        "acute myocardial infarction"
+      ],
+      "acronyms": [
+        "AMI"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "446358003",
+      "record_count": 36,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "HYP"
+      ],
+      "names": [
+        "right atrial hypertrophy"
+      ],
+      "acronyms": [
+        "RAH"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "67751000119106",
+      "record_count": 36,
+      "role": "uncertain",
+      "affected_classes": [
+        "HYP"
+      ],
+      "names": [
+        "right atrial  high voltage"
+      ],
+      "acronyms": [
+        "RAHV"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "5609005",
+      "record_count": 33,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "sinus arrest"
+      ],
+      "acronyms": [
+        "SARR"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "54016002",
+      "record_count": 31,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "2 degree atrioventricular block(Type one)",
+        "mobitz type i wenckebach atrioventricular block"
+      ],
+      "acronyms": [
+        "2AVB1",
+        "MoI"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "233897008",
+      "record_count": 26,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "Atrioventricular Reentrant Tachycardia",
+        "atrioventricular reentrant tachycardia"
+      ],
+      "acronyms": [
+        "AVRT"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "426648003",
+      "record_count": 24,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "junctional tachycardia"
+      ],
+      "acronyms": [
+        "JTach"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "49578007",
+      "record_count": 23,
+      "role": "uncertain",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "shortened pr interval"
+      ],
+      "acronyms": [
+        "SPRI"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "251187003",
+      "record_count": 17,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "atrial escape beat"
+      ],
+      "acronyms": [
+        "AED"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "251166008",
+      "record_count": 16,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "atrioventricular  node reentrant tachycardia"
+      ],
+      "acronyms": [
+        "AVNRT"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "233892002",
+      "record_count": 16,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "accelerated atrial escape rhythm"
+      ],
+      "acronyms": [
+        "AAR"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "61277005",
+      "record_count": 14,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "accelerated idioventricular rhythm"
+      ],
+      "acronyms": [
+        "AIVR"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "195060002",
+      "record_count": 12,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "ventricular preexcitation",
+        "ventricular pre excitation"
+      ],
+      "acronyms": [
+        "VPE",
+        "VPEx"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "426664006",
+      "record_count": 12,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "accelerated junctional rhythm"
+      ],
+      "acronyms": [
+        "AJR"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "251164006",
+      "record_count": 11,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "junctional premature beat",
+        "junctional premature complex"
+      ],
+      "acronyms": [
+        "JPT",
+        "JPC"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "63593006",
+      "record_count": 9,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "supraventricular premature beats"
+      ],
+      "acronyms": [
+        "SVPB"
+      ],
+      "sources": [
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "251180001",
+      "record_count": 8,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "ventricular escape trigeminy",
+        "ventricular trigeminy"
+      ],
+      "acronyms": [
+        "VET",
+        "VTrig"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "446813000",
+      "record_count": 8,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "HYP"
+      ],
+      "names": [
+        "left atrial hypertrophy"
+      ],
+      "acronyms": [
+        "LAH"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "17366009",
+      "record_count": 7,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "sinus atrium to atrial wandering rhythm"
+      ],
+      "acronyms": [
+        "SAAWR"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "426627000",
+      "record_count": 7,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "bradycardia"
+      ],
+      "acronyms": [
+        "Brady"
+      ],
+      "sources": [
+        "challenge_scored.csv"
+      ]
+    },
+    {
+      "code": "111288001",
+      "record_count": 7,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "ventricular flutter"
+      ],
+      "acronyms": [
+        "VFL"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "426183003",
+      "record_count": 7,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "mobitz type II atrioventricular block"
+      ],
+      "acronyms": [
+        "IIAVBII"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "251120003",
+      "record_count": 6,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "incomplete left bundle branch block"
+      ],
+      "acronyms": [
+        "ILBBB"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "65778007",
+      "record_count": 5,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "sinoatrial block"
+      ],
+      "acronyms": [
+        "SAB"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "445211001",
+      "record_count": 5,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "left posterior fascicular block"
+      ],
+      "acronyms": [
+        "LPFB"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "418818005",
+      "record_count": 5,
+      "role": "uncertain",
+      "affected_classes": [
+        "STTC",
+        "CD"
+      ],
+      "names": [
+        "brugada"
+      ],
+      "acronyms": [
+        "BRU"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "251173003",
+      "record_count": 3,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "atrial bigeminy"
+      ],
+      "acronyms": [
+        "ABI",
+        "AB"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "164942001",
+      "record_count": 3,
+      "role": "uncertain",
+      "affected_classes": [
+        "CD"
+      ],
+      "names": [
+        "fQRS Wave",
+        "fqrs wave"
+      ],
+      "acronyms": [
+        "FQRS"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "11157007",
+      "record_count": 3,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "ventricular bigeminy"
+      ],
+      "acronyms": [
+        "VB",
+        "VBig"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "195101003",
+      "record_count": 2,
+      "role": "rhythm_only",
+      "affected_classes": [],
+      "names": [
+        "Wandering in the atrioventricalualr node",
+        "Sinus Atrium to Atrial Wandering Rhythm",
+        "wandering atrial pacemaker"
+      ],
+      "acronyms": [
+        "WAVN",
+        "SAAWR",
+        "WAP"
+      ],
+      "sources": [
+        "ConditionNames_SNOMED-CT.csv",
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "77867006",
+      "record_count": 2,
+      "role": "uncertain",
+      "affected_classes": [
+        "STTC"
+      ],
+      "names": [
+        "decreased qt interval"
+      ],
+      "acronyms": [
+        "SQT"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    },
+    {
+      "code": "67741000119109",
+      "record_count": 1,
+      "role": "explicit_positive",
+      "affected_classes": [
+        "HYP"
+      ],
+      "names": [
+        "left atrial enlargement"
+      ],
+      "acronyms": [
+        "LAE"
+      ],
+      "sources": [
+        "challenge_unscored.csv"
+      ]
+    }
+  ],
+  "header_errors": {
+    "ValueError: time data '/' does not match format '%d/%m/%Y'": 1,
+    "ValueError: Input spec is not 12 standard leads / 500 Hz / 5000 samples": 1
+  }
+}

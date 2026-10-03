@@ -1,0 +1,118 @@
+{
+  "records": 2198,
+  "per_class": {
+    "NORM": {
+      "support": 963,
+      "threshold": 0.47202956676483154,
+      "auroc": 0.9488037130929409,
+      "precision": 0.8014247551202137,
+      "recall": 0.9345794392523364,
+      "f1": 0.862895493767977,
+      "confusion_matrix": [
+        [
+          1012,
+          223
+        ],
+        [
+          63,
+          900
+        ]
+      ]
+    },
+    "MI": {
+      "support": 550,
+      "threshold": 0.5887033939361572,
+      "auroc": 0.9283583406884377,
+      "precision": 0.7490842490842491,
+      "recall": 0.7436363636363637,
+      "f1": 0.7463503649635036,
+      "confusion_matrix": [
+        [
+          1511,
+          137
+        ],
+        [
+          141,
+          409
+        ]
+      ]
+    },
+    "STTC": {
+      "support": 521,
+      "threshold": 0.6001289486885071,
+      "auroc": 0.937618244809246,
+      "precision": 0.7352941176470589,
+      "recall": 0.8157389635316699,
+      "f1": 0.7734303912647862,
+      "confusion_matrix": [
+        [
+          1524,
+          153
+        ],
+        [
+          96,
+          425
+        ]
+      ]
+    },
+    "CD": {
+      "support": 496,
+      "threshold": 0.8037816286087036,
+      "auroc": 0.9239391039005346,
+      "precision": 0.7551020408163265,
+      "recall": 0.7459677419354839,
+      "f1": 0.7505070993914807,
+      "confusion_matrix": [
+        [
+          1582,
+          120
+        ],
+        [
+          126,
+          370
+        ]
+      ]
+    },
+    "HYP": {
+      "support": 262,
+      "threshold": 0.809538722038269,
+      "auroc": 0.9061179105419217,
+      "precision": 0.5704697986577181,
+      "recall": 0.648854961832061,
+      "f1": 0.6071428571428571,
+      "confusion_matrix": [
+        [
+          1808,
+          128
+        ],
+        [
+          92,
+          170
+        ]
+      ]
+    }
+  },
+  "macro_auroc": 0.9289674626066162,
+  "macro_precision": 0.7222749922651133,
+  "macro_recall": 0.777755494037583,
+  "macro_f1": 0.748065241306121,
+  "classes_with_defined_auroc": 5,
+  "name": "ensemble_equal",
+  "test_fold": 10,
+  "threshold_source": "fold9",
+  "test_role": "reused_test_after_iteration",
+  "model_components": [
+    {
+      "checkpoint": "outputs/further_optimization/frozen_models/0_resnet1d.pt",
+      "source_checkpoint": "outputs/optimization/01_global_norm/checkpoint/resnet1d_best.pt",
+      "weight": 0.5,
+      "sha256": "e78becd7dc6d425aa4702347231afe3e4c0021e554b53224fd8b11049bdbf518"
+    },
+    {
+      "checkpoint": "outputs/further_optimization/frozen_models/1_inception1d.pt",
+      "source_checkpoint": "outputs/optimization/08_global_inception1d/checkpoint/inception1d_best.pt",
+      "weight": 0.5,
+      "sha256": "100d1df47b1bce21a4fc31bf01f5c26f0815a9f5b4f0957a0ae75a1ae48999d5"
+    }
+  ]
+}

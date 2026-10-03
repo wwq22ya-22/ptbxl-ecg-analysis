@@ -1,0 +1,94 @@
+{
+  "protocol": 1,
+  "model_type": "cnn1d",
+  "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+  "model_file": "ptbxl_cnn1d_int8.onnx",
+  "sample_file": "serial_samples.npz",
+  "sample_sha256": "6d153d0567ade0524dd60cf1a2b3adacdef9ef963705ec6bfc0e4f8a3098a6b3",
+  "sample_source": "PTB-XL validation fold 9",
+  "sample_count": 128,
+  "reference": "Cube.AI host C-model; not physical-board outputs",
+  "labels": [
+    "NORM",
+    "MI",
+    "STTC",
+    "CD",
+    "HYP"
+  ],
+  "thresholds": [
+    0.5500000000000002,
+    0.6000000000000002,
+    0.5500000000000002,
+    0.7500000000000002,
+    0.6500000000000001
+  ],
+  "lead_order": [
+    "I",
+    "II",
+    "III",
+    "aVR",
+    "aVL",
+    "aVF",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6"
+  ],
+  "input_shape": [
+    12,
+    1000
+  ],
+  "input_scale": 0.2008364498615265,
+  "input_zero_point": 0,
+  "preprocessing": {
+    "baseline_windows_s": [
+      0.2,
+      0.6
+    ],
+    "lowcut_hz": 0.5,
+    "highcut_hz": 40.0,
+    "bandpass_order": 4,
+    "notch_hz": null,
+    "notch_quality_factor": 30.0,
+    "normalization": "train_global",
+    "rpeak_minimum_rr_s": 0.25,
+    "rpeak_integration_window_s": 0.12,
+    "rpeak_t_wave_window_s": 0.36,
+    "rpeak_t_wave_max_ratio": 0.75,
+    "rr_min_valid_s": 0.3,
+    "rr_max_valid_s": 2.0,
+    "training_mean": [
+      -8.29980455279083e-05,
+      -9.471457418735513e-05,
+      -1.8573451129833478e-06,
+      8.873225927876774e-05,
+      -3.922448620534397e-05,
+      -4.691987649332625e-05,
+      0.00010763294833339956,
+      0.00014846208986115213,
+      9.36026388655544e-05,
+      -1.7562160201324448e-05,
+      -0.00012476339082697792,
+      -0.00020475601327742585
+    ],
+    "training_std": [
+      0.1459681383239733,
+      0.14441239225980662,
+      0.13670085900657417,
+      0.12810973935669523,
+      0.12155112496707875,
+      0.12015464814185506,
+      0.20399021099509676,
+      0.3152158397676448,
+      0.3045114305595777,
+      0.2737368427568455,
+      0.24054999705506647,
+      0.19192188594533216
+    ]
+  },
+  "preprocessing_location": "host",
+  "default_baudrate": 115200,
+  "chunk_values": 64
+}

@@ -1,0 +1,20 @@
+{
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "epochs": 30,
+  "patience": 8,
+  "alpha": 0.5,
+  "temperature": 2,
+  "teacher": "outputs/optimization/optimized_best.pt",
+  "teacher_sha256": "29ffa3ad10e2081fd3749679e195e894edcda40a4851c8db3dc9081f6762a717",
+  "selection": "validation macro F1 then AUROC",
+  "cohort": {
+    "train": 17084,
+    "validation": 2146,
+    "test": 2158
+  },
+  "test_used_for_selection": false
+}

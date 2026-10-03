@@ -1,0 +1,80 @@
+{
+  "train": {
+    "before": {
+      "records": 17418,
+      "patients": 15023,
+      "all_zero_records": 334,
+      "positives": {
+        "NORM": 7596,
+        "MI": 4379,
+        "STTC": 4186,
+        "CD": 3907,
+        "HYP": 2119
+      }
+    },
+    "after": {
+      "records": 17084,
+      "patients": 14823,
+      "all_zero_records": 0,
+      "positives": {
+        "NORM": 7596,
+        "MI": 4379,
+        "STTC": 4186,
+        "CD": 3907,
+        "HYP": 2119
+      }
+    }
+  },
+  "validation": {
+    "before": {
+      "records": 2183,
+      "patients": 1942,
+      "all_zero_records": 37,
+      "positives": {
+        "NORM": 955,
+        "MI": 540,
+        "STTC": 528,
+        "CD": 495,
+        "HYP": 268
+      }
+    },
+    "after": {
+      "records": 2146,
+      "patients": 1917,
+      "all_zero_records": 0,
+      "positives": {
+        "NORM": 955,
+        "MI": 540,
+        "STTC": 528,
+        "CD": 495,
+        "HYP": 268
+      }
+    }
+  },
+  "test": {
+    "before": {
+      "records": 2198,
+      "patients": 1904,
+      "all_zero_records": 40,
+      "positives": {
+        "NORM": 963,
+        "MI": 550,
+        "STTC": 521,
+        "CD": 496,
+        "HYP": 262
+      }
+    },
+    "after": {
+      "records": 2158,
+      "patients": 1877,
+      "all_zero_records": 0,
+      "positives": {
+        "NORM": 963,
+        "MI": 550,
+        "STTC": 521,
+        "CD": 496,
+        "HYP": 262
+      }
+    }
+  }
+}

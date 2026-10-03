@@ -1,0 +1,4 @@
+{
+  "criterion": "INT8 validation macro F1, AUROC tie-break; test scores excluded",
+  "written_before_test_evaluation": true
+}

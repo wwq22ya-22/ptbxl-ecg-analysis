@@ -1,0 +1,58 @@
+{
+  "baseline": {
+    "original_2198": {
+      "records": 2198,
+      "macro_precision": 0.681176932100747,
+      "macro_recall": 0.7435723530974089,
+      "macro_f1": 0.7079884083396173,
+      "macro_auroc": 0.9076863574916476
+    },
+    "same_filtered_2158": {
+      "records": 2158,
+      "macro_precision": 0.6872703203496622,
+      "macro_recall": 0.7435723530974089,
+      "macro_f1": 0.7111162167133498,
+      "macro_auroc": 0.9082149280475494
+    }
+  },
+  "deployed": {
+    "records": 2158,
+    "macro_auroc": 0.9242763108399783,
+    "macro_precision": 0.7424291995627785,
+    "macro_recall": 0.7595921698501585,
+    "macro_f1": 0.7494409540193498,
+    "classes_with_defined_auroc": 5
+  },
+  "same_cohort_delta_percentage_points": {
+    "macro_precision": 5.515887921311635,
+    "macro_recall": 1.601981675274966,
+    "macro_f1": 3.8324737306000056,
+    "macro_auroc": 1.6061382792428858
+  },
+  "hyp": {
+    "baseline_precision": 0.3894736842105263,
+    "baseline_recall": 0.5648854961832062,
+    "baseline_f1": 0.46105919003115264,
+    "deployed": {
+      "support": 262,
+      "threshold": 0.6500000000000001,
+      "auroc": 0.9007462476245692,
+      "precision": 0.640495867768595,
+      "recall": 0.5916030534351145,
+      "f1": 0.6150793650793651,
+      "confusion_matrix": [
+        [
+          1809,
+          87
+        ],
+        [
+          107,
+          155
+        ]
+      ]
+    }
+  },
+  "thresholds_changed_for_this_comparison": false,
+  "new_model_inference": false,
+  "historical_test_independent": false
+}

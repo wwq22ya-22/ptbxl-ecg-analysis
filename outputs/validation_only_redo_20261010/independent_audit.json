@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "metric_sets_independently_recomputed": 26,
+  "threshold_sets_independently_researched": 8,
+  "joint_threshold_manifest_and_components_checked": true,
+  "joint_threshold_metrics_and_solver_status_checked": true,
+  "student_training_statistics_recomputed": true,
+  "student_runs_completed": 6,
+  "fresh_training_history_verified": true,
+  "teacher_weights_reused": true,
+  "teacher_selection_recomputed_from_validation": true,
+  "student_selection_recomputed_from_validation": true,
+  "int8_selection_recomputed_from_validation": true,
+  "train_only_calibration": true,
+  "actual_calibration_tensor_matches_training_records": true,
+  "protected_artifacts_unchanged": true,
+  "fold10_evaluated": false,
+  "historical_test_influence_erased": false
+}

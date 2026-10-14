@@ -1,0 +1,287 @@
+{
+  "validation": {
+    "records": 2183,
+    "per_class": {
+      "NORM": {
+        "support": 955,
+        "threshold": 0.6000000000000002,
+        "auroc": 0.9421900847587701,
+        "precision": 0.829126213592233,
+        "recall": 0.8942408376963351,
+        "f1": 0.8604534005037784,
+        "confusion_matrix": [
+          [
+            1052,
+            176
+          ],
+          [
+            101,
+            854
+          ]
+        ]
+      },
+      "MI": {
+        "support": 540,
+        "threshold": 0.5500000000000002,
+        "auroc": 0.9153310340163656,
+        "precision": 0.6636225266362252,
+        "recall": 0.8074074074074075,
+        "f1": 0.7284878863826232,
+        "confusion_matrix": [
+          [
+            1422,
+            221
+          ],
+          [
+            104,
+            436
+          ]
+        ]
+      },
+      "STTC": {
+        "support": 528,
+        "threshold": 0.5000000000000001,
+        "auroc": 0.9315469651194727,
+        "precision": 0.702922077922078,
+        "recall": 0.8200757575757576,
+        "f1": 0.756993006993007,
+        "confusion_matrix": [
+          [
+            1472,
+            183
+          ],
+          [
+            95,
+            433
+          ]
+        ]
+      },
+      "CD": {
+        "support": 495,
+        "threshold": 0.5500000000000002,
+        "auroc": 0.9366676241083824,
+        "precision": 0.7037037037037037,
+        "recall": 0.8444444444444444,
+        "f1": 0.7676767676767676,
+        "confusion_matrix": [
+          [
+            1512,
+            176
+          ],
+          [
+            77,
+            418
+          ]
+        ]
+      },
+      "HYP": {
+        "support": 268,
+        "threshold": 0.6500000000000001,
+        "auroc": 0.8383578192587974,
+        "precision": 0.42771084337349397,
+        "recall": 0.5298507462686567,
+        "f1": 0.47333333333333333,
+        "confusion_matrix": [
+          [
+            1725,
+            190
+          ],
+          [
+            126,
+            142
+          ]
+        ]
+      }
+    },
+    "macro_auroc": 0.9128187054523575,
+    "macro_precision": 0.6654170730455469,
+    "macro_recall": 0.7792038386785203,
+    "macro_f1": 0.7173888789779019,
+    "classes_with_defined_auroc": 5
+  },
+  "validation_fine": {
+    "records": 2183,
+    "per_class": {
+      "NORM": {
+        "support": 955,
+        "threshold": 0.6110478639602661,
+        "auroc": 0.9421900847587701,
+        "precision": 0.8354554358472086,
+        "recall": 0.8931937172774869,
+        "f1": 0.8633603238866396,
+        "confusion_matrix": [
+          [
+            1060,
+            168
+          ],
+          [
+            102,
+            853
+          ]
+        ]
+      },
+      "MI": {
+        "support": 540,
+        "threshold": 0.5170356631278992,
+        "auroc": 0.9153310340163656,
+        "precision": 0.658321060382916,
+        "recall": 0.8277777777777777,
+        "f1": 0.7333880229696472,
+        "confusion_matrix": [
+          [
+            1411,
+            232
+          ],
+          [
+            93,
+            447
+          ]
+        ]
+      },
+      "STTC": {
+        "support": 528,
+        "threshold": 0.50689297914505,
+        "auroc": 0.9315469651194727,
+        "precision": 0.7093596059113301,
+        "recall": 0.8181818181818182,
+        "f1": 0.7598944591029023,
+        "confusion_matrix": [
+          [
+            1478,
+            177
+          ],
+          [
+            96,
+            432
+          ]
+        ]
+      },
+      "CD": {
+        "support": 495,
+        "threshold": 0.5658086538314819,
+        "auroc": 0.9366676241083824,
+        "precision": 0.7096774193548387,
+        "recall": 0.8444444444444444,
+        "f1": 0.7712177121771218,
+        "confusion_matrix": [
+          [
+            1517,
+            171
+          ],
+          [
+            77,
+            418
+          ]
+        ]
+      },
+      "HYP": {
+        "support": 268,
+        "threshold": 0.5421189069747925,
+        "auroc": 0.8383578192587974,
+        "precision": 0.38095238095238093,
+        "recall": 0.6567164179104478,
+        "f1": 0.4821917808219178,
+        "confusion_matrix": [
+          [
+            1629,
+            286
+          ],
+          [
+            92,
+            176
+          ]
+        ]
+      }
+    },
+    "macro_auroc": 0.9128187054523575,
+    "macro_precision": 0.6587531804897349,
+    "macro_recall": 0.808062835118395,
+    "macro_f1": 0.7220104597916457,
+    "classes_with_defined_auroc": 5
+  },
+  "fine_thresholds": [
+    0.6110478639602661,
+    0.5170356631278992,
+    0.50689297914505,
+    0.5658086538314819,
+    0.5421189069747925
+  ],
+  "epoch": 11,
+  "parameters": 450885,
+  "name": "00_resnet_baseline",
+  "description": "已有 ResNet checkpoint 在 fold 9 重新推理；不重新训练",
+  "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\checkpoints\\resnet1d_best.pt",
+  "seconds": 5.230110300000206,
+  "config": {
+    "project": {
+      "name": "ptbxl-ecg-system",
+      "random_seed": 42
+    },
+    "dataset": {
+      "root": "D:/datasets/ptb-xl",
+      "sampling_rate_hz": 100,
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "test_fold": 10
+    },
+    "signal_processing": {
+      "baseline_windows_s": [
+        0.2,
+        0.6
+      ],
+      "lowcut_hz": 0.5,
+      "highcut_hz": 40.0,
+      "bandpass_order": 4,
+      "notch_hz": null,
+      "notch_quality_factor": 30.0,
+      "normalization": "zscore",
+      "rpeak_minimum_rr_s": 0.25,
+      "rpeak_integration_window_s": 0.12,
+      "rpeak_t_wave_window_s": 0.36,
+      "rpeak_t_wave_max_ratio": 0.75,
+      "rr_min_valid_s": 0.3,
+      "rr_max_valid_s": 2.0
+    },
+    "labels": {
+      "superclasses": [
+        "NORM",
+        "MI",
+        "STTC",
+        "CD",
+        "HYP"
+      ],
+      "default_threshold": 0.5
+    },
+    "model": {
+      "type": "resnet1d",
+      "dropout": 0.2
+    },
+    "training": {
+      "epochs": 20,
+      "batch_size": 32,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "early_stopping_patience": 5,
+      "num_workers": 0,
+      "use_amp": true,
+      "random_seed": 42
+    },
+    "outputs": {
+      "split_dir": "outputs/splits",
+      "figure_dir": "outputs/optimization/00_resnet_baseline/figure",
+      "cache_dir": "outputs/cache",
+      "checkpoint_dir": "outputs/optimization/00_resnet_baseline/checkpoint",
+      "metrics_dir": "outputs/optimization/00_resnet_baseline/metrics",
+      "predictions_dir": "outputs/optimization/00_resnet_baseline/predictions"
+    }
+  }
+}

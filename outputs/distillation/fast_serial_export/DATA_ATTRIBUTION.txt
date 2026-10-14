@@ -1,0 +1,26 @@
+PTB-XL demonstration data attribution
+
+Source: Wagner, P., Strodthoff, N., Bousseljot, R., Samek, W., & Schaeffter, T.
+(2022). PTB-XL, a large publicly available electrocardiography dataset
+(version 1.0.3). PhysioNet. DOI: https://doi.org/10.13026/kfzx-aw45
+Dataset: https://physionet.org/content/ptb-xl/1.0.3/
+Original publication: Wagner et al. (2020). Scientific Data.
+https://doi.org/10.1038/s41597-020-0495-6
+Platform citation: Pollard et al. (2026). PhysioNet as a global platform for
+biomedical research. Nature Health. https://doi.org/10.1038/s44360-026-00096-z
+
+License: Creative Commons Attribution 4.0 International (CC BY 4.0).
+See LICENSE_PTBXL.txt and https://creativecommons.org/licenses/by/4.0/ .
+
+serial_samples.npz contains 128 records selected from official validation
+fold 9 after excluding records with no positive diagnostic superclass.
+The ecg_id array identifies the source records; IDs also appear in
+deployment_manifest.json. This is a demonstration subset, not a new dataset.
+raw_mv stores original waveforms in millivolts; ecg stores signals after
+baseline removal, bandpass filtering and training-set global normalization.
+targets stores the five diagnostic superclass labels. reference_probabilities
+comes from the generated Cube.AI host C implementation, not a physical board.
+validation_reference.npz contains the corresponding preprocessed validation
+subset and FP32 reference outputs. No training or test-fold signals are
+included in these demonstration arrays. The data's CC BY license does not
+extend to the ST runtime or imply endorsement by the dataset authors.

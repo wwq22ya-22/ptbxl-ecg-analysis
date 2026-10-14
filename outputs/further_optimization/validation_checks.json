@@ -1,0 +1,6 @@
+{
+  "project_tests_passed": 58,
+  "gpu_amp_strategies_finite_gradients": true,
+  "single_record_batch_verified": true,
+  "joint_threshold_solver_small_problem_exhaustively_verified": true
+}

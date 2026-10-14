@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "statistics_provenance": {
+    "filtered_250hz": {
+      "records": 17084,
+      "train_only": true
+    },
+    "filtered_500hz": {
+      "records": 17084,
+      "train_only": true
+    },
+    "unfiltered_250hz": {
+      "records": 17418,
+      "train_only": true
+    },
+    "unfiltered_500hz": {
+      "records": 17418,
+      "train_only": true
+    }
+  },
+  "int8_cohort_metrics_independently_checked": 8,
+  "actual_signal_audit": true,
+  "input_contract_audit": true,
+  "source_sha256": {
+    "D:\\MyProject\\college\\ecg1\\src\\models\\cnn1d.py": "cbec0f67e608a99769fe59726c02da9fe4a47cbd9770ae28fd53bd9391170032",
+    "D:\\MyProject\\college\\ecg1\\src\\models\\alternatives.py": "6c1b9225d6fdbdde05b8ced6b998d05681d314bc3f422f7fd777cc9aa9d27d7f",
+    "D:\\MyProject\\college\\ecg1\\src\\models\\teachers.py": "74bc1b50f5d08d03ea240c9c353751669ec6c44cbcb0bae62f6b408f7bf3df90",
+    "D:\\MyProject\\college\\ecg1\\scripts\\run_highrate_study.py": "288ee1350ccee681a8cf1ee7df67d04e836feef1f1101646b3e90307d338a4d4"
+  }
+}

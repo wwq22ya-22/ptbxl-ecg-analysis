@@ -1,0 +1,29 @@
+{
+  "phase": "exploratory_three_seed_ensemble_followup",
+  "proposed_after_parent_test_review": true,
+  "test_is_new_blind_test": false,
+  "candidates": [
+    "inception1d",
+    "inception_time1d"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "weights": "equal probability average; no weight tuning",
+  "preprocessing": "P0_current; identical training-only per-lead normalization",
+  "selection": "validation macro F1 then AUROC, include parent frozen single-teacher candidate",
+  "thresholds": "original coarse grid using validation only",
+  "test_used_for_this_selection": false,
+  "source_sha256": {
+    "scripts\\compose_teacher_ensembles.py": "164d81f53a8a5194fd17ec11a304a55efae5560d6f2496bd35a6e2c36f371d62",
+    "src\\models\\probability_ensemble.py": "c24090ada1f29d091dd4e3d63057e6bdbd388a187584ed1dd6aab3602fb127a4"
+  },
+  "protected_artifacts": {
+    "outputs\\distillation\\distilled_seed44\\checkpoint\\cnn1d_best.pt": "857ed01b867ec8342c6162bd819875f72e4d090a20d3c9effb6fbdab6509a08e",
+    "outputs\\optimization\\optimized_best.pt": "29ffa3ad10e2081fd3749679e195e894edcda40a4851c8db3dc9081f6762a717",
+    "outputs\\distillation\\distilled_export\\ptbxl_cnn1d_int8.onnx": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+    "outputs\\board_release\\seed44_int8_stm32f407ve\\ECG_Student_INT8_STM32F407VE.hex": "57d255b4dc08cce3ff8e7879ab3c37143865b384e93a31a1f182df4a959134b6"
+  }
+}

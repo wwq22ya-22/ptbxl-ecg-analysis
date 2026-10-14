@@ -1,0 +1,6 @@
+A快速版：原seed44 INT8模型，协议3二进制传输。
+STM32F407VG，HSE8MHz，168MHz；USART1 PA9 TX/PA10 RX，115200 8N1，J-Link沿用原工程。
+先用Keil烧录本目录Fast HEX，再运行根目录start_ecg_student_fast_viz.cmd。
+VS Code运行scripts/ecg_stm32_fast_viz.py，可选择折9或折10。
+上位机完成原预处理和相同的INT8量化；芯片仍只推理。旧A/B工程保留。
+只完成编译及电脑协议验证，尚未烧录快速固件或实测提速。

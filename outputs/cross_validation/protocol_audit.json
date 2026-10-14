@@ -1,0 +1,31 @@
+{
+  "checked_cv_folds": 4,
+  "patient_leakage": [
+    {
+      "cv_fold": 1,
+      "train_calibration_overlap": 0,
+      "train_heldout_overlap": 0,
+      "calibration_heldout_overlap": 0
+    },
+    {
+      "cv_fold": 2,
+      "train_calibration_overlap": 0,
+      "train_heldout_overlap": 0,
+      "calibration_heldout_overlap": 0
+    },
+    {
+      "cv_fold": 3,
+      "train_calibration_overlap": 0,
+      "train_heldout_overlap": 0,
+      "calibration_heldout_overlap": 0
+    },
+    {
+      "cv_fold": 4,
+      "train_calibration_overlap": 0,
+      "train_heldout_overlap": 0,
+      "calibration_heldout_overlap": 0
+    }
+  ],
+  "all_training_pool_records_heldout_once": true,
+  "heldout_record_count": 17418
+}

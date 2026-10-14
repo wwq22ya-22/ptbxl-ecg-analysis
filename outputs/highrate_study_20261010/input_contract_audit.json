@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "model": "cnn1d",
+      "fs": 250,
+      "input_shape": [
+        32,
+        12,
+        2500
+      ],
+      "output_shape": [
+        32,
+        5
+      ],
+      "forward_backward_finite": true,
+      "gpu_peak_allocated_bytes": 65564160,
+      "seconds": 0.7422528000024613
+    },
+    {
+      "model": "cnn1d",
+      "fs": 500,
+      "input_shape": [
+        32,
+        12,
+        5000
+      ],
+      "output_shape": [
+        32,
+        5
+      ],
+      "forward_backward_finite": true,
+      "gpu_peak_allocated_bytes": 115769856,
+      "seconds": 0.0433591000000888
+    },
+    {
+      "model": "inception1d",
+      "fs": 250,
+      "input_shape": [
+        32,
+        12,
+        2500
+      ],
+      "output_shape": [
+        32,
+        5
+      ],
+      "forward_backward_finite": true,
+      "gpu_peak_allocated_bytes": 223852544,
+      "seconds": 0.2356193000014173
+    },
+    {
+      "model": "inception1d",
+      "fs": 500,
+      "input_shape": [
+        32,
+        12,
+        5000
+      ],
+      "output_shape": [
+        32,
+        5
+      ],
+      "forward_backward_finite": true,
+      "gpu_peak_allocated_bytes": 428905472,
+      "seconds": 0.0950050999999803
+    },
+    {
+      "model": "inception_time1d",
+      "fs": 250,
+      "input_shape": [
+        32,
+        12,
+        2500
+      ],
+      "output_shape": [
+        32,
+        5
+      ],
+      "forward_backward_finite": true,
+      "gpu_peak_allocated_bytes": 1016328704,
+      "seconds": 0.30505019999691285
+    },
+    {
+      "model": "inception_time1d",
+      "fs": 500,
+      "input_shape": [
+        32,
+        12,
+        5000
+      ],
+      "output_shape": [
+        32,
+        5
+      ],
+      "forward_backward_finite": true,
+      "gpu_peak_allocated_bytes": 2012787200,
+      "seconds": 0.4801597999976366
+    }
+  ],
+  "cuda": "12.6",
+  "torch": "2.12.1+cu126"
+}

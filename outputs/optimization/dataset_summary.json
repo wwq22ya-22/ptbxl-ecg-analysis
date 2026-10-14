@@ -1,0 +1,41 @@
+{
+  "train": {
+    "records": 17418,
+    "patients": 15023,
+    "positives": {
+      "NORM": 7596,
+      "MI": 4379,
+      "STTC": 4186,
+      "CD": 3907,
+      "HYP": 2119
+    },
+    "zero_label_records": 334,
+    "multiple_label_records": 4127
+  },
+  "validation": {
+    "records": 2183,
+    "patients": 1942,
+    "positives": {
+      "NORM": 955,
+      "MI": 540,
+      "STTC": 528,
+      "CD": 495,
+      "HYP": 268
+    },
+    "zero_label_records": 37,
+    "multiple_label_records": 509
+  },
+  "test": {
+    "records": 2198,
+    "patients": 1904,
+    "positives": {
+      "NORM": 963,
+      "MI": 550,
+      "STTC": 521,
+      "CD": 496,
+      "HYP": 262
+    },
+    "zero_label_records": 40,
+    "multiple_label_records": 508
+  }
+}

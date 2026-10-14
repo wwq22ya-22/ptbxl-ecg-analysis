@@ -1,0 +1,261 @@
+{
+  "date": "2026-10-09",
+  "models": [
+    {
+      "name": "baseline_seed42_fp32",
+      "label": "普通CNN seed42 FP32",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\baseline_seed42\\checkpoint\\cnn1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "baseline_seed43_fp32",
+      "label": "普通CNN seed43 FP32",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\baseline_seed43\\checkpoint\\cnn1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "baseline_seed44_fp32",
+      "label": "普通CNN seed44 FP32",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\baseline_seed44\\checkpoint\\cnn1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "distilled_seed42_fp32",
+      "label": "原教师蒸馏CNN seed42 FP32",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_seed42\\checkpoint\\cnn1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "distilled_seed43_fp32",
+      "label": "原教师蒸馏CNN seed43 FP32",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_seed43\\checkpoint\\cnn1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "distilled_seed44_fp32",
+      "label": "原教师蒸馏CNN seed44 FP32",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_seed44\\checkpoint\\cnn1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "ensemble_kd_seed42_fp32",
+      "label": "新教师蒸馏CNN seed42 FP32",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_distillation\\ensemble_kd_seed42\\checkpoint\\cnn1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "ensemble_kd_seed43_fp32",
+      "label": "新教师蒸馏CNN seed43 FP32",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_distillation\\ensemble_kd_seed43\\checkpoint\\cnn1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "ensemble_kd_seed44_fp32",
+      "label": "新教师蒸馏CNN seed44 FP32",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_distillation\\ensemble_kd_seed44\\checkpoint\\cnn1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "inception1d_P0_current_seed42",
+      "label": "inception1d_P0_current_seed42",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception1d_P0_current_seed42\\checkpoint\\inception1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "inception1d_P1_bandpass_only_seed42",
+      "label": "inception1d_P1_bandpass_only_seed42",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception1d_P1_bandpass_only_seed42\\checkpoint\\inception1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "inception1d_P2_gentle_bandpass_seed42",
+      "label": "inception1d_P2_gentle_bandpass_seed42",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception1d_P2_gentle_bandpass_seed42\\checkpoint\\inception1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "se_resnet18_P0_current_seed42",
+      "label": "se_resnet18_P0_current_seed42",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\se_resnet18_P0_current_seed42\\checkpoint\\se_resnet18_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "inception_time1d_P0_current_seed42",
+      "label": "inception_time1d_P0_current_seed42",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception_time1d_P0_current_seed42\\checkpoint\\inception_time1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "inception1d_P0_current_seed43",
+      "label": "inception1d_P0_current_seed43",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception1d_P0_current_seed43\\checkpoint\\inception1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "inception_time1d_P0_current_seed43",
+      "label": "inception_time1d_P0_current_seed43",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception_time1d_P0_current_seed43\\checkpoint\\inception_time1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "inception1d_P0_current_seed44",
+      "label": "inception1d_P0_current_seed44",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception1d_P0_current_seed44\\checkpoint\\inception1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "inception_time1d_P0_current_seed44",
+      "label": "inception_time1d_P0_current_seed44",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception_time1d_P0_current_seed44\\checkpoint\\inception_time1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "inception1d_ensemble3",
+      "label": "inception1d_ensemble3 FP32",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\ensemble_followup\\inception1d_ensemble3.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "inception_time1d_ensemble3",
+      "label": "inception_time1d_ensemble3 FP32",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\ensemble_followup\\inception_time1d_ensemble3.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "original_seed44_int8",
+      "label": "原蒸馏 seed44 INT8",
+      "kind": "onnx",
+      "checkpoint": "outputs/distillation/distilled_seed44/checkpoint/cnn1d_best.pt",
+      "onnx": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_export\\ptbxl_cnn1d_int8.onnx",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "ensemble_kd_seed42_int8",
+      "label": "新蒸馏 seed42 INT8",
+      "kind": "onnx",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_distillation\\ensemble_kd_seed42\\checkpoint\\cnn1d_best.pt",
+      "onnx": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_distillation\\selected_export\\ptbxl_cnn1d_int8.onnx",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "historical_resnet_global",
+      "label": "历史标准化 ResNet",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\optimization\\01_global_norm\\checkpoint\\resnet1d_best.pt",
+      "training_records": 17418,
+      "training_diagnostic_only": false
+    },
+    {
+      "name": "diagnostic_resnet",
+      "label": "筛选后重训 ResNet seed42",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\diagnostic_only\\resnet_seed42\\checkpoint\\resnet1d_best.pt",
+      "training_records": 17084,
+      "training_diagnostic_only": true
+    },
+    {
+      "name": "historical_inception",
+      "label": "历史优化 Inception",
+      "kind": "torch",
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\optimization\\optimized_best.pt",
+      "training_records": 17418,
+      "training_diagnostic_only": false
+    },
+    {
+      "name": "historical_equal_ensemble",
+      "label": "历史 ResNet+Inception 集成",
+      "kind": "legacy_ensemble",
+      "manifest": "D:\\MyProject\\college\\ecg1\\outputs\\further_optimization\\threshold_refinement\\ensemble_manifest.json",
+      "training_records": 17418,
+      "training_diagnostic_only": false
+    }
+  ],
+  "model_retraining": false,
+  "normalization_refit": false,
+  "cohort": {
+    "train_metadata": 17418,
+    "validation": 2183,
+    "test": 2198
+  },
+  "added_zero_label_records": {
+    "validation": 37,
+    "test": 40
+  },
+  "threshold_policy": "per-class validation F1; 0.10-0.90, steps .05/.01, tie nearest .5",
+  "test_used_for_selection": false,
+  "test_previously_reused": true,
+  "protected_sha256": {
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\baseline_seed42\\checkpoint\\cnn1d_best.pt": "be8e22b1f3cfc04b9e302f8f7cb824f79ea9f7ab12fa7c34d4f64bfca27eceeb",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\baseline_seed43\\checkpoint\\cnn1d_best.pt": "2711314555f1a143fb79265982e0c1a7485e69a7e202df89e0a59bd123172497",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\baseline_seed44\\checkpoint\\cnn1d_best.pt": "579711d2e3e14847ea62008886cf1f239ab7b0b3ebf521eb9f9aa047943f4d22",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_seed42\\checkpoint\\cnn1d_best.pt": "2b6b2684a9c5bb667437d0f6f76f8a791f552f6abc3d6145e658aad2ca7020b3",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_seed43\\checkpoint\\cnn1d_best.pt": "a7d2413930ded0ca28173eab123a82779b6deda72211632853322a49de3085c2",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_seed44\\checkpoint\\cnn1d_best.pt": "857ed01b867ec8342c6162bd819875f72e4d090a20d3c9effb6fbdab6509a08e",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_distillation\\ensemble_kd_seed42\\checkpoint\\cnn1d_best.pt": "bd1017526a07f4edcd21ae98fbf54b8ec6b96ba844516abac327593d7d9650ff",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_distillation\\ensemble_kd_seed43\\checkpoint\\cnn1d_best.pt": "074f91570b609ede0b989c68ef10f918ec5cce5601418953cac31e5ae58725db",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_distillation\\ensemble_kd_seed44\\checkpoint\\cnn1d_best.pt": "843d1a7c955571dafd7d6363902be9a57e9610ea3bad04e5d597bea3498f2298",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception1d_P0_current_seed42\\checkpoint\\inception1d_best.pt": "687c897c8d0093d06d0b26d88bdda1adc840cd3531c053728b8af787c2c707d8",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception1d_P1_bandpass_only_seed42\\checkpoint\\inception1d_best.pt": "5e07b1bd6a4a99bb98e93167a3686cad3f92dea62d7623b8de62ea896eaf45de",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception1d_P2_gentle_bandpass_seed42\\checkpoint\\inception1d_best.pt": "40a87df75bf070556179021adefc323819607295a00d84b00d85229a2d5e5e46",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\se_resnet18_P0_current_seed42\\checkpoint\\se_resnet18_best.pt": "f93fec7082f4dc6125af74d740a90f8e896097c513bc3ab3913084e79ee8b25a",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception_time1d_P0_current_seed42\\checkpoint\\inception_time1d_best.pt": "449ffa3825cb485e4be0997fe4111fdcd1d840c6226d1d7ac3b7662cadc854dd",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception1d_P0_current_seed43\\checkpoint\\inception1d_best.pt": "d57af627fdb12c380056f8576be2a48de8994d6bc2ea5b20eb64cb1cf8012481",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception_time1d_P0_current_seed43\\checkpoint\\inception_time1d_best.pt": "19aa7c03dc89b740e7ff8cd40fee469424457c27953ef0f86286ac4e10e1d258",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception1d_P0_current_seed44\\checkpoint\\inception1d_best.pt": "3fbed91364493b54f5d9bae7d327b03d72b796c765f31c20322ed809ef3ba027",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception_time1d_P0_current_seed44\\checkpoint\\inception_time1d_best.pt": "b2e2c71b980dd92844ab88a432f679d0f5f69f5ee50d723e964dae360d51f052",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\ensemble_followup\\inception1d_ensemble3.pt": "a1fc4b6cfef75781f4ec893ebf205307fb281e737da1812caa90d307ca5f807b",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\ensemble_followup\\inception_time1d_ensemble3.pt": "440e9b6bc15fa6e1246eee75645f3000eb15b03884efe4a680ad0bffa140c256",
+    "outputs\\distillation\\distilled_seed44\\checkpoint\\cnn1d_best.pt": "857ed01b867ec8342c6162bd819875f72e4d090a20d3c9effb6fbdab6509a08e",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_export\\ptbxl_cnn1d_int8.onnx": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_distillation\\selected_export\\ptbxl_cnn1d_int8.onnx": "4038712961f1079efc5dae5d3a78b55be2e1aa73e6206d0ae42023c4f116a6e4",
+    "D:\\MyProject\\college\\ecg1\\outputs\\optimization\\01_global_norm\\checkpoint\\resnet1d_best.pt": "14f1104375f4a420620976c2d41b7d61bcc388023bab6b9adedcd5ce4600d0f4",
+    "D:\\MyProject\\college\\ecg1\\outputs\\diagnostic_only\\resnet_seed42\\checkpoint\\resnet1d_best.pt": "b62c9158121951fb4f59c37fea048c9afde5b1d62b810303c8113cfec4c0fd2b",
+    "D:\\MyProject\\college\\ecg1\\outputs\\optimization\\optimized_best.pt": "29ffa3ad10e2081fd3749679e195e894edcda40a4851c8db3dc9081f6762a717",
+    "D:\\MyProject\\college\\ecg1\\outputs\\further_optimization\\threshold_refinement\\ensemble_manifest.json": "5f17a069eb210cde8dd99a7bc86735f7f3af0db690b636361849f7c8030caafa",
+    "D:\\MyProject\\college\\ecg1\\outputs\\further_optimization\\frozen_models\\0_resnet1d.pt": "e78becd7dc6d425aa4702347231afe3e4c0021e554b53224fd8b11049bdbf518",
+    "D:\\MyProject\\college\\ecg1\\outputs\\further_optimization\\frozen_models\\1_inception1d.pt": "100d1df47b1bce21a4fc31bf01f5c26f0815a9f5b4f0957a0ae75a1ae48999d5",
+    "D:\\MyProject\\college\\ecg1\\outputs\\board_release\\seed44_int8_stm32f407ve\\ECG_Student_INT8_STM32F407VE.hex": "57d255b4dc08cce3ff8e7879ab3c37143865b384e93a31a1f182df4a959134b6"
+  }
+}

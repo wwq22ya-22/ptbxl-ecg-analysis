@@ -1,0 +1,17 @@
+{
+  "resampling_unit": "patient",
+  "paired": true,
+  "replicates": 2000,
+  "random_seed": 20260930,
+  "patients": 1904,
+  "records": 2198,
+  "previous_macro_f1": 0.7444688530394612,
+  "current_macro_f1": 0.7461540521241136,
+  "observed_difference": 0.0016851990846523668,
+  "percentile_95_interval": [
+    -0.007652586395746866,
+    0.011278638213003633
+  ],
+  "interval_includes_zero": true,
+  "scope": "Conditional on these frozen models and validation thresholds; excludes training/model-selection uncertainty and does not undo reused-test bias."
+}

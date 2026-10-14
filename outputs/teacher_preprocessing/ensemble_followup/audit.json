@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "prediction_sets_recomputed": 4,
+  "protected_artifacts_unchanged": true,
+  "training_logits_records": 17084,
+  "teacher_sha256": "440e9b6bc15fa6e1246eee75645f3000eb15b03884efe4a680ad0bffa140c256",
+  "selection_frozen_before_followup_test": true
+}

@@ -1,0 +1,10 @@
+{
+  "records": 19601,
+  "files_requested": 39202,
+  "files_verified": 39202,
+  "transferred": 39194,
+  "failures": [],
+  "sha256_manifest": "b7224b92b341511ec3ceb13dc6652079b2c36a06504bcb49506f157f51dc695d",
+  "source": "https://physionet-open.s3.amazonaws.com/ptb-xl/1.0.3/",
+  "fold10_downloaded": false
+}

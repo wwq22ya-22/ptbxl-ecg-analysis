@@ -1,70 +1,206 @@
-# 项目运行与文档入口
+# 项目总览、实验路线与运行入口
 
-更新：2026-10-03。项目完成 PTB-XL 十二导联五类多标签训练、网页/API 展示、模型蒸馏、INT8 导出、STM32 固件编译及串口验证程序；Chapman 外部测试已完成。STM32F407VE 型号已确认，学生 HEX 和完整源码工程已整理；课程展示尚待实板烧录、串口收发和板上计时验证。
+VS Code串口界面：选择项目`.venv`后，A仅推理打开`scripts/ecg_stm32_viz.py`；B板端预处理＋推理打开`scripts/ecg_stm32_raw_viz.py`，点击“运行Python文件”即可。两个入口各配独立原seed44学生/VG固件；“波形来源”可选折9的128条联调样本或折10完整筛选后的2158条，命令行对应`--fold 9/10`。选择实际COM端口及115200再连接；新增折10无需修改模型或重新烧录HEX，使用说明及检查见[部署文档](STM32部署与串口验证.md)。
 
-## 保留的五份文档
+A快速入口：先烧录[Fast HEX](../outputs/board_release/seed44_int8_stm32f407vg_fast/ECG_Student_INT8_Fast_STM32F407VG.hex)，再运行[scripts/ecg_stm32_fast_viz.py](../scripts/ecg_stm32_fast_viz.py)或[start_ecg_student_fast_viz.cmd](../start_ecg_student_fast_viz.cmd)。旧A文本入口和B保留。快速版仍为seed44原模型/阈值，115200，二进制INT8，每条12包；独立Keil编译通过，Flash153040 B、RAM40664 B。全部折9/折10共2286条输入INT8逐值一致，44条实际C协议/C模型与GUI核对通过；尚未烧录快速HEX，2–3秒为估算。详见[快速版使用与证据](STM32部署与串口验证.md#serial-fast-a)。
 
-| 文档 | 内容 |
+更新：2026-10-11。实际项目为`D:/MyProject/college/ecg1`，旧路径`D:/MyProject/college/大三上/ecg1`已不存在。项目使用公开数据库波形回放，不要求人体采集。
+
+<!-- validation-redo-notice-20261010:start -->
+**评价状态（2026-10-10）：** 当前验证候选为单教师蒸馏CNN seed43 INT8，折9宏F1为75.893%；现有完整HEX仍为原seed44及原部署阈值。折10在历史研发中已反复使用，且部分追加方案受测试反馈影响，所有已有折10成绩按历史探索结果解释。重做没有恢复折10的独立性；新候选没有本轮独立测试或完整固件。
+<!-- validation-redo-notice-20261010:end -->
+
+<a id="overview-route"></a>
+
+## 1. 项目路线与文档分工
+
+实验流程从数据集选择和分析开始，随后定义标签/人群、固定患者划分，才进入网络与训练比较。下面是逻辑依赖顺序；真实历史上早期全队列实验在前，筛选规则后来引入，不能倒写成所有实验一开始就用了筛选后队列。
+
+```mermaid
+flowchart TD
+    A[选择PTB-XL版本与100 Hz输入] --> B[分析规模、类别共现与数据质量]
+    B --> C[构建五类标签与纳入规则]
+    C --> D[官方患者隔离划分]
+    D --> E[训练集拟合预处理与损失权重]
+    E --> F[网络基线与单项控制实验]
+    F --> G[内部验证与折9候选选择]
+    G --> H[教师选择与三种子蒸馏]
+    H --> I[训练集INT8校准与折9核对]
+    I --> J[外部标签兼容性检查]
+    I --> K[Cube.AI、固件与真实板端验证]
+    J --> L[课程报告与答辩]
+    K --> L
+```
+
+| 文档 | 职责 | 阅读时机 |
+|---|---|---|
+| 本文 | 全局流程、状态、启动和交付 | 首先阅读 |
+| [模型训练与优化](模型训练与优化.md) | 数据选择、分析、标签、划分、预处理、网络、损失、实验推进、纠正 | 理解完整实验过程 |
+| [各模型整体与逐类指标总表](各模型整体与逐类指标总表.md) | 当前折9结果与历史各队列/条件原始指标 | 核对分数与评估口径 |
+| [STM32部署与串口验证](STM32部署与串口验证.md) | 模型/芯片版本、资源、协议、运行、实板验收 | 转换或上板前 |
+| [Chapman冻结模型外部验证](Chapman_冻结模型外部验证总结.md) | 输入/标签对齐、明确阳性结果、条件指标、质量及限制 | 讨论外部泛化前 |
+
+核心MD仍仅五份；实验JSON、预测和自动报告位于各`outputs`目录。不要再用对话接续长段落或日期追加代替完整实验主线。
+
+<a id="overview-contract"></a>
+
+## 2. 固定任务与数据规则
+
+| 项目 | 约定 |
 |---|---|
-| [本文件](README.md) | 环境、运行、项目结构和小组协作 |
-| [各模型整体与逐类指标总表](各模型整体与逐类指标总表.md) | PTB-XL 历史模型、筛选模型、蒸馏、量化与交叉验证指标 |
-| [模型训练与优化](模型训练与优化.md) | 数据剔除、患者划分、训练方法、蒸馏和复现入口 |
-| [STM32 部署与串口验证](STM32部署与串口验证.md) | 当前学生固件、Cube.AI 资源、接线、协议和验证边界 |
-| [Chapman 外部验证](Chapman_冻结模型外部验证总结.md) | 标签映射、四类检出率、条件指标和量化差异 |
+| 数据 | PTB-XL v1.0.3，`D:/datasets/ptb-xl`，元数据21799条/18869患者 |
+| 输入 | 12导联、100 Hz、10秒、`[B,12,1000]` |
+| 输出 | NORM、MI、STTC、CD、HYP，五个独立sigmoid及阈值，允许多标签 |
+| 官方划分 | folds1–8训练、9验证、10历史测试，患者隔离 |
+| 原始/当前记录 | 17418/2183/2198 → 剔除五类全零后17084/2146/2158 |
+| 拟合规则 | 训练集计算标准化/类别权重/量化校准；折9选epoch、模型及阈值 |
+| 全零标签 | 不自动补NORM，不等于一定使用起搏器；筛选是人群定义 |
+| 实验限制 | 历史折10反复使用及测试反馈已记录；不得称新盲测 |
 
-## 数据与模型
+LUDB方向已取消，不恢复相关工作。Chapman用于有限标签的外部检查，不能当作完整五类验证。训练采用加权BCE，HYP训练阳性2119/17084（12.40%），正类权重约7.06；不是尚未尝试类别加权。
 
-模型输入为十二导联、100 Hz、10 秒，形状 `[1,12,1000]`。输出依次为 NORM、MI、STTC、CD、HYP，逐类 sigmoid 与独立阈值；一条 ECG 可以对应多个类别。
+<a id="overview-status"></a>
 
-PTB-XL 1.0.3 位于本机 `D:/datasets/ptb-xl`，通过不提交的 `configs/local.yaml` 配置。官方 folds 1–8 训练、9 验证、10 测试，患者隔离。原始训练/验证/测试为 17418/2183/2198；剔除五类全零记录后为 17084/2146/2158。筛选规则和指标口径见训练文档，不把无诊断标签解释为正常。
+## 3. 当前成果及版本对应
 
-当前部署候选为 `outputs/distillation/distilled_seed44/checkpoint/cnn1d_best.pt` 及 `outputs/distillation/distilled_export/ptbxl_cnn1d_int8.onnx`。旧网页/API 默认 CNN 与 ResNet 仍使用 `outputs/checkpoints/` 的正式检查点；没有因生成学生固件而自动切换网页默认模型。
+| 层级 | 已完成 | 仍未完成/限制 |
+|---|---|---|
+| 数据和软件 | 标签映射、划分、预处理、信号分析、网页/API、串口程序 | HRV跨无效RR缺口问题未修复 |
+| 模型研究 | 多网络、损失/增强、内部验证、三种子、蒸馏、量化、26版本复核、Ribeiro适配 | 不能声称所有类别或外部泛化全面提升 |
+| 评价纠正 | 原9教师复算、联合阈值重做、6新学生、独立INT8折9选择 | 不能恢复历史测试独立性 |
+| 原seed44固件 | Cube.AI/C生成、完整VE/VG编译、HEX/源码ZIP、主机C核对 | A已取得小批真实串口及计时证据；B/快速版与全量稳定性待完成 |
+| 新seed43候选 | 折9选择、FP32/INT8 ONNX、训练校准和独立复核 | 无独立测试、Chapman、新Cube.AI资源或完整固件 |
+| 外部验证 | 六个旧冻结版本的Chapman结果 | NORM无可靠真值，条件阴性指标需带假设 |
+| 课程材料 | 开题稿及第3–12周个人记录已有文件 | 中期/最终报告、第13–16周记录、答辩稿待制作/确认 |
 
-## 安装与启动
+<!-- validation-redo-results-20261010:start -->
+### 当前纠正结果（2026-10-10）
 
-在项目根目录运行。已有 `.venv` 时直接使用其中的 Python；小组成员在自己的克隆目录执行：
+6个学生均已重训，教师9候选仅复算选择、权重沿用。仅按折9推荐`single_teacher_kd_seed43_int8`，验证宏F1 75.893%。原seed44相同细阈值口径为75.683%，差异较小，整体Recall略降。
+
+完整方法与验证见[训练文档](模型训练与优化.md#step-12)，整体/逐类结果见[指标总表](各模型整体与逐类指标总表.md#metric-current)。当前新候选无完整固件或独立测试，原seed44 HEX未替换。
+<!-- validation-redo-results-20261010:end -->
+
+旧追加集成教师及其派生seed42保留为历史探索版本，已撤回纠正推荐。网页/API默认模型、最新验证候选与已编译HEX是三个独立配置，整理文档不会替换它们。
+
+<!-- unet-overview-20261010:start -->
+### 新增网络研究：1D U-Net
+
+已完成12次新训练及30组整体/逐类指标、30组阈值独立复核；仅折9评估。
+
+筛选后训练/验证：U-Net三种子F1均值75.778%，样本标准差0.454个百分点；编码器对照均值75.293%，平均差+0.486个百分点，U-Net胜出2/3种子。
+
+未筛选训练/验证：U-Net三种子F1均值75.023%，样本标准差0.233个百分点；编码器对照均值75.014%，平均差+0.009个百分点，U-Net胜出1/3种子。
+
+筛选后同训练人群的旧InceptionTime三种子折9均值76.287%，U-Net差-0.508个百分点。
+
+这些是用来选择模型和阈值的验证成绩，不能据此宣布泛化提升；三种子不足以证明统计显著性。本轮按冻结方案保留全部结果，既有部署候选保持原状态。
+
+本轮训练分别使用筛选后17084条与未筛选17418条，对应两套折9验证；两结构×三种子，数据与选择口径见[训练流程](模型训练与优化.md#unet-study-20261010)、[指标总表](各模型整体与逐类指标总表.md#metric-unet)。没有新增折10、外部或板端结果，当前seed43部署候选与旧HEX保持原状态。
+<!-- unet-overview-20261010:end -->
+
+<!-- highrate-study-20261010:start -->
+<a id="highrate-study-20261010"></a>
+
+### 新增E16：250/500 Hz输入探索
+
+新增10次训练（250 Hz三网络×两队列；500 Hz仅CNN与紧凑Inception×两队列），100 Hz只复用已有模型。结果见[训练记录](模型训练与优化.md#highrate-study-20261010)、[指标表](各模型整体与逐类指标总表.md#highrate-study-20261010)、[资源](STM32部署与串口验证.md#highrate-study-20261010)。新模型未替换固件；原始高采样率与旧100 Hz滤波条件不同，结果按单种子系统比较解释。
+<!-- highrate-study-supplement:start -->
+
+#### 实测结论与推荐范围
+
+筛选数据上，本轮新模型最高折9宏F1为76.147%，已有100 Hz参考最高为76.540%；与本轮250 Hz相比，4组500 Hz宏F1分差仅约−0.28至+0.07个百分点。不同预处理、单种子和折9选模限制了纯采样率与稳定提升结论。
+
+按当前F407工程布局，CNN INT8的250/500 Hz完整主SRAM估算分别79672/139672 B；500 Hz超128 KiB约8600 B，需另做CCM布局/完整链接/实板核对。500 Hz紧凑Inception仅激活便需1440000 B。已有100 Hz方案仍是当前部署起点；250 Hz轻量CNN具有资源空间，可作为后续研究候选。新HEX、板端耗时和实际运行均尚未验证。
+
+<!-- highrate-study-supplement:end -->
+<!-- highrate-study-20261010:end -->
+
+<a id="overview-files"></a>
+
+## 4. 关键目录与产物
+
+| 内容 | 位置 |
+|---|---|
+| 配置 | `configs/default.yaml`，本机路径由不上传的`configs/local.yaml`覆盖 |
+| 源码 | `src/data`、`src/signal_processing`、`src/models`、`src/training`、`src/inference` |
+| 展示 | `app/`、`api/`、`scripts/ecg_stm32_viz.py` |
+| 原seed44学生/导出 | `outputs/distillation/distilled_seed44/`、`outputs/distillation/distilled_export/` |
+| 原完整固件 | `outputs/board_release/seed44_int8_stm32f407ve/` |
+| 当前纠正结果 | `outputs/validation_only_redo_20261010/` |
+| 当前学生 | `single_teacher_kd_seed43/checkpoint/cnn1d_best.pt`，相对上行目录 |
+| 当前导出 | `selected_export/ptbxl_cnn1d_int8.onnx`、`deployment_manifest.json`、`candidate_thresholds.json` |
+| Chapman | `outputs/external_validation/chapman_audited/` |
+| 审查证据 | `outputs/reports/`及各实验`independent_audit.json` |
+| 报告材料 | `报告材料/` |
+
+原模型、ONNX、HEX均保留回退；缓存可重建，但原始配置、权重、阈值、预测和清单是复现证据，不随意清理。完整数据/缓存和部分实验产物不随普通Git克隆提供；GitHub 发布范围和缓存重建方法见[发布说明](GitHub同步与实板验证.md)。
+
+<a id="overview-run"></a>
+
+## 5. 安装、数据检查与软件启动
+
+命令在实际项目根目录运行。现有`.venv`可复用，无需因整理文档重复安装。
 
 ```powershell
 python -m venv .venv
 .venv/Scripts/python.exe -m pip install -r requirements-dev.txt -r requirements-train.txt -r requirements-app.txt -r requirements-api.txt -r requirements-stm32.txt
-.venv/Scripts/python.exe scripts/download_ptbxl.py --workers 8
-.venv/Scripts/python.exe scripts/prepare_data.py
+.venv/Scripts/python.exe scripts/prepare_data.py --dataset-root D:/datasets/ptb-xl
+.venv/Scripts/python.exe scripts/inspect_record.py --ecg-id 1
+.venv/Scripts/python.exe scripts/predict_record.py --ecg-id 1
 .venv/Scripts/python.exe -m streamlit run app/streamlit_app.py
-```
-
-网页地址为 `http://localhost:8501/`。GPU 构建须与本机 Python、驱动匹配；本机环境为 Python 3.14.3、PyTorch 2.12.1+cu126。不要直接复制 `.venv` 到其他电脑。
-
-```powershell
-# 单条推理
-.venv/Scripts/python.exe scripts/predict_record.py --ecg-id 9
-# API，接口文档为 localhost:8000/docs
 .venv/Scripts/python.exe -m uvicorn api.main:app --host 127.0.0.1 --port 8000
-# 项目测试
-.venv/Scripts/python.exe -m pytest tests -q -p no:cacheprovider --basetemp outputs/diagnostic_only/pytest_run
 ```
 
-串口学生界面双击根目录 `start_ecg_student_viz.cmd`；接线、HEX 和真实/模拟模式见部署文档。模拟流程不代表板上运行或板上耗时。
+缺少数据时再运行`download_ptbxl.py --workers 8`，下载位置按当前配置，不强制写回项目`data/`。API文档为`http://localhost:8000/docs`。网页/API默认仍加载原正式模型，不能展示新候选分数却把原模型预测说成新模型输出。
 
-## 项目结构与清理
+串口学生入口为`start_ecg_student_viz.cmd`；现有包对应旧seed44/旧阈值。USART1使用PA9/PA10、115200、8N1、3.3 V TTL、共地。实板最新记录VG，本轮新增VG工程，旧VE包保留；烧录前按[部署文档](STM32部署与串口验证.md#deployment-run)核对工程、Flash、晶振与接线。界面显示一条导联，实际发送全部十二导联。
 
-| 位置 | 用途 |
+模拟器、主机C和ONNX对照不计为板端验证。2026-10-11原seed44 A方案已通过COM8完成3条不同ECG及重复回放的真实串口核对，芯片返回1012–1013 ms；B、快速版、全量回放及长期稳定性仍待完成。
+
+<a id="overview-materials"></a>
+
+## 6. 课程材料与个人分工
+
+个人分工是模型训练、蒸馏与量化，不能把小组其他工作自动写成本人经历。当前`报告材料/`存在五份文件：
+
+- 个人报告或周记（仅在本机保存，不随 GitHub 发布）。
+- 个人报告或周记（仅在本机保存，不随 GitHub 发布）。
+- 个人报告或周记（仅在本机保存，不随 GitHub 发布）。
+- 个人报告或周记（仅在本机保存，不随 GitHub 发布）。
+- 个人报告或周记（仅在本机保存，不随 GitHub 发布）：保留前八周，补充蒸馏量化、评价纠正、新网络/采样率研究与实板记录核对。
+
+原开题稿包含后期成果及旧资源数字，不作为早期开题当时已经完成的证明。修订稿将后期蒸馏/固件改为计划；VG字段若为后续统一更正，应注明修订，而不是断言当周已核实实物。个人日期、信息和讨论经历仍需本人核对，第3–12周更新稿已按现有实验和实板日志补写；本轮未重新读取课程PPT。
+
+小组中期/最终报告、第13–16周个人记录、答辩PPT仍需制作或确认。旧课程阅读记录要求第11周中期、第16周最终、第17–18周约7分钟答辩；该安排来自已有记录，实际提交时间以课程和本人确认为准。技术MD整理完成不等于课程材料交付完成。
+
+<a id="overview-next"></a>
+
+## 7. 待办与完成标准
+
+| 工作 | 完成标准 |
 |---|---|
-| `src/` | 数据、信号处理、模型、训练和推理 |
-| `scripts/` | 下载、训练、评估、导出及报告入口 |
-| `app/`、`api/` | Streamlit 与 FastAPI |
-| `firmware/` | 串口协议及 MCU 接入源码 |
-| `tests/`、`configs/` | 测试、默认及本机配置 |
-| `outputs/` | 检查点、指标、逐条预测、工程及生成报告 |
-| `md/` | 五份核心文档 |
+| 代码防错 | 修复HRV无效RR位置、串口量化/预处理指纹检查；保留错误参数回归证据 |
+| VG工程 | 打包器支持明确芯片目标，模型/工具/配置/C代码/HEX哈希绑定，核对时钟和下载器 |
+| 真实板端 | 同版本实际烧录、固定样本回放、概率/标签对照，传输和推理分开计时，连续与断线测试 |
+| 最终部署包 | 选定实际展示版本后独立打包；新seed43目前仅是验证候选，旧包不覆盖 |
+| 课程交付 | 核对形成/修订时间，完成小组报告、剩余个人记录和答辩稿 |
+| 新模型研究 | 先固定验证目标与候选；不重复已完成实验，不按折10追加调参 |
 
-原始数据、缓存与训练产物不随普通代码发布自动下载。`outputs/cache` 可以重建；模型、部署清单、配置、JSON 指标及预测是复现依据，清理时保留。详细自动生成报告在 `outputs/reports/`，核心 `md` 不因重跑实验自动增加文件。
+<a id="overview-maintenance"></a>
 
-## 小组协作与归属
+## 8. 文档维护与本次整理记录
 
-公开仓库为 [wwq22ya-22/ptbxl-ecg-analysis](https://github.com/wwq22ya-22/ptbxl-ecg-analysis)，可直接浏览或克隆；需要向原仓库推送的小组成员，由所有者在 Settings → Collaborators 邀请。各成员以自己的克隆目录和本机数据路径为准，建议用分支和 Pull Request 协作。
+后续实验按本主线补到对应阶段：先写问题、候选和固定配置，再记录数据人群、选择规则、整体/逐类结果、无效方案、产物和限制。更新当前候选时同时核对指标与部署状态，不能只改一个“推荐”字样。
 
-仓库提供选定模型、学生串口演示样本、STM32F407VE 源码工程及烧录包；完整原始数据库和中间缓存不上传。演示样本的归属、处理方式及 CC BY 4.0 许可随包保存，主 README 给出直接下载链接。
+前一阶段的文档整理本身未重训、未新增折10评估、未改原模型/固件/Word、未推送；后续E15的12次训练另按本轮协议执行，仍不新增折10评估。整理前七份项目MD（五核心、根README、data README）原文完整保存在[备份ZIP](../outputs/documentation_reorganization_20261010/original_markdown.zip)；保留指标总表、部署和Chapman的全部原表格行，并补充元数据描述与架构参数实算。
 
-本项目参考 [AndrewLucenko/ptb-xl-ecg-classification](https://github.com/AndrewLucenko/ptb-xl-ecg-classification) 的数据划分与工程组织思路，未复制其模型权重或成绩；参考项目的 MIT 许可不自动成为本项目的代码许可。数据按 [PTB-XL 官方页](https://physionet.org/content/ptb-xl/1.0.3/) 和 [Chapman 官方页](https://physionet.org/content/ecg-arrhythmia/1.0.0/) 的要求引用。
+来源见[清单](../outputs/documentation_reorganization_20261010/source_inventory.json)，整理核对见[核验记录](../outputs/documentation_reorganization_20261010/verification.json)。不用聊天摘要替代实验来源，也不把本次说明的逻辑顺序改写成真实历史日期。
 
-当前数据上的指标不等于临床适用性证明。短时 HRV、R 峰和模型响应图属于课程实验功能。最新回归测试为 78 项通过，实板结果仍待验证。
+<!-- seed44-vg-reference-20261010:start -->
+2026-10-10已按用户要求沿用原sine/ECG三分类的STM32F407VG、8 MHz HSE、168 MHz主频、USART1及J-Link设置，生成独立原seed44五类VG工程。全量编译0错误/0警告，Flash155.15 KiB、主SRAM42.65 KiB。工程：`outputs/distillation/stm32_student_project_vg/MDK_Project/ECG_Student_INT8_VG.uvprojx`；发布包：`outputs/board_release/seed44_int8_stm32f407vg/`。仍使用 `start_ecg_student_viz.cmd`；模型、原阈值和旧VE回退包保留，尚未实板烧录/计时。详见[部署文档](STM32部署与串口验证.md)。
+<!-- seed44-vg-reference-20261010:end -->
+
+<!-- board-preprocessing-two-projects-20261010:start -->
+2026-10-10补齐原seed44的完整板端预处理，保留两个独立VG工程：A仅推理使用`ecg_stm32_viz.py` / `start_ecg_student_viz.cmd`；B发送原始波形、板端预处理＋推理使用`ecg_stm32_raw_viz.py` / `start_ecg_board_preprocess_viz.cmd`。B工程在`outputs/distillation/stm32_student_raw_vg_project/`，发布包在`outputs/board_release/seed44_int8_stm32f407vg_preprocess/`。两个包协议不同，禁止混用。均已编译；C预处理与128条真实回放在主机核对通过，尚未实板验证。详见[部署文档](STM32部署与串口验证.md)。
+<!-- board-preprocessing-two-projects-20261010:end -->

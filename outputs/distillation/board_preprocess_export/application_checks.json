@@ -1,0 +1,16 @@
+{
+  "GUI": [
+    {
+      "entry": "ecg_stm32_viz.py",
+      "GUI_initialized_and_waveform_rendered": true,
+      "preview": "inference_only_waveform_preview.png"
+    },
+    {
+      "entry": "ecg_stm32_raw_viz.py",
+      "GUI_initialized_and_waveform_rendered": true,
+      "preview": "serial_waveform_preview.png"
+    }
+  ],
+  "both_default_headless_simulation_entries_passed": true,
+  "physical_board_test": false
+}

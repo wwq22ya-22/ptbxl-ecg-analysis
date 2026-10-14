@@ -1,0 +1,422 @@
+{
+  "passed": true,
+  "partial": false,
+  "fresh_runs": 12,
+  "fixed_reference_models": 3,
+  "metric_sets_independently_recomputed": 30,
+  "threshold_sets_independently_researched": 30,
+  "cohort_ids_labels_patient_isolation_verified": true,
+  "training_moments_cohorts": [
+    "filtered",
+    "unfiltered"
+  ],
+  "two_cohort_training_moments_recomputed": true,
+  "train_only_positive_weights_recomputed": true,
+  "epoch_selection_verified": true,
+  "epochs_and_native_cohort_selection_verified": true,
+  "paired_seed_statistics_verified": true,
+  "frozen_sources_and_protected_artifacts_unchanged": true,
+  "sampled_saved_logits_reinferred_from_checkpoints": [
+    {
+      "name": "filtered/unet1d_seed42",
+      "validation_cohort": "filtered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.00030517578125,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "filtered/unet1d_seed42",
+      "validation_cohort": "unfiltered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0009450912475585938,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "filtered/unet_encoder1d_seed42",
+      "validation_cohort": "filtered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0012345314025878906,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "filtered/unet_encoder1d_seed42",
+      "validation_cohort": "unfiltered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0012345314025878906,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "unfiltered/unet1d_seed42",
+      "validation_cohort": "filtered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0007038116455078125,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "unfiltered/unet1d_seed42",
+      "validation_cohort": "unfiltered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0007038116455078125,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "unfiltered/unet_encoder1d_seed42",
+      "validation_cohort": "filtered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0019674301147460938,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "unfiltered/unet_encoder1d_seed42",
+      "validation_cohort": "unfiltered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0019674301147460938,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "filtered/unet1d_seed43",
+      "validation_cohort": "filtered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0007243156433105469,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "filtered/unet1d_seed43",
+      "validation_cohort": "unfiltered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0007243156433105469,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "filtered/unet_encoder1d_seed43",
+      "validation_cohort": "filtered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0025801658630371094,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "filtered/unet_encoder1d_seed43",
+      "validation_cohort": "unfiltered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0025801658630371094,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "unfiltered/unet1d_seed43",
+      "validation_cohort": "filtered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.002048969268798828,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "unfiltered/unet1d_seed43",
+      "validation_cohort": "unfiltered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.003307342529296875,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "unfiltered/unet_encoder1d_seed43",
+      "validation_cohort": "filtered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0011744499206542969,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "unfiltered/unet_encoder1d_seed43",
+      "validation_cohort": "unfiltered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0011744499206542969,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "filtered/unet1d_seed44",
+      "validation_cohort": "filtered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0008149147033691406,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "filtered/unet1d_seed44",
+      "validation_cohort": "unfiltered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0013637542724609375,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "filtered/unet_encoder1d_seed44",
+      "validation_cohort": "filtered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0012850761413574219,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "filtered/unet_encoder1d_seed44",
+      "validation_cohort": "unfiltered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0016951560974121094,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "unfiltered/unet1d_seed44",
+      "validation_cohort": "filtered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0014429092407226562,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "unfiltered/unet1d_seed44",
+      "validation_cohort": "unfiltered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.00130462646484375,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "unfiltered/unet_encoder1d_seed44",
+      "validation_cohort": "filtered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0017523765563964844,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "unfiltered/unet_encoder1d_seed44",
+      "validation_cohort": "unfiltered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0021162033081054688,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "inception_time1d_P0_current_seed42",
+      "validation_cohort": "filtered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0011920928955078125,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "inception_time1d_P0_current_seed42",
+      "validation_cohort": "unfiltered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0011539459228515625,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "inception_time1d_P0_current_seed43",
+      "validation_cohort": "filtered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.001271963119506836,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "inception_time1d_P0_current_seed43",
+      "validation_cohort": "unfiltered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0015063285827636719,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "inception_time1d_P0_current_seed44",
+      "validation_cohort": "filtered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0019150972366333008,
+      "max_abs_original_batch_gpu_difference": 0.0
+    },
+    {
+      "name": "inception_time1d_P0_current_seed44",
+      "validation_cohort": "unfiltered",
+      "records": 3,
+      "max_abs_cpu_gpu_difference": 0.0019150972366333008,
+      "max_abs_original_batch_gpu_difference": 0.0
+    }
+  ],
+  "reinference_backend": {
+    "cudnn_allow_tf32": true,
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_deterministic": true,
+    "cpu_comparison": "diagnostic only; checkpoint binding verified using original GPU batches"
+  },
+  "fold10_evaluated": false,
+  "historical_test_independence_restored": false,
+  "zero_label_validation_profiles": [
+    {
+      "name": "filtered/unet1d_seed42",
+      "records": 37,
+      "any_positive_records": 36,
+      "positive_counts": {
+        "NORM": 2,
+        "MI": 17,
+        "STTC": 6,
+        "CD": 31,
+        "HYP": 3
+      }
+    },
+    {
+      "name": "filtered/unet_encoder1d_seed42",
+      "records": 37,
+      "any_positive_records": 37,
+      "positive_counts": {
+        "NORM": 3,
+        "MI": 28,
+        "STTC": 5,
+        "CD": 30,
+        "HYP": 6
+      }
+    },
+    {
+      "name": "unfiltered/unet1d_seed42",
+      "records": 37,
+      "any_positive_records": 28,
+      "positive_counts": {
+        "NORM": 3,
+        "MI": 3,
+        "STTC": 6,
+        "CD": 19,
+        "HYP": 2
+      }
+    },
+    {
+      "name": "unfiltered/unet_encoder1d_seed42",
+      "records": 37,
+      "any_positive_records": 12,
+      "positive_counts": {
+        "NORM": 2,
+        "MI": 3,
+        "STTC": 2,
+        "CD": 8,
+        "HYP": 2
+      }
+    },
+    {
+      "name": "filtered/unet1d_seed43",
+      "records": 37,
+      "any_positive_records": 37,
+      "positive_counts": {
+        "NORM": 2,
+        "MI": 14,
+        "STTC": 7,
+        "CD": 30,
+        "HYP": 4
+      }
+    },
+    {
+      "name": "filtered/unet_encoder1d_seed43",
+      "records": 37,
+      "any_positive_records": 37,
+      "positive_counts": {
+        "NORM": 3,
+        "MI": 25,
+        "STTC": 8,
+        "CD": 28,
+        "HYP": 5
+      }
+    },
+    {
+      "name": "unfiltered/unet1d_seed43",
+      "records": 37,
+      "any_positive_records": 33,
+      "positive_counts": {
+        "NORM": 6,
+        "MI": 23,
+        "STTC": 2,
+        "CD": 20,
+        "HYP": 1
+      }
+    },
+    {
+      "name": "unfiltered/unet_encoder1d_seed43",
+      "records": 37,
+      "any_positive_records": 13,
+      "positive_counts": {
+        "NORM": 2,
+        "MI": 5,
+        "STTC": 4,
+        "CD": 9,
+        "HYP": 3
+      }
+    },
+    {
+      "name": "filtered/unet1d_seed44",
+      "records": 37,
+      "any_positive_records": 37,
+      "positive_counts": {
+        "NORM": 3,
+        "MI": 25,
+        "STTC": 4,
+        "CD": 28,
+        "HYP": 6
+      }
+    },
+    {
+      "name": "filtered/unet_encoder1d_seed44",
+      "records": 37,
+      "any_positive_records": 37,
+      "positive_counts": {
+        "NORM": 3,
+        "MI": 16,
+        "STTC": 11,
+        "CD": 31,
+        "HYP": 9
+      }
+    },
+    {
+      "name": "unfiltered/unet1d_seed44",
+      "records": 37,
+      "any_positive_records": 21,
+      "positive_counts": {
+        "NORM": 2,
+        "MI": 7,
+        "STTC": 7,
+        "CD": 9,
+        "HYP": 1
+      }
+    },
+    {
+      "name": "unfiltered/unet_encoder1d_seed44",
+      "records": 37,
+      "any_positive_records": 16,
+      "positive_counts": {
+        "NORM": 3,
+        "MI": 6,
+        "STTC": 1,
+        "CD": 10,
+        "HYP": 1
+      }
+    },
+    {
+      "name": "inception_time1d_P0_current_seed42",
+      "records": 37,
+      "any_positive_records": 36,
+      "positive_counts": {
+        "NORM": 2,
+        "MI": 33,
+        "STTC": 15,
+        "CD": 27,
+        "HYP": 4
+      }
+    },
+    {
+      "name": "inception_time1d_P0_current_seed43",
+      "records": 37,
+      "any_positive_records": 37,
+      "positive_counts": {
+        "NORM": 3,
+        "MI": 18,
+        "STTC": 9,
+        "CD": 26,
+        "HYP": 5
+      }
+    },
+    {
+      "name": "inception_time1d_P0_current_seed44",
+      "records": 37,
+      "any_positive_records": 37,
+      "positive_counts": {
+        "NORM": 3,
+        "MI": 31,
+        "STTC": 9,
+        "CD": 25,
+        "HYP": 6
+      }
+    }
+  ],
+  "blocked_reads": []
+}

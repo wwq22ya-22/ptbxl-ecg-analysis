@@ -1,0 +1,13 @@
+{
+  "method": "joint_PR_curve_MILP",
+  "architecture_weights": [
+    0.5,
+    0.5
+  ],
+  "precision_floor": 0.7179231673241182,
+  "recall_floor": 0.8096266051939256,
+  "floor_source": "same fold9 floors set before first ensemble test",
+  "threshold_fold": 9,
+  "test_is_reused": true,
+  "reason": "The original one-multiplier search reported no feasible candidate on calibration; this checks the joint discrete constraints explicitly."
+}

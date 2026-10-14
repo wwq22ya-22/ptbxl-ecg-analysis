@@ -1,0 +1,6 @@
+Quantizing with 256 training records, per-channel int8 QDQ...
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cache\validation_full_f2bdba82fbf64151.npy
+Comparing float32/int8 on all 2146 validation-fold-9 records...
+float32 {'macro_auroc': 0.9308480674512776, 'macro_precision': 0.7409024131499764, 'macro_recall': 0.7745935113685368, 'macro_f1': 0.7556649940333534}
+int8 {'macro_auroc': 0.930678956413557, 'macro_precision': 0.7410032893426713, 'macro_recall': 0.7735928414935213, 'macro_f1': 0.7552926879927936}
+ONNX: D:\MyProject\college\ecg1\outputs\noise_robustness_b\selected_export\ptbxl_cnn1d_int8.onnx; label agreement: 0.996738

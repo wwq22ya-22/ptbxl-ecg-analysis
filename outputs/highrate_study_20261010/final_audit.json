@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "new_runs": 10,
+  "new250hz_runs": 6,
+  "new500hz_runs": 4,
+  "reused100hz_models": 5,
+  "new100hz_training": 0,
+  "actual_cubeai_resource_pairs": 7,
+  "independent_test_fold10_used": false,
+  "omitted500hz_inception_time_epoch_count": 0,
+  "original_checkpoints_verified": true,
+  "new_firmware_compiled": false,
+  "physical_board_validated": false,
+  "verification_scripts": [
+    "D:\\MyProject\\college\\ecg1\\outputs\\highrate_study_20261010\\verification\\audit_highrate_signal.py",
+    "D:\\MyProject\\college\\ecg1\\outputs\\highrate_study_20261010\\verification\\check_highrate_document_preservation.py",
+    "D:\\MyProject\\college\\ecg1\\outputs\\highrate_study_20261010\\verification\\check_highrate_inputs.py",
+    "D:\\MyProject\\college\\ecg1\\outputs\\highrate_study_20261010\\verification\\check_highrate_teacher_quantization.py",
+    "D:\\MyProject\\college\\ecg1\\outputs\\highrate_study_20261010\\verification\\enrich_highrate_report.py",
+    "D:\\MyProject\\college\\ecg1\\outputs\\highrate_study_20261010\\verification\\finalize_highrate_artifacts.py",
+    "D:\\MyProject\\college\\ecg1\\outputs\\highrate_study_20261010\\verification\\finish_revised_highrate.py",
+    "D:\\MyProject\\college\\ecg1\\outputs\\highrate_study_20261010\\verification\\place_highrate_sections.py",
+    "D:\\MyProject\\college\\ecg1\\outputs\\highrate_study_20261010\\verification\\prepare_highrate_time250_resource.py",
+    "D:\\MyProject\\college\\ecg1\\outputs\\highrate_study_20261010\\verification\\record_highrate_cancellations.py",
+    "D:\\MyProject\\college\\ecg1\\outputs\\highrate_study_20261010\\verification\\run_highrate_study.py",
+    "D:\\MyProject\\college\\ecg1\\outputs\\highrate_study_20261010\\verification\\write_highrate_cnn_manifests.py"
+  ],
+  "shared_documentation_preserved": true,
+  "scientific_figure_visually_checked": true,
+  "figure_sha256": "c30a23c951b4f830ccdcb8aabc5a7ae041370b98119ed5398cc2f5843be34601"
+}

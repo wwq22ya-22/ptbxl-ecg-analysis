@@ -101,4 +101,10 @@ def onnx_simulator(manifest, directory):
                   * np.float32(manifest["input_scale"])).reshape(1, 12, 1000)
         return session.run(None, {"ecg": signal})[0][0]
 
+    if manifest.get('preprocessing_location') == 'board':
+        from src.inference.raw_serial_simulator import RawFirmwareSimulator
+        return RawFirmwareSimulator(manifest, infer)
+    if manifest.get('protocol') == 3:
+        from src.inference.binary_serial_simulator import BinaryFirmwareSimulator
+        return BinaryFirmwareSimulator(manifest, infer)
     return FirmwareSimulator(manifest, infer)

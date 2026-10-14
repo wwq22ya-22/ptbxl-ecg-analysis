@@ -1,0 +1,6 @@
+B工程：板端预处理＋推理，原seed44 INT8，STM32F407VG。
+先接收完整12导联×1000点原始mV波形，板端执行双中值去基线、0.5–40 Hz前后向带通、训练统计标准化、量化和模型。
+烧录ECG_Student_RAW_INT8_STM32F407VG.hex；在VS Code直接运行scripts/ecg_stm32_raw_viz.py或双击start_ecg_board_preprocess_viz.cmd。
+旧A仅推理工程仍用ecg_stm32_viz.py/start_ecg_student_viz.cmd，二者协议不同，握手拒绝混用。
+沿用原三分类VG、8 MHz HSE、168 MHz主频、J-Link设置，USART1 PA9 TX/PA10 RX，115200 8N1，3.3 V TTL共地。
+本轮已编译和主机核对，尚未烧录实板或测量板上预处理/推理耗时。

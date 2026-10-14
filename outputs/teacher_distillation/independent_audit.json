@@ -1,0 +1,120 @@
+{
+  "prediction_sets_verified": 22,
+  "predictions": [
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\baseline_seed42\\validation_predictions.npz",
+      "records": 2146,
+      "sha256": "65b0c2a2d6cd017d4072a20a48093db8f3f8af02d0d1b3d1d9a816a551df6a87"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\baseline_seed42\\test_predictions.npz",
+      "records": 2158,
+      "sha256": "66cbc046834b5cf040c9494815bcb8dfb2bd7a172ab42a3c643245c25ed9eab7"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\baseline_seed43\\validation_predictions.npz",
+      "records": 2146,
+      "sha256": "117d0a97b25dc63f211d7d313ba138f528b359a3903f910096368c039c44b7b9"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\baseline_seed43\\test_predictions.npz",
+      "records": 2158,
+      "sha256": "4ae59c410a45970599c9df10d9ea79cf47016a7290e79f06103d0785ac9ca566"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\baseline_seed44\\validation_predictions.npz",
+      "records": 2146,
+      "sha256": "2b3d382898cfe2b3522d74b42f988d2979af5ac59b00759e09e3975d042b0802"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\baseline_seed44\\test_predictions.npz",
+      "records": 2158,
+      "sha256": "872f3a251dbfe0162e5d231a4c7f8885224cae68edb1b5cbc1c14772b4edfb11"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\distilled_seed42\\validation_predictions.npz",
+      "records": 2146,
+      "sha256": "662c437e80d82ef564640a00758d0929f50aa9f1fd9e339a8dab1d1ee4acfda8"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\distilled_seed42\\test_predictions.npz",
+      "records": 2158,
+      "sha256": "cdd5cfc4d4d0bcb09fe3dc23571b9e55eaf5455570b24596ca073e2b94d35409"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\distilled_seed43\\validation_predictions.npz",
+      "records": 2146,
+      "sha256": "bf76c401e674cf693b026f9b295666fb792db679907fed1d84e0d4ec8b289678"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\distilled_seed43\\test_predictions.npz",
+      "records": 2158,
+      "sha256": "a402b6b5afe7e7a949710c5a3e50690b23afbab5daf1a0267f25b081734ffdab"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\distilled_seed44\\validation_predictions.npz",
+      "records": 2146,
+      "sha256": "86b10b5bcafc4604ef01d0b466cb642fbab72020d73e1dc8346f51fc06a6efad"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\distilled_seed44\\test_predictions.npz",
+      "records": 2158,
+      "sha256": "1bdaa49af159e807c3d2689f0eff1d907ed7a6b28167562ce887d3c28394aa11"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\ensemble_kd_seed42\\validation_predictions.npz",
+      "records": 2146,
+      "sha256": "05c765db5fa9103ad4374fb017a96c2ccd88b72e6b2ede695214f9584b3fbe9a"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\ensemble_kd_seed42\\test_predictions.npz",
+      "records": 2158,
+      "sha256": "8c009d729e11dc7c84dbd6180db304ca5dadad23c767c4612bb6fbf61fe4e9c1"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\ensemble_kd_seed43\\validation_predictions.npz",
+      "records": 2146,
+      "sha256": "1afd9ebbb507f789300415d857a1b52805361a4add70addce78c29ccce3843e9"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\ensemble_kd_seed43\\test_predictions.npz",
+      "records": 2158,
+      "sha256": "1e16906fd1fac71225ad13409241487519b4ff320133ae8bc1b38638cf61f789"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\ensemble_kd_seed44\\validation_predictions.npz",
+      "records": 2146,
+      "sha256": "b2acdbf074dff3bb5ff89d70b136bfb6931198b719e54a32894150c537e20c21"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\comparison\\ensemble_kd_seed44\\test_predictions.npz",
+      "records": 2158,
+      "sha256": "691b3a69fcb7920cf2ec3c478e553c8f495036b907b0d1a3124ed982f264d34a"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\selected_export\\float32_test_predictions.npz",
+      "records": 2158,
+      "sha256": "a7f9287ad01346ff5949e1bcfd7c15926b8429d72c5e3cc18e7b512bb8a27468"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\selected_export\\int8_test_predictions.npz",
+      "records": 2158,
+      "sha256": "c83c008b70894c8fa513cebae7d2b0ea7a6b64150e3cd06b7617884ff33c685d"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\selected_export\\audit_float32_validation.npz",
+      "records": 2146,
+      "sha256": "bc6b68a41c0fad2505002bbab7ee2a485a2f34544071818af4a40d4621d087eb"
+    },
+    {
+      "file": "outputs\\teacher_distillation\\selected_export\\audit_int8_validation.npz",
+      "records": 2146,
+      "sha256": "ce813353950e6cc9c8e9bd2a34e55fb77f147077441a096fe215bd90d3b5bc15"
+    }
+  ],
+  "protected_artifacts_unchanged": true,
+  "calibration_train_only_verified": true,
+  "validation_selection_verified": true,
+  "loss_and_export_tests_passed": 7,
+  "test_used_for_selection": false
+}

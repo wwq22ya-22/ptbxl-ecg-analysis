@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "prediction_sets_recomputed": 18,
+  "per_class_metrics_recomputed": true,
+  "patient_isolation_verified": true,
+  "training_only_normalization": true,
+  "protected_artifacts_unchanged": true,
+  "selected_teacher_sha256": "449ffa3825cb485e4be0997fe4111fdcd1d840c6226d1d7ac3b7662cadc854dd"
+}

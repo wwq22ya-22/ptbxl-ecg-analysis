@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "resource": "filtered_inception1d_250hz",
+      "artifact_sha256": {
+        "model_float32.onnx": "835398a4c0a4fb80a4491713c634e6e32b1e198edfabaea8917deb82d53fc94c",
+        "model_int8.onnx": "452c6187f7468397f190f6b09b126f0341be7067888ea9b98366af8eccd8f6a1",
+        "calibration_train.npz": "b83276e610154a88669241bac09b6b95ce779bae1ba41177c0ae0d44f62f46fb"
+      },
+      "executable": true,
+      "finite": true,
+      "records": 8,
+      "training_calibration_sample_only": true,
+      "max_probability_error": 0.09115351736545563,
+      "mean_probability_error": 0.01336281280964613,
+      "full_validation_accuracy_checked": false,
+      "per_channel_bn_warning": "rank1 BN weights fall back to per-tensor, as verified in installed QDQ quantizer"
+    },
+    {
+      "resource": "filtered_inception1d_500hz",
+      "artifact_sha256": {
+        "model_float32.onnx": "e5eb90a393161d5a4972490f950c759716df7e61ebf7644f91b4b2476b5d300a",
+        "model_int8.onnx": "8d7250384241da64c4aec14b3725a079b5a0b39e71bc025218c39bb7064678ce",
+        "calibration_train.npz": "b8b22dd849f1c71b27485e5e08c4dd31967acc9f79f8bf3276e9552f89418cba"
+      },
+      "executable": true,
+      "finite": true,
+      "records": 8,
+      "training_calibration_sample_only": true,
+      "max_probability_error": 0.1388097107410431,
+      "mean_probability_error": 0.025910621508955956,
+      "full_validation_accuracy_checked": false,
+      "per_channel_bn_warning": "rank1 BN weights fall back to per-tensor, as verified in installed QDQ quantizer"
+    },
+    {
+      "resource": "filtered_inception_time1d_250hz",
+      "artifact_sha256": {
+        "model_float32.onnx": "6eb19562b4eb52c6ff5fa566e411604eb5a4ef7fa44c623341f14a555f844be0",
+        "model_int8.onnx": "8dff34ea23e26704a3f8cb3cc7e3a3726b1ec6c853add8d7a22b8b61b86b0d59",
+        "calibration_train.npz": "b83276e610154a88669241bac09b6b95ce779bae1ba41177c0ae0d44f62f46fb"
+      },
+      "executable": true,
+      "finite": true,
+      "records": 8,
+      "training_calibration_sample_only": true,
+      "max_probability_error": 0.6651417016983032,
+      "mean_probability_error": 0.09839817136526108,
+      "full_validation_accuracy_checked": false,
+      "per_channel_bn_warning": "rank1 BN weights fall back to per-tensor, as verified in installed QDQ quantizer"
+    }
+  ]
+}

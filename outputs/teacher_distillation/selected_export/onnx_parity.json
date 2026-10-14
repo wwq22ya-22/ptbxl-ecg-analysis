@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "records_compared": 128,
+  "max_absolute_error": 2.86102294921875e-06,
+  "mean_absolute_error": 4.8895014970185e-07,
+  "tolerance": {
+    "rtol": 0.0002,
+    "atol": 1e-05
+  },
+  "onnxruntime_version": "1.30.0"
+}

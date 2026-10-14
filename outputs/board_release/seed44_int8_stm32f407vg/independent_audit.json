@@ -1,0 +1,9 @@
+{
+  "project_source_and_library_references_verified_in_zip": 46,
+  "JLink_settings_unchanged_after_build": true,
+  "generated_C_and_deployment_header_identical_to_seed44": true,
+  "original_reference_and_VE_artifacts_unchanged": true,
+  "configuration_and_serial_tests_passed": 15,
+  "hex_checks_passed": true,
+  "physical_board_test": false
+}

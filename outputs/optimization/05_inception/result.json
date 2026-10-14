@@ -1,0 +1,287 @@
+{
+  "validation": {
+    "records": 2183,
+    "per_class": {
+      "NORM": {
+        "support": 955,
+        "threshold": 0.6000000000000002,
+        "auroc": 0.9416545866944079,
+        "precision": 0.8058340929808568,
+        "recall": 0.9256544502617801,
+        "f1": 0.8615984405458089,
+        "confusion_matrix": [
+          [
+            1015,
+            213
+          ],
+          [
+            71,
+            884
+          ]
+        ]
+      },
+      "MI": {
+        "support": 540,
+        "threshold": 0.5500000000000002,
+        "auroc": 0.9165990396970312,
+        "precision": 0.7185314685314685,
+        "recall": 0.7611111111111111,
+        "f1": 0.7392086330935251,
+        "confusion_matrix": [
+          [
+            1482,
+            161
+          ],
+          [
+            129,
+            411
+          ]
+        ]
+      },
+      "STTC": {
+        "support": 528,
+        "threshold": 0.5500000000000002,
+        "auroc": 0.9289675455460955,
+        "precision": 0.6961414790996785,
+        "recall": 0.8200757575757576,
+        "f1": 0.7530434782608696,
+        "confusion_matrix": [
+          [
+            1466,
+            189
+          ],
+          [
+            95,
+            433
+          ]
+        ]
+      },
+      "CD": {
+        "support": 495,
+        "threshold": 0.6000000000000002,
+        "auroc": 0.9343039398726604,
+        "precision": 0.7257769652650823,
+        "recall": 0.802020202020202,
+        "f1": 0.761996161228407,
+        "confusion_matrix": [
+          [
+            1538,
+            150
+          ],
+          [
+            98,
+            397
+          ]
+        ]
+      },
+      "HYP": {
+        "support": 268,
+        "threshold": 0.6500000000000001,
+        "auroc": 0.8349401815985348,
+        "precision": 0.41798941798941797,
+        "recall": 0.5895522388059702,
+        "f1": 0.4891640866873065,
+        "confusion_matrix": [
+          [
+            1695,
+            220
+          ],
+          [
+            110,
+            158
+          ]
+        ]
+      }
+    },
+    "macro_auroc": 0.9112930586817459,
+    "macro_precision": 0.6728546847733009,
+    "macro_recall": 0.7796827519549641,
+    "macro_f1": 0.7210021599631834,
+    "classes_with_defined_auroc": 5
+  },
+  "validation_fine": {
+    "records": 2183,
+    "per_class": {
+      "NORM": {
+        "support": 955,
+        "threshold": 0.6001596450805664,
+        "auroc": 0.9416545866944079,
+        "precision": 0.8058340929808568,
+        "recall": 0.9256544502617801,
+        "f1": 0.8615984405458089,
+        "confusion_matrix": [
+          [
+            1015,
+            213
+          ],
+          [
+            71,
+            884
+          ]
+        ]
+      },
+      "MI": {
+        "support": 540,
+        "threshold": 0.5887525677680969,
+        "auroc": 0.9165990396970312,
+        "precision": 0.7376146788990826,
+        "recall": 0.7444444444444445,
+        "f1": 0.7410138248847926,
+        "confusion_matrix": [
+          [
+            1500,
+            143
+          ],
+          [
+            138,
+            402
+          ]
+        ]
+      },
+      "STTC": {
+        "support": 528,
+        "threshold": 0.6196297407150269,
+        "auroc": 0.9289675455460955,
+        "precision": 0.7332155477031802,
+        "recall": 0.7859848484848485,
+        "f1": 0.7586837294332724,
+        "confusion_matrix": [
+          [
+            1504,
+            151
+          ],
+          [
+            113,
+            415
+          ]
+        ]
+      },
+      "CD": {
+        "support": 495,
+        "threshold": 0.6746360063552856,
+        "auroc": 0.9343039398726604,
+        "precision": 0.7703252032520326,
+        "recall": 0.7656565656565657,
+        "f1": 0.767983789260385,
+        "confusion_matrix": [
+          [
+            1575,
+            113
+          ],
+          [
+            116,
+            379
+          ]
+        ]
+      },
+      "HYP": {
+        "support": 268,
+        "threshold": 0.6614794135093689,
+        "auroc": 0.8349401815985348,
+        "precision": 0.43131868131868134,
+        "recall": 0.585820895522388,
+        "f1": 0.49683544303797467,
+        "confusion_matrix": [
+          [
+            1708,
+            207
+          ],
+          [
+            111,
+            157
+          ]
+        ]
+      }
+    },
+    "macro_auroc": 0.9112930586817459,
+    "macro_precision": 0.6956616408307668,
+    "macro_recall": 0.7615122408740053,
+    "macro_f1": 0.7252230454324468,
+    "classes_with_defined_auroc": 5
+  },
+  "fine_thresholds": [
+    0.6001596450805664,
+    0.5887525677680969,
+    0.6196297407150269,
+    0.6746360063552856,
+    0.6614794135093689
+  ],
+  "epoch": 11,
+  "parameters": 267749,
+  "name": "05_inception",
+  "description": "只换紧凑多尺度Inception风格网络，平均+最大池化",
+  "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\optimization\\05_inception\\checkpoint\\inception1d_best.pt",
+  "seconds": 109.93481870000005,
+  "config": {
+    "project": {
+      "name": "ptbxl-ecg-system",
+      "random_seed": 42
+    },
+    "dataset": {
+      "root": "D:/datasets/ptb-xl",
+      "sampling_rate_hz": 100,
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "test_fold": 10
+    },
+    "signal_processing": {
+      "baseline_windows_s": [
+        0.2,
+        0.6
+      ],
+      "lowcut_hz": 0.5,
+      "highcut_hz": 40.0,
+      "bandpass_order": 4,
+      "notch_hz": null,
+      "notch_quality_factor": 30.0,
+      "normalization": "zscore",
+      "rpeak_minimum_rr_s": 0.25,
+      "rpeak_integration_window_s": 0.12,
+      "rpeak_t_wave_window_s": 0.36,
+      "rpeak_t_wave_max_ratio": 0.75,
+      "rr_min_valid_s": 0.3,
+      "rr_max_valid_s": 2.0
+    },
+    "labels": {
+      "superclasses": [
+        "NORM",
+        "MI",
+        "STTC",
+        "CD",
+        "HYP"
+      ],
+      "default_threshold": 0.5
+    },
+    "model": {
+      "type": "inception1d",
+      "dropout": 0.2
+    },
+    "training": {
+      "epochs": 20,
+      "batch_size": 32,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "early_stopping_patience": 5,
+      "num_workers": 0,
+      "use_amp": true,
+      "random_seed": 42
+    },
+    "outputs": {
+      "split_dir": "outputs/splits",
+      "figure_dir": "outputs/optimization/05_inception/figure",
+      "cache_dir": "outputs/cache",
+      "checkpoint_dir": "outputs/optimization/05_inception/checkpoint",
+      "metrics_dir": "outputs/optimization/05_inception/metrics",
+      "predictions_dir": "outputs/optimization/05_inception/predictions"
+    }
+  }
+}

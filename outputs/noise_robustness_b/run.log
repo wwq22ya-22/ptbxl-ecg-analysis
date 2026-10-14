@@ -1,0 +1,248 @@
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cache\train_full_7edf6ebd8846b3d7.npy
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cache\train_full_40966c2282deaba3.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cache\validation_full_f2bdba82fbf64151.npy
+Training teacher_clean_44; 17084 records; device=cuda; clean/noise=[1, 0, 0]
+teacher_clean_44 epoch 1: AUROC=0.905624, F1@0.5=0.672603, 9.1s
+teacher_clean_44 epoch 2: AUROC=0.914506, F1@0.5=0.682508, 7.8s
+teacher_clean_44 epoch 3: AUROC=0.917889, F1@0.5=0.691938, 7.8s
+teacher_clean_44 epoch 4: AUROC=0.920869, F1@0.5=0.716613, 8.2s
+teacher_clean_44 epoch 5: AUROC=0.923352, F1@0.5=0.694097, 8.3s
+teacher_clean_44 epoch 6: AUROC=0.921958, F1@0.5=0.722035, 7.8s
+teacher_clean_44 epoch 7: AUROC=0.926697, F1@0.5=0.729174, 8.0s
+teacher_clean_44 epoch 8: AUROC=0.926272, F1@0.5=0.742741, 8.0s
+teacher_clean_44 epoch 9: AUROC=0.925559, F1@0.5=0.717935, 7.9s
+teacher_clean_44 epoch 10: AUROC=0.928134, F1@0.5=0.719757, 7.6s
+teacher_clean_44 epoch 11: AUROC=0.922754, F1@0.5=0.722071, 8.4s
+teacher_clean_44 epoch 12: AUROC=0.927889, F1@0.5=0.732920, 7.8s
+teacher_clean_44 epoch 13: AUROC=0.926956, F1@0.5=0.722675, 7.6s
+teacher_clean_44 epoch 14: AUROC=0.922759, F1@0.5=0.729247, 7.7s
+teacher_clean_44 epoch 15: AUROC=0.927409, F1@0.5=0.738650, 7.8s
+teacher_clean_44 epoch 16: AUROC=0.925954, F1@0.5=0.734151, 7.9s
+teacher_clean_44 epoch 17: AUROC=0.926446, F1@0.5=0.724391, 8.0s
+teacher_clean_44 epoch 18: AUROC=0.925444, F1@0.5=0.729238, 7.7s
+Training teacher_noise_44; 17084 records; device=cuda; clean/noise=[0.5, 0.25, 0.25]
+teacher_noise_44 epoch 1: AUROC=0.903443, F1@0.5=0.672856, 9.4s
+teacher_noise_44 epoch 2: AUROC=0.913880, F1@0.5=0.690466, 10.8s
+teacher_noise_44 epoch 3: AUROC=0.915410, F1@0.5=0.689110, 7.9s
+teacher_noise_44 epoch 4: AUROC=0.920062, F1@0.5=0.725926, 7.6s
+teacher_noise_44 epoch 5: AUROC=0.923082, F1@0.5=0.701229, 7.1s
+teacher_noise_44 epoch 6: AUROC=0.925814, F1@0.5=0.723906, 7.4s
+teacher_noise_44 epoch 7: AUROC=0.923743, F1@0.5=0.731874, 7.1s
+teacher_noise_44 epoch 8: AUROC=0.926590, F1@0.5=0.746576, 8.0s
+teacher_noise_44 epoch 9: AUROC=0.926832, F1@0.5=0.720931, 7.2s
+teacher_noise_44 epoch 10: AUROC=0.927927, F1@0.5=0.723157, 7.0s
+teacher_noise_44 epoch 11: AUROC=0.923624, F1@0.5=0.723391, 7.1s
+teacher_noise_44 epoch 12: AUROC=0.927759, F1@0.5=0.722707, 7.3s
+teacher_noise_44 epoch 13: AUROC=0.925912, F1@0.5=0.725789, 8.8s
+teacher_noise_44 epoch 14: AUROC=0.924308, F1@0.5=0.728502, 9.0s
+teacher_noise_44 epoch 15: AUROC=0.928639, F1@0.5=0.746613, 8.8s
+teacher_noise_44 epoch 16: AUROC=0.926573, F1@0.5=0.738329, 8.1s
+teacher_noise_44 epoch 17: AUROC=0.926205, F1@0.5=0.719923, 7.4s
+teacher_noise_44 epoch 18: AUROC=0.925623, F1@0.5=0.734444, 7.6s
+teacher_noise_44 epoch 19: AUROC=0.920811, F1@0.5=0.735119, 7.9s
+teacher_noise_44 epoch 20: AUROC=0.923035, F1@0.5=0.732014, 7.9s
+teacher_noise_44 epoch 21: AUROC=0.921220, F1@0.5=0.730715, 7.4s
+teacher_noise_44 epoch 22: AUROC=0.927417, F1@0.5=0.731333, 7.4s
+teacher_noise_44 epoch 23: AUROC=0.922914, F1@0.5=0.735122, 8.0s
+Generating new teacher logits for clean, 20dB and 10dB TRAINING views
+Training B_noise_supervised_42; 17084 records; device=cuda; clean/noise=[0.5, 0.25, 0.25]
+B_noise_supervised_42 epoch 1: AUROC=0.910848, F1@0.5=0.690668, 2.9s
+B_noise_supervised_42 epoch 2: AUROC=0.913485, F1@0.5=0.656295, 2.9s
+B_noise_supervised_42 epoch 3: AUROC=0.919534, F1@0.5=0.724367, 2.6s
+B_noise_supervised_42 epoch 4: AUROC=0.921874, F1@0.5=0.717078, 2.4s
+B_noise_supervised_42 epoch 5: AUROC=0.919636, F1@0.5=0.715974, 2.5s
+B_noise_supervised_42 epoch 6: AUROC=0.924260, F1@0.5=0.715381, 2.6s
+B_noise_supervised_42 epoch 7: AUROC=0.925818, F1@0.5=0.726204, 2.4s
+B_noise_supervised_42 epoch 8: AUROC=0.926144, F1@0.5=0.727955, 2.4s
+B_noise_supervised_42 epoch 9: AUROC=0.925856, F1@0.5=0.733541, 2.3s
+B_noise_supervised_42 epoch 10: AUROC=0.926103, F1@0.5=0.726955, 2.4s
+B_noise_supervised_42 epoch 11: AUROC=0.926088, F1@0.5=0.707385, 2.4s
+B_noise_supervised_42 epoch 12: AUROC=0.926733, F1@0.5=0.717641, 2.4s
+B_noise_supervised_42 epoch 13: AUROC=0.923358, F1@0.5=0.724501, 2.4s
+B_noise_supervised_42 epoch 14: AUROC=0.922663, F1@0.5=0.720967, 2.4s
+B_noise_supervised_42 epoch 15: AUROC=0.924978, F1@0.5=0.736401, 2.5s
+B_noise_supervised_42 epoch 16: AUROC=0.925424, F1@0.5=0.729255, 2.4s
+B_noise_supervised_42 epoch 17: AUROC=0.926033, F1@0.5=0.726038, 2.4s
+B_noise_supervised_42 epoch 18: AUROC=0.925045, F1@0.5=0.715271, 2.3s
+B_noise_supervised_42 epoch 19: AUROC=0.918569, F1@0.5=0.706401, 2.4s
+B_noise_supervised_42 epoch 20: AUROC=0.924481, F1@0.5=0.726819, 2.5s
+Training B_noise_distilled_42; 17084 records; device=cuda; clean/noise=[0.5, 0.25, 0.25]
+B_noise_distilled_42 epoch 1: AUROC=0.915448, F1@0.5=0.712761, 3.1s
+B_noise_distilled_42 epoch 2: AUROC=0.918076, F1@0.5=0.695446, 3.0s
+B_noise_distilled_42 epoch 3: AUROC=0.923334, F1@0.5=0.727865, 3.5s
+B_noise_distilled_42 epoch 4: AUROC=0.923364, F1@0.5=0.729220, 3.2s
+B_noise_distilled_42 epoch 5: AUROC=0.921862, F1@0.5=0.735611, 3.1s
+B_noise_distilled_42 epoch 6: AUROC=0.927483, F1@0.5=0.734604, 3.0s
+B_noise_distilled_42 epoch 7: AUROC=0.926440, F1@0.5=0.735959, 2.9s
+B_noise_distilled_42 epoch 8: AUROC=0.927196, F1@0.5=0.739505, 2.9s
+B_noise_distilled_42 epoch 9: AUROC=0.927549, F1@0.5=0.741657, 2.9s
+B_noise_distilled_42 epoch 10: AUROC=0.929650, F1@0.5=0.747246, 3.3s
+B_noise_distilled_42 epoch 11: AUROC=0.928326, F1@0.5=0.724750, 3.2s
+B_noise_distilled_42 epoch 12: AUROC=0.929354, F1@0.5=0.739246, 3.0s
+B_noise_distilled_42 epoch 13: AUROC=0.925997, F1@0.5=0.739079, 3.1s
+B_noise_distilled_42 epoch 14: AUROC=0.927714, F1@0.5=0.742526, 3.0s
+B_noise_distilled_42 epoch 15: AUROC=0.929605, F1@0.5=0.747540, 3.0s
+B_noise_distilled_42 epoch 16: AUROC=0.929341, F1@0.5=0.744868, 2.9s
+B_noise_distilled_42 epoch 17: AUROC=0.930844, F1@0.5=0.741730, 3.2s
+B_noise_distilled_42 epoch 18: AUROC=0.928337, F1@0.5=0.738606, 3.0s
+B_noise_distilled_42 epoch 19: AUROC=0.927224, F1@0.5=0.733067, 2.9s
+B_noise_distilled_42 epoch 20: AUROC=0.929195, F1@0.5=0.733201, 2.8s
+B_noise_distilled_42 epoch 21: AUROC=0.930633, F1@0.5=0.743026, 3.0s
+B_noise_distilled_42 epoch 22: AUROC=0.927685, F1@0.5=0.739144, 2.9s
+B_noise_distilled_42 epoch 23: AUROC=0.928807, F1@0.5=0.735881, 2.9s
+B_noise_distilled_42 epoch 24: AUROC=0.929482, F1@0.5=0.734359, 4.7s
+B_noise_distilled_42 epoch 25: AUROC=0.929973, F1@0.5=0.733490, 3.2s
+Training B_noise_supervised_43; 17084 records; device=cuda; clean/noise=[0.5, 0.25, 0.25]
+B_noise_supervised_43 epoch 1: AUROC=0.904095, F1@0.5=0.695931, 2.9s
+B_noise_supervised_43 epoch 2: AUROC=0.915982, F1@0.5=0.707971, 2.9s
+B_noise_supervised_43 epoch 3: AUROC=0.919425, F1@0.5=0.724710, 2.6s
+B_noise_supervised_43 epoch 4: AUROC=0.913231, F1@0.5=0.707758, 2.6s
+B_noise_supervised_43 epoch 5: AUROC=0.920702, F1@0.5=0.708477, 2.5s
+B_noise_supervised_43 epoch 6: AUROC=0.924652, F1@0.5=0.721443, 2.4s
+B_noise_supervised_43 epoch 7: AUROC=0.922006, F1@0.5=0.727713, 2.4s
+B_noise_supervised_43 epoch 8: AUROC=0.925820, F1@0.5=0.733189, 2.4s
+B_noise_supervised_43 epoch 9: AUROC=0.918814, F1@0.5=0.715443, 2.5s
+B_noise_supervised_43 epoch 10: AUROC=0.926889, F1@0.5=0.722818, 2.4s
+B_noise_supervised_43 epoch 11: AUROC=0.920480, F1@0.5=0.723413, 2.5s
+B_noise_supervised_43 epoch 12: AUROC=0.925293, F1@0.5=0.723826, 2.4s
+B_noise_supervised_43 epoch 13: AUROC=0.920986, F1@0.5=0.717251, 2.7s
+B_noise_supervised_43 epoch 14: AUROC=0.924736, F1@0.5=0.730090, 2.6s
+B_noise_supervised_43 epoch 15: AUROC=0.922454, F1@0.5=0.722649, 2.5s
+B_noise_supervised_43 epoch 16: AUROC=0.924135, F1@0.5=0.724753, 2.5s
+B_noise_supervised_43 epoch 17: AUROC=0.921716, F1@0.5=0.716751, 2.7s
+B_noise_supervised_43 epoch 18: AUROC=0.921370, F1@0.5=0.722171, 2.6s
+Training B_noise_distilled_43; 17084 records; device=cuda; clean/noise=[0.5, 0.25, 0.25]
+B_noise_distilled_43 epoch 1: AUROC=0.909350, F1@0.5=0.712670, 2.9s
+B_noise_distilled_43 epoch 2: AUROC=0.919582, F1@0.5=0.708526, 2.8s
+B_noise_distilled_43 epoch 3: AUROC=0.920840, F1@0.5=0.720657, 3.1s
+B_noise_distilled_43 epoch 4: AUROC=0.919846, F1@0.5=0.720200, 2.8s
+B_noise_distilled_43 epoch 5: AUROC=0.922286, F1@0.5=0.728583, 2.7s
+B_noise_distilled_43 epoch 6: AUROC=0.927213, F1@0.5=0.744855, 2.7s
+B_noise_distilled_43 epoch 7: AUROC=0.924172, F1@0.5=0.735782, 3.1s
+B_noise_distilled_43 epoch 8: AUROC=0.927144, F1@0.5=0.738963, 2.7s
+B_noise_distilled_43 epoch 9: AUROC=0.921585, F1@0.5=0.734195, 2.6s
+B_noise_distilled_43 epoch 10: AUROC=0.927542, F1@0.5=0.736194, 2.6s
+B_noise_distilled_43 epoch 11: AUROC=0.923214, F1@0.5=0.739290, 2.7s
+B_noise_distilled_43 epoch 12: AUROC=0.927296, F1@0.5=0.729247, 2.9s
+B_noise_distilled_43 epoch 13: AUROC=0.926098, F1@0.5=0.741449, 2.7s
+B_noise_distilled_43 epoch 14: AUROC=0.928205, F1@0.5=0.744781, 2.6s
+B_noise_distilled_43 epoch 15: AUROC=0.926800, F1@0.5=0.735747, 2.7s
+B_noise_distilled_43 epoch 16: AUROC=0.928947, F1@0.5=0.735751, 2.8s
+B_noise_distilled_43 epoch 17: AUROC=0.926486, F1@0.5=0.740653, 2.8s
+B_noise_distilled_43 epoch 18: AUROC=0.926084, F1@0.5=0.740845, 2.7s
+B_noise_distilled_43 epoch 19: AUROC=0.926145, F1@0.5=0.733948, 2.7s
+B_noise_distilled_43 epoch 20: AUROC=0.928149, F1@0.5=0.739999, 2.6s
+B_noise_distilled_43 epoch 21: AUROC=0.928816, F1@0.5=0.733644, 2.6s
+B_noise_distilled_43 epoch 22: AUROC=0.926435, F1@0.5=0.742393, 2.6s
+B_noise_distilled_43 epoch 23: AUROC=0.925173, F1@0.5=0.737511, 2.9s
+B_noise_distilled_43 epoch 24: AUROC=0.927039, F1@0.5=0.739364, 2.8s
+Training B_noise_supervised_44; 17084 records; device=cuda; clean/noise=[0.5, 0.25, 0.25]
+B_noise_supervised_44 epoch 1: AUROC=0.904767, F1@0.5=0.694187, 2.7s
+B_noise_supervised_44 epoch 2: AUROC=0.912951, F1@0.5=0.702667, 2.6s
+B_noise_supervised_44 epoch 3: AUROC=0.918113, F1@0.5=0.700417, 2.6s
+B_noise_supervised_44 epoch 4: AUROC=0.918130, F1@0.5=0.720661, 2.5s
+B_noise_supervised_44 epoch 5: AUROC=0.919715, F1@0.5=0.709590, 2.4s
+B_noise_supervised_44 epoch 6: AUROC=0.921276, F1@0.5=0.710062, 2.8s
+B_noise_supervised_44 epoch 7: AUROC=0.920871, F1@0.5=0.719049, 2.5s
+B_noise_supervised_44 epoch 8: AUROC=0.922829, F1@0.5=0.727501, 2.4s
+B_noise_supervised_44 epoch 9: AUROC=0.924409, F1@0.5=0.713004, 2.5s
+B_noise_supervised_44 epoch 10: AUROC=0.925625, F1@0.5=0.716738, 2.5s
+B_noise_supervised_44 epoch 11: AUROC=0.923586, F1@0.5=0.717581, 2.4s
+B_noise_supervised_44 epoch 12: AUROC=0.926271, F1@0.5=0.724439, 2.8s
+B_noise_supervised_44 epoch 13: AUROC=0.921887, F1@0.5=0.715793, 2.7s
+B_noise_supervised_44 epoch 14: AUROC=0.922434, F1@0.5=0.715458, 2.4s
+B_noise_supervised_44 epoch 15: AUROC=0.921945, F1@0.5=0.729576, 2.4s
+B_noise_supervised_44 epoch 16: AUROC=0.924964, F1@0.5=0.731443, 2.4s
+B_noise_supervised_44 epoch 17: AUROC=0.923486, F1@0.5=0.711261, 2.4s
+B_noise_supervised_44 epoch 18: AUROC=0.922715, F1@0.5=0.729024, 2.3s
+B_noise_supervised_44 epoch 19: AUROC=0.922417, F1@0.5=0.722392, 2.3s
+B_noise_supervised_44 epoch 20: AUROC=0.924080, F1@0.5=0.720130, 2.3s
+Training B_noise_distilled_44; 17084 records; device=cuda; clean/noise=[0.5, 0.25, 0.25]
+B_noise_distilled_44 epoch 1: AUROC=0.912237, F1@0.5=0.699596, 3.0s
+B_noise_distilled_44 epoch 2: AUROC=0.919657, F1@0.5=0.713375, 2.8s
+B_noise_distilled_44 epoch 3: AUROC=0.920812, F1@0.5=0.707240, 3.0s
+B_noise_distilled_44 epoch 4: AUROC=0.922610, F1@0.5=0.738274, 3.1s
+B_noise_distilled_44 epoch 5: AUROC=0.921859, F1@0.5=0.726991, 2.7s
+B_noise_distilled_44 epoch 6: AUROC=0.924175, F1@0.5=0.727004, 2.7s
+B_noise_distilled_44 epoch 7: AUROC=0.925355, F1@0.5=0.733418, 2.7s
+B_noise_distilled_44 epoch 8: AUROC=0.927224, F1@0.5=0.741126, 2.7s
+B_noise_distilled_44 epoch 9: AUROC=0.926034, F1@0.5=0.720398, 2.6s
+B_noise_distilled_44 epoch 10: AUROC=0.927189, F1@0.5=0.730309, 2.7s
+B_noise_distilled_44 epoch 11: AUROC=0.924727, F1@0.5=0.727225, 2.7s
+B_noise_distilled_44 epoch 12: AUROC=0.928268, F1@0.5=0.733763, 2.6s
+B_noise_distilled_44 epoch 13: AUROC=0.928244, F1@0.5=0.726413, 2.6s
+B_noise_distilled_44 epoch 14: AUROC=0.925982, F1@0.5=0.739119, 2.6s
+B_noise_distilled_44 epoch 15: AUROC=0.922157, F1@0.5=0.735189, 2.6s
+B_noise_distilled_44 epoch 16: AUROC=0.927833, F1@0.5=0.738916, 2.7s
+B_noise_distilled_44 epoch 17: AUROC=0.928647, F1@0.5=0.726201, 2.7s
+B_noise_distilled_44 epoch 18: AUROC=0.926086, F1@0.5=0.739753, 2.6s
+B_noise_distilled_44 epoch 19: AUROC=0.927664, F1@0.5=0.737038, 2.7s
+B_noise_distilled_44 epoch 20: AUROC=0.927463, F1@0.5=0.737864, 2.7s
+B_noise_distilled_44 epoch 21: AUROC=0.927025, F1@0.5=0.733434, 2.7s
+B_noise_distilled_44 epoch 22: AUROC=0.929434, F1@0.5=0.735329, 2.7s
+B_noise_distilled_44 epoch 23: AUROC=0.927400, F1@0.5=0.736272, 2.7s
+B_noise_distilled_44 epoch 24: AUROC=0.927491, F1@0.5=0.740162, 2.9s
+B_noise_distilled_44 epoch 25: AUROC=0.926750, F1@0.5=0.734725, 2.8s
+B_noise_distilled_44 epoch 26: AUROC=0.925193, F1@0.5=0.729209, 2.7s
+B_noise_distilled_44 epoch 27: AUROC=0.927031, F1@0.5=0.741616, 2.7s
+B_noise_distilled_44 epoch 28: AUROC=0.927831, F1@0.5=0.734784, 2.8s
+B_noise_distilled_44 epoch 29: AUROC=0.929783, F1@0.5=0.733252, 2.6s
+B_noise_distilled_44 epoch 30: AUROC=0.928408, F1@0.5=0.733996, 2.7s
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cache\validation_full_f2bdba82fbf64151.npy
+Evaluating validation: A_baseline_42 on ['clean', '20dB', '10dB']
+Evaluating validation: A_baseline_43 on ['clean', '20dB', '10dB']
+Evaluating validation: A_baseline_44 on ['clean', '20dB', '10dB']
+Evaluating validation: A_distilled_42 on ['clean', '20dB', '10dB']
+Evaluating validation: A_distilled_43 on ['clean', '20dB', '10dB']
+Evaluating validation: A_distilled_44 on ['clean', '20dB', '10dB']
+Evaluating validation: teacher_clean_44 on ['clean', '20dB', '10dB']
+Evaluating validation: teacher_noise_44 on ['clean', '20dB', '10dB']
+Evaluating validation: B_noise_supervised_42 on ['clean', '20dB', '10dB']
+Evaluating validation: B_noise_supervised_43 on ['clean', '20dB', '10dB']
+Evaluating validation: B_noise_supervised_44 on ['clean', '20dB', '10dB']
+Evaluating validation: B_noise_distilled_42 on ['clean', '20dB', '10dB']
+Evaluating validation: B_noise_distilled_43 on ['clean', '20dB', '10dB']
+Evaluating validation: B_noise_distilled_44 on ['clean', '20dB', '10dB']
+Validation selection frozen: B_noise_distilled_42; now preparing and evaluating TEST noise
+Using existing test_full cache: D:\MyProject\college\ecg1\outputs\cache\test_full_7065c5b0a375776d.npy
+Preparing test noisy raw ECG views [30, 20, 10] dB (2158 records)
+test noise cache: 128/2158 records, 2.0s
+test noise cache: 1152/2158 records, 16.4s
+test noise cache: 2158/2158 records, 30.6s
+Evaluating test: A_baseline_42 on ['clean', '30dB', '20dB', '10dB']
+Evaluating test: A_baseline_43 on ['clean', '30dB', '20dB', '10dB']
+Evaluating test: A_baseline_44 on ['clean', '30dB', '20dB', '10dB']
+Evaluating test: A_distilled_42 on ['clean', '30dB', '20dB', '10dB']
+Evaluating test: A_distilled_43 on ['clean', '30dB', '20dB', '10dB']
+Evaluating test: A_distilled_44 on ['clean', '30dB', '20dB', '10dB']
+Evaluating test: teacher_clean_44 on ['clean', '30dB', '20dB', '10dB']
+Evaluating test: teacher_noise_44 on ['clean', '30dB', '20dB', '10dB']
+Evaluating test: B_noise_supervised_42 on ['clean', '30dB', '20dB', '10dB']
+Evaluating test: B_noise_supervised_43 on ['clean', '30dB', '20dB', '10dB']
+Evaluating test: B_noise_supervised_44 on ['clean', '30dB', '20dB', '10dB']
+Evaluating test: B_noise_distilled_42 on ['clean', '30dB', '20dB', '10dB']
+Evaluating test: B_noise_distilled_43 on ['clean', '30dB', '20dB', '10dB']
+Evaluating test: B_noise_distilled_44 on ['clean', '30dB', '20dB', '10dB']
+Exporting selected B distilled student to FP32 ONNX
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cache\train_full_40966c2282deaba3.npy
+INT8 QDQ quantization: 256 training-only clean/noisy calibration records
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cache\validation_full_f2bdba82fbf64151.npy
+ORT A_deployed_seed44_INT8: validation clean
+ORT A_deployed_seed44_INT8: validation 20dB
+ORT A_deployed_seed44_INT8: validation 10dB
+Using existing test_full cache: D:\MyProject\college\ecg1\outputs\cache\test_full_7065c5b0a375776d.npy
+ORT A_deployed_seed44_INT8: test clean
+ORT A_deployed_seed44_INT8: test 30dB
+ORT A_deployed_seed44_INT8: test 20dB
+ORT A_deployed_seed44_INT8: test 10dB
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cache\validation_full_f2bdba82fbf64151.npy
+ORT B_selected_INT8: validation clean
+ORT B_selected_INT8: validation 20dB
+ORT B_selected_INT8: validation 10dB
+Using existing test_full cache: D:\MyProject\college\ecg1\outputs\cache\test_full_7065c5b0a375776d.npy
+ORT B_selected_INT8: test clean
+ORT B_selected_INT8: test 30dB
+ORT B_selected_INT8: test 20dB
+ORT B_selected_INT8: test 10dB
+Cube.AI resource analysis for B INT8 CNN
+B experiment complete: noise training, distillation, INT8, validation/test reports and existing MD updated

@@ -1,0 +1,8 @@
+{
+  "validation_ecg_id": 8,
+  "max_probability_difference": 2.5480985641479492e-06,
+  "positive_labels": [
+    "NORM"
+  ],
+  "passed": true
+}

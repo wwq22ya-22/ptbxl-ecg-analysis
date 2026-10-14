@@ -1,0 +1,325 @@
+{
+  "records": 2158,
+  "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+  "tests_passed": 35,
+  "physical_board_test": false,
+  "pipelines": {
+    "inference_only": {
+      "fold10_serial_cases": 25,
+      "max_probability_difference_from_host_C": 5.966418459291134e-08,
+      "GUI": {
+        "fold9_to_10_to_9_switch_passed": true,
+        "both_folds_sent_via_GUI": true,
+        "source_in_saved_results_correct": true,
+        "busy_switch_disabled": true
+      }
+    },
+    "board_preprocessing": {
+      "fold10_serial_cases": 25,
+      "max_probability_difference_from_host_C": 5.966418459291134e-08,
+      "GUI": {
+        "fold9_to_10_to_9_switch_passed": true,
+        "both_folds_sent_via_GUI": true,
+        "source_in_saved_results_correct": true,
+        "busy_switch_disabled": true
+      }
+    }
+  },
+  "user_approved_preexisting_Keil_workspace_differences": [
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\ECG_Student_INT8_VG.uvoptx",
+      "expected_sha256": "b158485f3d41b7f33d7ebb137c32ea3fd4123678e5fd30923d1aa914d2623a34",
+      "actual_sha256": "083c3f2f287c4016050ef19bb926b928ee0735a44c26334dff25ff90e32826dd",
+      "last_write_time": "2026-10-11T09:42:22.335367"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\ECG_Student_INT8_VG.uvprojx",
+      "expected_sha256": "9c6dfd012a5fba55528b20ced447a928433cc9f85cfcd57424ae2738d224f115",
+      "actual_sha256": "8a701dade493d4266f67ca4664c854182e7d603cfa3a6b3363b3aa7da7f97687",
+      "last_write_time": "2026-10-10T22:37:02.139483"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\delay.o",
+      "expected_sha256": "b0432cd506f17bd48501290c4669fe6aaca9f52696e587f315afd5f7de017e0e",
+      "actual_sha256": "6a5f8eb0d714b9f1cc202e504c3530fc178434540959b3ea05f9a85c5561b0b5",
+      "last_write_time": "2026-10-11T09:00:02.131294"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\ecg_network.o",
+      "expected_sha256": "21333676b9d7a0f11227157fc9c661a88774fa348a9be8d8e9500a1a555ddcff",
+      "actual_sha256": "08118c11b59dec02d98f44c4b4291f7996dd771925f21cbbc41b89256260d0cc",
+      "last_write_time": "2026-10-11T09:00:02.131294"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\ecg_network_data.o",
+      "expected_sha256": "800d78894c3a53c43e560a85bb0a2deb63c0aa8390f000aeb4d26c8c74995b94",
+      "actual_sha256": "9a9e6662e5cdef80dfa340875555cc7e5f8e319ca13b8016671ee2844a5b7c01",
+      "last_write_time": "2026-10-11T09:00:02.036452"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\ecg_network_data_params.o",
+      "expected_sha256": "cfdd2efdae8e243f5cda5341c6b525219e6af42e7408b56383eaf16711a43024",
+      "actual_sha256": "72ff55ac67713e7941b4ca58efca4744bc0c82e7939e0f4b3229f45396b1ef6d",
+      "last_write_time": "2026-10-11T09:00:02.127287"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\ecg_protocol.o",
+      "expected_sha256": "c27ab28c564c5d3dd03812c3172933c68a1b36f7f21826983f029cd4dd4f08d0",
+      "actual_sha256": "9d0b88d12c553b2f0339f3220fd4f9b03242cfa8872dbb01981fdba1f0ee93c6",
+      "last_write_time": "2026-10-11T09:00:01.983794"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\ECG_Student_INT8_VG.axf",
+      "expected_sha256": "1295ac44f8092496084939e5bf8dce7de82129ebb15e52e9acbc6c5177f3c90a",
+      "actual_sha256": "c4bbc3e058bf3915f21b4f56375aaa6c2fb50cf1cf8f4888b2fa9e73ad872606",
+      "last_write_time": "2026-10-11T09:00:02.519844"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\ECG_Student_INT8_VG.build_log.htm",
+      "expected_sha256": "ac3e7a59b12b11c22a0d2a57bd8d94a69fe7bdb48af4d0c7a8c2cdc6186fdfb4",
+      "actual_sha256": "29dfb6392f84957e9104464c0e2a8f98579f79901e3c7ea6c96981bbbe8de65a",
+      "last_write_time": "2026-10-11T09:00:03.108516"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\ECG_Student_INT8_VG.htm",
+      "expected_sha256": "0c17cbdf91f661e7a4de81f6362274c37f8d02f5cda25b9f2ab02a351678a650",
+      "actual_sha256": "19d37257e61bc8c61ce70a05b55694acfcfdb7864c33a512b1862ee208c1c309",
+      "last_write_time": "2026-10-11T09:00:02.517841"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\main.o",
+      "expected_sha256": "5a194f584d3c992a8b774f200d1fa380aa5d04d8e78bf4b4232c3eab32b570f7",
+      "actual_sha256": "a5a03bb6b65e32524a7fc40e83bea2f0f199d546fd02b37717f41a5086c76127",
+      "last_write_time": "2026-10-11T09:00:02.247340"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\misc.o",
+      "expected_sha256": "39ccc7bda6554f1035fec18d9355134daeed36e32507479b90aa56e0ab332487",
+      "actual_sha256": "8061e957bd1587ef2134675bbd5f305f55be246281d682e79c851c924acaef71",
+      "last_write_time": "2026-10-11T09:00:00.775106"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_adc.o",
+      "expected_sha256": "e94a8cda9c5edccd9d5edcac71e867d2c374d6a0ddb0f44bb4774bd2d90ec329",
+      "actual_sha256": "590e83c807a31be3e84dcbd757145a94ec6c1d609ad40858f952cd996ab82130",
+      "last_write_time": "2026-10-11T09:00:00.992535"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_can.o",
+      "expected_sha256": "f9ce397732377f88b42c9851ca863c12a4db0564e97f582522223306e4ce029c",
+      "actual_sha256": "ee1ec6cff704d0dd24e155ca531e26c17439134d7d3c758415394dd7665a4cfc",
+      "last_write_time": "2026-10-11T09:00:01.058783"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_crc.o",
+      "expected_sha256": "317d17a0d974febbf0fb4728d0267ea9f968f27bc5e4a21d6bc0890db5ea67b3",
+      "actual_sha256": "f4f023336710dd4a45bf72cca621cfd90ade813708448e360e3a6afcae962292",
+      "last_write_time": "2026-10-11T09:00:00.459267"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_cryp.o",
+      "expected_sha256": "dc505b38c1d8adc3e0adf663931a6d1592beda388b1920cf233910dc2c0ecd28",
+      "actual_sha256": "06672e0922790267eabec364ddb4e2a6727f7a94e4a4e9d85ad0eca32310b436",
+      "last_write_time": "2026-10-11T09:00:01.200262"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_cryp_aes.o",
+      "expected_sha256": "3f4689d127ac378fbeb3099daa6cb3c62644b984f4d3f8b642dedbf930a5b43c",
+      "actual_sha256": "fd03658844d0da8914afb629cbb8fccc108bee11874be0bf849810c804e2b0fc",
+      "last_write_time": "2026-10-11T09:00:01.222885"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_cryp_des.o",
+      "expected_sha256": "fe8026e0325c693e5e9ec344ff92df425287ae17b7ad1b47e0b2131578968873",
+      "actual_sha256": "d172b1150a5d0ad520bc214f4978145617499f08e684bbba6dd9317ba4ededb2",
+      "last_write_time": "2026-10-11T09:00:00.726017"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_cryp_tdes.o",
+      "expected_sha256": "c870ab38a07a3462919d3d09c8263925c017b702e1995fced257d06e82fa526b",
+      "actual_sha256": "196c83efef5dcbb1d6ae7421369f02a705200879b047488823e6af1ed414f9da",
+      "last_write_time": "2026-10-11T09:00:00.845033"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_dac.o",
+      "expected_sha256": "8b1d08646e7fee8483818b71f7175397ed6777dec41bfe48b34d9738ffee3a06",
+      "actual_sha256": "8b7ebed57a991a0c89bc9adb4c0bbc8d266ee60041919aaba58ba1c8b0f20a1a",
+      "last_write_time": "2026-10-11T09:00:00.797303"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_dbgmcu.o",
+      "expected_sha256": "be722256fd381bf3311d7878262ae3aa2c11f1e4feaeb675352c556b9baaf6c6",
+      "actual_sha256": "99562866036271d670d6ab7b120cbab63336b43bb09d4cc85c5bbee75ca6a035",
+      "last_write_time": "2026-10-11T09:00:00.389091"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_dcmi.o",
+      "expected_sha256": "740fd483d6d8f2d31aa4a304bf1b11234deaf776f4a1897f046f863f1593b012",
+      "actual_sha256": "e4fe92ae4480bcdfe517e80e6faad43cd4b39f4ecacd9f9e5d16875f2d947a48",
+      "last_write_time": "2026-10-11T09:00:00.900475"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_dma.o",
+      "expected_sha256": "dc76dfd356a95e7752d0d26cc126dd45d1c33db62cb8e8f9cdb97cb679580cc0",
+      "actual_sha256": "7f2305a8c59dc20b9f496a1ca70581fd32af9853f2a7fd07e9c5221db5f227f6",
+      "last_write_time": "2026-10-11T09:00:00.680639"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_dma2d.o",
+      "expected_sha256": "fb7ddbe07d3999bebd791edb299ac458de80e4a7b65983faaeadb0c015e5853e",
+      "actual_sha256": "5a6d8c48f71ea274cd594bf38c6a82e2acac44442783311bdf4cb449012444a4",
+      "last_write_time": "2026-10-11T09:00:00.932519"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_exti.o",
+      "expected_sha256": "8f528dcbd2c75f0fdb1a68293094d1c879f2b7ffb9f738e620ede58f2c469f6b",
+      "actual_sha256": "aea571c2b809146fcfbbe081ae837e088a149a4a3084378c2f470f3d1985e661",
+      "last_write_time": "2026-10-11T09:00:01.236745"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_flash.o",
+      "expected_sha256": "07c091c4276fa36b8a3b124eb803ef3a45e6e90fb4c308d997ab3ad047682028",
+      "actual_sha256": "da4c872e88605b91af8ed015b008cafb7fa24bc3bdab1155cffa366bfa54faee",
+      "last_write_time": "2026-10-11T09:00:00.928934"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_flash_ramfunc.o",
+      "expected_sha256": "b6a8b710d91bf5e913d4abc39e87de23ba66caccb01eef7d7568730de0167bc3",
+      "actual_sha256": "34eda17ad5ce8029da1827396bd77e680cf515996b2e252f6ee73ffcc2fd30ef",
+      "last_write_time": "2026-10-11T09:00:00.983548"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_fsmc.o",
+      "expected_sha256": "76f86a5ff1b6c2cc927995631863319b276b6d4b1998c10a859ad41025834589",
+      "actual_sha256": "6e9bb7d05594c8d86bc2f90118638191d5592c8c8b09279bd3020910b83a1f9a",
+      "last_write_time": "2026-10-11T09:00:01.291734"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_gpio.o",
+      "expected_sha256": "589dd4859005f0f75adfe28539c76860ae1999a47ef6c0d8c68f1bdca1be78a8",
+      "actual_sha256": "25254c59b10231e859e1dcad9b1e649dd09327818d8796ab7695bea8e9b47d2f",
+      "last_write_time": "2026-10-11T09:00:01.357318"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_hash.o",
+      "expected_sha256": "b52de8f49bc8ead6827976861e07d9230a5e0747ff7ddecd8cf39b38baa0702e",
+      "actual_sha256": "cfb059f5afadba3adef367d3c21c723cb0cbc581c8e0eb93c8c2bd23e763cbe2",
+      "last_write_time": "2026-10-11T09:00:01.373565"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_hash_md5.o",
+      "expected_sha256": "ba2917414bbf20a80f207916bef62c8dba8ca93834ae1bd9c32dec2c7ab9b42e",
+      "actual_sha256": "cc59e64a9e89d01a000abec3745a2f9555af4394be9d97150f62a8444fcab0f5",
+      "last_write_time": "2026-10-11T09:00:01.434767"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_hash_sha1.o",
+      "expected_sha256": "991f8d3e08410bc3b28d9dac92e4ff2cb5186c711669df5d0b893bd960258e9d",
+      "actual_sha256": "262d681284d851f5ef41cff24b7668bbed360a9125185030b0bee596e80b485c",
+      "last_write_time": "2026-10-11T09:00:01.479634"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_i2c.o",
+      "expected_sha256": "b38afe8d5d35ee0861e8a2ecaa00520e4935e57eb285d978f20a234e857473ec",
+      "actual_sha256": "96dc68a67d8f3b55db936a118728409c20b80b9355fd3e8ba94d0d1498013e9b",
+      "last_write_time": "2026-10-11T09:00:01.614412"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_it.o",
+      "expected_sha256": "cc59bc4837fbab77ab09cc2fc3f79c25c7b2aa3ee63bea46aa2100571bf155ee",
+      "actual_sha256": "7e02eafc0853d67a0e5d2fcf1f28bbb0ddd921c3f0b66174feb1ab5eaa2458ee",
+      "last_write_time": "2026-10-11T09:00:02.241336"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_iwdg.o",
+      "expected_sha256": "ee890a0ac370dc12c3a9e96ca1fc44b36b8565b41758ee6c31482fdbbbeb1d49",
+      "actual_sha256": "4c87f430527c41a94880d0ebd6a359c91a44fdb974851d12faefe60f57bb0c72",
+      "last_write_time": "2026-10-11T09:00:01.598078"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_ltdc.o",
+      "expected_sha256": "ff1a059f248cb929a20216bf56bbe2705287eab71c3e01dd40c1f0de8afc4078",
+      "actual_sha256": "24ffb4991aa7f2d23ac24a701084f1397841869e8c8be7b95ff37aae4171cce0",
+      "last_write_time": "2026-10-11T09:00:01.703734"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_pwr.o",
+      "expected_sha256": "97f2cd088f8133deec3bd48c963cada170c595e9deec8cafe695870a01997968",
+      "actual_sha256": "8afcd85b7b081623eaedcea3db3146f3fcf41c9fdcd7f393afba77003e75c3dc",
+      "last_write_time": "2026-10-11T09:00:01.648926"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_rcc.o",
+      "expected_sha256": "9ef6263a56a31e8cb3d3e9e7cf678b2d100d06af946a7f25b5786d1087aac1d3",
+      "actual_sha256": "93620528ea328d8b446e5276f8efa0d14d4829a1b6b881cb2c930d634d10f89d",
+      "last_write_time": "2026-10-11T09:00:01.796981"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_rng.o",
+      "expected_sha256": "fbed322bab086573c543899ac3507b756509c0cf488e080ddf026725c5808b1f",
+      "actual_sha256": "ad010a966a18d359f8c7942c5e6a1ad7309e4db4f81d82c26744bb49279944d1",
+      "last_write_time": "2026-10-11T09:00:01.726828"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_rtc.o",
+      "expected_sha256": "a23629386910f1d43b1bc0d351cc9a7a996822510d799c01c96d941011e3f6ed",
+      "actual_sha256": "3aeb59dc493ad43b809e41dfb54614ffe6cf62591334f6cfc791b60323922fd6",
+      "last_write_time": "2026-10-11T09:00:01.898405"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_sai.o",
+      "expected_sha256": "afffd11844d1e1429e29d7c7d3c028fcefd09cc5b32b232753bd4767f7fd9280",
+      "actual_sha256": "d1c36cc7019538db65edbccab2173ccd08794c67331cb0226318907097147d9c",
+      "last_write_time": "2026-10-11T09:00:01.877580"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_sdio.o",
+      "expected_sha256": "dd9f8ba06ac3ed61b659fdaaaa8a53871b29538d6f4aefb3a1a0897505b9aa35",
+      "actual_sha256": "cb536ae4ac1d518725b6f7b60b47a4d22c7b033c73bf8780a313e6d2af898a2d",
+      "last_write_time": "2026-10-11T09:00:01.979250"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_spi.o",
+      "expected_sha256": "dcedf9a0f24ea3976bbfc4160d2c42cd4556bd545313b4a7348403378725da34",
+      "actual_sha256": "deede703f3dfe3d05852d46b64b0e85d4353c50f5c124e54110a5c4fa9047058",
+      "last_write_time": "2026-10-11T09:00:01.985797"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_syscfg.o",
+      "expected_sha256": "a09918177136b457bdbbd3d084ab109798f5bc62d7aa7bd95c886c8469d42bb1",
+      "actual_sha256": "110e195cb4786f72638d1baa38d26e67acca71670f89b266a7d9d17340e56f8c",
+      "last_write_time": "2026-10-11T09:00:01.985797"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_tim.o",
+      "expected_sha256": "613747695dc2d2b909e53bd168ed360054ea1210241eda1de53119c821eb2998",
+      "actual_sha256": "be7ae8b67f9222fffd2cddda5964e4a8a7c2bff2a5e53416c49ea2c76ffdbc04",
+      "last_write_time": "2026-10-11T09:00:02.161953"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_usart.o",
+      "expected_sha256": "2fb36e82f632d8f3d7e793c9cae9caad02d27e19c3c2de7d9dd6fffce4fb1478",
+      "actual_sha256": "79cac91112a1680b29a6e09e2aad13e043515134f33a53b8882e5021a52f3700",
+      "last_write_time": "2026-10-11T09:00:02.107500"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\stm32f4xx_wwdg.o",
+      "expected_sha256": "3ff00e299f154d204768622e152f0f6e5417ee29b76ccb291cc40e11e591a750",
+      "actual_sha256": "1f23b40184dc272e4c355bf99caa2927bc608db1210043c93e4ee5f4b08bfd32",
+      "last_write_time": "2026-10-11T09:00:02.103087"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\system_stm32f4xx.o",
+      "expected_sha256": "2e5a62461c0f915c14e33d8fd593df180c1953f6adef4acf1cb42b4ef144920c",
+      "actual_sha256": "d8f4a04a5c55228f417ab7e44fa05df5d095fe732b1897db5de72a55a95591fe",
+      "last_write_time": "2026-10-11T09:00:00.871051"
+    },
+    {
+      "path": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project_vg\\MDK_Project\\Objects\\usart.o",
+      "expected_sha256": "f3040fa10f5894815fbcc3b77ceb47c791522f75d50a0d65653f4390b105587d",
+      "actual_sha256": "af7bd423e3e466b2d62dcbb0254bd20c078ece8bed4169c890760ea9c8a311a7",
+      "last_write_time": "2026-10-11T09:00:02.247340"
+    }
+  ],
+  "old_models_firmware_releases_and_fold9_samples_unchanged": true
+}

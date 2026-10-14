@@ -1,0 +1,39 @@
+{
+  "completed_at": "2026-10-11T13:05:09.204628",
+  "physical_board_test": false,
+  "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+  "protocol": 3,
+  "pytest": {
+    "passed": 42,
+    "failed": 0,
+    "warning": "One existing pytest cache-directory write warning; not a compiler warning",
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_binary_serial_protocol.py tests/test_serial_protocol.py tests/test_serial_sample_folds.py -q --basetemp outputs/pytest_fast"
+  },
+  "verification_file": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\fast_serial_export\\verification\\verification.json",
+  "verification_sha256": "d9145008468d64f6aa3e3a8a26b17a46d27951d0018d70dd5032daa553fe4862",
+  "quantization_records_checked": 2286,
+  "different_INT8_values": 0,
+  "actual_C_protocol_and_C_model_cases": 44,
+  "max_probability_difference": 5.976388550710254e-08,
+  "GUI": {
+    "fold9_to_10_to_9_switch_passed": true,
+    "both_folds_sent_via_GUI": true,
+    "source_in_saved_results_correct": true,
+    "busy_switch_disabled": true
+  },
+  "original_A_B_and_fold10_unchanged": true,
+  "source_sha256": {
+    "src/inference/binary_serial_link.py": "29e7c9a92662778451f80481fdcecf6bdb46705d0d765e2a747e13ad636d14dc",
+    "src/inference/binary_serial_simulator.py": "1bc0bc10bb401be1331077d5d4ce3f45cda2f050faca387bfbf74c6518959d9a",
+    "src/inference/serial_link.py": "88bf332ddccfdb22f4671071203b4e1a2719076446177d24cd52cf816b675efc",
+    "src/inference/serial_simulator.py": "652fce9485d57653830e692a7595110c85e7177b0f02c207a409380ff7f6062b",
+    "scripts/ecg_stm32_viz.py": "7cd8ecaef9bcb52d1bb0e48a9f8f0c525cb756245787be44ead92d079c368fe9",
+    "scripts/ecg_stm32_fast_viz.py": "02aef89406f7e11f286385e074481320329d3b254352cc6efb08f9adf95fbdd8",
+    "scripts/verify_fast_serial.py": "7cdaa05de87e6e06d55969e0d4e4b67eb3070836326e541103a8f793ee78652e",
+    "scripts/verify_physical_fast_serial.py": "1b5b56615a233a8e711740629ea9ae3f5a36379ab450a12b9b04db059280310a",
+    "scripts/build_seed44_fast_vg.py": "999e86879d84192eaa3f006748696a761e2fd4dda81f1983df7a20ba2b671e78",
+    "tests/test_binary_serial_protocol.py": "20aaf1bddbc140ba78edc96f1fc2d4ac45a9f5e15cadf086a0f88ce75bd6aed8",
+    "start_ecg_student_fast_viz.cmd": "928d277f88f8cf9e90a91676dd3814c0abab50a1f70455d2d5cc3d351cec5e54"
+  },
+  "VS_Code_entry_fold10_and_CMD_launcher_fold9_verified": true
+}

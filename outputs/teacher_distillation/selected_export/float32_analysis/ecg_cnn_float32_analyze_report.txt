@@ -1,0 +1,197 @@
+ST Edge AI Core v2.2.0-20266 2adc00962
+Created date          : 2026-10-07 21:48:13
+Parameters            : analyze --model D:\MyProject\college\ecg1\outputs\teacher_distillation\selected_export\ptbxl_cnn1d_float32.onnx --name ecg_cnn_float32 --target stm32f4 --compression none --optimization ram --output D:\MyProject\college\ecg1\outputs\teacher_distillation\selected_export\float32_analysis --workspace D:\MyProject\college\ecg1\outputs\teacher_distillation\selected_export\float32_workspace --inputs-ch-position chfirst --output-data-type float32 --c-api legacy
+
+Exec/report summary (analyze)
+-------------------------------------------------------------------------------------------------------------------------
+model file         :   D:\MyProject\college\ecg1\outputs\teacher_distillation\selected_export\ptbxl_cnn1d_float32.onnx   
+type               :   onnx                                                                                              
+c_name             :   ecg_cnn_float32                                                                                   
+compression        :   none                                                                                              
+options            :   allocate-inputs, allocate-outputs                                                                 
+optimization       :   ram                                                                                               
+target/series      :   stm32f4                                                                                           
+workspace dir      :   D:\MyProject\college\ecg1\outputs\teacher_distillation\selected_export\float32_workspace          
+output dir         :   D:\MyProject\college\ecg1\outputs\teacher_distillation\selected_export\float32_analysis           
+model_fmt          :   float                                                                                             
+model_name         :   ptbxl_cnn1d_float32                                                                               
+model_hash         :   0x31f5596d77b5bf62bbb66741f31356fd                                                                
+params #           :   111,205 items (434.39 KiB)                                                                        
+-------------------------------------------------------------------------------------------------------------------------
+input 1/1          :   'ecg', f32(1x12x1000), 46.88 KBytes, activations                                                  
+output 1/1         :   'logits', f32(1x5), 20 Bytes, activations                                                         
+macc               :   14,754,133                                                                                        
+weights (ro)       :   444,820 B (434.39 KiB) (1 segment)                                                                
+activations (rw)   :   96,000 B (93.75 KiB) (1 segment) *                                                                
+ram (total)        :   96,000 B (93.75 KiB) = 96,000 + 0 + 0                                                             
+-------------------------------------------------------------------------------------------------------------------------
+(*) 'input'/'output' buffers are allocated in the activations buffer
+
+Model name - ptbxl_cnn1d_float32
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+m_id   layer (type,original)                                      oshape              param/size              macc                     connected to   | c_size              c_macc                  c_type          
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+15     classifier_2_weight (Placeholder, Gemm)                    [b:5,c:128]         640/2,560                                                       | +20(+0.8%)          +645(+100.0%)           Dense_[o][6]    
+       classifier_2_bias (Placeholder, Gemm)                      [b:5]               5/20                                                            | -20(-100.0%)                                
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+0      ecg (Input, )                                              [b:1,h:1000,c:12]                                                                   |                                             
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+1      _features_features..v_output_0 (Conv2D, Conv)              [b:1,h:500,c:32]    5,792/23,168       2,880,032                              ecg   | -23,168(-100.0%)    -2,880,032(-100.0%)     
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+2      _features_features..u_output_0 (Nonlinearity, Relu)        [b:1,h:500,c:32]                          16,000   _features_features..v_output_0   |                     -10,000(-62.5%)         Transpose_[0]   
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+3      _features_features..l_output_0 (Pool, MaxPool)             [b:1,h:250,c:32]                          16,000   _features_features..u_output_0   | +23,168(+100.0%)    +2,896,032(+18100.2%)   Conv2D_[1]      
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+4      _features_features..v_output_0 (Conv2D, Conv)              [b:1,h:250,c:64]    14,400/57,600      3,584,064   _features_features..l_output_0   | -57,600(-100.0%)    -3,584,064(-100.0%)     
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+5      _features_features..u_output_0 (Nonlinearity, Relu)        [b:1,h:250,c:64]                          16,000   _features_features..v_output_0   |                     -16,000(-100.0%)        
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+6      _features_features..l_output_0 (Pool, MaxPool)             [b:1,h:125,c:64]                          16,000   _features_features..u_output_0   | +57,600(+100.0%)    +3,600,064(+22500.4%)   Conv2D_[2]      
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+7      _features_features..v_output_0 (Conv2D, Conv)              [b:1,h:125,c:128]   41,088/164,352     5,120,128   _features_features..l_output_0   | -164,352(-100.0%)   -5,120,128(-100.0%)     
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+8      _features_features..u_output_0 (Nonlinearity, Relu)        [b:1,h:125,c:128]                         16,000   _features_features..v_output_0   |                     -16,000(-100.0%)        
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+9      _features_features..l_output_0 (Pool, MaxPool)             [b:1,h:62,c:128]                          15,872   _features_features..u_output_0   | +164,352(+100.0%)   +5,136,128(+32359.7%)   Conv2D_[3]      
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+10     _features_features..v_output_0 (Conv2D, Conv)              [b:1,h:62,c:128]    49,280/197,120     3,047,552   _features_features..l_output_0   | -197,120(-100.0%)   -3,047,552(-100.0%)     
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+11     _features_features..u_output_0 (Nonlinearity, Relu)        [b:1,h:62,c:128]                           7,936   _features_features..v_output_0   |                     -7,936(-100.0%)         
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+12     _features_features..l_output_0 (Pool, MaxPool)             [b:1,h:31,c:128]                           7,936   _features_features..u_output_0   | +197,120(+100.0%)   +3,055,488(+38501.6%)   Conv2D_[4]      
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+13     _pool_GlobalAverag..l_output_0 (Pool, GlobalAveragePool)   [b:1,h:1,c:128]                            3,968   _features_features..l_output_0   |                                             Pool_[5]        
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+14     _classifier_classi..n_output_0 (Reshape, Flatten)          [b:1,c:128]                                        _pool_GlobalAverag..l_output_0   |                                             
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+15     logits (Gemm, Gemm)                                        [b:1,c:5]                                    645   _classifier_classi..n_output_0   |                     -645(-100.0%)           
+                                                                                                                                classifier_2_weight   | 
+                                                                                                                                  classifier_2_bias   | 
+------ ---------------------------------------------------------- ------------------- ---------------- ----------- -------------------------------- --- ------------------- ----------------------- --------------- 
+model/c-model: macc=14,748,133/14,754,133 +6,000(+0.0%) weights=444,820/444,820  activations=--/96,000 io=--/0
+
+
+
+Generated C-graph summary
+------------------------------------------------------------------------------------------------------------------------
+model name            : ptbxl_cnn1d_float32
+c-name                : ecg_cnn_float32
+c-node #              : 7
+c-array #             : 26
+activations size      : 96000 (1 segment)
+weights size          : 444820 (1 segment)
+macc                  : 14754133
+inputs                : ['ecg_output']
+outputs               : ['logits_output']
+
+C-Arrays (26)
+------ ---------------------------------------------------------- -------------- ------------------------- ------------- --------- 
+c_id   name (*_array)                                             item/size      domain/mem-pool           c-type        comment   
+------ ---------------------------------------------------------- -------------- ------------------------- ------------- --------- 
+0      _features_features_0_features_0_0_Conv_output_0_bias       32/128         weights/weights           const float             
+1      _features_features_0_features_0_0_Conv_output_0_output     8000/32000     activations/**default**   float                   
+2      _features_features_0_features_0_0_Conv_output_0_scratch0   180/720        activations/**default**   float                   
+3      _features_features_0_features_0_0_Conv_output_0_scratch1   64/256         activations/**default**   float                   
+4      _features_features_0_features_0_0_Conv_output_0_weights    5760/23040     weights/weights           const float             
+5      _features_features_1_features_1_0_Conv_output_0_bias       64/256         weights/weights           const float             
+6      _features_features_1_features_1_0_Conv_output_0_output     8000/32000     activations/**default**   float                   
+7      _features_features_1_features_1_0_Conv_output_0_scratch0   224/896        activations/**default**   float                   
+8      _features_features_1_features_1_0_Conv_output_0_scratch1   128/512        activations/**default**   float                   
+9      _features_features_1_features_1_0_Conv_output_0_weights    14336/57344    weights/weights           const float             
+10     _features_features_2_features_2_0_Conv_output_0_bias       128/512        weights/weights           const float             
+11     _features_features_2_features_2_0_Conv_output_0_output     7936/31744     activations/**default**   float                   
+12     _features_features_2_features_2_0_Conv_output_0_scratch0   320/1280       activations/**default**   float                   
+13     _features_features_2_features_2_0_Conv_output_0_scratch1   256/1024       activations/**default**   float                   
+14     _features_features_2_features_2_0_Conv_output_0_weights    40960/163840   weights/weights           const float             
+15     _features_features_3_features_3_0_Conv_output_0_bias       128/512        weights/weights           const float             
+16     _features_features_3_features_3_0_Conv_output_0_output     3968/15872     activations/**default**   float                   
+17     _features_features_3_features_3_0_Conv_output_0_scratch0   384/1536       activations/**default**   float                   
+18     _features_features_3_features_3_0_Conv_output_0_scratch1   256/1024       activations/**default**   float                   
+19     _features_features_3_features_3_0_Conv_output_0_weights    49152/196608   weights/weights           const float             
+20     _pool_GlobalAveragePool_output_0_output                    128/512        activations/**default**   float                   
+21     ecg_Transpose_output                                       12000/48000    activations/**default**   float                   
+22     ecg_output                                                 12000/48000    activations/**default**   float         /input    
+23     logits_bias                                                5/20           weights/weights           const float             
+24     logits_output                                              5/20           activations/**default**   float         /output   
+25     logits_weights                                             640/2560       weights/weights           const float             
+------ ---------------------------------------------------------- -------------- ------------------------- ------------- --------- 
+
+C-Layers (7)
+------ ------------------------------------------------- ---- ------------ --------- -------- ------------------------------------------------------------- ----------------------- 
+c_id   name (*_layer)                                    id   layer_type   macc      rom      tensors                                                       shape (array id)        
+------ ------------------------------------------------- ---- ------------ --------- -------- ------------------------------------------------------------- ----------------------- 
+0      ecg_Transpose                                     2    Transpose    6000      0        I: ecg_output                                                 f32(1x12x1000) (22)     
+                                                                                              O: ecg_Transpose_output                                       f32(1x1000x12) (21)     
+------ ------------------------------------------------- ---- ------------ --------- -------- ------------------------------------------------------------- ----------------------- 
+1      _features_features_0_features_0_0_Conv_output_0   3    Conv2D       2912032   23168    I: ecg_Transpose_output                                       f32(1x1000x12) (21)     
+                                                                                              S: _features_features_0_features_0_0_Conv_output_0_scratch0                           
+                                                                                              S: _features_features_0_features_0_0_Conv_output_0_scratch1                           
+                                                                                              W: _features_features_0_features_0_0_Conv_output_0_weights    f32(32x15x1x12) (4)     
+                                                                                              W: _features_features_0_features_0_0_Conv_output_0_bias       f32(32) (0)             
+                                                                                              O: _features_features_0_features_0_0_Conv_output_0_output     f32(1x250x32) (1)       
+------ ------------------------------------------------- ---- ------------ --------- -------- ------------------------------------------------------------- ----------------------- 
+2      _features_features_1_features_1_0_Conv_output_0   6    Conv2D       3616064   57600    I: _features_features_0_features_0_0_Conv_output_0_output     f32(1x250x32) (1)       
+                                                                                              S: _features_features_1_features_1_0_Conv_output_0_scratch0                           
+                                                                                              S: _features_features_1_features_1_0_Conv_output_0_scratch1                           
+                                                                                              W: _features_features_1_features_1_0_Conv_output_0_weights    f32(64x7x1x32) (9)      
+                                                                                              W: _features_features_1_features_1_0_Conv_output_0_bias       f32(64) (5)             
+                                                                                              O: _features_features_1_features_1_0_Conv_output_0_output     f32(1x125x64) (6)       
+------ ------------------------------------------------- ---- ------------ --------- -------- ------------------------------------------------------------- ----------------------- 
+3      _features_features_2_features_2_0_Conv_output_0   9    Conv2D       5152000   164352   I: _features_features_1_features_1_0_Conv_output_0_output     f32(1x125x64) (6)       
+                                                                                              S: _features_features_2_features_2_0_Conv_output_0_scratch0                           
+                                                                                              S: _features_features_2_features_2_0_Conv_output_0_scratch1                           
+                                                                                              W: _features_features_2_features_2_0_Conv_output_0_weights    f32(128x5x1x64) (14)    
+                                                                                              W: _features_features_2_features_2_0_Conv_output_0_bias       f32(128) (10)           
+                                                                                              O: _features_features_2_features_2_0_Conv_output_0_output     f32(1x62x128) (11)      
+------ ------------------------------------------------- ---- ------------ --------- -------- ------------------------------------------------------------- ----------------------- 
+4      _features_features_3_features_3_0_Conv_output_0   12   Conv2D       3063424   197120   I: _features_features_2_features_2_0_Conv_output_0_output     f32(1x62x128) (11)      
+                                                                                              S: _features_features_3_features_3_0_Conv_output_0_scratch0                           
+                                                                                              S: _features_features_3_features_3_0_Conv_output_0_scratch1                           
+                                                                                              W: _features_features_3_features_3_0_Conv_output_0_weights    f32(128x3x1x128) (19)   
+                                                                                              W: _features_features_3_features_3_0_Conv_output_0_bias       f32(128) (15)           
+                                                                                              O: _features_features_3_features_3_0_Conv_output_0_output     f32(1x31x128) (16)      
+------ ------------------------------------------------- ---- ------------ --------- -------- ------------------------------------------------------------- ----------------------- 
+5      _pool_GlobalAveragePool_output_0                  13   Pool         3968      0        I: _features_features_3_features_3_0_Conv_output_0_output     f32(1x31x128) (16)      
+                                                                                              O: _pool_GlobalAveragePool_output_0_output                    f32(1x1x128) (20)       
+------ ------------------------------------------------- ---- ------------ --------- -------- ------------------------------------------------------------- ----------------------- 
+6      logits                                            15   Dense        645       2580     I: _pool_GlobalAveragePool_output_0_output                    f32(1x1x128) (20)       
+                                                                                              W: logits_weights                                             f32(5x128) (25)         
+                                                                                              W: logits_bias                                                f32(5) (23)             
+                                                                                              O: logits_output                                              f32(1x5) (24)           
+------ ------------------------------------------------- ---- ------------ --------- -------- ------------------------------------------------------------- ----------------------- 
+
+
+
+Number of operations per c-layer
+------- ------ ----------------------------------------- ------------ -------------- 
+c_id    m_id   name (type)                                        #op           type 
+------- ------ ----------------------------------------- ------------ -------------- 
+0       2      ecg_Transpose (Transpose)                        6,000   smul_f32_f32 
+1       3      _features_features..v_output_0 (Conv2D)      2,912,032   smul_f32_f32 
+2       6      _features_features..v_output_0 (Conv2D)      3,616,064   smul_f32_f32 
+3       9      _features_features..v_output_0 (Conv2D)      5,152,000   smul_f32_f32 
+4       12     _features_features..v_output_0 (Conv2D)      3,063,424   smul_f32_f32 
+5       13     _pool_GlobalAverag..l_output_0 (Pool)            3,968   smul_f32_f32 
+6       15     logits (Dense)                                     645   smul_f32_f32 
+------- ------ ----------------------------------------- ------------ -------------- 
+total                                                      14,754,133 
+
+Number of operation types
+---------------- ------------ ----------- 
+operation type              #           % 
+---------------- ------------ ----------- 
+smul_f32_f32       14,754,133      100.0% 
+
+Complexity report (model)
+------ ------------------------------------------ ------------------------- ------------------------- ------ 
+m_id   name                                       c_macc                    c_rom                     c_id   
+------ ------------------------------------------ ------------------------- ------------------------- ------ 
+15     classifier_2_weight                        |                  0.0%   |                  0.6%   [6]    
+2      _features_features_0_feature..u_output_0   |                  0.0%   |                  0.0%   [0]    
+3      _features_features_0_feature..l_output_0   |||||||||         19.7%   ||                 5.2%   [1]    
+6      _features_features_1_feature..l_output_0   |||||||||||       24.5%   |||||             12.9%   [2]    
+9      _features_features_2_feature..l_output_0   ||||||||||||||||  34.9%   |||||||||||||     36.9%   [3]    
+12     _features_features_3_feature..l_output_0   |||||||||         20.8%   ||||||||||||||||  44.3%   [4]    
+13     _pool_GlobalAveragePool_output_0           |                  0.0%   |                  0.0%   [5]    
+------ ------------------------------------------ ------------------------- ------------------------- ------ 
+macc=14,754,133 weights=444,820 act=96,000 ram_io=0

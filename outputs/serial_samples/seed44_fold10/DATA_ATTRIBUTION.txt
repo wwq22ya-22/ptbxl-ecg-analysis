@@ -1,0 +1,24 @@
+PTB-XL demonstration data attribution
+
+Source: Wagner, P., Strodthoff, N., Bousseljot, R., Samek, W., & Schaeffter, T.
+(2022). PTB-XL, a large publicly available electrocardiography dataset
+(version 1.0.3). PhysioNet. DOI: https://doi.org/10.13026/kfzx-aw45
+Dataset: https://physionet.org/content/ptb-xl/1.0.3/
+Original publication: Wagner et al. (2020). Scientific Data.
+https://doi.org/10.1038/s41597-020-0495-6
+Platform citation: Pollard et al. (2026). PhysioNet as a global platform for
+biomedical research. Nature Health. https://doi.org/10.1038/s44360-026-00096-z
+
+License: Creative Commons Attribution 4.0 International (CC BY 4.0).
+See LICENSE_PTBXL.txt and https://creativecommons.org/licenses/by/4.0/ .
+
+serial_samples.npz contains all 2158 eligible records from official fold 10,
+excluding records with no positive diagnostic superclass, as in the seed44 training cohort.
+ecg_id and patient_id identify source records; strat_fold is 10 for every row.
+raw_mv stores original mV waveforms; ecg stores baseline removal, bandpass
+filtering and normalization using frozen training-set statistics.
+targets stores NORM/MI/STTC/CD/HYP multi-label targets. reference_probabilities
+comes from a fresh Cube.AI host C-model validation, not a physical board.
+sample_manifest.json binds this bundle to the existing seed44 model and thresholds.
+Historical fold-10 results have been used during development; replay is not a new blind test.
+The data license does not extend to the ST runtime or imply endorsement by dataset authors.

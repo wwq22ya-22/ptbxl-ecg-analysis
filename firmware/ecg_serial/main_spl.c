@@ -9,6 +9,10 @@
 #include "ecg_network_data.h"
 #include <stdio.h>
 #include <string.h>
+#ifdef ECG_BOARD_PREPROCESSING
+#include "ecg_preprocess.h"
+static float raw_record[ECG_SAMPLE_COUNT];
+#endif
 
 static AI_ALIGNED(32) ai_u8 activations[AI_ECG_NETWORK_DATA_ACTIVATIONS_SIZE];
 static ai_handle network = AI_HANDLE_NULL;
@@ -18,6 +22,16 @@ static char line[ECG_LINE_CAPACITY];
 static volatile uint32_t milliseconds;
 
 void ecg_tick_1ms(void) { ++milliseconds; }
+#ifdef ECG_BOARD_PREPROCESSING
+static int prepare_raw(const float *raw, int8_t *input, uint32_t *elapsed, void *context) {
+    uint32_t start = milliseconds;
+    int success;
+    (void)context;
+    success = ecg_preprocess_to_int8(raw, input);
+    *elapsed = milliseconds - start;
+    return success;
+}
+#endif
 
 static void transmit(const char *message, void *context) {
     (void)context;
@@ -47,6 +61,10 @@ static void initialize_ai(void) {
     protocol.model_sha256 = ECG_MODEL_SHA256;
     protocol.send = transmit;
     protocol.run = infer;
+#ifdef ECG_BOARD_PREPROCESSING
+    protocol.raw_input = raw_record;
+    protocol.prepare = prepare_raw;
+#endif
     if (AI_ECG_NETWORK_IN_1_FORMAT != AI_BUFFER_FORMAT_S8
         || AI_ECG_NETWORK_OUT_1_FORMAT != AI_BUFFER_FORMAT_FLOAT
         || AI_ECG_NETWORK_IN_1_SIZE != ECG_SAMPLE_COUNT

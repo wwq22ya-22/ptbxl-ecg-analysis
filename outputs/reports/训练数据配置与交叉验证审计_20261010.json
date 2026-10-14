@@ -1,0 +1,1265 @@
+{
+  "date": "2026-10-10",
+  "configurations": [
+    {
+      "path": "outputs\\optimization\\00_resnet_baseline\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\optimization\\01_global_norm\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\optimization\\02_schedule\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\optimization\\03_sqrt_weight\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 0.5
+    },
+    {
+      "path": "outputs\\optimization\\04_unweighted_bce\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 0.0
+    },
+    {
+      "path": "outputs\\optimization\\05_inception\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\optimization\\06_cnn_bigru\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\optimization\\07_combo_cnn_bigru\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 0.5
+    },
+    {
+      "path": "outputs\\optimization\\07_combo_inception1d\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 0.5
+    },
+    {
+      "path": "outputs\\optimization\\07_combo_resnet1d\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 0.5
+    },
+    {
+      "path": "outputs\\optimization\\08_global_cnn_bigru\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\optimization\\08_global_inception1d\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\optimization\\final_seed_42\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\optimization\\final_seed_43\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\optimization\\final_seed_44\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\distillation\\baseline_seed42\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\distillation\\baseline_seed43\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\distillation\\baseline_seed44\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\distillation\\distilled_seed42\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\distillation\\distilled_seed43\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\distillation\\distilled_seed44\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\teacher_distillation\\ensemble_kd_seed42\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\teacher_distillation\\ensemble_kd_seed43\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\teacher_distillation\\ensemble_kd_seed44\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1
+    },
+    {
+      "path": "outputs\\teacher_preprocessing\\inception1d_P0_current_seed42\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\teacher_preprocessing\\inception1d_P0_current_seed43\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\teacher_preprocessing\\inception1d_P0_current_seed44\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\teacher_preprocessing\\inception1d_P1_bandpass_only_seed42\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\teacher_preprocessing\\inception1d_P2_gentle_bandpass_seed42\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\teacher_preprocessing\\inception_time1d_P0_current_seed42\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\teacher_preprocessing\\inception_time1d_P0_current_seed43\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\teacher_preprocessing\\inception_time1d_P0_current_seed44\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\teacher_preprocessing\\se_resnet18_P0_current_seed42\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\ribeiro_teacher\\seed42\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\ribeiro_teacher\\seed43\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\ribeiro_teacher\\seed44\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\cross_validation\\fold_1\\inception_global\\config.json",
+      "train_folds": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        1,
+        2
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\cross_validation\\fold_1\\resnet_global\\config.json",
+      "train_folds": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        1,
+        2
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\cross_validation\\fold_1\\resnet_original\\config.json",
+      "train_folds": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        1,
+        2
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\cross_validation\\fold_2\\inception_global\\config.json",
+      "train_folds": [
+        1,
+        2,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        3,
+        4
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\cross_validation\\fold_2\\resnet_global\\config.json",
+      "train_folds": [
+        1,
+        2,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        3,
+        4
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\cross_validation\\fold_2\\resnet_original\\config.json",
+      "train_folds": [
+        1,
+        2,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        3,
+        4
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\cross_validation\\fold_3\\inception_global\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        5,
+        6
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\cross_validation\\fold_3\\resnet_global\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        5,
+        6
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\cross_validation\\fold_3\\resnet_original\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        5,
+        6
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\cross_validation\\fold_4\\inception_global\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        7,
+        8
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\cross_validation\\fold_4\\resnet_global\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        7,
+        8
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\cross_validation\\fold_4\\resnet_original\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        7,
+        8
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\further_optimization\\cv\\fold_1\\resnet_asl4\\config.json",
+      "train_folds": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        1,
+        2
+      ],
+      "patient_disjoint": true,
+      "loss": "asl",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\further_optimization\\cv\\fold_2\\resnet_asl4\\config.json",
+      "train_folds": [
+        1,
+        2,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        3,
+        4
+      ],
+      "patient_disjoint": true,
+      "loss": "asl",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\further_optimization\\cv\\fold_3\\resnet_asl4\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        5,
+        6
+      ],
+      "patient_disjoint": true,
+      "loss": "asl",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\further_optimization\\cv\\fold_4\\resnet_asl4\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        7,
+        8
+      ],
+      "patient_disjoint": true,
+      "loss": "asl",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\further_optimization\\screen\\inception_mixup\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\further_optimization\\screen\\resnet_asl2\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "asl",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\further_optimization\\screen\\resnet_asl4\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "asl",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\further_optimization\\screen\\resnet_avgmax\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\further_optimization\\screen\\resnet_mild_aug\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\further_optimization\\screen\\resnet_mixup\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    },
+    {
+      "path": "outputs\\further_optimization\\screen\\resnet_small_lr\\config.json",
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "evaluation_folds": [
+        10
+      ],
+      "patient_disjoint": true,
+      "loss": "bce",
+      "pos_weight_power": 1.0
+    }
+  ],
+  "cv_statistics": [
+    {
+      "fold": 1,
+      "train_folds": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "records": 13062,
+      "training_stats_recomputed": true,
+      "pos_weight_recomputed": true
+    },
+    {
+      "fold": 2,
+      "train_folds": [
+        1,
+        2,
+        5,
+        6,
+        7,
+        8
+      ],
+      "records": 13052,
+      "training_stats_recomputed": true,
+      "pos_weight_recomputed": true
+    },
+    {
+      "fold": 3,
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8
+      ],
+      "records": 13071,
+      "training_stats_recomputed": true,
+      "pos_weight_recomputed": true
+    },
+    {
+      "fold": 4,
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "records": 13069,
+      "training_stats_recomputed": true,
+      "pos_weight_recomputed": true
+    }
+  ],
+  "teacher_members": [
+    {
+      "seed": 42,
+      "pos_weight": [
+        1.2490785121917725,
+        2.9013473987579346,
+        3.0812230110168457,
+        3.372664451599121,
+        7.062293529510498
+      ],
+      "training_records": 17084,
+      "validation_records": 2146
+    },
+    {
+      "seed": 43,
+      "pos_weight": [
+        1.2490785121917725,
+        2.9013473987579346,
+        3.0812230110168457,
+        3.372664451599121,
+        7.062293529510498
+      ],
+      "training_records": 17084,
+      "validation_records": 2146
+    },
+    {
+      "seed": 44,
+      "pos_weight": [
+        1.2490785121917725,
+        2.9013473987579346,
+        3.0812230110168457,
+        3.372664451599121,
+        7.062293529510498
+      ],
+      "training_records": 17084,
+      "validation_records": 2146
+    }
+  ]
+}

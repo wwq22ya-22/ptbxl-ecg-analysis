@@ -1,0 +1,10 @@
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cache\train_full_40966c2282deaba3.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cache\validation_full_f2bdba82fbf64151.npy
+D:\MyProject\college\ecg1\scripts\prepare_stm32.py:93: DeprecationWarning: You are using the legacy TorchScript-based ONNX export. Starting in PyTorch 2.9, the new torch.export-based ONNX exporter has become the default. Learn more about the new export logic: https://docs.pytorch.org/docs/stable/onnx_export.html. For exporting control flow: https://pytorch.org/tutorials/beginner/onnx/export_control_flow_model_to_onnx_tutorial.html
+  torch.onnx.export(
+D:\MyProject\college\ecg1\src\models\cnn1d.py:47: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if signal.ndim != 3 or signal.shape[1] != self.features[0][0].in_channels:
+ONNX: D:\MyProject\college\ecg1\outputs\distillation\baseline_export\ptbxl_cnn1d_float32.onnx (448,224 bytes)
+Shapes: [1, 12, 1000] -> [1, 5]; operators: ['Conv', 'Flatten', 'Gemm', 'GlobalAveragePool', 'MaxPool', 'Relu']; parameters: 111,557
+Parity: {'status': 'passed', 'records_compared': 128, 'max_absolute_error': 2.384185791015625e-06, 'mean_absolute_error': 5.021953484174446e-07, 'tolerance': {'rtol': 0.0002, 'atol': 1e-05}, 'onnxruntime_version': '1.30.0'}; calibration records: 256; validation records: 128
+Artifacts: D:\MyProject\college\ecg1\outputs\distillation\baseline_export

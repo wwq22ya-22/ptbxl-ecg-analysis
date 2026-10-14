@@ -1,0 +1,54 @@
+{
+  "comparisons": [
+    {
+      "model": "cnn1d",
+      "cohort": "filtered",
+      "delta_500_minus250_f1_percentage_points": -0.22058905164148435,
+      "conditional_ci95_percentage_points": [
+        -1.3531470929005045,
+        0.8946337975679661
+      ],
+      "patient_clusters": 1917,
+      "bootstrap_draws": 2000,
+      "interpretation": "same raw-waveform pipeline except250-Hz antialias resampling; seed42; physical receptive fields differ; conditional frozen-prediction bootstrap ignores selection/seed variation"
+    },
+    {
+      "model": "cnn1d",
+      "cohort": "unfiltered",
+      "delta_500_minus250_f1_percentage_points": -0.08599363141623684,
+      "conditional_ci95_percentage_points": [
+        -0.960511346639504,
+        0.769501923549194
+      ],
+      "patient_clusters": 1942,
+      "bootstrap_draws": 2000,
+      "interpretation": "same raw-waveform pipeline except250-Hz antialias resampling; seed42; physical receptive fields differ; conditional frozen-prediction bootstrap ignores selection/seed variation"
+    },
+    {
+      "model": "inception1d",
+      "cohort": "filtered",
+      "delta_500_minus250_f1_percentage_points": 0.07124346328184483,
+      "conditional_ci95_percentage_points": [
+        -0.8961383920609497,
+        1.0389862428488366
+      ],
+      "patient_clusters": 1917,
+      "bootstrap_draws": 2000,
+      "interpretation": "same raw-waveform pipeline except250-Hz antialias resampling; seed42; physical receptive fields differ; conditional frozen-prediction bootstrap ignores selection/seed variation"
+    },
+    {
+      "model": "inception1d",
+      "cohort": "unfiltered",
+      "delta_500_minus250_f1_percentage_points": -0.27650193343049523,
+      "conditional_ci95_percentage_points": [
+        -1.3268989482822884,
+        0.8350349429843189
+      ],
+      "patient_clusters": 1942,
+      "bootstrap_draws": 2000,
+      "interpretation": "same raw-waveform pipeline except250-Hz antialias resampling; seed42; physical receptive fields differ; conditional frozen-prediction bootstrap ignores selection/seed variation"
+    }
+  ],
+  "independent_test": false,
+  "selection_adjusted": false
+}

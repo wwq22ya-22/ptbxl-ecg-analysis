@@ -1,0 +1,78 @@
+{
+  "model": "inception_time1d",
+  "fs": 250,
+  "training_cohort": "filtered",
+  "checkpoint_sha256": "4414ce03c72df4dc39a655899d7a217feaa8a2aef64ce7009230237892daef5a",
+  "onnx_max_logits_error": 2.384185791015625e-06,
+  "calibration_records": 32,
+  "calibration_folds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "resources": {
+    "float32": {
+      "conversion_success": true,
+      "weights_bytes": 1968788,
+      "activations_bytes": 4796160,
+      "macc": 1236586861,
+      "memory_footprint": {
+        "activations": 4796160,
+        "io": [
+          0,
+          0
+        ],
+        "kernel_flash": null,
+        "kernel_ram": null,
+        "series": "generic",
+        "toolchain": null,
+        "toolchain_flash": null,
+        "toolchain_ram": null,
+        "weights": 1968788
+      },
+      "estimated_complete_flash": 2015388,
+      "estimated_complete_main_sram": 4815832,
+      "overhead_source": "old CNN seed44 link map; estimates only, no new firmware",
+      "fits_f407ve_flash_estimate": false,
+      "fits_f407vg_flash_estimate": false,
+      "fits_main_sram_estimate": false
+    },
+    "int8": {
+      "conversion_success": true,
+      "weights_bytes": 498708,
+      "activations_bytes": 2155488,
+      "macc": 1242347383,
+      "memory_footprint": {
+        "activations": 2155488,
+        "io": [
+          0,
+          0
+        ],
+        "kernel_flash": null,
+        "kernel_ram": null,
+        "series": "generic",
+        "toolchain": null,
+        "toolchain_flash": null,
+        "toolchain_ram": null,
+        "weights": 498708
+      },
+      "estimated_complete_flash": 545308,
+      "estimated_complete_main_sram": 2175160,
+      "overhead_source": "old CNN seed44 link map; estimates only, no new firmware",
+      "fits_f407ve_flash_estimate": false,
+      "fits_f407vg_flash_estimate": true,
+      "fits_main_sram_estimate": false
+    }
+  },
+  "int8_validation": null,
+  "int8_thresholds_retuned": false,
+  "new_firmware_compiled": false,
+  "physical_board_validated": false,
+  "serial_fp32_115200_min_seconds": 10.416666666666666,
+  "serial_int8_115200_min_seconds": 2.6041666666666665
+}

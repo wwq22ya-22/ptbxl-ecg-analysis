@@ -1,11 +1,36 @@
-# Chapman–Shaoxing–Ningbo：冻结模型外部验证
+# Chapman：冻结模型外部验证与标签边界
 
-本轮未训练、微调模型，也未使用外部数据调整阈值。NORM 没有可靠真值，不计分。
+更新：2026-10-10。**主证据是四类明确阳性召回，NORM不计分；不能称为完整五类外部验证。** 本次重排保持原表格全部数值，未新增推理。
 
-全量头文件 45152 条；成功读取波形 45053 条；排除 99 条。
-数据源：[PhysioNet ecg-arrhythmia 1.0.0](https://physionet.org/content/ecg-arrhythmia/1.0.0/)。官方 SHA-256 文件校验通过；本地标记：`verified 90759 files`。
+- [1. 数据集角色与冻结模型范围](#external-role)
+- [2. 输入对齐与可计分标签](#external-input)
+- [3. 标签兼容性核查依据](#external-labels)
+- [4. 可读取记录与标签覆盖](#external-cohort)
+- [5. 主结果：明确阳性检出率](#external-positive)
+- [6. 附加结果：依赖阴性假设的四类指标](#external-assumed)
+- [7. 条件口径的逐类明细](#external-detail)
+- [8. 结果解释与数据质量](#external-reading)
+- [9. 量化尾部差异](#external-quant)
+- [10. 核验、复现与限制](#external-audit)
 
-## 输入与标签口径
+<a id="external-role"></a>
+
+## 1. 数据集角色与冻结模型范围
+
+Chapman–Shaoxing–Ningbo用于检查既有冻结模型对另一来源ECG的表现。本轮外部实验没有训练、微调、改阈值或用外部成绩选择模型。其诊断体系与PTB-XL不完全相同，输入形状一致不代表标签或数据分布一致。
+
+数据源：[PhysioNet ecg-arrhythmia 1.0.0](https://physionet.org/content/ecg-arrhythmia/1.0.0/)。全量头文件45152条，可读波形45053条，排除99条；历史下载核验记录为`verified 90759 files`。
+
+已评估6个旧冻结版本：baseline seed42、原蒸馏seed44 FP32/INT8、原紧凑Inception教师、旧部署ResNet、原CNN。当前2026-10-10单教师KD seed43没有Chapman推理结果；追加集成派生seed42也没有已核实对应结果，不能继承旧模型外部成绩。
+
+
+<!-- unet-external-20261010:start -->
+新增1D U-Net和编码器对照只在PTB-XL折9评估，尚无Chapman结果；筛选/未筛选验证分数不作为外部证据。现有六个冻结版本的结果保持原记录。
+<!-- unet-external-20261010:end -->
+
+<a id="external-input"></a>
+
+## 2. 输入对齐与可计分标签
 
 十二导联、500 Hz、10 秒；依 header 转为 mV，抗混叠重采样到 100 Hz，统一导联顺序，使用每个检查点冻结的滤波与归一化参数，输入 `[1,12,1000]`。缓存的是归一化前物理 mV，未拟合外部均值/方差。
 
@@ -15,7 +40,35 @@
 
 窦性心律不补为 NORM；高电压不补为 HYP；异常 Q 波不补为 MI；早期复极不直接补为 STTC。
 
-## 样本覆盖
+
+<a id="external-labels"></a>
+
+## 3. 标签兼容性核查依据
+
+### 已确认的明确正类对应示例
+
+以下核对了官方诊断名称、SNOMED 代码与本地 PTB-XL `scp_statements.csv` 的 superclass 定义。这是概念层面的正类对应，不意味着标签缺失时可以一律记为阴性，也不证明两个数据集诊断敏感度或标注完整性相同。
+
+| 目标类 | 外部明确诊断 | 示例 SNOMED 代码 | 核查判断 |
+|---|---|---|---|
+| MI | myocardial infarction | 164865005 | 可确认 MI 阳性 |
+| MI | acute / anterior myocardial infarction | 57054005 / 54329005 | Challenge 字典可确认 MI 阳性；原始 Chapman 字典未覆盖全部这些扩展代码，接入前需补充审计 |
+| STTC | ST depression / ST elevation | 429622005 / 164931005 | 可确认 ST/T 改变阳性 |
+| STTC | T wave abnormal / T wave inversion | 164934002 / 59931005 | 可确认 ST/T 改变阳性 |
+| STTC | long QT | 111975006 | PTB-XL LNGQT 属于 STTC，可对应；不可因此将所有复极相关未明确诊断都归入 STTC |
+| CD | AV block / LBBB / RBBB | 270492004 / 164909002 / 59118001 | 可确认传导异常阳性 |
+| HYP | left / right ventricular hypertrophy | 164873001 / 89792004 | 可确认肥厚阳性 |
+| HYP | right atrial hypertrophy | 446358003 | 可确认肥厚相关阳性 |
+| NORM | sinus rhythm | 426783006 | **不可映射为 NORM**；PTB-XL SR 是节律，NORM 是正常 ECG 诊断 |
+
+单纯高电压、轴偏移、含糊 Q 波或未明确诊断不能直接补成 HYP / MI；只有节律标签的记录不能补成 NORM。早期复极等边界概念需单独审计，不能仅因为名称有关联就认定 superclass 等同。
+
+来源：[Chapman 原始字典](https://physionet.org/files/ecg-arrhythmia/1.0.0/ConditionNames_SNOMED-CT.csv)、[Challenge scored 字典](https://github.com/physionetchallenges/evaluation-2021/blob/main/dx_mapping_scored.csv)、[Challenge unscored 字典](https://github.com/physionetchallenges/evaluation-2021/blob/main/dx_mapping_unscored.csv)。
+
+
+<a id="external-cohort"></a>
+
+## 4. 可读取记录与标签覆盖
 
 | 类别 | 明确阳性 | 假设阴性 | 条件口径未知 |
 |---|---:|---:|---:|
@@ -25,7 +78,10 @@
 | CD | 5069 | 15658 | 24326 |
 | HYP | 768 | 14305 | 29980 |
 
-## 主结果：明确阳性检出率
+
+<a id="external-positive"></a>
+
+## 5. 主结果：明确阳性检出率
 
 | 模型 | MI Recall | STTC Recall | CD Recall | HYP Recall | 四类平均 Recall |
 |---|---:|---:|---:|---:|---:|
@@ -36,7 +92,10 @@
 | old_deployed_resnet_float32 | 0.8976 | 0.7579 | 0.7301 | 0.8919 | 0.8194 |
 | original_cnn_float32 | 0.8878 | 0.7536 | 0.6516 | 0.7018 | 0.7487 |
 
-## 附加结果：依赖阴性假设的四类指标
+
+<a id="external-assumed"></a>
+
+## 6. 附加结果：依赖阴性假设的四类指标
 
 | 模型 | AUC | Precision | Recall | F1 |
 |---|---:|---:|---:|---:|
@@ -47,15 +106,12 @@
 | old_deployed_resnet_float32 | 0.8977 | 0.4253 | 0.8194 | 0.4723 |
 | original_cnn_float32 | 0.8662 | 0.4236 | 0.7487 | 0.4466 |
 
-## 结果解读
 
-蒸馏学生 INT8 相对同一学生 FP32 的明确阳性平均 Recall 变化为 +0.01 个百分点。该差异来自同一输入、同一标签与同一阈值下的量化版本对比。
+<a id="external-detail"></a>
 
-在阴性假设口径下，INT8 相对 FP32 的四类 F1 变化为 -0.06 个百分点；蒸馏 FP32 相对普通学生 FP32 为 +1.12 个百分点。这里比较的是之前已按 PTB-XL 验证集选择的不同种子模型，不是同种子控制实验，不能把全部差异归因于蒸馏。
+## 7. 条件口径的逐类明细
 
-当前部署学生明确阳性检出率最低的类别为 CD：Recall 0.6735，检出 3414/5069，漏检 1655。阴性假设不能改变这些明确阳性上的漏检数。
-
-本次是另一来源上的验证，不能仅凭输入形状相同认为分布相同；也不能用一次外部结果证明临床适用性。若进一步改阈值或训练，需要另留独立外部测试集。
+以下各表依赖前述阴性假设，AUC/Precision/F1不是经临床阴性审计确认的主结论。
 
 ### baseline_seed42_float32
 
@@ -111,7 +167,42 @@
 | CD | 0.8578 | 0.6277 | 0.6516 | 0.6394 | 3303 | 1766 |
 | HYP | 0.8259 | 0.1493 | 0.7018 | 0.2462 | 539 | 229 |
 
-## 验证与限制
+
+<a id="external-reading"></a>
+
+## 8. 结果解释与数据质量
+
+蒸馏学生 INT8 相对同一学生 FP32 的明确阳性平均 Recall 变化为 +0.01 个百分点。该差异来自同一输入、同一标签与同一阈值下的量化版本对比。
+
+在阴性假设口径下，INT8 相对 FP32 的四类 F1 变化为 -0.06 个百分点；蒸馏 FP32 相对普通学生 FP32 为 +1.12 个百分点。这里比较的是之前已按 PTB-XL 验证集选择的不同种子模型，不是同种子控制实验，不能把全部差异归因于蒸馏。
+
+当前部署学生明确阳性检出率最低的类别为 CD：Recall 0.6735，检出 3414/5069，漏检 1655。阴性假设不能改变这些明确阳性上的漏检数。
+
+本次是另一来源上的验证，不能仅凭输入形状相同认为分布相同；也不能用一次外部结果证明临床适用性。若进一步改阈值或训练，需要另留独立外部测试集。
+
+### 质量问题
+
+99 条排除记录中，97 条在 WFDB 物理信号读取后含缺失/非有限值；另有 1 条日期字段格式错误、1 条头文件导联配置无法通过检查。没有修改原始数据或对缺失值插值，具体记录保存在 `waveform_errors.json`。
+
+在本队列，部署学生 HYP 检出 606/768（78.91%）。该结果反映本队列明确阳性上的检出情况，不能据此推断所有其他来源上的表现。
+
+明确阳性上的主要漏检短板是 CD（检出 3414/5069，漏检 1655）。在依赖阴性假设的口径下，MI Precision 仅 4.55%：192 个明确阳性被检出，4025 条按该假设计为假阳性。这里的 4025 条未经过临床阴性复核，既可能涉及误报，也可能涉及源数据未标注或任务定义不同，需要独立审计，不能当作已确认的临床误报数。
+
+
+<a id="external-quant"></a>
+
+## 9. 量化尾部差异
+
+FP32 与 INT8 的五个输出按固定阈值判断，一致率为 99.60%；五个标签全部一致的记录比例为 98.03%。99% 的逐输出概率绝对差不超过 0.0346，平均绝对差为 0.00503。平均 F1 损失很小，不代表每条记录都接近：78 条记录至少一个概率差超过 0.1，14 条超过 0.25，5 条超过 0.5。
+
+最大概率差为 0.6377，出现在不计分的 NORM 输出。四个可计分类别中，最大差为 0.5468，出现在 `JS10949` 的 CD：FP32 为 0.9646、INT8 为 0.4178，跨过了固定阈值。该条归一化输入范围约 [-173.43, 135.77]，而输入 INT8 可表达范围约 [-25.71, 25.51]，有 0.525% 输入超出范围。这说明确实存在输入裁剪；尚未通过控制实验确认它对该输出差异的贡献。
+
+这些少量样本提示，后续若要扩大部署范围，应专门验证校准样本覆盖与极端幅值输入。当前结果没有修改模型、量化校准或阈值。详细数据见 `quantization_tail_audit.json`。
+
+
+<a id="external-audit"></a>
+
+## 10. 核验、复现与限制
 
 - 检查点与量化模型 SHA-256 在前后检查，未改变；阈值来自原 PTB-XL 验证集。
 - 所有模型使用相同成功读取记录和标签掩码；保存逐条概率、目标、掩码和阈值，可以独立重算指标。
@@ -120,49 +211,17 @@
 - 与 PTB-XL 五类宏平均不直接可比，也不等于板上实测。此次为主机端冻结 FP32 / INT8 模型验证。
 - 未逐条人工复核临床诊断，未验证源数据与 PTB-XL 患者身份是否重合，未按医院划分结果。
 
-## 可复现产物
+### 独立结果复核
+
+已从 6 组逐条概率独立重算全部指标，核对同一记录/掩码/阈值、模型哈希不变、NORM 从不计分；15 项针对性测试通过。
+
+### 可复现产物
 
 `outputs/external_validation/chapman_audited/summary.json`、`record_label_audit.json`、`code_audit.json`、`waveform_errors.json` 及每个模型的 `*_predictions.npz`。
 `scripts/evaluate_audited_chapman.py` 为评估入口；`src/external_validation/chapman_audit.py` 为版本化映射，逐条代码名称保存在审计文件中。
 
-## 独立结果复核
+<!-- validation-redo-results-20261010:start -->
+### 纠正流程与外部验证边界（2026-10-10）
 
-已从 6 组逐条概率独立重算全部指标，核对同一记录/掩码/阈值、模型哈希不变、NORM 从不计分；15 项针对性测试通过。
-
-## 数据质量与当前短板
-
-99 条排除记录中，97 条在 WFDB 物理信号读取后含缺失/非有限值；另有 1 条日期字段格式错误、1 条头文件导联配置无法通过检查。没有修改原始数据或对缺失值插值，具体记录保存在 `waveform_errors.json`。
-
-在本队列，部署学生 HYP 检出 606/768（78.91%）。该结果反映本队列明确阳性上的检出情况，不能据此推断所有其他来源上的表现。
-
-明确阳性上的主要漏检短板是 CD（检出 3414/5069，漏检 1655）。在依赖阴性假设的口径下，MI Precision 仅 4.55%：192 个明确阳性被检出，4025 条按该假设计为假阳性。这里的 4025 条未经过临床阴性复核，既可能涉及误报，也可能涉及源数据未标注或任务定义不同，需要独立审计，不能当作已确认的临床误报数。
-
-## 量化尾部差异
-
-FP32 与 INT8 的五个输出按固定阈值判断，一致率为 99.60%；五个标签全部一致的记录比例为 98.03%。99% 的逐输出概率绝对差不超过 0.0346，平均绝对差为 0.00503。平均 F1 损失很小，不代表每条记录都接近：78 条记录至少一个概率差超过 0.1，14 条超过 0.25，5 条超过 0.5。
-
-最大概率差为 0.6377，出现在不计分的 NORM 输出。四个可计分类别中，最大差为 0.5468，出现在 `JS10949` 的 CD：FP32 为 0.9646、INT8 为 0.4178，跨过了固定阈值。该条归一化输入范围约 [-173.43, 135.77]，而输入 INT8 可表达范围约 [-25.71, 25.51]，有 0.525% 输入超出范围。这说明确实存在输入裁剪；尚未通过控制实验确认它对该输出差异的贡献。
-
-这些少量样本提示，后续若要扩大部署范围，应专门验证校准样本覆盖与极端幅值输入。当前结果没有修改模型、量化校准或阈值。详细数据见 `quantization_tail_audit.json`。
-
-## 标签兼容性核查依据
-
-### 已确认的明确正类对应示例
-
-以下核对了官方诊断名称、SNOMED 代码与本地 PTB-XL `scp_statements.csv` 的 superclass 定义。这是概念层面的正类对应，不意味着标签缺失时可以一律记为阴性，也不证明两个数据集诊断敏感度或标注完整性相同。
-
-| 目标类 | 外部明确诊断 | 示例 SNOMED 代码 | 核查判断 |
-|---|---|---|---|
-| MI | myocardial infarction | 164865005 | 可确认 MI 阳性 |
-| MI | acute / anterior myocardial infarction | 57054005 / 54329005 | Challenge 字典可确认 MI 阳性；原始 Chapman 字典未覆盖全部这些扩展代码，接入前需补充审计 |
-| STTC | ST depression / ST elevation | 429622005 / 164931005 | 可确认 ST/T 改变阳性 |
-| STTC | T wave abnormal / T wave inversion | 164934002 / 59931005 | 可确认 ST/T 改变阳性 |
-| STTC | long QT | 111975006 | PTB-XL LNGQT 属于 STTC，可对应；不可因此将所有复极相关未明确诊断都归入 STTC |
-| CD | AV block / LBBB / RBBB | 270492004 / 164909002 / 59118001 | 可确认传导异常阳性 |
-| HYP | left / right ventricular hypertrophy | 164873001 / 89792004 | 可确认肥厚阳性 |
-| HYP | right atrial hypertrophy | 446358003 | 可确认肥厚相关阳性 |
-| NORM | sinus rhythm | 426783006 | **不可映射为 NORM**；PTB-XL SR 是节律，NORM 是正常 ECG 诊断 |
-
-单纯高电压、轴偏移、含糊 Q 波或未明确诊断不能直接补成 HYP / MI；只有节律标签的记录不能补成 NORM。早期复极等边界概念需单独审计，不能仅因为名称有关联就认定 superclass 等同。
-
-来源：[Chapman 原始字典](https://physionet.org/files/ecg-arrhythmia/1.0.0/ConditionNames_SNOMED-CT.csv)、[Challenge scored 字典](https://github.com/physionetchallenges/evaluation-2021/blob/main/dx_mapping_scored.csv)、[Challenge unscored 字典](https://github.com/physionetchallenges/evaluation-2021/blob/main/dx_mapping_unscored.csv)。
+现有Chapman结果保留为其对应的原冻结模型证据。本次纠正候选没有执行Chapman推理，不能继承旧模型外部成绩。Chapman NORM真值不足，不是完整五类独立验证；本轮也未使用Chapman选模或调阈值。
+<!-- validation-redo-results-20261010:end -->

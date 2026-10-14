@@ -1,0 +1,21 @@
+{
+  "blocked_reads": [],
+  "reads": [
+    "d:/myproject/college/ecg1/outputs/teacher_preprocessing/frozen_selection.json",
+    "d:/myproject/college/ecg1/outputs/teacher_preprocessing/inception_time1d_p0_current_seed42/checkpoint/inception_time1d_best.pt",
+    "d:/myproject/college/ecg1/outputs/teacher_preprocessing/inception_time1d_p0_current_seed43/checkpoint/inception_time1d_best.pt",
+    "d:/myproject/college/ecg1/outputs/teacher_preprocessing/inception_time1d_p0_current_seed44/checkpoint/inception_time1d_best.pt",
+    "d:/myproject/college/ecg1/outputs/validation_only_redo_20261010/protocol.json",
+    "d:/myproject/college/ecg1/outputs/validation_only_redo_20261010/selected_export/cnn1d_weights_only.pt",
+    "d:/myproject/college/ecg1/outputs/validation_only_redo_20261010/selected_export/preprocessed_float32.onnx",
+    "d:/myproject/college/ecg1/outputs/validation_only_redo_20261010/selected_export/ptbxl_cnn1d_float32.onnx",
+    "d:/myproject/college/ecg1/outputs/validation_only_redo_20261010/selected_export/ptbxl_cnn1d_int8.onnx",
+    "d:/myproject/college/ecg1/outputs/validation_only_redo_20261010/single_teacher_kd_seed42/checkpoint/cnn1d_best.pt",
+    "d:/myproject/college/ecg1/outputs/validation_only_redo_20261010/single_teacher_kd_seed43/checkpoint/cnn1d_best.pt",
+    "d:/myproject/college/ecg1/outputs/validation_only_redo_20261010/single_teacher_kd_seed44/checkpoint/cnn1d_best.pt",
+    "d:/myproject/college/ecg1/outputs/validation_only_redo_20261010/supervised_seed42/checkpoint/cnn1d_best.pt",
+    "d:/myproject/college/ecg1/outputs/validation_only_redo_20261010/supervised_seed43/checkpoint/cnn1d_best.pt",
+    "d:/myproject/college/ecg1/outputs/validation_only_redo_20261010/supervised_seed44/checkpoint/cnn1d_best.pt",
+    "d:/myproject/college/ecg1/outputs/validation_only_redo_20261010/teacher_selection/selected_single_teacher.pt"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "project_source_and_library_references_verified_in_zip": 47,
+  "JLink_and_clock_settings_identical_to_original_reference": true,
+  "generated_AI_files_and_thresholds_identical_to_original_seed44": true,
+  "preprocessing_and_protocol_sources_match_verified_C": true,
+  "original_inference_only_VG_VE_and_reference_artifacts_unchanged": true,
+  "HEX_checksum_vectors_addresses_and_compiled_map_verified": true,
+  "both_GUI_and_default_headless_simulation_entries_verified": true,
+  "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+  "preprocessing_sha256": "121588eb2f65e4f7127ee880cff67b6a3959775b59b1bf3abdc86d4da12fcfa8",
+  "flash_bytes": 162420,
+  "ram_bytes": 108368,
+  "physical_board_test": false
+}

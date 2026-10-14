@@ -1,0 +1,132 @@
+{
+  "comparisons": [
+    {
+      "model": "cnn1d",
+      "fs": 250,
+      "cohort": "filtered",
+      "delta_f1_percentage_points": -0.135114808363479,
+      "patient_clusters": 1917,
+      "records": 2146,
+      "bootstrap_draws": 2000,
+      "conditional_ci95_percentage_points": [
+        -1.3323728881212682,
+        1.0743020696737295
+      ],
+      "interpretation": "descriptive validation bootstrap, frozen predictions/thresholds; ignores checkpoint/threshold/model selection and seed variation; preprocessing differs"
+    },
+    {
+      "model": "cnn1d",
+      "fs": 500,
+      "cohort": "filtered",
+      "delta_f1_percentage_points": -0.35570386000496335,
+      "patient_clusters": 1917,
+      "records": 2146,
+      "bootstrap_draws": 2000,
+      "conditional_ci95_percentage_points": [
+        -1.4518396880969267,
+        0.7674239224497474
+      ],
+      "interpretation": "descriptive validation bootstrap, frozen predictions/thresholds; ignores checkpoint/threshold/model selection and seed variation; preprocessing differs"
+    },
+    {
+      "model": "cnn1d",
+      "fs": 250,
+      "cohort": "unfiltered",
+      "delta_f1_percentage_points": 2.9364978940075837,
+      "patient_clusters": 1942,
+      "records": 2183,
+      "bootstrap_draws": 2000,
+      "conditional_ci95_percentage_points": [
+        1.6133179791550856,
+        4.276631720405727
+      ],
+      "interpretation": "descriptive validation bootstrap, frozen predictions/thresholds; ignores checkpoint/threshold/model selection and seed variation; preprocessing differs"
+    },
+    {
+      "model": "cnn1d",
+      "fs": 500,
+      "cohort": "unfiltered",
+      "delta_f1_percentage_points": 2.850504262591347,
+      "patient_clusters": 1942,
+      "records": 2183,
+      "bootstrap_draws": 2000,
+      "conditional_ci95_percentage_points": [
+        1.4990815701227143,
+        4.2022425214739085
+      ],
+      "interpretation": "descriptive validation bootstrap, frozen predictions/thresholds; ignores checkpoint/threshold/model selection and seed variation; preprocessing differs"
+    },
+    {
+      "model": "inception1d",
+      "fs": 250,
+      "cohort": "filtered",
+      "delta_f1_percentage_points": -0.0579259528524112,
+      "patient_clusters": 1917,
+      "records": 2146,
+      "bootstrap_draws": 2000,
+      "conditional_ci95_percentage_points": [
+        -1.0806961870971878,
+        0.9898037846144916
+      ],
+      "interpretation": "descriptive validation bootstrap, frozen predictions/thresholds; ignores checkpoint/threshold/model selection and seed variation; preprocessing differs"
+    },
+    {
+      "model": "inception1d",
+      "fs": 500,
+      "cohort": "filtered",
+      "delta_f1_percentage_points": 0.013317510429433632,
+      "patient_clusters": 1917,
+      "records": 2146,
+      "bootstrap_draws": 2000,
+      "conditional_ci95_percentage_points": [
+        -1.0116350059795367,
+        0.9387242993860553
+      ],
+      "interpretation": "descriptive validation bootstrap, frozen predictions/thresholds; ignores checkpoint/threshold/model selection and seed variation; preprocessing differs"
+    },
+    {
+      "model": "inception1d",
+      "fs": 250,
+      "cohort": "unfiltered",
+      "delta_f1_percentage_points": 0.76286644129272,
+      "patient_clusters": 1942,
+      "records": 2183,
+      "bootstrap_draws": 2000,
+      "conditional_ci95_percentage_points": [
+        -0.2962311180330987,
+        1.826221288590169
+      ],
+      "interpretation": "descriptive validation bootstrap, frozen predictions/thresholds; ignores checkpoint/threshold/model selection and seed variation; preprocessing differs"
+    },
+    {
+      "model": "inception1d",
+      "fs": 500,
+      "cohort": "unfiltered",
+      "delta_f1_percentage_points": 0.48636450786222474,
+      "patient_clusters": 1942,
+      "records": 2183,
+      "bootstrap_draws": 2000,
+      "conditional_ci95_percentage_points": [
+        -0.6877802404219446,
+        1.6455852568267912
+      ],
+      "interpretation": "descriptive validation bootstrap, frozen predictions/thresholds; ignores checkpoint/threshold/model selection and seed variation; preprocessing differs"
+    },
+    {
+      "model": "inception_time1d",
+      "fs": 250,
+      "cohort": "filtered",
+      "delta_f1_percentage_points": -0.7084458544716066,
+      "patient_clusters": 1917,
+      "records": 2146,
+      "bootstrap_draws": 2000,
+      "conditional_ci95_percentage_points": [
+        -1.965306182400656,
+        0.5256041475205703
+      ],
+      "interpretation": "descriptive validation bootstrap, frozen predictions/thresholds; ignores checkpoint/threshold/model selection and seed variation; preprocessing differs"
+    }
+  ],
+  "independent_test": false,
+  "selection_adjusted": false
+}

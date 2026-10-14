@@ -1,0 +1,205 @@
+{
+  "date": "2026-10-09",
+  "mode": "read existing results; no training or model replacement",
+  "dataset": {
+    "records": 21799,
+    "patients": 18869,
+    "original": {
+      "train": 17418,
+      "validation": 2183,
+      "test": 2198
+    },
+    "filtered": {
+      "train": 17084,
+      "validation": 2146,
+      "test": 2158
+    },
+    "labels_match_official_semantics": true,
+    "patient_overlap": {
+      "train_validation": 0,
+      "train_test": 0,
+      "validation_test": 0
+    }
+  },
+  "waveform_samples": [
+    {
+      "split": "train",
+      "ecg_id": 1,
+      "shape": [
+        1000,
+        12
+      ],
+      "units": [
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV"
+      ]
+    },
+    {
+      "split": "validation",
+      "ecg_id": 8,
+      "shape": [
+        1000,
+        12
+      ],
+      "units": [
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV"
+      ]
+    },
+    {
+      "split": "test",
+      "ecg_id": 9,
+      "shape": [
+        1000,
+        12
+      ],
+      "units": [
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV",
+        "mV"
+      ]
+    }
+  ],
+  "student_test_metric_sets_verified": 12,
+  "unfiltered_metric_sets_verified": 416,
+  "ribeiro_metric_sets_verified": 36,
+  "total_metric_sets_verified": 464,
+  "train_normalization_independently_recomputed": true,
+  "raw_cache_waveform_checks": [
+    1,
+    11142,
+    21836
+  ],
+  "calibration": {
+    "old": {
+      "records": 256,
+      "train_only": true,
+      "positive_counts": {
+        "NORM": 121,
+        "MI": 70,
+        "STTC": 40,
+        "CD": 64,
+        "HYP": 24
+      }
+    },
+    "new": {
+      "records": 256,
+      "train_only": true,
+      "positive_counts": {
+        "NORM": 121,
+        "MI": 70,
+        "STTC": 40,
+        "CD": 64,
+        "HYP": 24
+      }
+    }
+  },
+  "protected_hashes_verified": 33,
+  "release_physical_board_test": false,
+  "current_serial_manifest_matches_release": true,
+  "hrv_gap": {
+    "raw_rr": [
+      1.0,
+      0.2,
+      1.2
+    ],
+    "retained_rr": [
+      1.0,
+      1.2
+    ],
+    "current_rmssd_ms": 199.99999999999994,
+    "valid_original_adjacent_pairs": 0
+  },
+  "handshake_wrong_scale_accepted": true,
+  "handshake_reply_fields": [
+    "type",
+    "protocol",
+    "ready",
+    "model",
+    "input_shape",
+    "preprocessing",
+    "labels",
+    "thresholds"
+  ],
+  "fine_threshold_paired_bootstrap": {
+    "replicates": 2000,
+    "seed": 20261009,
+    "patients": 1877,
+    "old_macro_f1": 0.7509667756273533,
+    "new_macro_f1": 0.7525590904584192,
+    "delta_pp": 0.1592314831065922,
+    "95_percentile_interval_pp": [
+      -0.8846527347053668,
+      1.174078592738509
+    ],
+    "scope": "fixed models and fine thresholds on reused fold10; excludes training and selection uncertainty"
+  },
+  "word_text_extracted_originals_unchanged": {
+    "《科技实习与创新》开题报告_十二导联心电五类识别.docx": {
+      "sha256": "22f157f93b7f0750aa9faffe5417516ebd122b31afe880ccd98abdae8b2851de",
+      "paragraphs": 117,
+      "text_extract": "C:\\Users\\鱼\\.codex\\visualizations\\2026\\10\\09\\01a11fdd-4ebb-76d1-8124-077917fbd92a\\《科技实习与创新》开题报告_十二导联心电五类识别.txt"
+    },
+    "《科技实习与创新》开题报告_十二导联心电五类识别_第4至5周修订版.docx": {
+      "sha256": "1c28ba6b0d02a13dd4c8203920bce2ea416162fd49285b63d653988d78053bd2",
+      "paragraphs": 117,
+      "text_extract": "C:\\Users\\鱼\\.codex\\visualizations\\2026\\10\\09\\01a11fdd-4ebb-76d1-8124-077917fbd92a\\《科技实习与创新》开题报告_十二导联心电五类识别_第4至5周修订版.txt"
+    },
+    "《科技实习与创新》开题报告_十二导联心电五类识别_第4至5周修订版_VG确认版.docx": {
+      "sha256": "9c9084089e04e40b825812ba78f8cf72f9789ca1f57ac170a0a8fadbdae93122",
+      "paragraphs": 117,
+      "text_extract": "C:\\Users\\鱼\\.codex\\visualizations\\2026\\10\\09\\01a11fdd-4ebb-76d1-8124-077917fbd92a\\《科技实习与创新》开题报告_十二导联心电五类识别_第4至5周修订版_VG确认版.txt"
+    },
+    "个人实习记录_第3至10周.docx": {
+      "sha256": "00b1ec643bf1b4e0fef0af1f0fb9cbece5fc70c17721a790e574e8bb65488b28",
+      "paragraphs": 313,
+      "text_extract": "C:\\Users\\鱼\\.codex\\visualizations\\2026\\10\\09\\01a11fdd-4ebb-76d1-8124-077917fbd92a\\个人实习记录_第3至10周.txt"
+    }
+  },
+  "current_regression": {
+    "passed": 89,
+    "warnings": [
+      "Starlette TestClient/httpx deprecation",
+      "PyTorch same-padding implementation warning"
+    ],
+    "seconds": 59.032,
+    "environment": "local socket access allowed; sandbox attempt interrupted while constructing event-loop socketpair"
+  },
+  "confirmed_findings": {
+    "hrv_gap_bug_unfixed": true,
+    "handshake_quantization_parameters_not_checked": true,
+    "packager_hardcodes_VE": true,
+    "physical_board_evidence_missing": true,
+    "test_fold_previously_reused": true,
+    "minor_F1_gain_interval_includes_zero": true
+  }
+}

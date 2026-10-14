@@ -1,0 +1,31 @@
+{
+  "scope": "network, existing training strategy and fold10 boundary, study-specific population selection",
+  "invocations": [
+    {
+      "files": [
+        "tests/test_unet1d.py",
+        "tests/test_training_strategies.py",
+        "tests/test_validation_only_redo.py"
+      ],
+      "passed": 33,
+      "seconds": 6.96
+    },
+    {
+      "files": [
+        "tests/test_unet_study.py"
+      ],
+      "passed": 4,
+      "seconds": 6.66
+    }
+  ],
+  "distinct_tests_passed": 37,
+  "new_network_tests": 9,
+  "new_study_boundary_tests": 4,
+  "source_sha256": {
+    "tests/test_unet1d.py": "42ce539b773eb4f37f9174a1a217e24dbbc235ae828a42346a760f1a4447dd4f",
+    "tests/test_training_strategies.py": "f01380fac0c5d5bdc31c74ea6f6e4273db589345281cbcd539ee685f43c86746",
+    "tests/test_validation_only_redo.py": "05ba24afc7b1ab6f94eaddf7e304771cb4cf7a9dcfb555e576afd71f91b33e15",
+    "tests/test_unet_study.py": "3f74951580dba0ce8aecf703e928e87e0da34190c0b9bc87216dddbc5748e111"
+  },
+  "reported_from_successful_tool_results": true
+}

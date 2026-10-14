@@ -1,0 +1,58 @@
+{
+  "checks": [
+    {
+      "cv_fold": 1,
+      "case": "resnet_asl4",
+      "order_labels_thresholds_metrics_verified": true,
+      "train_calibration_heldout_patient_overlap": 0
+    },
+    {
+      "cv_fold": 1,
+      "case": "ensemble_equal",
+      "order_labels_thresholds_metrics_verified": true,
+      "train_calibration_heldout_patient_overlap": 0
+    },
+    {
+      "cv_fold": 2,
+      "case": "resnet_asl4",
+      "order_labels_thresholds_metrics_verified": true,
+      "train_calibration_heldout_patient_overlap": 0
+    },
+    {
+      "cv_fold": 2,
+      "case": "ensemble_equal",
+      "order_labels_thresholds_metrics_verified": true,
+      "train_calibration_heldout_patient_overlap": 0
+    },
+    {
+      "cv_fold": 3,
+      "case": "resnet_asl4",
+      "order_labels_thresholds_metrics_verified": true,
+      "train_calibration_heldout_patient_overlap": 0
+    },
+    {
+      "cv_fold": 3,
+      "case": "ensemble_equal",
+      "order_labels_thresholds_metrics_verified": true,
+      "train_calibration_heldout_patient_overlap": 0
+    },
+    {
+      "cv_fold": 4,
+      "case": "resnet_asl4",
+      "order_labels_thresholds_metrics_verified": true,
+      "train_calibration_heldout_patient_overlap": 0
+    },
+    {
+      "cv_fold": 4,
+      "case": "ensemble_equal",
+      "order_labels_thresholds_metrics_verified": true,
+      "train_calibration_heldout_patient_overlap": 0
+    }
+  ],
+  "oof_unique_records": {
+    "resnet_asl4": 17418,
+    "ensemble_equal": 17418
+  },
+  "gpu_amp_finite_gradients_checked": true,
+  "single_record_vs_batch_max_difference": 5.93625009059906e-06
+}

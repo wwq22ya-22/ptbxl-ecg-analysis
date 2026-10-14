@@ -1,0 +1,444 @@
+{
+  "thresholds_f1": [
+    0.5124016404151917,
+    0.5684474110603333,
+    0.46309059858322144,
+    0.7064545154571533,
+    0.658568263053894
+  ],
+  "thresholds_balanced": [
+    0.5124016404151917,
+    0.5684474110603333,
+    0.46309059858322144,
+    0.7064545154571533,
+    0.658568263053894
+  ],
+  "calibration_f1": {
+    "records": 2183,
+    "per_class": {
+      "NORM": {
+        "support": 955,
+        "threshold": 0.5124016404151917,
+        "auroc": 0.948228933949554,
+        "precision": 0.7929515418502202,
+        "recall": 0.9424083769633508,
+        "f1": 0.861244019138756,
+        "confusion_matrix": [
+          [
+            993,
+            235
+          ],
+          [
+            55,
+            900
+          ]
+        ]
+      },
+      "MI": {
+        "support": 540,
+        "threshold": 0.5684474110603333,
+        "auroc": 0.9234936092513695,
+        "precision": 0.7190226876090751,
+        "recall": 0.762962962962963,
+        "f1": 0.7403414195867026,
+        "confusion_matrix": [
+          [
+            1482,
+            161
+          ],
+          [
+            128,
+            412
+          ]
+        ]
+      },
+      "STTC": {
+        "support": 528,
+        "threshold": 0.46309059858322144,
+        "auroc": 0.938916735329122,
+        "precision": 0.6949152542372882,
+        "recall": 0.8541666666666666,
+        "f1": 0.7663551401869159,
+        "confusion_matrix": [
+          [
+            1457,
+            198
+          ],
+          [
+            77,
+            451
+          ]
+        ]
+      },
+      "CD": {
+        "support": 495,
+        "threshold": 0.7064545154571533,
+        "auroc": 0.9307039590214946,
+        "precision": 0.7941787941787942,
+        "recall": 0.7717171717171717,
+        "f1": 0.7827868852459017,
+        "confusion_matrix": [
+          [
+            1589,
+            99
+          ],
+          [
+            113,
+            382
+          ]
+        ]
+      },
+      "HYP": {
+        "support": 268,
+        "threshold": 0.658568263053894,
+        "auroc": 0.9084018549549899,
+        "precision": 0.551622418879056,
+        "recall": 0.6977611940298507,
+        "f1": 0.6161449752883031,
+        "confusion_matrix": [
+          [
+            1763,
+            152
+          ],
+          [
+            81,
+            187
+          ]
+        ]
+      }
+    },
+    "macro_auroc": 0.929949018501306,
+    "macro_precision": 0.7105381393508867,
+    "macro_recall": 0.8058032744680006,
+    "macro_f1": 0.7533744878893158,
+    "classes_with_defined_auroc": 5
+  },
+  "calibration_balanced": {
+    "records": 2183,
+    "per_class": {
+      "NORM": {
+        "support": 955,
+        "threshold": 0.5124016404151917,
+        "auroc": 0.948228933949554,
+        "precision": 0.7929515418502202,
+        "recall": 0.9424083769633508,
+        "f1": 0.861244019138756,
+        "confusion_matrix": [
+          [
+            993,
+            235
+          ],
+          [
+            55,
+            900
+          ]
+        ]
+      },
+      "MI": {
+        "support": 540,
+        "threshold": 0.5684474110603333,
+        "auroc": 0.9234936092513695,
+        "precision": 0.7190226876090751,
+        "recall": 0.762962962962963,
+        "f1": 0.7403414195867026,
+        "confusion_matrix": [
+          [
+            1482,
+            161
+          ],
+          [
+            128,
+            412
+          ]
+        ]
+      },
+      "STTC": {
+        "support": 528,
+        "threshold": 0.46309059858322144,
+        "auroc": 0.938916735329122,
+        "precision": 0.6949152542372882,
+        "recall": 0.8541666666666666,
+        "f1": 0.7663551401869159,
+        "confusion_matrix": [
+          [
+            1457,
+            198
+          ],
+          [
+            77,
+            451
+          ]
+        ]
+      },
+      "CD": {
+        "support": 495,
+        "threshold": 0.7064545154571533,
+        "auroc": 0.9307039590214946,
+        "precision": 0.7941787941787942,
+        "recall": 0.7717171717171717,
+        "f1": 0.7827868852459017,
+        "confusion_matrix": [
+          [
+            1589,
+            99
+          ],
+          [
+            113,
+            382
+          ]
+        ]
+      },
+      "HYP": {
+        "support": 268,
+        "threshold": 0.658568263053894,
+        "auroc": 0.9084018549549899,
+        "precision": 0.551622418879056,
+        "recall": 0.6977611940298507,
+        "f1": 0.6161449752883031,
+        "confusion_matrix": [
+          [
+            1763,
+            152
+          ],
+          [
+            81,
+            187
+          ]
+        ]
+      }
+    },
+    "macro_auroc": 0.929949018501306,
+    "macro_precision": 0.7105381393508867,
+    "macro_recall": 0.8058032744680006,
+    "macro_f1": 0.7533744878893158,
+    "classes_with_defined_auroc": 5
+  },
+  "threshold_policy": {
+    "precision_floor": 0.6983231929173446,
+    "recall_floor": 0.7966745349354555,
+    "feasible": true
+  },
+  "components": [
+    "D:\\MyProject\\college\\ecg1\\outputs\\cross_validation\\fold_4\\resnet_global\\checkpoint\\resnet1d_best.pt",
+    "D:\\MyProject\\college\\ecg1\\outputs\\cross_validation\\fold_4\\inception_global\\checkpoint\\inception1d_best.pt"
+  ],
+  "heldout_f1": {
+    "records": 4349,
+    "per_class": {
+      "NORM": {
+        "support": 1902,
+        "threshold": 0.5124016404151917,
+        "auroc": 0.9598830646079644,
+        "precision": 0.825046904315197,
+        "recall": 0.9248159831756047,
+        "f1": 0.8720872583044125,
+        "confusion_matrix": [
+          [
+            2074,
+            373
+          ],
+          [
+            143,
+            1759
+          ]
+        ]
+      },
+      "MI": {
+        "support": 1088,
+        "threshold": 0.5684474110603333,
+        "auroc": 0.935950803389433,
+        "precision": 0.7239932885906041,
+        "recall": 0.7931985294117647,
+        "f1": 0.7570175438596491,
+        "confusion_matrix": [
+          [
+            2932,
+            329
+          ],
+          [
+            225,
+            863
+          ]
+        ]
+      },
+      "STTC": {
+        "support": 1034,
+        "threshold": 0.46309059858322144,
+        "auroc": 0.9338701348713865,
+        "precision": 0.6679418515684774,
+        "recall": 0.844294003868472,
+        "f1": 0.7458351131994874,
+        "confusion_matrix": [
+          [
+            2881,
+            434
+          ],
+          [
+            161,
+            873
+          ]
+        ]
+      },
+      "CD": {
+        "support": 970,
+        "threshold": 0.7064545154571533,
+        "auroc": 0.9411950098089168,
+        "precision": 0.829954954954955,
+        "recall": 0.7597938144329897,
+        "f1": 0.7933261571582346,
+        "confusion_matrix": [
+          [
+            3228,
+            151
+          ],
+          [
+            233,
+            737
+          ]
+        ]
+      },
+      "HYP": {
+        "support": 532,
+        "threshold": 0.658568263053894,
+        "auroc": 0.9258363356649417,
+        "precision": 0.5438356164383562,
+        "recall": 0.7462406015037594,
+        "f1": 0.6291600633914421,
+        "confusion_matrix": [
+          [
+            3484,
+            333
+          ],
+          [
+            135,
+            397
+          ]
+        ]
+      }
+    },
+    "macro_auroc": 0.9393470696685284,
+    "macro_precision": 0.7181545231735178,
+    "macro_recall": 0.813668586478518,
+    "macro_f1": 0.7594852271826451,
+    "classes_with_defined_auroc": 5
+  },
+  "heldout_balanced": {
+    "records": 4349,
+    "per_class": {
+      "NORM": {
+        "support": 1902,
+        "threshold": 0.5124016404151917,
+        "auroc": 0.9598830646079644,
+        "precision": 0.825046904315197,
+        "recall": 0.9248159831756047,
+        "f1": 0.8720872583044125,
+        "confusion_matrix": [
+          [
+            2074,
+            373
+          ],
+          [
+            143,
+            1759
+          ]
+        ]
+      },
+      "MI": {
+        "support": 1088,
+        "threshold": 0.5684474110603333,
+        "auroc": 0.935950803389433,
+        "precision": 0.7239932885906041,
+        "recall": 0.7931985294117647,
+        "f1": 0.7570175438596491,
+        "confusion_matrix": [
+          [
+            2932,
+            329
+          ],
+          [
+            225,
+            863
+          ]
+        ]
+      },
+      "STTC": {
+        "support": 1034,
+        "threshold": 0.46309059858322144,
+        "auroc": 0.9338701348713865,
+        "precision": 0.6679418515684774,
+        "recall": 0.844294003868472,
+        "f1": 0.7458351131994874,
+        "confusion_matrix": [
+          [
+            2881,
+            434
+          ],
+          [
+            161,
+            873
+          ]
+        ]
+      },
+      "CD": {
+        "support": 970,
+        "threshold": 0.7064545154571533,
+        "auroc": 0.9411950098089168,
+        "precision": 0.829954954954955,
+        "recall": 0.7597938144329897,
+        "f1": 0.7933261571582346,
+        "confusion_matrix": [
+          [
+            3228,
+            151
+          ],
+          [
+            233,
+            737
+          ]
+        ]
+      },
+      "HYP": {
+        "support": 532,
+        "threshold": 0.658568263053894,
+        "auroc": 0.9258363356649417,
+        "precision": 0.5438356164383562,
+        "recall": 0.7462406015037594,
+        "f1": 0.6291600633914421,
+        "confusion_matrix": [
+          [
+            3484,
+            333
+          ],
+          [
+            135,
+            397
+          ]
+        ]
+      }
+    },
+    "macro_auroc": 0.9393470696685284,
+    "macro_precision": 0.7181545231735178,
+    "macro_recall": 0.813668586478518,
+    "macro_f1": 0.7594852271826451,
+    "classes_with_defined_auroc": 5
+  },
+  "name": "ensemble_equal",
+  "cv_fold": 4,
+  "heldout_folds": [
+    7,
+    8
+  ],
+  "train_folds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "training_records": 13069,
+  "calibration_fold": 9,
+  "excluded_test_fold": 10,
+  "run_dir": "D:\\MyProject\\college\\ecg1\\outputs\\further_optimization\\cv\\fold_4\\ensemble_equal",
+  "seconds": 0.12625909999769647
+}

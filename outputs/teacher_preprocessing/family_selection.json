@@ -1,0 +1,7 @@
+{
+  "preprocessing": "P0_current",
+  "teacher_model": "inception_time1d",
+  "teacher_preprocessing": "P0_current",
+  "screen_seed": 42,
+  "test_used": false
+}

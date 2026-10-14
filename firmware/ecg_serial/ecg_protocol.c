@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#ifdef ECG_BOARD_PREPROCESSING
+#include "ecg_preprocess.h"
+#endif
 
 static uint32_t crc_bytes(uint32_t crc, const void *data, size_t length) {
     const unsigned char *bytes = (const unsigned char *)data;
@@ -44,11 +47,29 @@ static int unsigned_token(char **cursor, uint32_t *value) {
 }
 
 void ecg_protocol_line(ecg_protocol *p, char *line) {
+#ifdef ECG_BOARD_PREPROCESSING
+    char reply[768], *cursor = line, *command = token(&cursor);
+#else
     char reply[640], *cursor = line, *command = token(&cursor);
+#endif
     uint32_t sequence, offset, count, crc, i, elapsed = 0;
+#ifdef ECG_BOARD_PREPROCESSING
+    uint32_t preprocessing_ms = 0;
+#endif
     float chunk[ECG_CHUNK_COUNT], logits[5], probabilities[5];
     unsigned mask = 0;
     if (command && !strcmp(command, "$P") && !cursor) {
+#ifdef ECG_BOARD_PREPROCESSING
+        snprintf(reply, sizeof(reply),
+            "{\"type\":\"hello\",\"protocol\":2,\"ready\":%s,\"model\":\"%s\","
+            "\"input_shape\":[12,1000],\"preprocessing\":\"board\",\"input_kind\":\"raw_mv\","
+            "\"preprocessing_sha256\":\"%s\","
+            "\"labels\":[\"NORM\",\"MI\",\"STTC\",\"CD\",\"HYP\"],"
+            "\"thresholds\":[%.9g,%.9g,%.9g,%.9g,%.9g]}\r\n",
+            (p->input && p->raw_input && p->prepare) ? "true" : "false", p->model_sha256,
+            ecg_preprocess_contract_sha256(),
+            p->thresholds[0], p->thresholds[1], p->thresholds[2], p->thresholds[3], p->thresholds[4]);
+#else
         snprintf(reply, sizeof(reply),
             "{\"type\":\"hello\",\"protocol\":1,\"ready\":%s,\"model\":\"%s\","
             "\"input_shape\":[12,1000],\"preprocessing\":\"host\","
@@ -56,6 +77,7 @@ void ecg_protocol_line(ecg_protocol *p, char *line) {
             "\"thresholds\":[%.9g,%.9g,%.9g,%.9g,%.9g]}\r\n",
             p->input ? "true" : "false", p->model_sha256,
             p->thresholds[0], p->thresholds[1], p->thresholds[2], p->thresholds[3], p->thresholds[4]);
+#endif
         p->send(reply, p->context); return;
     }
     if (!command || !unsigned_token(&cursor, &sequence)) {
@@ -67,6 +89,9 @@ void ecg_protocol_line(ecg_protocol *p, char *line) {
         if (!p->input || !isfinite(p->scale) || p->scale <= 0) {
             ecg_protocol_abort(p, "ai_not_ready"); return;
         }
+#ifdef ECG_BOARD_PREPROCESSING
+        if (!p->raw_input || !p->prepare) { ecg_protocol_abort(p, "preprocessing_not_ready"); return; }
+#endif
         if (!unsigned_token(&cursor, &count) || count != ECG_SAMPLE_COUNT || cursor) {
             ecg_protocol_abort(p, "sample_count"); return;
         }
@@ -93,10 +118,14 @@ void ecg_protocol_line(ecg_protocol *p, char *line) {
         }
         if (cursor) { ecg_protocol_abort(p, "extra_values"); return; }
         for (i = 0; i < count; ++i) {
+#ifdef ECG_BOARD_PREPROCESSING
+            p->raw_input[offset + i] = chunk[i];
+#else
             /* Round to nearest, ties to even, matching ONNX Runtime's quantizer. */
             float q = nearbyintf(chunk[i] / p->scale) + (float)p->zero_point;
             q = fminf(127.0f, fmaxf(-128.0f, q));
             p->input[offset + i] = (int8_t)q;
+#endif
             p->crc = crc_bytes(p->crc, &chunk[i], sizeof(float));
         }
         p->received += count;
@@ -108,6 +137,11 @@ void ecg_protocol_line(ecg_protocol *p, char *line) {
         if (!unsigned_token(&cursor, &crc) || cursor || p->received != ECG_SAMPLE_COUNT
                 || crc != (p->crc ^ 0xFFFFFFFFu)) { ecg_protocol_abort(p, "crc_or_incomplete"); return; }
         p->active = 0;
+#ifdef ECG_BOARD_PREPROCESSING
+        if (!p->prepare(p->raw_input, p->input, &preprocessing_ms, p->context)) {
+            ecg_protocol_abort(p, "preprocessing"); return;
+        }
+#endif
         if (!p->run(logits, &elapsed, p->context)) { ecg_protocol_abort(p, "ai_run"); return; }
         for (i = 0; i < 5; ++i) {
             if (!isfinite(logits[i])) { ecg_protocol_abort(p, "nonfinite_output"); return; }
@@ -117,9 +151,17 @@ void ecg_protocol_line(ecg_protocol *p, char *line) {
         }
         snprintf(reply, sizeof(reply),
             "{\"type\":\"result\",\"seq\":%lu,\"probabilities\":[%.9g,%.9g,%.9g,%.9g,%.9g],"
-            "\"mask\":%u,\"inference_ms\":%lu}\r\n",
+            "\"mask\":%u,\"inference_ms\":%lu"
+#ifdef ECG_BOARD_PREPROCESSING
+            ",\"preprocessing_ms\":%lu"
+#endif
+            "}\r\n",
             (unsigned long)sequence, probabilities[0], probabilities[1], probabilities[2],
-            probabilities[3], probabilities[4], mask, (unsigned long)elapsed);
+            probabilities[3], probabilities[4], mask, (unsigned long)elapsed
+#ifdef ECG_BOARD_PREPROCESSING
+            , (unsigned long)preprocessing_ms
+#endif
+            );
         p->send(reply, p->context); return;
     }
     ecg_protocol_abort(p, "command");

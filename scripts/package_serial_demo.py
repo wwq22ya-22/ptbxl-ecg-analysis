@@ -20,7 +20,29 @@ from src.training.data import load_labeled_splits
 from src.config import resolve_project_path
 
 
-def write_spl_project(reference, destination, export, sdk, project_name="ECG_ResNet_INT8"):
+def configure_chip(root, chip):
+    """Select the explicit Flash budget without changing the reference RAM/clock."""
+    if chip not in {"STM32F407VE", "STM32F407VG"}:
+        raise ValueError(f"Unsupported target: {chip}")
+    device = chip + "Tx"
+    size = 0x80000 if chip.endswith("VE") else 0x100000
+    root.find(".//Device").text = device
+    for node in root.iter():
+        if node.text:
+            node.text = node.text.replace("STM32F407VGTx", device).replace("STM32F407VETx", device)
+    driver = root.find(".//FlashDriverDll")
+    driver.text = driver.text.replace("STM32F4xx_512", "STM32F4xx_1024") if size == 0x100000 else driver.text.replace("STM32F4xx_1024", "STM32F4xx_512")
+    driver.text = re.sub(r"-FL0(?:100000|080000)", f"-FL0{size:06X}", driver.text)
+    cpu = root.find(".//Cpu")
+    cpu.text = re.sub(r"IROM\(0x08000000,0x[0-9a-fA-F]+\)", f"IROM(0x08000000,0x{size:08X})", cpu.text)
+    for node in root.findall(".//IROM/Size") + root.findall(".//OCR_RVCT1/Size"):
+        node.text = f"0x{size:X}"
+    for node in root.findall(".//OnChipMemories//Size"):
+        if node.text and int(node.text, 0) in {0x80000, 0x100000}:
+            node.text = f"0x{size:X}"
+
+
+def write_spl_project(reference, destination, export, sdk, project_name="ECG_ResNet_INT8", chip="STM32F407VE"):
     """Copy only source files; preserve the user's reference project unchanged."""
     if destination.exists():
         raise FileExistsError(f"Project already exists: {destination}")
@@ -81,20 +103,8 @@ def write_spl_project(reference, destination, export, sdk, project_name="ECG_Res
         ET.SubElement(item, "FileName").text = name
         ET.SubElement(item, "FileType").text = "1"
         ET.SubElement(item, "FilePath").text = path
-    # Enforce the smaller VE Flash limit until the physical chip is confirmed.
-    root.find(".//Device").text = "STM32F407VETx"
+    configure_chip(root, chip)
     root.find(".//OutputName").text = project_name
-    for node in root.iter():
-        if node.text:
-            node.text = node.text.replace("STM32F407VGTx", "STM32F407VETx")
-    driver = root.find(".//FlashDriverDll")
-    driver.text = driver.text.replace("STM32F4xx_1024", "STM32F4xx_512").replace("-FL0100000", "-FL0080000")
-    cpu = root.find(".//Cpu")
-    cpu.text = cpu.text.replace("0x00100000", "0x00080000")
-    for node in root.findall(".//IROM/Size") + root.findall(".//OCR_RVCT1/Size"):
-        node.text = "0x80000"
-    for node in root.findall(".//OnChipMemories//Size"):
-        if node.text == "0x100000": node.text = "0x80000"
     root.find(".//pCCUsed").text = "5060422::V5.06 update 4 (build 422)::ARMCC"
     root.find(".//Optim").text = "2"
     # printf float support and strtof/nearbyintf use the full Arm C library.
@@ -104,6 +114,25 @@ def write_spl_project(reference, destination, export, sdk, project_name="ECG_Res
     target = target_dir / f"{project_name}.uvprojx"
     ET.indent(project)
     project.write(target, encoding="UTF-8", xml_declaration=True)
+    options_source = reference / "MDK_Project/Project.uvoptx"
+    if options_source.exists():
+        options = ET.parse(options_source)
+        opt_root = options.getroot()
+        # Old source-tree UI groups and line breakpoints refer to the old model.
+        for group in list(opt_root.findall("Group")):
+            opt_root.remove(group)
+        for parent in opt_root.iter():
+            for node in list(parent):
+                if node.tag == "Breakpoint": parent.remove(node)
+        for node in opt_root.iter():
+            if node.text:
+                node.text = node.text.replace("STM32F407VGTx", chip + "Tx").replace("STM32F407VETx", chip + "Tx")
+                if chip.endswith("VE"):
+                    node.text = node.text.replace("STM32F4xx_1024", "STM32F4xx_512").replace("-FL0100000", "-FL0080000")
+                else:
+                    node.text = node.text.replace("STM32F4xx_512", "STM32F4xx_1024").replace("-FL0080000", "-FL0100000")
+        ET.indent(options)
+        options.write(target.with_suffix(".uvoptx"), encoding="UTF-8", xml_declaration=True)
     return target
 
 
@@ -114,6 +143,7 @@ def main():
     parser.add_argument("--sdk", type=Path)
     parser.add_argument("--project-dir", type=Path, default=ROOT / "outputs/cubeai/stm32_spl_project")
     parser.add_argument("--project-name", default="ECG_ResNet_INT8")
+    parser.add_argument("--chip", choices=["STM32F407VE", "STM32F407VG"], default="STM32F407VE")
     args = parser.parse_args()
     export = args.export_dir.resolve()
     base = json.loads((export / "deployment_manifest.json").read_text(encoding="utf-8"))
@@ -174,7 +204,7 @@ def main():
     print(f"Serial samples: {samples}; raw-vs-cache preprocessing parity passed for {len(raw)} records.")
     if args.reference_mdk:
         if not args.sdk: raise ValueError("--sdk is required for the Keil project.")
-        target = write_spl_project(args.reference_mdk, args.project_dir.resolve(), export, args.sdk, args.project_name)
+        target = write_spl_project(args.reference_mdk, args.project_dir.resolve(), export, args.sdk, args.project_name, args.chip)
         print(f"Keil project: {target}")
 
 

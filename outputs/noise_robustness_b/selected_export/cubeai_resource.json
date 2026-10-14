@@ -1,0 +1,7 @@
+{
+  "weights_bytes": 112276,
+  "activations_bytes": 24000,
+  "macc": 14698207,
+  "physical_board_test": false,
+  "complete_firmware_compilation": false
+}

@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "new_training_runs": 10,
+  "new_training_rates": [
+    250,
+    500
+  ],
+  "new_100hz_training": 0,
+  "fold10_inference": 0,
+  "patient_isolation": true,
+  "counts": {
+    "train": 17418,
+    "filtered_train": 17084,
+    "unfiltered_train": 17418,
+    "validation": 2183,
+    "filtered_validation": 2146,
+    "unfiltered_validation": 2183
+  },
+  "cohort_metrics_checked": 30,
+  "resampling": {
+    "input_hz": 500,
+    "output_hz": 250,
+    "shape": [
+      12,
+      2500
+    ],
+    "pass_20hz_rms": 0.7071053011098166,
+    "rejection_180hz_db": -97.32403616577918,
+    "naive_decimation_180hz_alias_hz": 70,
+    "finite_record_padding": "line",
+    "passed": true
+  },
+  "protected_artifacts_unchanged": true,
+  "board_validation": false
+}

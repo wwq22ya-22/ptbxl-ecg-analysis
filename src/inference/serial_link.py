@@ -51,20 +51,23 @@ class STM32Link:
         hello = self._request("$P", "hello")
         expected = self.manifest
         cutoffs = np.asarray(hello.get("thresholds", []), dtype=float)
-        if (hello.get("protocol") != 1 or hello.get("ready") is not True
+        if (hello.get("protocol") != expected["protocol"] or hello.get("ready") is not True
                 or hello.get("model") != expected["model_sha256"]
                 or hello.get("input_shape") != [12, 1000]
                 or hello.get("labels") != list(SUPERCLASSES)
-                or hello.get("preprocessing") != "host"
+                or hello.get("preprocessing") != expected.get("preprocessing_location", "host")
+                or (expected["protocol"] == 2 and (hello.get("input_kind") != "raw_mv"
+                    or hello.get("preprocessing_sha256") != expected.get("preprocessing_sha256")))
                 or cutoffs.shape != (5,)
                 or not np.allclose(cutoffs, expected["thresholds"], atol=1e-6, rtol=0)):
-            raise SerialProtocolError("芯片模型、阈值或输入协议与当前部署包不一致。")
+            raise SerialProtocolError("芯片模型、阈值或预处理/输入协议与当前部署包不一致。")
         return hello
 
     def predict(self, signal, *, progress=None):
         values = np.asarray(signal, dtype=np.float32)
         if values.shape != (12, 1000) or not np.isfinite(values).all():
-            raise ValueError("发送输入必须是预处理后的有限浮点数，形状 [12,1000]。")
+            kind = "原始mV" if self.manifest.get("preprocessing_location") == "board" else "预处理后的"
+            raise ValueError(f"发送输入必须是{kind}有限浮点数，形状 [12,1000]。")
         self.sequence = (self.sequence + 1) & 0x7FFFFFFF
         sequence = self.sequence
         flat = np.ascontiguousarray(values, dtype="<f4").reshape(-1)
@@ -94,9 +97,27 @@ class STM32Link:
 def load_serial_manifest(path):
     manifest = json.loads(Path(path).read_text(encoding="utf-8"))
     thresholds = np.asarray(manifest.get("thresholds"), dtype=float)
-    if (manifest.get("protocol") != 1 or manifest.get("labels") != list(SUPERCLASSES)
+    if (manifest.get("protocol") not in (1, 2, 3) or manifest.get("labels") != list(SUPERCLASSES)
             or len(manifest.get("model_sha256", "")) != 64
             or thresholds.shape != (5,) or not np.isfinite(thresholds).all()
             or np.any((thresholds <= 0) | (thresholds >= 1))):
         raise ValueError("部署清单无效。")
+    if manifest['protocol'] == 2 and (manifest.get('preprocessing_location') != 'board'
+            or manifest.get('input_kind') != 'raw_mv' or len(manifest.get('preprocessing_sha256', '')) != 64):
+        raise ValueError("板端预处理清单无效。")
+    if manifest['protocol'] == 1 and manifest.get('preprocessing_location', 'host') != 'host':
+        raise ValueError("仅推理清单必须使用上位机预处理。")
+    if manifest['protocol'] == 3 and (manifest.get('preprocessing_location') != 'host'
+            or manifest.get('input_kind') != 'int8' or manifest.get('chunk_bytes') != 1024
+            or manifest.get('quantization') != 'float32_divide_rint_ties_even_saturate'
+            or manifest.get('input_shape') != [12, 1000]
+            or not np.isfinite(manifest.get('input_scale', float('nan')))
+            or manifest['input_scale'] <= 0 or manifest.get('input_zero_point') != 0):
+        raise ValueError('A快速串口清单无效。')
     return manifest
+
+def link_for(transport, manifest, **kwargs):
+    if manifest.get('protocol') == 3:
+        from src.inference.binary_serial_link import BinarySTM32Link
+        return BinarySTM32Link(transport, manifest, **kwargs)
+    return STM32Link(transport, manifest, **kwargs)

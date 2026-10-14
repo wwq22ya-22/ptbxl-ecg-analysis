@@ -1,0 +1,117 @@
+ST Edge AI Core v2.2.0-20266 2adc00962
+ecg shape is already on channel first, no change needed
+
+Setting validation data...
+ loading file: D:\MyProject\college\ecg1\outputs\distillation\distilled_export\validation_input.npy
+   samples are reshaped: (128, 12, 1000) -> (128, 12, 1, 1000)
+   I[1]: (128, 12, 1, 1000)/float32, min/max=[-19.909897, 17.285664], mean/std=[-0.000388, 0.899929]
+    c/I[1] conversion [Q(0.20083645,0)]-> (128, 12, 1, 1000)/int8, min/max=[-99, 86], mean/std=[-0.002154, 4.490089]
+    m/I[1] no modification.
+ no output/reference samples are provided
+
+Creating c (debug) info json file D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\host_validation\ecg_network_c_info.json
+Copying the AI runtime files to the user workspace: D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\host_workspace\inspector_ecg_network\workspace
+ from: D:\STM32AI\User\STM32Cube\Repository\Packs\STMicroelectronics\X-CUBE-AI\10.2.1\Utilities\windows\targets\common\EmbedNets\tools\inspector\workspace
+ 
+ Exec/report summary (validate)
+ --------------------------------------------------------------------------------------------------------------------------
+ model file         :   D:\MyProject\college\ecg1\outputs\distillation\distilled_export\ptbxl_cnn1d_int8.onnx              
+ type               :   onnx                                                                                               
+ c_name             :   ecg_network                                                                                        
+ compression        :   none                                                                                               
+ options            :   allocate-inputs, allocate-outputs                                                                  
+ optimization       :   ram                                                                                                
+ target/series      :   stm32f4                                                                                            
+ workspace dir      :   D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\host_workspace    
+ output dir         :   D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\host_validation   
+ vinput files       :   D:\MyProject\college\ecg1\outputs\distillation\distilled_export\validation_input.npy               
+ model_fmt          :   ss/sa per tensor                                                                                   
+ model_name         :   ptbxl_cnn1d_int8                                                                                   
+ model_hash         :   0x4d573327af164355881fc61b405482f0                                                                 
+ params #           :   111,205 items (434.39 KiB)                                                                         
+ --------------------------------------------------------------------------------------------------------------------------
+ input 1/1          :   'ecg', int8(1x12x1000), 11.72 KBytes, QLinear(0.200836450,0,int8), activations                     
+ output 1/1         :   'logits_QuantizeLin..conversion', f32(1x5), 20 Bytes, activations                                  
+ macc               :   14,698,207                                                                                         
+ weights (ro)       :   112,276 B (109.64 KiB) (1 segment) / -332,544(-74.8%) vs float model                               
+ activations (rw)   :   24,000 B (23.44 KiB) (1 segment) *                                                                 
+ ram (total)        :   24,000 B (23.44 KiB) = 24,000 + 0 + 0                                                              
+ --------------------------------------------------------------------------------------------------------------------------
+ (*) 'input'/'output' buffers are allocated in the activations buffer
+
+Running the ONNX model...
+
+Running the ST.AI c-model (AI RUNNER)...(name=ecg_network, mode=HOST)
+
+ DLL Driver v2.0 - Direct Python binding (D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\host_workspace\inspector_ecg_network\workspace\lib\libai_ecg_network.dll) ['ecg_network']
+
+  Summary 'ecg_network' - ['ecg_network']
+  -------------------------------------------------------------------------------------------------------------
+  I[1/1] 'input_1'    :   int8[1,12,1,1000], 12000 Bytes, QLinear(0.200836450,0,int8), in activations buffer
+  O[1/1] 'output_1'   :   f32[1,1,1,5], 20 Bytes, in activations buffer
+  n_nodes             :   12
+  activations         :   24000
+  weights             :   112276
+  macc                :   14698207
+  hash                :   0x4d573327af164355881fc61b405482f0
+  compile_datetime    :   Oct  3 2026 14:38:38
+  -------------------------------------------------------------------------------------------------------------
+  protocol            :   DLL Driver v2.0 - Direct Python binding
+  tools               :   ST.AI (legacy api) v2.2.0
+  runtime lib         :   v10.2.0
+  capabilities        :   IO_ONLY, PER_LAYER, PER_LAYER_WITH_DATA
+  device.desc         :   AMD64, Intel64 Family 6 Model 183 Stepping 1, GenuineIntel, Windows
+  -------------------------------------------------------------------------------------------------------------
+
+ NOTE: The duration and execution time per layer are just indications. They depend on the host machine's workload.
+
+  ST.AI Profiling results v2.0 - "ecg_network"
+  ---------------------------------------------------------------
+  nb sample(s)   :   128
+  duration       :   20.319 ms by sample (12.627/32.640/3.125)
+  macc           :   14698207
+  ---------------------------------------------------------------
+
+  Statistic per tensor
+  ---------------------------------------------------------------------------------------
+  tensor   #     type[shape]:size              min     max     mean      std  name
+  ---------------------------------------------------------------------------------------
+  I.0      128   i8[1,12,1,1000]:12000         -99      86   -0.002    4.490  input_1
+  O.0      128   f32[1,1,1,5]:20           -12.437   7.379   -1.743    3.697  output_1
+  ---------------------------------------------------------------------------------------
+
+Saving validation data...
+ output directory: D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\host_validation
+ creating D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\host_validation\ecg_network_val_io.npz
+ m_outputs_1: (128, 5)/float64, min/max=[-12.437087, 7.379338], mean/std=[-1.743135, 3.696839], logits_QuantizeLinear_Input_0_conversion
+ c_outputs_1: (128, 1, 1, 5)/float32, min/max=[-12.437087, 7.379338], mean/std=[-1.743135, 3.696840], logits_QuantizeLinear_Input_0_conversion
+
+Computing the metrics...
+
+ Cross accuracy report #1 (reference vs C-model)
+ ----------------------------------------------------------------------------------------------------
+ notes: - data type is different: r/float64 instead p/float32
+        - ACC metric is not computed ("--classifier" option can be used to force it)
+        - the output of the reference model is used as ground truth/reference value
+        - 128 samples (5 items per sample)
+
+  acc=n.a. rmse=0.000000000 mae=0.000000000 l2r=0.000000000 mean=0.000000 std=0.000000 nse=1.000000 cos=1.000000
+
+ Evaluation report (summary)
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Output       acc    rmse          mae           l2r           mean       std        nse        cos        tensor
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ X-cross #1   n.a.   0.000000000   0.000000000   0.000000000   0.000000   0.000000   1.000000   1.000000   'logits_QuantizeLin..conversion', 128 x f32(1x5), m_id=[43]
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  acc  : Accuracy (class, axis=-1)
+  rmse : Root Mean Squared Error
+  mae  : Mean Absolute Error
+  l2r  : L2 relative error
+  mean : Mean error
+  std  : Standard deviation error
+  nse  : Nash-Sutcliffe efficiency criteria, bigger is better, best=1, range=(-inf, 1]
+  cos  : COsine Similarity, bigger is better, best=1, range=(0, 1]
+
+Creating txt report file D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\host_validation\ecg_network_validate_report.txt
+elapsed time (validate): 58.330s

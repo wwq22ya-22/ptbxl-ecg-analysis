@@ -1,0 +1,24 @@
+{
+  "type": "result",
+  "seq": 1,
+  "probabilities": [
+    0.989648938,
+    0.0049348278,
+    0.00535914907,
+    0.044454556,
+    0.00198818394
+  ],
+  "mask": 1,
+  "inference_ms": 0,
+  "preprocessing_ms": 0,
+  "positive_labels": [
+    "NORM"
+  ],
+  "mode": "simulation",
+  "ecg_id": 47,
+  "total_seconds": 0.019121500001347158,
+  "truth": [
+    "NORM"
+  ],
+  "max_probability_difference_from_host_c": 3.683799744413907e-09
+}

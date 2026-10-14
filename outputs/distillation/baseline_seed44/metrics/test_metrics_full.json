@@ -1,0 +1,109 @@
+{
+  "records": 2158,
+  "per_class": {
+    "NORM": {
+      "support": 963,
+      "threshold": 0.3500000000000001,
+      "auroc": 0.9409429215709276,
+      "precision": 0.7857762359063313,
+      "recall": 0.940809968847352,
+      "f1": 0.8563327032136105,
+      "confusion_matrix": [
+        [
+          948,
+          247
+        ],
+        [
+          57,
+          906
+        ]
+      ]
+    },
+    "MI": {
+      "support": 550,
+      "threshold": 0.6500000000000001,
+      "auroc": 0.9150463591135234,
+      "precision": 0.7271095152603232,
+      "recall": 0.7363636363636363,
+      "f1": 0.7317073170731707,
+      "confusion_matrix": [
+        [
+          1456,
+          152
+        ],
+        [
+          145,
+          405
+        ]
+      ]
+    },
+    "STTC": {
+      "support": 521,
+      "threshold": 0.7000000000000002,
+      "auroc": 0.9345638351133869,
+      "precision": 0.7707129094412332,
+      "recall": 0.7677543186180422,
+      "f1": 0.7692307692307693,
+      "confusion_matrix": [
+        [
+          1518,
+          119
+        ],
+        [
+          121,
+          400
+        ]
+      ]
+    },
+    "CD": {
+      "support": 496,
+      "threshold": 0.8500000000000002,
+      "auroc": 0.9123651061682387,
+      "precision": 0.7687224669603524,
+      "recall": 0.7036290322580645,
+      "f1": 0.7347368421052631,
+      "confusion_matrix": [
+        [
+          1557,
+          105
+        ],
+        [
+          147,
+          349
+        ]
+      ]
+    },
+    "HYP": {
+      "support": 262,
+      "threshold": 0.5500000000000002,
+      "auroc": 0.907114616549103,
+      "precision": 0.5,
+      "recall": 0.7022900763358778,
+      "f1": 0.5841269841269842,
+      "confusion_matrix": [
+        [
+          1712,
+          184
+        ],
+        [
+          78,
+          184
+        ]
+      ]
+    }
+  },
+  "macro_auroc": 0.922006567703036,
+  "macro_precision": 0.710464225513648,
+  "macro_recall": 0.7701694064845945,
+  "macro_f1": 0.7352269231499596,
+  "classes_with_defined_auroc": 5,
+  "dataset": "PTB-XL 1.0.3",
+  "fold": 10,
+  "sampling_rate_hz": 100,
+  "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\baseline_seed44\\checkpoint\\cnn1d_best.pt",
+  "best_validation_epoch": 10,
+  "checkpoint_scope": "full",
+  "threshold_source": "validation_fold_9",
+  "evaluation_device": "cuda",
+  "require_diagnostic_label": true
+}

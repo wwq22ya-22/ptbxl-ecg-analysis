@@ -1,0 +1,109 @@
+{
+  "experiment": "B_raw_gaussian_noise",
+  "date": "2026-10-03",
+  "noise_seed": 20261003,
+  "noise_type": "Gaussian white noise only; no synthetic ECG, no EMG or electrode-motion simulation",
+  "noise_stage": "raw mV before baseline removal, bandpass and training-global normalization",
+  "snr_definition": "per-lead demeaned signal power / added noise power, before preprocessing",
+  "train_view_probabilities": [
+    0.5,
+    0.25,
+    0.25
+  ],
+  "train_views": [
+    "clean",
+    "20dB",
+    "10dB"
+  ],
+  "fixed_noisy_views_per_record": 2,
+  "noise_levels": {
+    "train": [
+      20,
+      10
+    ],
+    "validation": [
+      20,
+      10
+    ],
+    "test": [
+      30,
+      20,
+      10
+    ]
+  },
+  "cohort": {
+    "train": 17084,
+    "validation": 2146,
+    "test": 2158
+  },
+  "patient_isolation_verified": true,
+  "teacher": {
+    "type": "inception1d",
+    "seeds": [
+      44
+    ],
+    "arms": [
+      "clean",
+      "noise"
+    ],
+    "initialization": "from scratch"
+  },
+  "student": {
+    "type": "cnn1d",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "arms": [
+      "noise_supervised",
+      "noise_distilled"
+    ]
+  },
+  "training": {
+    "epochs": 30,
+    "early_stopping_patience": 8,
+    "batch_size": 32,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "checkpoint_selection": "clean validation AUROC, improvement > 0.0001",
+    "threshold_selection": "clean validation only, unchanged coarse grid"
+  },
+  "distillation": {
+    "alpha": 0.5,
+    "temperature": 2,
+    "teacher_input": "same selected record and noise view as student",
+    "teacher_logits": "new view-aligned cache, never legacy clean-only cache"
+  },
+  "deployment_selection": {
+    "candidates": "three noise-distilled students",
+    "score": "0.50 clean validation F1 + 0.25 20dB F1 + 0.25 10dB F1",
+    "clean_f1_guard": 0.01,
+    "guard_reference": "existing distilled seed44 FP32 evaluated in FP32",
+    "fallback": "if no candidate passes guard, export best experimental candidate without replacing firmware"
+  },
+  "quantization": {
+    "method": "static signed INT8 QDQ, per-channel weights, MinMax",
+    "training_calibration": {
+      "clean": 128,
+      "20dB": 64,
+      "10dB": 64
+    },
+    "thresholds": "frozen FP32 clean-validation thresholds"
+  },
+  "test_used_for_selection": false,
+  "test_fold_previously_reused": true,
+  "normalization": "reuse and verify moments fitted on the 17084 clean training records only",
+  "source_code_sha256": "62b6716e3c6a07465983fdb8e02362825bd459a84a7e89cf3d8d7300351db513",
+  "metadata_sha256": "7600de9c1b27d181d850b3c6038a35d7c3ddb6bb33b702e3a20252a6859d216b",
+  "protected_artifacts": {
+    "outputs\\distillation\\distilled_seed44\\checkpoint\\cnn1d_best.pt": "857ed01b867ec8342c6162bd819875f72e4d090a20d3c9effb6fbdab6509a08e",
+    "outputs\\distillation\\distilled_export\\ptbxl_cnn1d_int8.onnx": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+    "outputs\\board_release\\seed44_int8_stm32f407ve\\ECG_Student_INT8_STM32F407VE.hex": "57d255b4dc08cce3ff8e7879ab3c37143865b384e93a31a1f182df4a959134b6",
+    "outputs\\distillation\\baseline_seed42\\checkpoint\\cnn1d_best.pt": "be8e22b1f3cfc04b9e302f8f7cb824f79ea9f7ab12fa7c34d4f64bfca27eceeb",
+    "outputs\\distillation\\baseline_seed43\\checkpoint\\cnn1d_best.pt": "2711314555f1a143fb79265982e0c1a7485e69a7e202df89e0a59bd123172497",
+    "outputs\\distillation\\baseline_seed44\\checkpoint\\cnn1d_best.pt": "579711d2e3e14847ea62008886cf1f239ab7b0b3ebf521eb9f9aa047943f4d22",
+    "outputs\\distillation\\distilled_seed42\\checkpoint\\cnn1d_best.pt": "2b6b2684a9c5bb667437d0f6f76f8a791f552f6abc3d6145e658aad2ca7020b3",
+    "outputs\\distillation\\distilled_seed43\\checkpoint\\cnn1d_best.pt": "a7d2413930ded0ca28173eab123a82779b6deda72211632853322a49de3085c2"
+  }
+}

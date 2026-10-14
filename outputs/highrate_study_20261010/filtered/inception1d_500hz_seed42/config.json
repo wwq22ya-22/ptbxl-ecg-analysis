@@ -1,0 +1,74 @@
+{
+  "dataset": {
+    "root": "D:\\MyProject\\college\\ecg1\\outputs\\highrate_study_20261010\\official_500hz",
+    "sampling_rate_hz": 500,
+    "require_diagnostic_label": true,
+    "train_folds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "validation_fold": 9,
+    "test_fold": 10
+  },
+  "signal_processing": {
+    "normalization": "train_global",
+    "training_mean": [
+      -0.0017282171078607021,
+      -0.0015509792010690838,
+      0.00018224799048915176,
+      0.0016251797969020875,
+      -0.0009029714745102224,
+      -0.0006611658461317895,
+      0.00019874445683189506,
+      -0.0009522935970310337,
+      -0.0015698490152394953,
+      -0.0014002409134608721,
+      -0.0013762203395176536,
+      -0.001298134584348712
+    ],
+    "training_std": [
+      0.1901074650058627,
+      0.1597374814507309,
+      0.16612139466270998,
+      0.14011037528196224,
+      0.14555118037166878,
+      0.14012495674819042,
+      0.23446606615850354,
+      0.3349952318276152,
+      0.3298133623721573,
+      0.29333704877607586,
+      0.29339306138925936,
+      0.24205736999770458
+    ],
+    "baseline_removal": false,
+    "bandpass": null,
+    "notch_hz": null
+  },
+  "model": {
+    "type": "inception1d",
+    "dropout": 0.2
+  },
+  "training": {
+    "epochs": 30,
+    "early_stopping_patience": 8,
+    "batch_size": 32,
+    "random_seed": 42,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "use_amp": true
+  },
+  "highrate_preprocessing": {
+    "500hz": "original mV waveform; no additional temporal filtering",
+    "250hz": "500 Hz -> resample_poly(up=1,down=2,window=(kaiser,8.6),padtype=line)",
+    "normalization": "per-lead global mean/std fitted only on each training cohort",
+    "bandpass": null,
+    "baseline_removal": false,
+    "notch": null
+  }
+}

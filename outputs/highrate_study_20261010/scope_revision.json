@@ -1,0 +1,82 @@
+{
+  "revised_at": "2026-10-10T18:25:50.915191",
+  "original_protocol_preserved": "protocol.json",
+  "user_instruction": "500hz训练少量模型就行了 我主要证明原始采样率获得的模型不好部署的结论",
+  "rationale": "Keep four completed500-Hz CNN/compact-Inception runs; cancel both remaining500-Hz InceptionTime runs without completing an epoch or producing a checkpoint.",
+  "expected_runs": 10,
+  "expected_250hz_runs": 6,
+  "expected_500hz_runs": 4,
+  "plan": [
+    {
+      "model": "cnn1d",
+      "fs": 250,
+      "training_cohort": "filtered"
+    },
+    {
+      "model": "cnn1d",
+      "fs": 500,
+      "training_cohort": "filtered"
+    },
+    {
+      "model": "cnn1d",
+      "fs": 250,
+      "training_cohort": "unfiltered"
+    },
+    {
+      "model": "cnn1d",
+      "fs": 500,
+      "training_cohort": "unfiltered"
+    },
+    {
+      "model": "inception1d",
+      "fs": 250,
+      "training_cohort": "filtered"
+    },
+    {
+      "model": "inception1d",
+      "fs": 500,
+      "training_cohort": "filtered"
+    },
+    {
+      "model": "inception1d",
+      "fs": 250,
+      "training_cohort": "unfiltered"
+    },
+    {
+      "model": "inception1d",
+      "fs": 500,
+      "training_cohort": "unfiltered"
+    },
+    {
+      "model": "inception_time1d",
+      "fs": 250,
+      "training_cohort": "filtered"
+    },
+    {
+      "model": "inception_time1d",
+      "fs": 250,
+      "training_cohort": "unfiltered"
+    }
+  ],
+  "cancelled": [
+    {
+      "model": "inception_time1d",
+      "fs": 500,
+      "training_cohort": "filtered",
+      "reason": "User requested fewer500-Hz models; cancelled without a completed training epoch",
+      "completed_epochs": 0,
+      "checkpoint_created": false,
+      "initialization_started": true
+    },
+    {
+      "model": "inception_time1d",
+      "fs": 500,
+      "training_cohort": "unfiltered",
+      "reason": "User requested fewer500-Hz models; cancelled without a completed training epoch",
+      "completed_epochs": 0,
+      "checkpoint_created": false,
+      "initialization_started": false
+    }
+  ],
+  "inference_limit": "Demonstrates cost and current-board constraints of tested networks/input protocol; does not establish every possible500-Hz network is undeployable."
+}

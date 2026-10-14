@@ -1,0 +1,287 @@
+{
+  "validation": {
+    "records": 2183,
+    "per_class": {
+      "NORM": {
+        "support": 955,
+        "threshold": 0.30000000000000004,
+        "auroc": 0.9503001517812986,
+        "precision": 0.7919227392449517,
+        "recall": 0.9445026178010472,
+        "f1": 0.8615090735434575,
+        "confusion_matrix": [
+          [
+            991,
+            237
+          ],
+          [
+            53,
+            902
+          ]
+        ]
+      },
+      "MI": {
+        "support": 540,
+        "threshold": 0.6500000000000001,
+        "auroc": 0.9330684610355943,
+        "precision": 0.7382671480144405,
+        "recall": 0.7574074074074074,
+        "f1": 0.7477148080438757,
+        "confusion_matrix": [
+          [
+            1498,
+            145
+          ],
+          [
+            131,
+            409
+          ]
+        ]
+      },
+      "STTC": {
+        "support": 528,
+        "threshold": 0.6000000000000002,
+        "auroc": 0.9346356312368397,
+        "precision": 0.7182410423452769,
+        "recall": 0.8352272727272727,
+        "f1": 0.7723292469352014,
+        "confusion_matrix": [
+          [
+            1482,
+            173
+          ],
+          [
+            87,
+            441
+          ]
+        ]
+      },
+      "CD": {
+        "support": 495,
+        "threshold": 0.8500000000000002,
+        "auroc": 0.9221420364785294,
+        "precision": 0.749003984063745,
+        "recall": 0.7595959595959596,
+        "f1": 0.7542627883650953,
+        "confusion_matrix": [
+          [
+            1562,
+            126
+          ],
+          [
+            119,
+            376
+          ]
+        ]
+      },
+      "HYP": {
+        "support": 268,
+        "threshold": 0.9000000000000002,
+        "auroc": 0.9084213397763142,
+        "precision": 0.5148247978436657,
+        "recall": 0.7126865671641791,
+        "f1": 0.5978090766823161,
+        "confusion_matrix": [
+          [
+            1735,
+            180
+          ],
+          [
+            77,
+            191
+          ]
+        ]
+      }
+    },
+    "macro_auroc": 0.9297135240617151,
+    "macro_precision": 0.7024519423024159,
+    "macro_recall": 0.8018839649391731,
+    "macro_f1": 0.7467249987139892,
+    "classes_with_defined_auroc": 5
+  },
+  "validation_fine": {
+    "records": 2183,
+    "per_class": {
+      "NORM": {
+        "support": 955,
+        "threshold": 0.3013271689414978,
+        "auroc": 0.9503001517812986,
+        "precision": 0.7926186291739895,
+        "recall": 0.9445026178010472,
+        "f1": 0.8619206880076445,
+        "confusion_matrix": [
+          [
+            992,
+            236
+          ],
+          [
+            53,
+            902
+          ]
+        ]
+      },
+      "MI": {
+        "support": 540,
+        "threshold": 0.6329114437103271,
+        "auroc": 0.9330684610355943,
+        "precision": 0.7345132743362832,
+        "recall": 0.7685185185185185,
+        "f1": 0.751131221719457,
+        "confusion_matrix": [
+          [
+            1493,
+            150
+          ],
+          [
+            125,
+            415
+          ]
+        ]
+      },
+      "STTC": {
+        "support": 528,
+        "threshold": 0.6154722571372986,
+        "auroc": 0.9346356312368397,
+        "precision": 0.7348993288590604,
+        "recall": 0.8295454545454546,
+        "f1": 0.7793594306049823,
+        "confusion_matrix": [
+          [
+            1497,
+            158
+          ],
+          [
+            90,
+            438
+          ]
+        ]
+      },
+      "CD": {
+        "support": 495,
+        "threshold": 0.8381143808364868,
+        "auroc": 0.9221420364785294,
+        "precision": 0.7446393762183235,
+        "recall": 0.7717171717171717,
+        "f1": 0.7579365079365079,
+        "confusion_matrix": [
+          [
+            1557,
+            131
+          ],
+          [
+            113,
+            382
+          ]
+        ]
+      },
+      "HYP": {
+        "support": 268,
+        "threshold": 0.9467571377754211,
+        "auroc": 0.9084213397763142,
+        "precision": 0.6428571428571429,
+        "recall": 0.6044776119402985,
+        "f1": 0.6230769230769231,
+        "confusion_matrix": [
+          [
+            1825,
+            90
+          ],
+          [
+            106,
+            162
+          ]
+        ]
+      }
+    },
+    "macro_auroc": 0.9297135240617151,
+    "macro_precision": 0.7299055502889599,
+    "macro_recall": 0.7837522749044982,
+    "macro_f1": 0.754684954269103,
+    "classes_with_defined_auroc": 5
+  },
+  "fine_thresholds": [
+    0.3013271689414978,
+    0.6329114437103271,
+    0.6154722571372986,
+    0.8381143808364868,
+    0.9467571377754211
+  ],
+  "epoch": 14,
+  "parameters": 267749,
+  "name": "08_global_inception1d",
+  "description": "inception1d+只改训练集标准化，排除权重/调度交互影响",
+  "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\optimization\\08_global_inception1d\\checkpoint\\inception1d_best.pt",
+  "seconds": 156.18533770000022,
+  "config": {
+    "project": {
+      "name": "ptbxl-ecg-system",
+      "random_seed": 42
+    },
+    "dataset": {
+      "root": "D:/datasets/ptb-xl",
+      "sampling_rate_hz": 100,
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "test_fold": 10
+    },
+    "signal_processing": {
+      "baseline_windows_s": [
+        0.2,
+        0.6
+      ],
+      "lowcut_hz": 0.5,
+      "highcut_hz": 40.0,
+      "bandpass_order": 4,
+      "notch_hz": null,
+      "notch_quality_factor": 30.0,
+      "normalization": "train_global",
+      "rpeak_minimum_rr_s": 0.25,
+      "rpeak_integration_window_s": 0.12,
+      "rpeak_t_wave_window_s": 0.36,
+      "rpeak_t_wave_max_ratio": 0.75,
+      "rr_min_valid_s": 0.3,
+      "rr_max_valid_s": 2.0
+    },
+    "labels": {
+      "superclasses": [
+        "NORM",
+        "MI",
+        "STTC",
+        "CD",
+        "HYP"
+      ],
+      "default_threshold": 0.5
+    },
+    "model": {
+      "type": "inception1d",
+      "dropout": 0.2
+    },
+    "training": {
+      "epochs": 20,
+      "batch_size": 32,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "early_stopping_patience": 5,
+      "num_workers": 0,
+      "use_amp": true,
+      "random_seed": 42
+    },
+    "outputs": {
+      "split_dir": "outputs/splits",
+      "figure_dir": "outputs/optimization/08_global_inception1d/figure",
+      "cache_dir": "outputs/cache",
+      "checkpoint_dir": "outputs/optimization/08_global_inception1d/checkpoint",
+      "metrics_dir": "outputs/optimization/08_global_inception1d/metrics",
+      "predictions_dir": "outputs/optimization/08_global_inception1d/predictions"
+    }
+  }
+}

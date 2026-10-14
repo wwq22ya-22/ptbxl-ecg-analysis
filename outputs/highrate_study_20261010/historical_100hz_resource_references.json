@@ -1,0 +1,25 @@
+{
+  "references": [
+    {
+      "model": "cnn1d",
+      "fs": 100,
+      "weights_bytes": 112276,
+      "activations_bytes": 24000,
+      "macc": 14698207,
+      "source": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_export\\int8_analysis\\ecg_cnn_int8_analyze_report.txt",
+      "sha256": "07ec5e4a324f4ef3a8b64e689da2a6816ccbae7ad42f01717cd9fa4e9ab3aaf4",
+      "scope": "historical structure/resource reference; different checkpoint from100-Hz accuracy reference"
+    },
+    {
+      "model": "inception1d",
+      "fs": 100,
+      "weights_bytes": 272564,
+      "activations_bytes": 288000,
+      "macc": 80504405,
+      "source": "D:\\MyProject\\college\\ecg1\\outputs\\cubeai\\inception\\int8_analysis\\ecg_inception_int8_analyze_report.txt",
+      "sha256": "e226dbbac4c5b254dfddaf0cf1a925e6de220a286842a30057bc1830e84aeb48",
+      "scope": "historical structure/resource reference; different checkpoint from100-Hz accuracy reference"
+    }
+  ],
+  "board_timing": false
+}

@@ -1,0 +1,110 @@
+{
+  "rule": "fold9 F1 >= full ResNetglobal +0.001 and AUROC >= reference -0.001; top two; fixed equal ensemble always checked",
+  "single_cases": [
+    "resnet_asl4"
+  ],
+  "calibration_reference": {
+    "records": 2183,
+    "per_class": {
+      "NORM": {
+        "support": 955,
+        "threshold": 0.5874487161636353,
+        "auroc": 0.947023210600815,
+        "precision": 0.8397626112759644,
+        "recall": 0.8890052356020942,
+        "f1": 0.8636826042726348,
+        "confusion_matrix": [
+          [
+            1066,
+            162
+          ],
+          [
+            106,
+            849
+          ]
+        ]
+      },
+      "MI": {
+        "support": 540,
+        "threshold": 0.5629241466522217,
+        "auroc": 0.9220565361466152,
+        "precision": 0.7445255474452555,
+        "recall": 0.7555555555555555,
+        "f1": 0.75,
+        "confusion_matrix": [
+          [
+            1503,
+            140
+          ],
+          [
+            132,
+            408
+          ]
+        ]
+      },
+      "STTC": {
+        "support": 528,
+        "threshold": 0.5355321168899536,
+        "auroc": 0.9328916048704567,
+        "precision": 0.7023622047244095,
+        "recall": 0.8446969696969697,
+        "f1": 0.766981943250215,
+        "confusion_matrix": [
+          [
+            1466,
+            189
+          ],
+          [
+            82,
+            446
+          ]
+        ]
+      },
+      "CD": {
+        "support": 495,
+        "threshold": 0.7665272355079651,
+        "auroc": 0.9278830963665088,
+        "precision": 0.7319778188539742,
+        "recall": 0.8,
+        "f1": 0.7644787644787645,
+        "confusion_matrix": [
+          [
+            1543,
+            145
+          ],
+          [
+            99,
+            396
+          ]
+        ]
+      },
+      "HYP": {
+        "support": 268,
+        "threshold": 0.7323082089424133,
+        "auroc": 0.9079127859397529,
+        "precision": 0.5709876543209876,
+        "recall": 0.6902985074626866,
+        "f1": 0.625,
+        "confusion_matrix": [
+          [
+            1776,
+            139
+          ],
+          [
+            83,
+            185
+          ]
+        ]
+      }
+    },
+    "macro_auroc": 0.9275534467848298,
+    "macro_precision": 0.7179231673241182,
+    "macro_recall": 0.7959112536634612,
+    "macro_f1": 0.7540286624003227,
+    "classes_with_defined_auroc": 5
+  },
+  "cv_cases": [
+    "resnet_asl4",
+    "ensemble_equal"
+  ]
+}

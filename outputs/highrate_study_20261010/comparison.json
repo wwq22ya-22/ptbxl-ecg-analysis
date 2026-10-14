@@ -1,0 +1,16 @@
+{
+  "conclusions": [
+    "- filtered / cnn1d / 250 Hz：相对已有同训练队列100 Hz，折9宏F1差值-0.135个百分点；预处理差异限制见上。",
+    "- filtered / cnn1d / 500 Hz：相对已有同训练队列100 Hz，折9宏F1差值-0.356个百分点；预处理差异限制见上。",
+    "- unfiltered / cnn1d / 250 Hz：相对已有同训练队列100 Hz，折9宏F1差值+2.936个百分点；预处理差异限制见上。",
+    "- unfiltered / cnn1d / 500 Hz：相对已有同训练队列100 Hz，折9宏F1差值+2.851个百分点；预处理差异限制见上。",
+    "- filtered / inception1d / 250 Hz：相对已有同训练队列100 Hz，折9宏F1差值-0.058个百分点；预处理差异限制见上。",
+    "- filtered / inception1d / 500 Hz：相对已有同训练队列100 Hz，折9宏F1差值+0.013个百分点；预处理差异限制见上。",
+    "- unfiltered / inception1d / 250 Hz：相对已有同训练队列100 Hz，折9宏F1差值+0.763个百分点；预处理差异限制见上。",
+    "- unfiltered / inception1d / 500 Hz：相对已有同训练队列100 Hz，折9宏F1差值+0.486个百分点；预处理差异限制见上。",
+    "- filtered / inception_time1d / 250 Hz：相对已有同训练队列100 Hz，折9宏F1差值-0.708个百分点；预处理差异限制见上。",
+    "- unfiltered / inception_time1d / 250 Hz：无匹配的已有100 Hz训练队列检查点，不能给出严格同队列增益。"
+  ],
+  "baseline_limits": "different preprocessing; unfiltered InceptionTime100 missing",
+  "new_100hz_training": false
+}

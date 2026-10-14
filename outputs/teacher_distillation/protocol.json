@@ -1,0 +1,109 @@
+{
+  "date": "2026-10-07",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "teacher": "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\ensemble_followup\\recommended_teacher.pt",
+  "teacher_sha256": "440e9b6bc15fa6e1246eee75645f3000eb15b03884efe4a680ad0bffa140c256",
+  "logits_sha256": "cc3a8e94532883ac50707893e460bb9166862b06f6128ec84f9972b23156caf4",
+  "student_parameters": 111557,
+  "training": {
+    "epochs": 30,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "early_stopping_patience": 8,
+    "num_workers": 0,
+    "use_amp": true,
+    "random_seed": 44
+  },
+  "alpha": 0.5,
+  "temperature": 2,
+  "preprocessing": {
+    "baseline_windows_s": [
+      0.2,
+      0.6
+    ],
+    "lowcut_hz": 0.5,
+    "highcut_hz": 40.0,
+    "bandpass_order": 4,
+    "notch_hz": null,
+    "notch_quality_factor": 30.0,
+    "normalization": "train_global",
+    "rpeak_minimum_rr_s": 0.25,
+    "rpeak_integration_window_s": 0.12,
+    "rpeak_t_wave_window_s": 0.36,
+    "rpeak_t_wave_max_ratio": 0.75,
+    "rr_min_valid_s": 0.3,
+    "rr_max_valid_s": 2.0
+  },
+  "cohort": {
+    "train": 17084,
+    "validation": 2146,
+    "test": 2158
+  },
+  "selection": "new student FP32 validation macro F1 then AUROC; freeze before test",
+  "deployment_policy": "compare selected new INT8 versus original INT8 validation macro F1 then AUROC",
+  "thresholds": "original training AMP validation coarse F1 grid; preserved for FP32 and INT8",
+  "test_used_for_selection": false,
+  "test_previously_reused": true,
+  "teacher_ensemble_proposed_after_parent_test_review": true,
+  "controls_reused_after_config_and_normalization_checks": [
+    {
+      "arm": "baseline",
+      "seed": 42,
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\baseline_seed42\\checkpoint\\cnn1d_best.pt",
+      "sha256": "be8e22b1f3cfc04b9e302f8f7cb824f79ea9f7ab12fa7c34d4f64bfca27eceeb",
+      "epoch": 10
+    },
+    {
+      "arm": "baseline",
+      "seed": 43,
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\baseline_seed43\\checkpoint\\cnn1d_best.pt",
+      "sha256": "2711314555f1a143fb79265982e0c1a7485e69a7e202df89e0a59bd123172497",
+      "epoch": 10
+    },
+    {
+      "arm": "baseline",
+      "seed": 44,
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\baseline_seed44\\checkpoint\\cnn1d_best.pt",
+      "sha256": "579711d2e3e14847ea62008886cf1f239ab7b0b3ebf521eb9f9aa047943f4d22",
+      "epoch": 10
+    },
+    {
+      "arm": "distilled",
+      "seed": 42,
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_seed42\\checkpoint\\cnn1d_best.pt",
+      "sha256": "2b6b2684a9c5bb667437d0f6f76f8a791f552f6abc3d6145e658aad2ca7020b3",
+      "epoch": 17
+    },
+    {
+      "arm": "distilled",
+      "seed": 43,
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_seed43\\checkpoint\\cnn1d_best.pt",
+      "sha256": "a7d2413930ded0ca28173eab123a82779b6deda72211632853322a49de3085c2",
+      "epoch": 21
+    },
+    {
+      "arm": "distilled",
+      "seed": 44,
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_seed44\\checkpoint\\cnn1d_best.pt",
+      "sha256": "857ed01b867ec8342c6162bd819875f72e4d090a20d3c9effb6fbdab6509a08e",
+      "epoch": 16
+    }
+  ],
+  "protected_artifacts": {
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_seed44\\checkpoint\\cnn1d_best.pt": "857ed01b867ec8342c6162bd819875f72e4d090a20d3c9effb6fbdab6509a08e",
+    "D:\\MyProject\\college\\ecg1\\outputs\\optimization\\optimized_best.pt": "29ffa3ad10e2081fd3749679e195e894edcda40a4851c8db3dc9081f6762a717",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_export\\ptbxl_cnn1d_int8.onnx": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+    "D:\\MyProject\\college\\ecg1\\outputs\\board_release\\seed44_int8_stm32f407ve\\ECG_Student_INT8_STM32F407VE.hex": "57d255b4dc08cce3ff8e7879ab3c37143865b384e93a31a1f182df4a959134b6",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\ensemble_followup\\recommended_teacher.pt": "440e9b6bc15fa6e1246eee75645f3000eb15b03884efe4a680ad0bffa140c256",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\baseline_seed42\\checkpoint\\cnn1d_best.pt": "be8e22b1f3cfc04b9e302f8f7cb824f79ea9f7ab12fa7c34d4f64bfca27eceeb",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\baseline_seed43\\checkpoint\\cnn1d_best.pt": "2711314555f1a143fb79265982e0c1a7485e69a7e202df89e0a59bd123172497",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\baseline_seed44\\checkpoint\\cnn1d_best.pt": "579711d2e3e14847ea62008886cf1f239ab7b0b3ebf521eb9f9aa047943f4d22",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_seed42\\checkpoint\\cnn1d_best.pt": "2b6b2684a9c5bb667437d0f6f76f8a791f552f6abc3d6145e658aad2ca7020b3",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_seed43\\checkpoint\\cnn1d_best.pt": "a7d2413930ded0ca28173eab123a82779b6deda72211632853322a49de3085c2"
+  }
+}

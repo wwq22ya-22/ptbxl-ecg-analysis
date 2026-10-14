@@ -1,0 +1,359 @@
+{
+  "started_at": "2026-10-11T02:30:33.669214+00:00",
+  "physical_board_test": true,
+  "mode": "physical_serial",
+  "port": "COM8",
+  "baudrate": 115200,
+  "simulation_used": false,
+  "firmware_modified_or_flashed": false,
+  "results": [
+    {
+      "type": "result",
+      "seq": 717944010,
+      "probabilities": [
+        0.947944582,
+        0.0323120207,
+        0.0103510218,
+        0.171452999,
+        0.0030064818
+      ],
+      "mask": 1,
+      "inference_ms": 1013,
+      "positive_labels": [
+        "NORM"
+      ],
+      "ecg_id": 9,
+      "sample_index": 0,
+      "fold": 10,
+      "sample_source": "PTB-XL historical test fold 10",
+      "sample_sha256": "2e2687d21a05fb6ba940f090ce39830488f2c365316eb16c4bb4a26b4d1f5f8f",
+      "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+      "protocol": 1,
+      "preprocessing_location": "host",
+      "preprocessing_sha256": null,
+      "thresholds": [
+        0.5500000000000002,
+        0.6000000000000002,
+        0.5500000000000002,
+        0.7500000000000002,
+        0.6500000000000001
+      ],
+      "truth": [
+        "NORM"
+      ],
+      "host_c_reference_probabilities": [
+        0.9479445815086365,
+        0.032312020659446716,
+        0.010351022705435753,
+        0.17145301401615143,
+        0.003006481798365712
+      ],
+      "reference": "Cube.AI host C-model with exact firmware INT8 inputs; not physical-board outputs",
+      "mode": "physical_serial",
+      "total_seconds": 16.500492000000122,
+      "max_probability_difference_from_host_c": 1.5016151433400182e-08
+    },
+    {
+      "type": "result",
+      "seq": 717944011,
+      "probabilities": [
+        0.602183104,
+        0.159993261,
+        0.0169102289,
+        0.879736185,
+        0.0049348278
+      ],
+      "mask": 9,
+      "inference_ms": 1013,
+      "positive_labels": [
+        "NORM",
+        "CD"
+      ],
+      "ecg_id": 38,
+      "sample_index": 1,
+      "fold": 10,
+      "sample_source": "PTB-XL historical test fold 10",
+      "sample_sha256": "2e2687d21a05fb6ba940f090ce39830488f2c365316eb16c4bb4a26b4d1f5f8f",
+      "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+      "protocol": 1,
+      "preprocessing_location": "host",
+      "preprocessing_sha256": null,
+      "thresholds": [
+        0.5500000000000002,
+        0.6000000000000002,
+        0.5500000000000002,
+        0.7500000000000002,
+        0.6500000000000001
+      ],
+      "truth": [
+        "NORM"
+      ],
+      "host_c_reference_probabilities": [
+        0.6021831035614014,
+        0.1599932610988617,
+        0.01691022701561451,
+        0.8797361850738525,
+        0.004934827797114849
+      ],
+      "reference": "Cube.AI host C-model with exact firmware INT8 inputs; not physical-board outputs",
+      "mode": "physical_serial",
+      "total_seconds": 16.969038000000182,
+      "max_probability_difference_from_host_c": 1.8843854913963565e-09
+    },
+    {
+      "type": "result",
+      "seq": 717944012,
+      "probabilities": [
+        0.0893506482,
+        0.790281415,
+        0.43813324,
+        0.678355634,
+        0.0183452684
+      ],
+      "mask": 2,
+      "inference_ms": 1013,
+      "positive_labels": [
+        "MI"
+      ],
+      "ecg_id": 21826,
+      "sample_index": 2157,
+      "fold": 10,
+      "sample_source": "PTB-XL historical test fold 10",
+      "sample_sha256": "2e2687d21a05fb6ba940f090ce39830488f2c365316eb16c4bb4a26b4d1f5f8f",
+      "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+      "protocol": 1,
+      "preprocessing_location": "host",
+      "preprocessing_sha256": null,
+      "thresholds": [
+        0.5500000000000002,
+        0.6000000000000002,
+        0.5500000000000002,
+        0.7500000000000002,
+        0.6500000000000001
+      ],
+      "truth": [
+        "MI"
+      ],
+      "host_c_reference_probabilities": [
+        0.0893506407737732,
+        0.7902814149856567,
+        0.43813320994377136,
+        0.6783556342124939,
+        0.018345266580581665
+      ],
+      "reference": "Cube.AI host C-model with exact firmware INT8 inputs; not physical-board outputs",
+      "mode": "physical_serial",
+      "total_seconds": 16.745116999999482,
+      "max_probability_difference_from_host_c": 3.0056228617070246e-08
+    },
+    {
+      "type": "result",
+      "seq": 717944013,
+      "probabilities": [
+        0.947944582,
+        0.0323120207,
+        0.0103510218,
+        0.171452999,
+        0.0030064818
+      ],
+      "mask": 1,
+      "inference_ms": 1012,
+      "positive_labels": [
+        "NORM"
+      ],
+      "ecg_id": 9,
+      "sample_index": 0,
+      "fold": 10,
+      "sample_source": "PTB-XL historical test fold 10",
+      "sample_sha256": "2e2687d21a05fb6ba940f090ce39830488f2c365316eb16c4bb4a26b4d1f5f8f",
+      "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+      "protocol": 1,
+      "preprocessing_location": "host",
+      "preprocessing_sha256": null,
+      "thresholds": [
+        0.5500000000000002,
+        0.6000000000000002,
+        0.5500000000000002,
+        0.7500000000000002,
+        0.6500000000000001
+      ],
+      "truth": [
+        "NORM"
+      ],
+      "host_c_reference_probabilities": [
+        0.9479445815086365,
+        0.032312020659446716,
+        0.010351022705435753,
+        0.17145301401615143,
+        0.003006481798365712
+      ],
+      "reference": "Cube.AI host C-model with exact firmware INT8 inputs; not physical-board outputs",
+      "mode": "physical_serial",
+      "total_seconds": 16.51819650000016,
+      "max_probability_difference_from_host_c": 1.5016151433400182e-08
+    }
+  ],
+  "completed": true,
+  "hello": {
+    "type": "hello",
+    "protocol": 1,
+    "ready": true,
+    "model": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+    "input_shape": [
+      12,
+      1000
+    ],
+    "preprocessing": "host",
+    "labels": [
+      "NORM",
+      "MI",
+      "STTC",
+      "CD",
+      "HYP"
+    ],
+    "thresholds": [
+      0.550000012,
+      0.600000024,
+      0.550000012,
+      0.75,
+      0.649999976
+    ]
+  },
+  "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+  "protocol": 1,
+  "preprocessing_location": "host",
+  "distinct_inputs_produce_different_probabilities": true,
+  "repeated_input_max_probability_difference": 0.0,
+  "distinct_response_sequences": true,
+  "all_inference_times_positive": true,
+  "max_probability_difference_from_host_c": 3.0056228617070246e-08,
+  "raw_responses": [
+    {
+      "received_at": "2026-10-11T02:30:33.718388+00:00",
+      "raw_ascii": "{\"type\":\"hello\",\"protocol\":1,\"ready\":true,\"model\":\"ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610\",\"input_shape\":[12,1000],\"preprocessing\":\"host\",\"labels\":[\"NORM\",\"MI\",\"STTC\",\"CD\",\"HYP\"],\"thresholds\":[0.550000012,0.600000024,0.550000012,0.75,0.649999976]}\r\n",
+      "parsed": {
+        "type": "hello",
+        "protocol": 1,
+        "ready": true,
+        "model": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+        "input_shape": [
+          12,
+          1000
+        ],
+        "preprocessing": "host",
+        "labels": [
+          "NORM",
+          "MI",
+          "STTC",
+          "CD",
+          "HYP"
+        ],
+        "thresholds": [
+          0.550000012,
+          0.600000024,
+          0.550000012,
+          0.75,
+          0.649999976
+        ]
+      }
+    },
+    {
+      "received_at": "2026-10-11T02:30:33.761131+00:00",
+      "raw_ascii": "{\"type\":\"hello\",\"protocol\":1,\"ready\":true,\"model\":\"ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610\",\"input_shape\":[12,1000],\"preprocessing\":\"host\",\"labels\":[\"NORM\",\"MI\",\"STTC\",\"CD\",\"HYP\"],\"thresholds\":[0.550000012,0.600000024,0.550000012,0.75,0.649999976]}\r\n",
+      "parsed": {
+        "type": "hello",
+        "protocol": 1,
+        "ready": true,
+        "model": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+        "input_shape": [
+          12,
+          1000
+        ],
+        "preprocessing": "host",
+        "labels": [
+          "NORM",
+          "MI",
+          "STTC",
+          "CD",
+          "HYP"
+        ],
+        "thresholds": [
+          0.550000012,
+          0.600000024,
+          0.550000012,
+          0.75,
+          0.649999976
+        ]
+      }
+    },
+    {
+      "received_at": "2026-10-11T02:30:51.558762+00:00",
+      "raw_ascii": "{\"type\":\"result\",\"seq\":717944010,\"probabilities\":[0.947944582,0.0323120207,0.0103510218,0.171452999,0.0030064818],\"mask\":1,\"inference_ms\":1013}\r\n",
+      "parsed": {
+        "type": "result",
+        "seq": 717944010,
+        "probabilities": [
+          0.947944582,
+          0.0323120207,
+          0.0103510218,
+          0.171452999,
+          0.0030064818
+        ],
+        "mask": 1,
+        "inference_ms": 1013
+      }
+    },
+    {
+      "received_at": "2026-10-11T02:31:08.527868+00:00",
+      "raw_ascii": "{\"type\":\"result\",\"seq\":717944011,\"probabilities\":[0.602183104,0.159993261,0.0169102289,0.879736185,0.0049348278],\"mask\":9,\"inference_ms\":1013}\r\n",
+      "parsed": {
+        "type": "result",
+        "seq": 717944011,
+        "probabilities": [
+          0.602183104,
+          0.159993261,
+          0.0169102289,
+          0.879736185,
+          0.0049348278
+        ],
+        "mask": 9,
+        "inference_ms": 1013
+      }
+    },
+    {
+      "received_at": "2026-10-11T02:31:25.273103+00:00",
+      "raw_ascii": "{\"type\":\"result\",\"seq\":717944012,\"probabilities\":[0.0893506482,0.790281415,0.43813324,0.678355634,0.0183452684],\"mask\":2,\"inference_ms\":1013}\r\n",
+      "parsed": {
+        "type": "result",
+        "seq": 717944012,
+        "probabilities": [
+          0.0893506482,
+          0.790281415,
+          0.43813324,
+          0.678355634,
+          0.0183452684
+        ],
+        "mask": 2,
+        "inference_ms": 1013
+      }
+    },
+    {
+      "received_at": "2026-10-11T02:31:41.791503+00:00",
+      "raw_ascii": "{\"type\":\"result\",\"seq\":717944013,\"probabilities\":[0.947944582,0.0323120207,0.0103510218,0.171452999,0.0030064818],\"mask\":1,\"inference_ms\":1012}\r\n",
+      "parsed": {
+        "type": "result",
+        "seq": 717944013,
+        "probabilities": [
+          0.947944582,
+          0.0323120207,
+          0.0103510218,
+          0.171452999,
+          0.0030064818
+        ],
+        "mask": 1,
+        "inference_ms": 1012
+      }
+    }
+  ],
+  "finished_at": "2026-10-11T02:31:41.916878+00:00"
+}

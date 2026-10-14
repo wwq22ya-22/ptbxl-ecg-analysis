@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-14",
+  "pytest": "160 passed, 2 warnings in 123.57s",
+  "physical_board_test_rerun": false,
+  "uploaded_physical_evidence_date": "2026-10-11",
+  "current_deployed_model": "seed44 INT8; original deployment thresholds; protocol1 A",
+  "private_reports_excluded": true
+}

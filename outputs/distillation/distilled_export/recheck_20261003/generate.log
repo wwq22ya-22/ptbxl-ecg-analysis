@@ -1,0 +1,45 @@
+ST Edge AI Core v2.2.0-20266 2adc00962
+ecg shape is already on channel first, no change needed
+
+Creating c (debug) info json file D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\generated\ecg_network_c_info.json
+ 
+ Exec/report summary (generate)
+ -----------------------------------------------------------------------------------------------------------------------------
+ model file         :   D:\MyProject\college\ecg1\outputs\distillation\distilled_export\ptbxl_cnn1d_int8.onnx                 
+ type               :   onnx                                                                                                  
+ c_name             :   ecg_network                                                                                           
+ compression        :   none                                                                                                  
+ options            :   allocate-inputs, allocate-outputs                                                                     
+ optimization       :   ram                                                                                                   
+ target/series      :   stm32f4                                                                                               
+ workspace dir      :   D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\generate_workspace   
+ output dir         :   D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\generated            
+ model_fmt          :   ss/sa per tensor                                                                                      
+ model_name         :   ptbxl_cnn1d_int8                                                                                      
+ model_hash         :   0x4d573327af164355881fc61b405482f0                                                                    
+ params #           :   111,205 items (434.39 KiB)                                                                            
+ -----------------------------------------------------------------------------------------------------------------------------
+ input 1/1          :   'ecg', int8(1x12x1000), 11.72 KBytes, QLinear(0.200836450,0,int8), activations                        
+ output 1/1         :   'logits_QuantizeLin..conversion', f32(1x5), 20 Bytes, activations                                     
+ macc               :   14,698,207                                                                                            
+ weights (ro)       :   112,276 B (109.64 KiB) (1 segment) / -332,544(-74.8%) vs float model                                  
+ activations (rw)   :   24,000 B (23.44 KiB) (1 segment) *                                                                    
+ ram (total)        :   24,000 B (23.44 KiB) = 24,000 + 0 + 0                                                                 
+ -----------------------------------------------------------------------------------------------------------------------------
+ (*) 'input'/'output' buffers are allocated in the activations buffer
+
+Computing AI RT data/code size (target=stm32f4)..
+ -> compiler "gcc:arm-none-eabi-gcc" is not in the PATH
+
+ Generated files (7)
+ ----------------------------------------------------------------------------------------------------------------------
+ D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\generated\ecg_network_data_params.h
+ D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\generated\ecg_network_data_params.c
+ D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\generated\ecg_network_data.h
+ D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\generated\ecg_network_data.c
+ D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\generated\ecg_network_config.h
+ D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\generated\ecg_network.h
+ D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\generated\ecg_network.c
+
+Creating txt report file D:\MyProject\college\ecg1\outputs\distillation\distilled_export\recheck_20261003\generated\ecg_network_generate_report.txt
+elapsed time (generate): 129.754s

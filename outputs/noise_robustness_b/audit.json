@@ -1,0 +1,31 @@
+{
+  "audit_passed": true,
+  "prediction_files_recomputed": 112,
+  "patient_isolation_verified": true,
+  "no_empty_five_class_targets": true,
+  "metrics_and_confusion_matrices_recomputed": true,
+  "thresholds_fixed_across_conditions": true,
+  "validation_only_selection_recomputed": true,
+  "selection_frozen_before_test_noise_build": true,
+  "training_only_quantization_calibration": true,
+  "original_artifact_hashes_unchanged": true,
+  "checked_at": "2026-10-03T16:54:54.881351+08:00",
+  "environment": {
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "torch": "2.12.1+cu126",
+      "onnx": "1.23.0",
+      "onnxruntime": "1.30.0"
+    }
+  },
+  "source_sha256": {
+    "src/training/noise.py": "62b6716e3c6a07465983fdb8e02362825bd459a84a7e89cf3d8d7300351db513",
+    "scripts/run_noise_robustness.py": "c98e3c5a756616fa825ce0b458c19e7833c635c54a25d0c2ab2dae74bef10ad9",
+    "scripts/audit_noise_robustness.py": "4213d8d08366a41d8ad6941c616b5f5bb2113273286aad4e4c498e48500e3f09",
+    "tests/test_noise_robustness.py": "fa71eb97f5444dadc374268a19249619409243702b8aa0316e7718712a1e9b69"
+  }
+}

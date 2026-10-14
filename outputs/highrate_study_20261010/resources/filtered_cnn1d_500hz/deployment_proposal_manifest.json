@@ -1,0 +1,128 @@
+{
+  "status": "PROPOSAL_ONLY_NOT_COMPILED_OR_BOARD_VALIDATED",
+  "model_type": "cnn1d",
+  "fs": 500,
+  "input_shape": [
+    1,
+    12,
+    5000
+  ],
+  "samples_total": 60000,
+  "layout": "lead-major contiguous: each lead then time",
+  "lead_names": [
+    "I",
+    "II",
+    "III",
+    "aVR",
+    "aVL",
+    "aVF",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6"
+  ],
+  "labels": [
+    "NORM",
+    "MI",
+    "STTC",
+    "CD",
+    "HYP"
+  ],
+  "prediction": "five independent sigmoid outputs; no argmax",
+  "training_cohort": "filtered",
+  "source_checkpoint_sha256": "d333d525a7c14a1b9b7c7b3fd4548597729da1b2a4f90b3bc7502ba6194b4260",
+  "model_int8_onnx_sha256": "5ac33a018961790e516d3aa9fa24326451ffc55a6f8f9d30a27583c60b6aed36",
+  "onnxruntime_input": "FP32 normalized signal; QDQ graph quantizes internally",
+  "cubeai_input_dtype": "int8",
+  "input_quantization": {
+    "scale": 0.13388459384441376,
+    "zero_point": -5,
+    "range": [
+      -128,
+      127
+    ]
+  },
+  "host_normalization": {
+    "method": "per-lead global moments from training folds1-8",
+    "mean": [
+      -0.0017282171078607021,
+      -0.0015509792010690838,
+      0.00018224799048915176,
+      0.0016251797969020875,
+      -0.0009029714745102224,
+      -0.0006611658461317895,
+      0.00019874445683189506,
+      -0.0009522935970310337,
+      -0.0015698490152394953,
+      -0.0014002409134608721,
+      -0.0013762203395176536,
+      -0.001298134584348712
+    ],
+    "std": [
+      0.1901074650058627,
+      0.1597374814507309,
+      0.16612139466270998,
+      0.14011037528196224,
+      0.14555118037166878,
+      0.14012495674819042,
+      0.23446606615850354,
+      0.3349952318276152,
+      0.3298133623721573,
+      0.29333704877607586,
+      0.29339306138925936,
+      0.24205736999770458
+    ]
+  },
+  "host_resampling": {
+    "source_hz": 500,
+    "output_hz": 500,
+    "method": "none"
+  },
+  "host_temporal_filtering": null,
+  "thresholds_native_fold9": [
+    0.63,
+    0.62,
+    0.67,
+    0.66,
+    0.62
+  ],
+  "model_resources_actual_cubeai": {
+    "conversion_success": true,
+    "weights_bytes": 112276,
+    "activations_bytes": 120000,
+    "macc": 73586207,
+    "memory_footprint": {
+      "activations": 120000,
+      "io": [
+        0,
+        0
+      ],
+      "kernel_flash": null,
+      "kernel_ram": null,
+      "series": "generic",
+      "toolchain": null,
+      "toolchain_flash": null,
+      "toolchain_ram": null,
+      "weights": 112276
+    },
+    "estimated_complete_flash": 158876,
+    "estimated_complete_main_sram": 139672,
+    "overhead_source": "old CNN seed44 link map; estimates only, no new firmware",
+    "fits_f407ve_flash_estimate": true,
+    "fits_f407vg_flash_estimate": true,
+    "fits_main_sram_estimate": false
+  },
+  "firmware_changes_required": [
+    "update host and MCU input length and hello",
+    "update model C/weights",
+    "update scale/zero point/thresholds/hash",
+    "confirm VG target and flash settings",
+    "link full firmware and SRAM/CCM placement",
+    "validate protocol CRC and outputs",
+    "measure real inference/stack/stability"
+  ],
+  "physical_board_validated": false,
+  "old_100hz_firmware_replaced": false
+}

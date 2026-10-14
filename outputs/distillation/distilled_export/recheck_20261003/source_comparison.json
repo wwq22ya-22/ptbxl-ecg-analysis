@@ -1,0 +1,44 @@
+[
+  {
+    "file": "ecg_network.c",
+    "same_network_and_weights": true,
+    "metadata_difference": "generation datetime and generated graph signature only",
+    "fresh_sha256": "d9ff643859e2793fe45dbfc16e637f52e7359bf28ae11bff0f67806b58b340ff"
+  },
+  {
+    "file": "ecg_network.h",
+    "same_network_and_weights": true,
+    "metadata_difference": "generation datetime only",
+    "fresh_sha256": "7eac3bc2ce6f57167ed1d2865ed3ccb5189bb5090c3f60a8f21d43667a468846"
+  },
+  {
+    "file": "ecg_network_config.h",
+    "same_network_and_weights": true,
+    "metadata_difference": "generation datetime only",
+    "fresh_sha256": "79fe70cff87a842d5e5c49205b8f5b91ae3783af6b0c136039c2415854b7f010"
+  },
+  {
+    "file": "ecg_network_data.c",
+    "same_network_and_weights": true,
+    "metadata_difference": "generation datetime only",
+    "fresh_sha256": "72809f7c2b9ff7d420cdbcd8cf0ee76a1307fa19e41b73cf1752357224c62506"
+  },
+  {
+    "file": "ecg_network_data.h",
+    "same_network_and_weights": true,
+    "metadata_difference": "generation datetime only",
+    "fresh_sha256": "392aef7f76de9d22f848cb642e095e0f0e3d2ab7eec6e8cb29fd623e7afe9ae2"
+  },
+  {
+    "file": "ecg_network_data_params.c",
+    "same_network_and_weights": true,
+    "metadata_difference": "generation datetime only",
+    "fresh_sha256": "8fe91229d51aa9153366f7035dc1b7fa74fb57e0e7dca06e4064205602c71259"
+  },
+  {
+    "file": "ecg_network_data_params.h",
+    "same_network_and_weights": true,
+    "metadata_difference": "generation datetime only",
+    "fresh_sha256": "72af92dffd988730ee72f10be78740224ac9645fa7f8f7a0a140e98dfd669ff2"
+  }
+]

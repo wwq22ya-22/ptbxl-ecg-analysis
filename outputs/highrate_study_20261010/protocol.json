@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-10",
+  "models": [
+    "cnn1d",
+    "inception1d",
+    "inception_time1d"
+  ],
+  "rates": [
+    250,
+    500
+  ],
+  "cohorts": [
+    "filtered",
+    "unfiltered"
+  ],
+  "seed": 42,
+  "epochs": 30,
+  "patience": 8,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "new_100hz_training": false,
+  "source": "PTB-XL v1.0.3 official records500",
+  "preprocessing": {
+    "500hz": "original mV waveform; no additional temporal filtering",
+    "250hz": "500 Hz -> resample_poly(up=1,down=2,window=(kaiser,8.6),padtype=line)",
+    "normalization": "per-lead global mean/std fitted only on each training cohort",
+    "bandpass": null,
+    "baseline_removal": false,
+    "notch": null
+  },
+  "checkpoint_selection": "fold9 native cohort macro AUROC; minimum improvement .0001",
+  "final_ranking": "native fold9 macro F1, fine thresholds chosen there only",
+  "cross_cohort_thresholds": "one threshold vector fitted on training-native fold9 cohort; reused on both",
+  "threshold_grid": "0.01..0.99 step0.01, closest to .5 on ties",
+  "model_kernels": "existing sample-domain kernels/strides unchanged; physical receptive fields shrink with fs",
+  "baseline_comparability": "existing 100 Hz models may differ in preprocessing/cohort; report explicitly",
+  "test_fold10_used": false,
+  "multiseed_confirmed": false,
+  "protected_artifacts": {
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\selected_teacher.pt": "449ffa3825cb485e4be0997fe4111fdcd1d840c6226d1d7ac3b7662cadc854dd",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_seed44\\checkpoint\\cnn1d_best.pt": "857ed01b867ec8342c6162bd819875f72e4d090a20d3c9effb6fbdab6509a08e",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_export\\ptbxl_cnn1d_int8.onnx": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+    "D:\\MyProject\\college\\ecg1\\outputs\\validation_only_redo_20261010\\single_teacher_kd_seed43\\checkpoint\\cnn1d_best.pt": "3e3d0f4521409727663fab34f540d96784ef7ea174ba4bab55fcf50552515212"
+  },
+  "counts": {
+    "train": 17418,
+    "filtered_train": 17084,
+    "unfiltered_train": 17418,
+    "validation": 2183,
+    "filtered_validation": 2146,
+    "unfiltered_validation": 2183
+  },
+  "resampling_audit": {
+    "input_hz": 500,
+    "output_hz": 250,
+    "shape": [
+      12,
+      2500
+    ],
+    "pass_20hz_rms": 0.7071053011098166,
+    "rejection_180hz_db": -97.32403616577918,
+    "naive_decimation_180hz_alias_hz": 70,
+    "finite_record_padding": "line",
+    "passed": true
+  }
+}

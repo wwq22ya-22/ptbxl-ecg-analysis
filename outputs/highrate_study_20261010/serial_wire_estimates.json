@@ -1,0 +1,51 @@
+{
+  "baud": 115200,
+  "bits_per_byte": 10,
+  "existing_format": ".9g comma-separated ASCII, 64 samples per packet",
+  "estimates": [
+    {
+      "cohort": "filtered",
+      "fs": 250,
+      "records": 8,
+      "ascii_data_only_seconds": [
+        31.91831597222222,
+        33.25516493055555,
+        33.607899305555556
+      ],
+      "ack_compute_delay_excluded": true
+    },
+    {
+      "cohort": "filtered",
+      "fs": 500,
+      "records": 8,
+      "ascii_data_only_seconds": [
+        63.85043402777778,
+        66.59908854166667,
+        67.30164930555556
+      ],
+      "ack_compute_delay_excluded": true
+    },
+    {
+      "cohort": "unfiltered",
+      "fs": 250,
+      "records": 8,
+      "ascii_data_only_seconds": [
+        31.9296875,
+        33.270008680555556,
+        33.6265625
+      ],
+      "ack_compute_delay_excluded": true
+    },
+    {
+      "cohort": "unfiltered",
+      "fs": 500,
+      "records": 8,
+      "ascii_data_only_seconds": [
+        63.945659722222224,
+        66.616796875,
+        67.30364583333333
+      ],
+      "ack_compute_delay_excluded": true
+    }
+  ]
+}

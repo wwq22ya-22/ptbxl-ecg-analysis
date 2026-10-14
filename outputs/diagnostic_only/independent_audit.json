@@ -1,0 +1,7 @@
+{
+  "same_test_ecg_ids_verified": true,
+  "saved_predictions_reproduce_all_macro_metrics": true,
+  "no_patient_overlap": true,
+  "removed_records": 411,
+  "tests_passed": 72
+}

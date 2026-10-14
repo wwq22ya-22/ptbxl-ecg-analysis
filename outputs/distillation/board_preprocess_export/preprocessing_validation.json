@@ -1,0 +1,19 @@
+{
+  "records": 128,
+  "sample_source": "PTB-XL validation fold 9",
+  "preprocessing_sha256": "121588eb2f65e4f7127ee880cff67b6a3959775b59b1bf3abdc86d4da12fcfa8",
+  "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+  "host_C_vs_python_raw32_max_absolute_error": 0.0,
+  "host_C_vs_original_training_cache_max_absolute_error": 0.0,
+  "int8_different_values_vs_python_raw32": 0,
+  "int8_different_values_vs_original_cache": 0,
+  "serial_parser_int8_mismatches": 0,
+  "classification_agreement_with_original_host_C": 1.0,
+  "max_probability_difference_from_original_host_C": 5.960464477539063e-08,
+  "workspace_bytes": 16680,
+  "raw_buffer_bytes": 48000,
+  "preparation_calls": 128,
+  "physical_board_test": false,
+  "board_latency_measured": false,
+  "note": "Same C source on host; not an ARM arithmetic or physical-board validation."
+}

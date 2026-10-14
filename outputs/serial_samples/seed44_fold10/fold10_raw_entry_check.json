@@ -1,0 +1,47 @@
+{
+  "type": "result",
+  "seq": 1,
+  "probabilities": [
+    0.0893506482,
+    0.790281415,
+    0.43813324,
+    0.678355634,
+    0.0183452684
+  ],
+  "mask": 2,
+  "inference_ms": 0,
+  "preprocessing_ms": 0,
+  "positive_labels": [
+    "MI"
+  ],
+  "ecg_id": 21826,
+  "sample_index": 2157,
+  "fold": 10,
+  "sample_source": "PTB-XL historical test fold 10",
+  "sample_sha256": "2e2687d21a05fb6ba940f090ce39830488f2c365316eb16c4bb4a26b4d1f5f8f",
+  "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+  "protocol": 2,
+  "preprocessing_location": "board",
+  "preprocessing_sha256": "121588eb2f65e4f7127ee880cff67b6a3959775b59b1bf3abdc86d4da12fcfa8",
+  "thresholds": [
+    0.5500000000000002,
+    0.6000000000000002,
+    0.5500000000000002,
+    0.7500000000000002,
+    0.6500000000000001
+  ],
+  "truth": [
+    "MI"
+  ],
+  "host_c_reference_probabilities": [
+    0.0893506407737732,
+    0.7902814149856567,
+    0.43813320994377136,
+    0.6783556342124939,
+    0.018345266580581665
+  ],
+  "reference": "Cube.AI host C-model with exact firmware INT8 inputs; not physical-board outputs",
+  "mode": "simulation",
+  "total_seconds": 0.03664149999985966,
+  "max_probability_difference_from_host_c": 3.0056228617070246e-08
+}

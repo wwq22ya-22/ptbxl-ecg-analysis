@@ -1,0 +1,154 @@
+{
+  "name": "ensemble_equal",
+  "type": "probability_ensemble",
+  "superclasses": [
+    "NORM",
+    "MI",
+    "STTC",
+    "CD",
+    "HYP"
+  ],
+  "components": [
+    {
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\further_optimization\\frozen_models\\0_resnet1d.pt",
+      "source_checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\optimization\\01_global_norm\\checkpoint\\resnet1d_best.pt",
+      "weight": 0.5,
+      "sha256": "e78becd7dc6d425aa4702347231afe3e4c0021e554b53224fd8b11049bdbf518"
+    },
+    {
+      "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\further_optimization\\frozen_models\\1_inception1d.pt",
+      "source_checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\optimization\\08_global_inception1d\\checkpoint\\inception1d_best.pt",
+      "weight": 0.5,
+      "sha256": "100d1df47b1bce21a4fc31bf01f5c26f0815a9f5b4f0957a0ae75a1ae48999d5"
+    }
+  ],
+  "thresholds": [
+    0.47202956676483154,
+    0.5169481039047241,
+    0.5570763349533081,
+    0.7814997434616089,
+    0.809538722038269
+  ],
+  "threshold_policy": {
+    "precision_floor": 0.7179231673241182,
+    "recall_floor": 0.8096266051939256,
+    "feasible": true,
+    "method": "joint_PR_curve_MILP",
+    "solver": {
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "optimal": true,
+      "frontier_points": [
+        189,
+        169,
+        153,
+        149,
+        121
+      ],
+      "mip_gap": 0.0,
+      "calibration_macro_f1": 0.7614979237238906
+    }
+  },
+  "validation_metrics": {
+    "records": 2183,
+    "per_class": {
+      "NORM": {
+        "support": 955,
+        "threshold": 0.47202956676483154,
+        "auroc": 0.9525052441291334,
+        "precision": 0.8235849056603773,
+        "recall": 0.9141361256544502,
+        "f1": 0.8665012406947891,
+        "confusion_matrix": [
+          [
+            1041,
+            187
+          ],
+          [
+            82,
+            873
+          ]
+        ]
+      },
+      "MI": {
+        "support": 540,
+        "threshold": 0.5169481039047241,
+        "auroc": 0.9355345911949685,
+        "precision": 0.7211221122112211,
+        "recall": 0.8092592592592592,
+        "f1": 0.7626527050610821,
+        "confusion_matrix": [
+          [
+            1474,
+            169
+          ],
+          [
+            103,
+            437
+          ]
+        ]
+      },
+      "STTC": {
+        "support": 528,
+        "threshold": 0.5570763349533081,
+        "auroc": 0.9391673532912204,
+        "precision": 0.7147435897435898,
+        "recall": 0.8446969696969697,
+        "f1": 0.7743055555555556,
+        "confusion_matrix": [
+          [
+            1477,
+            178
+          ],
+          [
+            82,
+            446
+          ]
+        ]
+      },
+      "CD": {
+        "support": 495,
+        "threshold": 0.7814997434616089,
+        "auroc": 0.931253291205898,
+        "precision": 0.7480916030534351,
+        "recall": 0.7919191919191919,
+        "f1": 0.7693817468105987,
+        "confusion_matrix": [
+          [
+            1556,
+            132
+          ],
+          [
+            103,
+            392
+          ]
+        ]
+      },
+      "HYP": {
+        "support": 268,
+        "threshold": 0.809538722038269,
+        "auroc": 0.914527882779315,
+        "precision": 0.5873015873015873,
+        "recall": 0.6902985074626866,
+        "f1": 0.6346483704974271,
+        "confusion_matrix": [
+          [
+            1785,
+            130
+          ],
+          [
+            83,
+            185
+          ]
+        ]
+      }
+    },
+    "macro_auroc": 0.934597672520107,
+    "macro_precision": 0.7189687595940422,
+    "macro_recall": 0.8100620107985115,
+    "macro_f1": 0.7614979237238906,
+    "classes_with_defined_auroc": 5
+  },
+  "cv_selection_rule": "mean F1 +0.001, wins>=3/4, AUC >= reference-0.001",
+  "description": "同一已冻结50/50概率集成；用fold9精确联合约束阈值替换有限候选搜索，不改模型、权重和原有下限。"
+}

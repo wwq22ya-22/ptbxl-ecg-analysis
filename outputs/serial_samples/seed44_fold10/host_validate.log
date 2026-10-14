@@ -1,0 +1,117 @@
+ST Edge AI Core v2.2.0-20266 2adc00962
+ecg shape is already on channel first, no change needed
+
+Setting validation data...
+ loading file: D:\MyProject\college\ecg1\outputs\serial_samples\seed44_fold10\host_input.npy
+   samples are reshaped: (2158, 12, 1000) -> (2158, 12, 1, 1000)
+   I[1]: (2158, 12, 1, 1000)/float32, min/max=[-37.783901, 40.259106], mean/std=[0.000404, 0.983636]
+    c/I[1] conversion [Q(0.20083645,0)]-> (2158, 12, 1, 1000)/int8, min/max=[-128, 127], mean/std=[0.001922, 4.905041]
+    m/I[1] no modification.
+ no output/reference samples are provided
+
+Creating c (debug) info json file D:\MyProject\college\ecg1\outputs\serial_samples\seed44_fold10\host_validation\ecg_network_c_info.json
+Copying the AI runtime files to the user workspace: D:\MyProject\college\ecg1\outputs\serial_samples\seed44_fold10\host_workspace\inspector_ecg_network\workspace
+ from: D:\STM32AI\User\STM32Cube\Repository\Packs\STMicroelectronics\X-CUBE-AI\10.2.1\Utilities\windows\targets\common\EmbedNets\tools\inspector\workspace
+
+LOAD ERROR: Unable to update the workspace
+------------------------------------------------------------------------------------------------------
+ model file         :   D:\MyProject\college\ecg1\outputs\distillation\distilled_export\ptbxl_cnn1d_int8.onnx   
+ type               :   onnx                                                                                    
+ c_name             :   ecg_network                                                                             
+ compression        :   none                                                                                    
+ options            :   allocate-inputs, allocate-outputs                                                       
+ optimization       :   ram                                                                                     
+ target/series      :   stm32f4                                                                                 
+ workspace dir      :   D:\MyProject\college\ecg1\outputs\serial_samples\seed44_fold10\host_workspace           
+ output dir         :   D:\MyProject\college\ecg1\outputs\serial_samples\seed44_fold10\host_validation          
+ vinput files       :   D:\MyProject\college\ecg1\outputs\serial_samples\seed44_fold10\host_input.npy           
+ model_fmt          :   ss/sa per tensor                                                                        
+ model_name         :   ptbxl_cnn1d_int8                                                                        
+ model_hash         :   0x4d573327af164355881fc61b405482f0                                                      
+ params #           :   111,205 items (434.39 KiB)                                                              
+ ---------------------------------------------------------------------------------------------------------------
+ input 1/1          :   'ecg', int8(1x12x1000), 11.72 KBytes, QLinear(0.200836450,0,int8), activations          
+ output 1/1         :   'logits_QuantizeLin..conversion', f32(1x5), 20 Bytes, activations                       
+ macc               :   14,698,207                                                                              
+ weights (ro)       :   112,276 B (109.64 KiB) (1 segment) / -332,544(-74.8%) vs float model                    
+ activations (rw)   :   24,000 B (23.44 KiB) (1 segment) *                                                      
+ ram (total)        :   24,000 B (23.44 KiB) = 24,000 + 0 + 0                                                   
+ ---------------------------------------------------------------------------------------------------------------
+ (*) 'input'/'output' buffers are allocated in the activations buffer
+
+Running the ONNX model...
+
+Running the ST.AI c-model (AI RUNNER)...(name=ecg_network, mode=HOST)
+
+ DLL Driver v2.0 - Direct Python binding (D:\MyProject\college\ecg1\outputs\serial_samples\seed44_fold10\host_workspace\inspector_ecg_network\workspace\lib\libai_ecg_network.dll) ['ecg_network']
+
+  Summary 'ecg_network' - ['ecg_network']
+  -------------------------------------------------------------------------------------------------------------
+  I[1/1] 'input_1'    :   int8[1,12,1,1000], 12000 Bytes, QLinear(0.200836450,0,int8), in activations buffer
+  O[1/1] 'output_1'   :   f32[1,1,1,5], 20 Bytes, in activations buffer
+  n_nodes             :   12
+  activations         :   24000
+  weights             :   112276
+  macc                :   14698207
+  hash                :   0x4d573327af164355881fc61b405482f0
+  compile_datetime    :   Oct 11 2026 09:57:39
+  -------------------------------------------------------------------------------------------------------------
+  protocol            :   DLL Driver v2.0 - Direct Python binding
+  tools               :   ST.AI (legacy api) v2.2.0
+  runtime lib         :   v10.2.0
+  capabilities        :   IO_ONLY, PER_LAYER, PER_LAYER_WITH_DATA
+  device.desc         :   AMD64, Intel64 Family 6 Model 183 Stepping 1, GenuineIntel, Windows
+  -------------------------------------------------------------------------------------------------------------
+
+ NOTE: The duration and execution time per layer are just indications. They depend on the host machine's workload.
+
+  ST.AI Profiling results v2.0 - "ecg_network"
+  -----------------------------------------------------------------
+  nb sample(s)   :   2158
+  duration       :   27.644 ms by sample (12.060/202.445/17.811)
+  macc           :   14698207
+  -----------------------------------------------------------------
+
+  Statistic per tensor
+  ----------------------------------------------------------------------------------------
+  tensor   #      type[shape]:size              min     max     mean      std  name
+  ----------------------------------------------------------------------------------------
+  I.0      2158   i8[1,12,1,1000]:12000        -128     127    0.002    4.905  input_1
+  O.0      2158   f32[1,1,1,5]:20           -12.852   8.291   -1.672    3.638  output_1
+  ----------------------------------------------------------------------------------------
+
+Saving validation data...
+ output directory: D:\MyProject\college\ecg1\outputs\serial_samples\seed44_fold10\host_validation
+ creating D:\MyProject\college\ecg1\outputs\serial_samples\seed44_fold10\host_validation\ecg_network_val_io.npz
+ m_outputs_1: (2158, 5)/float64, min/max=[-12.851657, 8.291391], mean/std=[-1.671803, 3.638102], logits_QuantizeLinear_Input_0_conversion
+ c_outputs_1: (2158, 1, 1, 5)/float32, min/max=[-12.851657, 8.291391], mean/std=[-1.671780, 3.638099], logits_QuantizeLinear_Input_0_conversion
+
+Computing the metrics...
+
+ Cross accuracy report #1 (reference vs C-model)
+ ----------------------------------------------------------------------------------------------------
+ notes: - data type is different: r/float64 instead p/float32
+        - ACC metric is not computed ("--classifier" option can be used to force it)
+        - the output of the reference model is used as ground truth/reference value
+        - 2158 samples (5 items per sample)
+
+  acc=n.a. rmse=0.001382539 mae=0.000023053 l2r=0.000345304 mean=-0.000023 std=0.001382 nse=1.000000 cos=1.000000
+
+ Evaluation report (summary)
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Output       acc    rmse          mae           l2r           mean        std        nse        cos        tensor
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ X-cross #1   n.a.   0.001382539   0.000023053   0.000345304   -0.000023   0.001382   1.000000   1.000000   'logits_QuantizeLin..conversion', 2158 x f32(1x5), m_id=[43]
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  acc  : Accuracy (class, axis=-1)
+  rmse : Root Mean Squared Error
+  mae  : Mean Absolute Error
+  l2r  : L2 relative error
+  mean : Mean error
+  std  : Standard deviation error
+  nse  : Nash-Sutcliffe efficiency criteria, bigger is better, best=1, range=(-inf, 1]
+  cos  : COsine Similarity, bigger is better, best=1, range=(0, 1]
+
+Creating txt report file D:\MyProject\college\ecg1\outputs\serial_samples\seed44_fold10\host_validation\ecg_network_validate_report.txt
+elapsed time (validate): 137.993s

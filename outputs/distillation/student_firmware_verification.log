@@ -1,0 +1,6 @@
+Running: stedgeai.exe
+Running: stedgeai.exe
+Host validation arrays: {'m_inputs_1': (128, 12, 1, 1000), 'm_outputs_1': (128, 5), 'c_inputs_1': (128, 12, 1, 1000), 'c_outputs_1': (128, 1, 1, 5)}
+Running: python.exe
+Running: UV4.exe
+{'flash_bytes': 158876, 'ram_bytes': 36504, 'flash_limit_bytes': 524288, 'main_sram_limit_bytes': 131072, 'flash_margin_bytes': 365412, 'ram_margin_bytes': 94568, 'build_errors': 0, 'build_warnings': 0, 'model_sha256': 'ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610', 'physical_board_test': False, 'project': 'D:\\MyProject\\college\\ecg1\\outputs\\distillation\\stm32_student_project\\MDK_Project\\ECG_Student_INT8.uvprojx'}

@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "oof_records_per_model": 17418,
+  "maximum_normalization_difference": 1.6653345369377348e-16,
+  "fold_normalization_checks": [
+    {
+      "cv_fold": 1,
+      "training_records": 13062,
+      "global_normalization_checked": true
+    },
+    {
+      "cv_fold": 2,
+      "training_records": 13052,
+      "global_normalization_checked": true
+    },
+    {
+      "cv_fold": 3,
+      "training_records": 13071,
+      "global_normalization_checked": true
+    },
+    {
+      "cv_fold": 4,
+      "training_records": 13069,
+      "global_normalization_checked": true
+    }
+  ],
+  "record_order_labels_and_metrics_checked": true
+}

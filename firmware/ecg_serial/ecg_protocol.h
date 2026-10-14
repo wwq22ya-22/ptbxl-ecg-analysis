@@ -9,6 +9,9 @@
 
 typedef void (*ecg_send_fn)(const char *line, void *context);
 typedef int (*ecg_run_fn)(float logits[5], uint32_t *elapsed_ms, void *context);
+#ifdef ECG_BOARD_PREPROCESSING
+typedef int (*ecg_prepare_fn)(const float *raw, int8_t *input, uint32_t *elapsed_ms, void *context);
+#endif
 typedef struct {
     int8_t *input;
     float scale;
@@ -20,6 +23,10 @@ typedef struct {
     void *context;
     uint32_t sequence, received, crc;
     int active;
+#ifdef ECG_BOARD_PREPROCESSING
+    float *raw_input;
+    ecg_prepare_fn prepare;
+#endif
 } ecg_protocol;
 
 /* Call in the main loop, never inside an interrupt. Modifies the line buffer. */

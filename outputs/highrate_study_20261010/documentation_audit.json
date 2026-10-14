@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "documents": {
+    "模型训练与优化.md": {
+      "sha256": "a0501a4d16ca14fcca022df37b08407fd53803a8ae2357796265000e47637351",
+      "tables_checked": 14,
+      "anchors": 16,
+      "highrate_block": 1,
+      "unet_block_preserved": true
+    },
+    "各模型整体与逐类指标总表.md": {
+      "sha256": "12cd6d589995b3b837c8015a84b7664cbe23b775776badc3d520ac65f3273b4f",
+      "tables_checked": 52,
+      "anchors": 21,
+      "highrate_block": 1,
+      "unet_block_preserved": true
+    },
+    "README.md": {
+      "sha256": "49a0837990d2f054bd06ed3d2b8703f899ec3d92a4754797db620fecaa6df4f4",
+      "tables_checked": 5,
+      "anchors": 9,
+      "highrate_block": 1,
+      "unet_block_preserved": true
+    },
+    "STM32部署与串口验证.md": {
+      "sha256": "bf0ebdcf5f368cd487a84e1f3b5cd2ff9e1e559fe08d00805323eb1b2ccc2b67",
+      "tables_checked": 16,
+      "anchors": 10,
+      "highrate_block": 1,
+      "unet_block_preserved": true
+    }
+  }
+}

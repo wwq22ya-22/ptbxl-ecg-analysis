@@ -1,0 +1,39 @@
+{
+  "method": "paired patient-cluster bootstrap; fixed trained models and validation thresholds",
+  "exploratory": true,
+  "iterations": 500,
+  "seed": 20261007,
+  "patients": 1877,
+  "baseline_family": "inception1d/P0_current",
+  "teacher_family": "inception_time1d/P0_current",
+  "differences": {
+    "macro_precision": {
+      "mean_delta": 0.019350539924348875,
+      "percentile_95_interval": [
+        0.011653238869337685,
+        0.027314020934472456
+      ]
+    },
+    "macro_recall": {
+      "mean_delta": -0.004697383969579638,
+      "percentile_95_interval": [
+        -0.012531149875135497,
+        0.0038773981872648818
+      ]
+    },
+    "macro_f1": {
+      "mean_delta": 0.005128389073972506,
+      "percentile_95_interval": [
+        -0.0013451884620181126,
+        0.011712816514207117
+      ]
+    },
+    "hyp_recall": {
+      "mean_delta": 0.01526717557251911,
+      "percentile_95_interval": [
+        -0.008476194212336401,
+        0.04391707057354773
+      ]
+    }
+  }
+}

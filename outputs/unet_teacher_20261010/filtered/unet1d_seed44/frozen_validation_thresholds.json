@@ -1,0 +1,21 @@
+{
+  "checkpoint_sha256": "22166faf17256627302538cf77d20cc0f484ed79b793705ef4eae5464d930474",
+  "native_validation_cohort": "filtered",
+  "thresholds": {
+    "filtered": [
+      0.41,
+      0.5500000000000002,
+      0.62,
+      0.69,
+      0.7000000000000002
+    ],
+    "unfiltered": [
+      0.41,
+      0.5500000000000002,
+      0.62,
+      0.69,
+      0.7000000000000002
+    ]
+  },
+  "source": "fold9 only"
+}

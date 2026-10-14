@@ -1,0 +1,62 @@
+{
+  "source_physical_record": "outputs\\serial_samples\\seed44_fold10\\physical_timing_audit_20261011_103850.json",
+  "source_record_sha256": "1d0678c3bffc57b63800dc305cb96e5ec5e48186590ce10c89c96e7a282de3c2",
+  "scope": "A inference-only; ASCII byte counts reconstructed using exact saved inputs and sequence numbers. Wire time calculated, total/inference times physically measured.",
+  "baudrate": 115200,
+  "framing": "8N1, 10 bits per byte",
+  "binary_INT8_payload_bytes": 12000,
+  "binary_INT8_ideal_payload_seconds": 1.0416666666666667,
+  "binary_float32_payload_bytes": 48000,
+  "binary_float32_ideal_payload_seconds": 4.166666666666667,
+  "binary_protocol_implemented": false,
+  "rows": [
+    {
+      "ecg_id": 9,
+      "seq": 717944507,
+      "chunks": 188,
+      "tx_bytes": 155183,
+      "rx_bytes": 8467,
+      "total_bytes": 163650,
+      "calculated_ideal_wire_seconds": 14.205729166666666,
+      "physical_measured_total_seconds": 16.761547199999768,
+      "physical_returned_inference_seconds": 1.013,
+      "remaining_seconds": 1.542818033333102
+    },
+    {
+      "ecg_id": 21826,
+      "seq": 717944508,
+      "chunks": 188,
+      "tx_bytes": 155815,
+      "rx_bytes": 8465,
+      "total_bytes": 164280,
+      "calculated_ideal_wire_seconds": 14.260416666666666,
+      "physical_measured_total_seconds": 16.71391229999972,
+      "physical_returned_inference_seconds": 1.013,
+      "remaining_seconds": 1.4404956333330539
+    },
+    {
+      "ecg_id": null,
+      "seq": 717944509,
+      "chunks": 188,
+      "tx_bytes": 28192,
+      "rx_bytes": 8464,
+      "total_bytes": 36656,
+      "calculated_ideal_wire_seconds": 3.1819444444444445,
+      "physical_measured_total_seconds": 7.053858400000536,
+      "physical_returned_inference_seconds": 1.013,
+      "remaining_seconds": 2.8589139555560914
+    },
+    {
+      "ecg_id": 9,
+      "seq": 717944510,
+      "chunks": 188,
+      "tx_bytes": 155183,
+      "rx_bytes": 8467,
+      "total_bytes": 163650,
+      "calculated_ideal_wire_seconds": 14.205729166666666,
+      "physical_measured_total_seconds": 16.740931499999533,
+      "physical_returned_inference_seconds": 1.013,
+      "remaining_seconds": 1.5222023333328671
+    }
+  ]
+}

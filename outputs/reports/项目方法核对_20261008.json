@@ -1,0 +1,105 @@
+{
+  "metadata_records": 21799,
+  "patients": 18869,
+  "label_mapping_matches_official_example": true,
+  "original_split_counts": {
+    "train": 17418,
+    "validation": 2183,
+    "test": 2198
+  },
+  "filtered_split_counts": {
+    "train": 17084,
+    "validation": 2146,
+    "test": 2158
+  },
+  "removed_counts": {
+    "train": 334,
+    "validation": 37,
+    "test": 40
+  },
+  "patient_overlap": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "sample_waveform_checks": [
+    {
+      "split": "train",
+      "ecg_id": 1,
+      "shape": [
+        1000,
+        12
+      ],
+      "units": [
+        "mV"
+      ]
+    },
+    {
+      "split": "validation",
+      "ecg_id": 8,
+      "shape": [
+        1000,
+        12
+      ],
+      "units": [
+        "mV"
+      ]
+    },
+    {
+      "split": "test",
+      "ecg_id": 9,
+      "shape": [
+        1000,
+        12
+      ],
+      "units": [
+        "mV"
+      ]
+    }
+  ],
+  "test_prediction_ids_and_labels_match_metadata": true,
+  "paired_patient_bootstrap": {
+    "replicates": 2000,
+    "test_patients": 1877,
+    "old_macro_f1": 0.7494409540193498,
+    "new_macro_f1": 0.7516625985867476,
+    "delta_percentage_points": 0.2221644567397707,
+    "percentile_95_interval_pp": [
+      -0.7042377361192428,
+      1.213416628643018
+    ],
+    "interval_includes_zero": true,
+    "scope": "conditional on fixed models and previously reused fold10; does not repair adaptive test reuse"
+  },
+  "quantization_calibration": {
+    "records": 256,
+    "train_only": true,
+    "positive_counts": {
+      "NORM": 121,
+      "MI": 70,
+      "STTC": 40,
+      "CD": 64,
+      "HYP": 24
+    }
+  },
+  "hrv_gap_reproducer": {
+    "peaks": [
+      0,
+      100,
+      120,
+      240
+    ],
+    "original_rr_s": [
+      1.0,
+      0.2,
+      1.2
+    ],
+    "remaining_rr_s": [
+      1.0,
+      1.2
+    ],
+    "excluded_rr": 1,
+    "reported_rmssd_ms": 199.99999999999994,
+    "issue": "RMSSD computes a difference across a removed RR gap; no consecutive valid pair remains in this example"
+  }
+}

@@ -1,0 +1,390 @@
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cache\train_full_948144871fc7b5c0.npy
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cache\train_full_6552ec0f256cf449.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cache\validation_full_e683478f1d5648f8.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cache\validation_full_0e92be0e67d96333.npy
+
+START CV 1/4 resnet_original, heldout=(1, 2), training=[3, 4, 5, 6, 7, 8]
+Training device: cuda; AMP: True; torch: 2.12.1+cu126
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_34644a1f57cdf154.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_e683478f1d5648f8.npy
+Training label positives: {'NORM': 5689, 'MI': 3292, 'STTC': 3136, 'CD': 2941, 'HYP': 1592}
+BCE positive weights: {'NORM': 1.2960000038146973, 'MI': 2.9679999351501465, 'STTC': 3.1649999618530273, 'CD': 3.440999984741211, 'HYP': 7.204999923706055}
+Epoch 1/20: train_loss=0.6881, val_loss=0.7343, val_macro_auroc=0.8782728550080048, val_macro_f1=0.6577, seconds=7.3
+Epoch 2/20: train_loss=0.6247, val_loss=0.6341, val_macro_auroc=0.8948887107606371, val_macro_f1=0.6498, seconds=4.1
+Epoch 3/20: train_loss=0.5906, val_loss=0.6222, val_macro_auroc=0.898839862978765, val_macro_f1=0.6810, seconds=3.8
+Epoch 4/20: train_loss=0.5718, val_loss=0.7283, val_macro_auroc=0.888160445386643, val_macro_f1=0.6690, seconds=4.8
+Epoch 5/20: train_loss=0.5556, val_loss=0.6088, val_macro_auroc=0.9040793907898006, val_macro_f1=0.6913, seconds=4.8
+Epoch 6/20: train_loss=0.5523, val_loss=0.5929, val_macro_auroc=0.9009217593966806, val_macro_f1=0.6881, seconds=4.8
+Epoch 7/20: train_loss=0.5361, val_loss=0.5839, val_macro_auroc=0.9057518274996849, val_macro_f1=0.6973, seconds=4.5
+Epoch 8/20: train_loss=0.5210, val_loss=0.5966, val_macro_auroc=0.9024240014923033, val_macro_f1=0.6692, seconds=4.0
+Epoch 9/20: train_loss=0.5142, val_loss=0.5922, val_macro_auroc=0.9044134326580346, val_macro_f1=0.6916, seconds=4.1
+Epoch 10/20: train_loss=0.5069, val_loss=0.5763, val_macro_auroc=0.9083047646018082, val_macro_f1=0.6834, seconds=3.8
+Epoch 11/20: train_loss=0.4941, val_loss=0.6052, val_macro_auroc=0.9027300405782578, val_macro_f1=0.6720, seconds=3.9
+Epoch 12/20: train_loss=0.4862, val_loss=0.6501, val_macro_auroc=0.9016353511494126, val_macro_f1=0.6915, seconds=3.9
+Epoch 13/20: train_loss=0.4754, val_loss=0.6324, val_macro_auroc=0.9085710965661609, val_macro_f1=0.7052, seconds=4.1
+Epoch 14/20: train_loss=0.4643, val_loss=0.6239, val_macro_auroc=0.9029675363806879, val_macro_f1=0.6916, seconds=4.2
+Epoch 15/20: train_loss=0.4581, val_loss=0.6243, val_macro_auroc=0.9013566946529986, val_macro_f1=0.6803, seconds=4.7
+Epoch 16/20: train_loss=0.4389, val_loss=0.6333, val_macro_auroc=0.9008307558561233, val_macro_f1=0.6672, seconds=4.4
+Epoch 17/20: train_loss=0.4325, val_loss=0.6308, val_macro_auroc=0.9051404769145339, val_macro_f1=0.7011, seconds=3.9
+Epoch 18/20: train_loss=0.4212, val_loss=0.6758, val_macro_auroc=0.8974276977219702, val_macro_f1=0.6691, seconds=4.1
+Early stopping after 18 epochs; best epoch was 13.
+Best checkpoint: D:\MyProject\college\ecg1\outputs\cross_validation\fold_1\resnet_original\checkpoint\resnet1d_best.pt
+Validation thresholds: {'NORM': 0.6500000000000001, 'MI': 0.5500000000000002, 'STTC': 0.6500000000000001, 'CD': 0.8000000000000002, 'HYP': 0.5000000000000001}
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_e683478f1d5648f8.npy
+Using existing cv_holdout_1 cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\cv_holdout_1_2e127c93a7e45ead.npy
+DONE CV 1 resnet_original: F1=0.718834, AUC=0.917364, HYP F1=0.477115
+
+START CV 1/4 resnet_global, heldout=(1, 2), training=[3, 4, 5, 6, 7, 8]
+Training device: cuda; AMP: True; torch: 2.12.1+cu126
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_a5fabd1fbb4c596a.npy
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_a5fabd1fbb4c596a.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_0e92be0e67d96333.npy
+Training label positives: {'NORM': 5689, 'MI': 3292, 'STTC': 3136, 'CD': 2941, 'HYP': 1592}
+BCE positive weights: {'NORM': 1.2960000038146973, 'MI': 2.9679999351501465, 'STTC': 3.1649999618530273, 'CD': 3.440999984741211, 'HYP': 7.204999923706055}
+Epoch 1/20: train_loss=0.6709, val_loss=0.6797, val_macro_auroc=0.8932067880796131, val_macro_f1=0.6510, seconds=4.7
+Epoch 2/20: train_loss=0.5925, val_loss=0.6354, val_macro_auroc=0.9037662084790183, val_macro_f1=0.6948, seconds=4.1
+Epoch 3/20: train_loss=0.5598, val_loss=0.5901, val_macro_auroc=0.9135342467337942, val_macro_f1=0.6741, seconds=4.1
+Epoch 4/20: train_loss=0.5378, val_loss=0.6667, val_macro_auroc=0.9068643483055492, val_macro_f1=0.7018, seconds=4.0
+Epoch 5/20: train_loss=0.5192, val_loss=0.5767, val_macro_auroc=0.9199914626166368, val_macro_f1=0.7292, seconds=4.0
+Epoch 6/20: train_loss=0.5148, val_loss=0.5610, val_macro_auroc=0.9180217559808259, val_macro_f1=0.7127, seconds=4.0
+Epoch 7/20: train_loss=0.5046, val_loss=0.5664, val_macro_auroc=0.9210130541169128, val_macro_f1=0.7247, seconds=4.2
+Epoch 8/20: train_loss=0.4891, val_loss=0.5619, val_macro_auroc=0.920521969330132, val_macro_f1=0.6863, seconds=4.1
+Epoch 9/20: train_loss=0.4848, val_loss=0.5699, val_macro_auroc=0.9201663747209622, val_macro_f1=0.7126, seconds=4.3
+Epoch 10/20: train_loss=0.4735, val_loss=0.5426, val_macro_auroc=0.9249962442008913, val_macro_f1=0.7014, seconds=4.1
+Epoch 11/20: train_loss=0.4620, val_loss=0.5513, val_macro_auroc=0.921586776779596, val_macro_f1=0.7187, seconds=4.2
+Epoch 12/20: train_loss=0.4593, val_loss=0.5714, val_macro_auroc=0.9231481707916551, val_macro_f1=0.7193, seconds=4.1
+Epoch 13/20: train_loss=0.4457, val_loss=0.5667, val_macro_auroc=0.9232355937670844, val_macro_f1=0.7273, seconds=4.1
+Epoch 14/20: train_loss=0.4375, val_loss=0.5738, val_macro_auroc=0.9216122795720232, val_macro_f1=0.7252, seconds=4.2
+Epoch 15/20: train_loss=0.4316, val_loss=0.5710, val_macro_auroc=0.9205185695840769, val_macro_f1=0.7146, seconds=4.0
+Early stopping after 15 epochs; best epoch was 10.
+Best checkpoint: D:\MyProject\college\ecg1\outputs\cross_validation\fold_1\resnet_global\checkpoint\resnet1d_best.pt
+Validation thresholds: {'NORM': 0.3500000000000001, 'MI': 0.45000000000000007, 'STTC': 0.7000000000000002, 'CD': 0.8000000000000002, 'HYP': 0.8000000000000002}
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_490127db2a8409e4.npy
+Using existing cv_holdout_1 cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\cv_holdout_1_d5309b2761f366db.npy
+DONE CV 1 resnet_global: F1=0.745657, AUC=0.931370, HYP F1=0.626609
+
+START CV 1/4 inception_global, heldout=(1, 2), training=[3, 4, 5, 6, 7, 8]
+Training device: cuda; AMP: True; torch: 2.12.1+cu126
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_a5fabd1fbb4c596a.npy
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_b37f1397e31d9314.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_490127db2a8409e4.npy
+Training label positives: {'NORM': 5689, 'MI': 3292, 'STTC': 3136, 'CD': 2941, 'HYP': 1592}
+BCE positive weights: {'NORM': 1.2960000038146973, 'MI': 2.9679999351501465, 'STTC': 3.1649999618530273, 'CD': 3.440999984741211, 'HYP': 7.204999923706055}
+Epoch 1/20: train_loss=0.7399, val_loss=0.7539, val_macro_auroc=0.8988709505123633, val_macro_f1=0.6558, seconds=7.2
+Epoch 2/20: train_loss=0.6150, val_loss=0.6613, val_macro_auroc=0.9025964633034306, val_macro_f1=0.6851, seconds=6.0
+Epoch 3/20: train_loss=0.5681, val_loss=0.5665, val_macro_auroc=0.9166518414762492, val_macro_f1=0.7138, seconds=6.3
+Epoch 4/20: train_loss=0.5401, val_loss=0.6187, val_macro_auroc=0.9105426053433586, val_macro_f1=0.6856, seconds=6.2
+Epoch 5/20: train_loss=0.5189, val_loss=0.6249, val_macro_auroc=0.9193845875849785, val_macro_f1=0.7235, seconds=6.0
+Epoch 6/20: train_loss=0.5138, val_loss=0.5658, val_macro_auroc=0.9167010934483404, val_macro_f1=0.7077, seconds=6.4
+Epoch 7/20: train_loss=0.4951, val_loss=0.5754, val_macro_auroc=0.9223196741681512, val_macro_f1=0.7276, seconds=5.9
+Epoch 8/20: train_loss=0.4816, val_loss=0.6202, val_macro_auroc=0.915926604008202, val_macro_f1=0.6834, seconds=5.7
+Epoch 9/20: train_loss=0.4749, val_loss=0.5310, val_macro_auroc=0.9254073760180244, val_macro_f1=0.7370, seconds=5.6
+Epoch 10/20: train_loss=0.4621, val_loss=0.5340, val_macro_auroc=0.9269577515809297, val_macro_f1=0.7032, seconds=6.8
+Epoch 11/20: train_loss=0.4464, val_loss=0.5741, val_macro_auroc=0.9212438185317602, val_macro_f1=0.6992, seconds=7.2
+Epoch 12/20: train_loss=0.4391, val_loss=0.5643, val_macro_auroc=0.9260008557066005, val_macro_f1=0.7172, seconds=7.0
+Epoch 13/20: train_loss=0.4218, val_loss=0.6091, val_macro_auroc=0.922995332991589, val_macro_f1=0.7294, seconds=7.5
+Epoch 14/20: train_loss=0.4132, val_loss=0.5776, val_macro_auroc=0.923608019349982, val_macro_f1=0.7243, seconds=7.7
+Epoch 15/20: train_loss=0.4026, val_loss=0.5759, val_macro_auroc=0.9197597162399903, val_macro_f1=0.7153, seconds=6.2
+Early stopping after 15 epochs; best epoch was 10.
+Best checkpoint: D:\MyProject\college\ecg1\outputs\cross_validation\fold_1\inception_global\checkpoint\inception1d_best.pt
+Validation thresholds: {'NORM': 0.30000000000000004, 'MI': 0.45000000000000007, 'STTC': 0.7500000000000002, 'CD': 0.8500000000000002, 'HYP': 0.8500000000000002}
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_490127db2a8409e4.npy
+Using existing cv_holdout_1 cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\cv_holdout_1_121cd52da7bb2939.npy
+DONE CV 1 inception_global: F1=0.749293, AUC=0.933415, HYP F1=0.634409
+
+START CV 2/4 resnet_original, heldout=(3, 4), training=[1, 2, 5, 6, 7, 8]
+Training device: cuda; AMP: True; torch: 2.12.1+cu126
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_d2e202e35cc8e3c6.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_e683478f1d5648f8.npy
+Training label positives: {'NORM': 5678, 'MI': 3300, 'STTC': 3144, 'CD': 2926, 'HYP': 1594}
+BCE positive weights: {'NORM': 1.2990000247955322, 'MI': 2.9549999237060547, 'STTC': 3.1510000228881836, 'CD': 3.4609999656677246, 'HYP': 7.188000202178955}
+Epoch 1/20: train_loss=0.6981, val_loss=0.6588, val_macro_auroc=0.8816643622201447, val_macro_f1=0.6312, seconds=6.7
+Epoch 2/20: train_loss=0.6275, val_loss=0.6403, val_macro_auroc=0.8888922025310132, val_macro_f1=0.6731, seconds=4.0
+Epoch 3/20: train_loss=0.5952, val_loss=0.6223, val_macro_auroc=0.8972488645976441, val_macro_f1=0.6760, seconds=4.3
+Epoch 4/20: train_loss=0.5794, val_loss=0.6203, val_macro_auroc=0.894121308844956, val_macro_f1=0.6659, seconds=3.9
+Epoch 5/20: train_loss=0.5637, val_loss=0.6141, val_macro_auroc=0.895961787202579, val_macro_f1=0.6753, seconds=4.1
+Epoch 6/20: train_loss=0.5503, val_loss=0.6271, val_macro_auroc=0.900689544384387, val_macro_f1=0.6781, seconds=3.8
+Epoch 7/20: train_loss=0.5378, val_loss=0.5893, val_macro_auroc=0.9034378501098175, val_macro_f1=0.6777, seconds=3.9
+Epoch 8/20: train_loss=0.5255, val_loss=0.5879, val_macro_auroc=0.9064770050720876, val_macro_f1=0.6935, seconds=3.9
+Epoch 9/20: train_loss=0.5165, val_loss=0.6254, val_macro_auroc=0.9015611429936541, val_macro_f1=0.6951, seconds=3.7
+Epoch 10/20: train_loss=0.5040, val_loss=0.6040, val_macro_auroc=0.9059357394057704, val_macro_f1=0.6982, seconds=3.9
+Epoch 11/20: train_loss=0.4914, val_loss=0.6370, val_macro_auroc=0.9031724801801989, val_macro_f1=0.6956, seconds=4.0
+Epoch 12/20: train_loss=0.4837, val_loss=0.5915, val_macro_auroc=0.9083005873086943, val_macro_f1=0.6921, seconds=4.2
+Epoch 13/20: train_loss=0.4721, val_loss=0.6215, val_macro_auroc=0.9018893414987146, val_macro_f1=0.6829, seconds=4.3
+Epoch 14/20: train_loss=0.4575, val_loss=0.6464, val_macro_auroc=0.9048293750277443, val_macro_f1=0.7066, seconds=4.1
+Epoch 15/20: train_loss=0.4468, val_loss=0.7041, val_macro_auroc=0.8996795653444604, val_macro_f1=0.6949, seconds=3.9
+Epoch 16/20: train_loss=0.4349, val_loss=0.6514, val_macro_auroc=0.9057925412899264, val_macro_f1=0.7021, seconds=3.7
+Epoch 17/20: train_loss=0.4184, val_loss=0.6731, val_macro_auroc=0.9014298957315591, val_macro_f1=0.6896, seconds=3.7
+Early stopping after 17 epochs; best epoch was 12.
+Best checkpoint: D:\MyProject\college\ecg1\outputs\cross_validation\fold_2\resnet_original\checkpoint\resnet1d_best.pt
+Validation thresholds: {'NORM': 0.5500000000000002, 'MI': 0.5000000000000001, 'STTC': 0.7000000000000002, 'CD': 0.7000000000000002, 'HYP': 0.7500000000000002}
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_e683478f1d5648f8.npy
+Using existing cv_holdout_2 cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\cv_holdout_2_71c1cab0bd0df37d.npy
+DONE CV 2 resnet_original: F1=0.715331, AUC=0.920232, HYP F1=0.485477
+
+START CV 2/4 resnet_global, heldout=(3, 4), training=[1, 2, 5, 6, 7, 8]
+Training device: cuda; AMP: True; torch: 2.12.1+cu126
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_8485d0fc551b2f44.npy
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_8485d0fc551b2f44.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_0e92be0e67d96333.npy
+Training label positives: {'NORM': 5678, 'MI': 3300, 'STTC': 3144, 'CD': 2926, 'HYP': 1594}
+BCE positive weights: {'NORM': 1.2990000247955322, 'MI': 2.9549999237060547, 'STTC': 3.1510000228881836, 'CD': 3.4609999656677246, 'HYP': 7.188000202178955}
+Epoch 1/20: train_loss=0.6695, val_loss=0.6991, val_macro_auroc=0.8947575150664591, val_macro_f1=0.6621, seconds=4.6
+Epoch 2/20: train_loss=0.5940, val_loss=0.6672, val_macro_auroc=0.9035217901738234, val_macro_f1=0.6960, seconds=3.8
+Epoch 3/20: train_loss=0.5601, val_loss=0.5750, val_macro_auroc=0.914069041961268, val_macro_f1=0.7027, seconds=4.0
+Epoch 4/20: train_loss=0.5421, val_loss=0.5802, val_macro_auroc=0.9138389858603322, val_macro_f1=0.7006, seconds=3.9
+Epoch 5/20: train_loss=0.5249, val_loss=0.5706, val_macro_auroc=0.9141142105028447, val_macro_f1=0.6957, seconds=4.0
+Epoch 6/20: train_loss=0.5150, val_loss=0.5610, val_macro_auroc=0.9182801619681387, val_macro_f1=0.6941, seconds=3.7
+Epoch 7/20: train_loss=0.5017, val_loss=0.5421, val_macro_auroc=0.9236035112780628, val_macro_f1=0.7228, seconds=3.9
+Epoch 8/20: train_loss=0.4875, val_loss=0.6038, val_macro_auroc=0.920371964371234, val_macro_f1=0.7354, seconds=3.8
+Epoch 9/20: train_loss=0.4815, val_loss=0.5441, val_macro_auroc=0.9230908741178873, val_macro_f1=0.7242, seconds=4.5
+Epoch 10/20: train_loss=0.4723, val_loss=0.5657, val_macro_auroc=0.923786185644965, val_macro_f1=0.7258, seconds=3.9
+Epoch 11/20: train_loss=0.4609, val_loss=0.5878, val_macro_auroc=0.9188544304183527, val_macro_f1=0.7166, seconds=3.8
+Epoch 12/20: train_loss=0.4576, val_loss=0.5377, val_macro_auroc=0.9252190657386775, val_macro_f1=0.7183, seconds=3.7
+Epoch 13/20: train_loss=0.4444, val_loss=0.5654, val_macro_auroc=0.9242136810234991, val_macro_f1=0.7240, seconds=3.9
+Epoch 14/20: train_loss=0.4362, val_loss=0.5244, val_macro_auroc=0.9285993014407012, val_macro_f1=0.7283, seconds=3.7
+Epoch 15/20: train_loss=0.4278, val_loss=0.5419, val_macro_auroc=0.9259489401937933, val_macro_f1=0.7205, seconds=3.8
+Epoch 16/20: train_loss=0.4195, val_loss=0.5570, val_macro_auroc=0.9258078084787205, val_macro_f1=0.7320, seconds=4.1
+Epoch 17/20: train_loss=0.4118, val_loss=0.5505, val_macro_auroc=0.9245435542574197, val_macro_f1=0.7233, seconds=4.1
+Epoch 18/20: train_loss=0.4040, val_loss=0.5609, val_macro_auroc=0.9234713208456103, val_macro_f1=0.7160, seconds=4.2
+Epoch 19/20: train_loss=0.3915, val_loss=0.5956, val_macro_auroc=0.9249435249505009, val_macro_f1=0.7172, seconds=4.2
+Early stopping after 19 epochs; best epoch was 14.
+Best checkpoint: D:\MyProject\college\ecg1\outputs\cross_validation\fold_2\resnet_global\checkpoint\resnet1d_best.pt
+Validation thresholds: {'NORM': 0.6500000000000001, 'MI': 0.6000000000000002, 'STTC': 0.6500000000000001, 'CD': 0.6500000000000001, 'HYP': 0.7500000000000002}
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_bbdae435568c0971.npy
+Using existing cv_holdout_2 cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\cv_holdout_2_489de94145faf236.npy
+DONE CV 2 resnet_global: F1=0.751569, AUC=0.936653, HYP F1=0.612613
+
+START CV 2/4 inception_global, heldout=(3, 4), training=[1, 2, 5, 6, 7, 8]
+Training device: cuda; AMP: True; torch: 2.12.1+cu126
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_8485d0fc551b2f44.npy
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_5b1535c6da774e35.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_bbdae435568c0971.npy
+Training label positives: {'NORM': 5678, 'MI': 3300, 'STTC': 3144, 'CD': 2926, 'HYP': 1594}
+BCE positive weights: {'NORM': 1.2990000247955322, 'MI': 2.9549999237060547, 'STTC': 3.1510000228881836, 'CD': 3.4609999656677246, 'HYP': 7.188000202178955}
+Epoch 1/20: train_loss=0.7420, val_loss=0.6067, val_macro_auroc=0.9005607098989644, val_macro_f1=0.6863, seconds=7.0
+Epoch 2/20: train_loss=0.6098, val_loss=0.5872, val_macro_auroc=0.907201147072651, val_macro_f1=0.6902, seconds=6.4
+Epoch 3/20: train_loss=0.5667, val_loss=0.5722, val_macro_auroc=0.9129397293745523, val_macro_f1=0.7007, seconds=6.8
+Epoch 4/20: train_loss=0.5503, val_loss=0.6036, val_macro_auroc=0.9124621623799118, val_macro_f1=0.7069, seconds=7.4
+Epoch 5/20: train_loss=0.5267, val_loss=0.5789, val_macro_auroc=0.9174235839991853, val_macro_f1=0.7132, seconds=6.9
+Epoch 6/20: train_loss=0.5110, val_loss=0.5483, val_macro_auroc=0.9224339951746139, val_macro_f1=0.7201, seconds=6.5
+Epoch 7/20: train_loss=0.5000, val_loss=0.5350, val_macro_auroc=0.9248246196215024, val_macro_f1=0.7067, seconds=6.6
+Epoch 8/20: train_loss=0.4815, val_loss=0.6487, val_macro_auroc=0.9178487215269833, val_macro_f1=0.7246, seconds=6.6
+Epoch 9/20: train_loss=0.4730, val_loss=0.5649, val_macro_auroc=0.9209889034934047, val_macro_f1=0.7304, seconds=7.3
+Epoch 10/20: train_loss=0.4602, val_loss=0.5611, val_macro_auroc=0.9224559576176776, val_macro_f1=0.7151, seconds=7.3
+Epoch 11/20: train_loss=0.4453, val_loss=0.6144, val_macro_auroc=0.9166601882931849, val_macro_f1=0.7112, seconds=7.1
+Epoch 12/20: train_loss=0.4378, val_loss=0.5406, val_macro_auroc=0.9253456950662097, val_macro_f1=0.7230, seconds=6.8
+Epoch 13/20: train_loss=0.4225, val_loss=0.5713, val_macro_auroc=0.9252036659202068, val_macro_f1=0.7254, seconds=6.4
+Epoch 14/20: train_loss=0.4074, val_loss=0.5597, val_macro_auroc=0.9248831890704465, val_macro_f1=0.7276, seconds=6.6
+Epoch 15/20: train_loss=0.3985, val_loss=0.5877, val_macro_auroc=0.9250773940709097, val_macro_f1=0.7294, seconds=7.5
+Epoch 16/20: train_loss=0.3816, val_loss=0.6276, val_macro_auroc=0.9176835021325143, val_macro_f1=0.7171, seconds=7.0
+Epoch 17/20: train_loss=0.3691, val_loss=0.5957, val_macro_auroc=0.9228466536800435, val_macro_f1=0.7248, seconds=6.5
+Early stopping after 17 epochs; best epoch was 12.
+Best checkpoint: D:\MyProject\college\ecg1\outputs\cross_validation\fold_2\inception_global\checkpoint\inception1d_best.pt
+Validation thresholds: {'NORM': 0.5000000000000001, 'MI': 0.7000000000000002, 'STTC': 0.6000000000000002, 'CD': 0.7500000000000002, 'HYP': 0.7500000000000002}
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_bbdae435568c0971.npy
+Using existing cv_holdout_2 cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\cv_holdout_2_fd3dfbaa3bff922b.npy
+DONE CV 2 inception_global: F1=0.749322, AUC=0.933988, HYP F1=0.615772
+
+START CV 3/4 resnet_original, heldout=(5, 6), training=[1, 2, 3, 4, 7, 8]
+Training device: cuda; AMP: True; torch: 2.12.1+cu126
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_67d1484241d1a783.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_e683478f1d5648f8.npy
+Training label positives: {'NORM': 5727, 'MI': 3254, 'STTC': 3126, 'CD': 2917, 'HYP': 1584}
+BCE positive weights: {'NORM': 1.281999945640564, 'MI': 3.0169999599456787, 'STTC': 3.180999994277954, 'CD': 3.4809999465942383, 'HYP': 7.251999855041504}
+Epoch 1/20: train_loss=0.6945, val_loss=0.6570, val_macro_auroc=0.8834830780856177, val_macro_f1=0.6408, seconds=6.7
+Epoch 2/20: train_loss=0.6192, val_loss=0.6660, val_macro_auroc=0.889054595401863, val_macro_f1=0.6362, seconds=4.4
+Epoch 3/20: train_loss=0.5934, val_loss=0.6431, val_macro_auroc=0.8925143083739335, val_macro_f1=0.6750, seconds=4.5
+Epoch 4/20: train_loss=0.5790, val_loss=0.6022, val_macro_auroc=0.898255116273563, val_macro_f1=0.6718, seconds=4.3
+Epoch 5/20: train_loss=0.5593, val_loss=0.6028, val_macro_auroc=0.9018297526947597, val_macro_f1=0.6776, seconds=4.6
+Epoch 6/20: train_loss=0.5485, val_loss=0.6311, val_macro_auroc=0.8963774737748651, val_macro_f1=0.6819, seconds=4.4
+Epoch 7/20: train_loss=0.5387, val_loss=0.6041, val_macro_auroc=0.9042156394050143, val_macro_f1=0.6561, seconds=3.8
+Epoch 8/20: train_loss=0.5254, val_loss=0.6045, val_macro_auroc=0.9031206028715051, val_macro_f1=0.6929, seconds=3.9
+Epoch 9/20: train_loss=0.5197, val_loss=0.6249, val_macro_auroc=0.89921841259618, val_macro_f1=0.6614, seconds=4.0
+Epoch 10/20: train_loss=0.5081, val_loss=0.5811, val_macro_auroc=0.9080329153082907, val_macro_f1=0.6911, seconds=3.7
+Epoch 11/20: train_loss=0.4967, val_loss=0.6202, val_macro_auroc=0.9015660583690007, val_macro_f1=0.6871, seconds=3.9
+Epoch 12/20: train_loss=0.4842, val_loss=0.6162, val_macro_auroc=0.9054777907888203, val_macro_f1=0.6883, seconds=4.6
+Epoch 13/20: train_loss=0.4739, val_loss=0.6168, val_macro_auroc=0.9008656324239224, val_macro_f1=0.6769, seconds=3.7
+Epoch 14/20: train_loss=0.4614, val_loss=0.6280, val_macro_auroc=0.9033081510291815, val_macro_f1=0.6718, seconds=3.9
+Epoch 15/20: train_loss=0.4515, val_loss=0.6675, val_macro_auroc=0.9033627617358577, val_macro_f1=0.7042, seconds=3.7
+Early stopping after 15 epochs; best epoch was 10.
+Best checkpoint: D:\MyProject\college\ecg1\outputs\cross_validation\fold_3\resnet_original\checkpoint\resnet1d_best.pt
+Validation thresholds: {'NORM': 0.6500000000000001, 'MI': 0.6000000000000002, 'STTC': 0.6500000000000001, 'CD': 0.7000000000000002, 'HYP': 0.7000000000000002}
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_e683478f1d5648f8.npy
+Using existing cv_holdout_3 cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\cv_holdout_3_77ddc6f9718ab558.npy
+DONE CV 3 resnet_original: F1=0.717781, AUC=0.915952, HYP F1=0.476934
+
+START CV 3/4 resnet_global, heldout=(5, 6), training=[1, 2, 3, 4, 7, 8]
+Training device: cuda; AMP: True; torch: 2.12.1+cu126
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_4e3b1a34f5e17431.npy
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_4e3b1a34f5e17431.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_0e92be0e67d96333.npy
+Training label positives: {'NORM': 5727, 'MI': 3254, 'STTC': 3126, 'CD': 2917, 'HYP': 1584}
+BCE positive weights: {'NORM': 1.281999945640564, 'MI': 3.0169999599456787, 'STTC': 3.180999994277954, 'CD': 3.4809999465942383, 'HYP': 7.251999855041504}
+Epoch 1/20: train_loss=0.6636, val_loss=0.6290, val_macro_auroc=0.8947395721507739, val_macro_f1=0.6791, seconds=4.2
+Epoch 2/20: train_loss=0.5906, val_loss=0.6380, val_macro_auroc=0.9045570460402986, val_macro_f1=0.6844, seconds=3.6
+Epoch 3/20: train_loss=0.5589, val_loss=0.6014, val_macro_auroc=0.9084085836288274, val_macro_f1=0.6743, seconds=3.6
+Epoch 4/20: train_loss=0.5421, val_loss=0.5679, val_macro_auroc=0.9166249425659523, val_macro_f1=0.7010, seconds=3.6
+Epoch 5/20: train_loss=0.5249, val_loss=0.5761, val_macro_auroc=0.9181516852654739, val_macro_f1=0.7058, seconds=3.8
+Epoch 6/20: train_loss=0.5131, val_loss=0.5614, val_macro_auroc=0.920150616189518, val_macro_f1=0.7059, seconds=4.0
+Epoch 7/20: train_loss=0.5002, val_loss=0.5583, val_macro_auroc=0.9212195029100373, val_macro_f1=0.7095, seconds=3.7
+Epoch 8/20: train_loss=0.4870, val_loss=0.5782, val_macro_auroc=0.9143626199113875, val_macro_f1=0.6980, seconds=4.3
+Epoch 9/20: train_loss=0.4845, val_loss=0.5394, val_macro_auroc=0.9228458165251116, val_macro_f1=0.7028, seconds=4.6
+Epoch 10/20: train_loss=0.4714, val_loss=0.5447, val_macro_auroc=0.922261187182104, val_macro_f1=0.7097, seconds=4.5
+Epoch 11/20: train_loss=0.4649, val_loss=0.5803, val_macro_auroc=0.9212942003786626, val_macro_f1=0.7239, seconds=4.4
+Epoch 12/20: train_loss=0.4501, val_loss=0.5528, val_macro_auroc=0.9225360607249685, val_macro_f1=0.7204, seconds=4.6
+Epoch 13/20: train_loss=0.4439, val_loss=0.5860, val_macro_auroc=0.9221332984105857, val_macro_f1=0.6847, seconds=4.3
+Epoch 14/20: train_loss=0.4351, val_loss=0.5626, val_macro_auroc=0.9211368237157131, val_macro_f1=0.6989, seconds=4.6
+Early stopping after 14 epochs; best epoch was 9.
+Best checkpoint: D:\MyProject\college\ecg1\outputs\cross_validation\fold_3\resnet_global\checkpoint\resnet1d_best.pt
+Validation thresholds: {'NORM': 0.45000000000000007, 'MI': 0.5500000000000002, 'STTC': 0.7000000000000002, 'CD': 0.8000000000000002, 'HYP': 0.8500000000000002}
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_ab040fc598033195.npy
+Using existing cv_holdout_3 cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\cv_holdout_3_d14136fcf18db676.npy
+DONE CV 3 resnet_global: F1=0.747673, AUC=0.932210, HYP F1=0.601399
+
+START CV 3/4 inception_global, heldout=(5, 6), training=[1, 2, 3, 4, 7, 8]
+Training device: cuda; AMP: True; torch: 2.12.1+cu126
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_4e3b1a34f5e17431.npy
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_87eaa1129bdca7d0.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_ab040fc598033195.npy
+Training label positives: {'NORM': 5727, 'MI': 3254, 'STTC': 3126, 'CD': 2917, 'HYP': 1584}
+BCE positive weights: {'NORM': 1.281999945640564, 'MI': 3.0169999599456787, 'STTC': 3.180999994277954, 'CD': 3.4809999465942383, 'HYP': 7.251999855041504}
+Epoch 1/20: train_loss=0.7476, val_loss=0.6183, val_macro_auroc=0.9027532502409865, val_macro_f1=0.6804, seconds=7.2
+Epoch 2/20: train_loss=0.6090, val_loss=0.6338, val_macro_auroc=0.9040893151971883, val_macro_f1=0.6782, seconds=6.8
+Epoch 3/20: train_loss=0.5712, val_loss=0.5902, val_macro_auroc=0.9159762661688877, val_macro_f1=0.6858, seconds=6.7
+Epoch 4/20: train_loss=0.5450, val_loss=0.6017, val_macro_auroc=0.9150532432029971, val_macro_f1=0.7032, seconds=7.3
+Epoch 5/20: train_loss=0.5289, val_loss=0.5766, val_macro_auroc=0.9178418017477942, val_macro_f1=0.6984, seconds=6.9
+Epoch 6/20: train_loss=0.5110, val_loss=0.5807, val_macro_auroc=0.9187530426590783, val_macro_f1=0.7230, seconds=7.0
+Epoch 7/20: train_loss=0.4972, val_loss=0.5511, val_macro_auroc=0.9210135294188113, val_macro_f1=0.7116, seconds=7.0
+Epoch 8/20: train_loss=0.4817, val_loss=0.5717, val_macro_auroc=0.9194559632576909, val_macro_f1=0.7129, seconds=7.0
+Epoch 9/20: train_loss=0.4723, val_loss=0.5870, val_macro_auroc=0.920286701963609, val_macro_f1=0.6742, seconds=6.8
+Epoch 10/20: train_loss=0.4616, val_loss=0.5600, val_macro_auroc=0.9215342557776556, val_macro_f1=0.6772, seconds=6.7
+Epoch 11/20: train_loss=0.4494, val_loss=0.5679, val_macro_auroc=0.9216801387365926, val_macro_f1=0.7223, seconds=6.9
+Epoch 12/20: train_loss=0.4343, val_loss=0.5497, val_macro_auroc=0.9249560006635973, val_macro_f1=0.7069, seconds=7.1
+Epoch 13/20: train_loss=0.4255, val_loss=0.5580, val_macro_auroc=0.9248621333990655, val_macro_f1=0.7225, seconds=7.5
+Epoch 14/20: train_loss=0.4074, val_loss=0.5478, val_macro_auroc=0.9265774214502862, val_macro_f1=0.7099, seconds=6.9
+Epoch 15/20: train_loss=0.3945, val_loss=0.6126, val_macro_auroc=0.9218362426940347, val_macro_f1=0.7287, seconds=7.0
+Epoch 16/20: train_loss=0.3912, val_loss=0.6597, val_macro_auroc=0.9256521278206055, val_macro_f1=0.7332, seconds=7.0
+Epoch 17/20: train_loss=0.3687, val_loss=0.5944, val_macro_auroc=0.922064499186684, val_macro_f1=0.7203, seconds=7.1
+Epoch 18/20: train_loss=0.3552, val_loss=0.6083, val_macro_auroc=0.9242648240687894, val_macro_f1=0.7358, seconds=7.1
+Epoch 19/20: train_loss=0.3390, val_loss=0.6143, val_macro_auroc=0.924899586345154, val_macro_f1=0.7225, seconds=6.9
+Early stopping after 19 epochs; best epoch was 14.
+Best checkpoint: D:\MyProject\college\ecg1\outputs\cross_validation\fold_3\inception_global\checkpoint\inception1d_best.pt
+Validation thresholds: {'NORM': 0.3500000000000001, 'MI': 0.6500000000000001, 'STTC': 0.7000000000000002, 'CD': 0.8000000000000002, 'HYP': 0.8500000000000002}
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_ab040fc598033195.npy
+Using existing cv_holdout_3 cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\cv_holdout_3_50a05b2bb56a5d40.npy
+DONE CV 3 inception_global: F1=0.744298, AUC=0.933279, HYP F1=0.596965
+
+START CV 4/4 resnet_original, heldout=(7, 8), training=[1, 2, 3, 4, 5, 6]
+Training device: cuda; AMP: True; torch: 2.12.1+cu126
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_e04482890e4f12fe.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_e683478f1d5648f8.npy
+Training label positives: {'NORM': 5694, 'MI': 3291, 'STTC': 3152, 'CD': 2937, 'HYP': 1587}
+BCE positive weights: {'NORM': 1.2949999570846558, 'MI': 2.9709999561309814, 'STTC': 3.1459999084472656, 'CD': 3.450000047683716, 'HYP': 7.235000133514404}
+Epoch 1/20: train_loss=0.6976, val_loss=0.7510, val_macro_auroc=0.8783393741009322, val_macro_f1=0.6664, seconds=8.3
+Epoch 2/20: train_loss=0.6236, val_loss=0.6686, val_macro_auroc=0.8918827943976572, val_macro_f1=0.6325, seconds=4.7
+Epoch 3/20: train_loss=0.5980, val_loss=0.7381, val_macro_auroc=0.8910212049801988, val_macro_f1=0.6614, seconds=4.6
+Epoch 4/20: train_loss=0.5797, val_loss=0.6104, val_macro_auroc=0.8974602017694162, val_macro_f1=0.6867, seconds=4.2
+Epoch 5/20: train_loss=0.5638, val_loss=0.5907, val_macro_auroc=0.9040037974771756, val_macro_f1=0.6887, seconds=4.0
+Epoch 6/20: train_loss=0.5495, val_loss=0.6040, val_macro_auroc=0.8996833572691774, val_macro_f1=0.6766, seconds=3.9
+Epoch 7/20: train_loss=0.5426, val_loss=0.5840, val_macro_auroc=0.9054332855901782, val_macro_f1=0.6819, seconds=3.5
+Epoch 8/20: train_loss=0.5288, val_loss=0.6278, val_macro_auroc=0.9045983732257034, val_macro_f1=0.6959, seconds=3.5
+Epoch 9/20: train_loss=0.5130, val_loss=0.6887, val_macro_auroc=0.899742946032779, val_macro_f1=0.6901, seconds=3.4
+Epoch 10/20: train_loss=0.5044, val_loss=0.6017, val_macro_auroc=0.9091607602629643, val_macro_f1=0.6987, seconds=3.5
+Epoch 11/20: train_loss=0.4926, val_loss=0.6835, val_macro_auroc=0.8980729336248331, val_macro_f1=0.6934, seconds=4.0
+Epoch 12/20: train_loss=0.4852, val_loss=0.5868, val_macro_auroc=0.9050543146563864, val_macro_f1=0.6810, seconds=4.2
+Epoch 13/20: train_loss=0.4757, val_loss=0.6720, val_macro_auroc=0.9018930841275076, val_macro_f1=0.6916, seconds=3.8
+Epoch 14/20: train_loss=0.4629, val_loss=0.6289, val_macro_auroc=0.9036818566436763, val_macro_f1=0.6989, seconds=4.1
+Epoch 15/20: train_loss=0.4538, val_loss=0.6214, val_macro_auroc=0.9023487340638502, val_macro_f1=0.6893, seconds=4.3
+Early stopping after 15 epochs; best epoch was 10.
+Best checkpoint: D:\MyProject\college\ecg1\outputs\cross_validation\fold_4\resnet_original\checkpoint\resnet1d_best.pt
+Validation thresholds: {'NORM': 0.7500000000000002, 'MI': 0.6500000000000001, 'STTC': 0.6500000000000001, 'CD': 0.6500000000000001, 'HYP': 0.6500000000000001}
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_e683478f1d5648f8.npy
+Using existing cv_holdout_4 cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\cv_holdout_4_a5bf3e349dd4f665.npy
+DONE CV 4 resnet_original: F1=0.719630, AUC=0.918692, HYP F1=0.479869
+
+START CV 4/4 resnet_global, heldout=(7, 8), training=[1, 2, 3, 4, 5, 6]
+Training device: cuda; AMP: True; torch: 2.12.1+cu126
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_8927c16b267392ed.npy
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_8927c16b267392ed.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_0e92be0e67d96333.npy
+Training label positives: {'NORM': 5694, 'MI': 3291, 'STTC': 3152, 'CD': 2937, 'HYP': 1587}
+BCE positive weights: {'NORM': 1.2949999570846558, 'MI': 2.9709999561309814, 'STTC': 3.1459999084472656, 'CD': 3.450000047683716, 'HYP': 7.235000133514404}
+Epoch 1/20: train_loss=0.6715, val_loss=0.6490, val_macro_auroc=0.8969053269399423, val_macro_f1=0.6742, seconds=4.4
+Epoch 2/20: train_loss=0.5948, val_loss=0.6315, val_macro_auroc=0.9027061340539179, val_macro_f1=0.6973, seconds=3.9
+Epoch 3/20: train_loss=0.5647, val_loss=0.6361, val_macro_auroc=0.9078604784435749, val_macro_f1=0.7040, seconds=3.8
+Epoch 4/20: train_loss=0.5452, val_loss=0.5680, val_macro_auroc=0.9167537613502317, val_macro_f1=0.7144, seconds=3.6
+Epoch 5/20: train_loss=0.5280, val_loss=0.5907, val_macro_auroc=0.9162144811777987, val_macro_f1=0.6900, seconds=3.5
+Epoch 6/20: train_loss=0.5147, val_loss=0.5616, val_macro_auroc=0.9163718083943838, val_macro_f1=0.7055, seconds=3.5
+Epoch 7/20: train_loss=0.5082, val_loss=0.5529, val_macro_auroc=0.9186254162005024, val_macro_f1=0.6930, seconds=3.5
+Epoch 8/20: train_loss=0.4944, val_loss=0.5629, val_macro_auroc=0.9231354974345531, val_macro_f1=0.7341, seconds=3.4
+Epoch 9/20: train_loss=0.4813, val_loss=0.6298, val_macro_auroc=0.9149547650805525, val_macro_f1=0.6959, seconds=3.6
+Epoch 10/20: train_loss=0.4735, val_loss=0.5504, val_macro_auroc=0.9230881020696797, val_macro_f1=0.7031, seconds=3.4
+Epoch 11/20: train_loss=0.4657, val_loss=0.5571, val_macro_auroc=0.9190370874552739, val_macro_f1=0.7084, seconds=3.3
+Epoch 12/20: train_loss=0.4549, val_loss=0.5737, val_macro_auroc=0.9185447159178317, val_macro_f1=0.7167, seconds=3.5
+Epoch 13/20: train_loss=0.4501, val_loss=0.6078, val_macro_auroc=0.921602190491647, val_macro_f1=0.7236, seconds=3.7
+Early stopping after 13 epochs; best epoch was 8.
+Best checkpoint: D:\MyProject\college\ecg1\outputs\cross_validation\fold_4\resnet_global\checkpoint\resnet1d_best.pt
+Validation thresholds: {'NORM': 0.6000000000000002, 'MI': 0.5000000000000001, 'STTC': 0.6000000000000002, 'CD': 0.6000000000000002, 'HYP': 0.5500000000000002}
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_731016ac6e1ca015.npy
+Using existing cv_holdout_4 cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\cv_holdout_4_e932ee1dade7d90a.npy
+DONE CV 4 resnet_global: F1=0.747411, AUC=0.934650, HYP F1=0.605166
+
+START CV 4/4 inception_global, heldout=(7, 8), training=[1, 2, 3, 4, 5, 6]
+Training device: cuda; AMP: True; torch: 2.12.1+cu126
+GPU: NVIDIA GeForce RTX 4060 Laptop GPU
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_8927c16b267392ed.npy
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\train_full_7f707e1995988faa.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_731016ac6e1ca015.npy
+Training label positives: {'NORM': 5694, 'MI': 3291, 'STTC': 3152, 'CD': 2937, 'HYP': 1587}
+BCE positive weights: {'NORM': 1.2949999570846558, 'MI': 2.9709999561309814, 'STTC': 3.1459999084472656, 'CD': 3.450000047683716, 'HYP': 7.235000133514404}
+Epoch 1/20: train_loss=0.7572, val_loss=0.7087, val_macro_auroc=0.8961403150605115, val_macro_f1=0.6767, seconds=6.0
+Epoch 2/20: train_loss=0.6126, val_loss=0.6557, val_macro_auroc=0.9022717195429237, val_macro_f1=0.6517, seconds=5.6
+Epoch 3/20: train_loss=0.5765, val_loss=0.6626, val_macro_auroc=0.9043629957991511, val_macro_f1=0.6904, seconds=5.3
+Epoch 4/20: train_loss=0.5529, val_loss=0.6044, val_macro_auroc=0.9122406228645772, val_macro_f1=0.7054, seconds=5.7
+Epoch 5/20: train_loss=0.5367, val_loss=0.5659, val_macro_auroc=0.9172727618323625, val_macro_f1=0.7025, seconds=5.5
+Epoch 6/20: train_loss=0.5145, val_loss=0.5767, val_macro_auroc=0.9170321493509995, val_macro_f1=0.7046, seconds=5.7
+Epoch 7/20: train_loss=0.5042, val_loss=0.5445, val_macro_auroc=0.9213157661548296, val_macro_f1=0.6996, seconds=6.0
+Epoch 8/20: train_loss=0.4899, val_loss=0.5695, val_macro_auroc=0.9224609342118738, val_macro_f1=0.7219, seconds=6.3
+Epoch 9/20: train_loss=0.4758, val_loss=0.5858, val_macro_auroc=0.9227737635163876, val_macro_f1=0.7162, seconds=5.7
+Epoch 10/20: train_loss=0.4650, val_loss=0.5333, val_macro_auroc=0.9266123715547476, val_macro_f1=0.7110, seconds=5.5
+Epoch 11/20: train_loss=0.4549, val_loss=0.6284, val_macro_auroc=0.9186710194334683, val_macro_f1=0.7185, seconds=5.4
+Epoch 12/20: train_loss=0.4448, val_loss=0.5585, val_macro_auroc=0.9222318410681843, val_macro_f1=0.7050, seconds=5.4
+Epoch 13/20: train_loss=0.4298, val_loss=0.6623, val_macro_auroc=0.9233811098162326, val_macro_f1=0.7283, seconds=5.4
+Epoch 14/20: train_loss=0.4211, val_loss=0.5644, val_macro_auroc=0.9260623467487917, val_macro_f1=0.7266, seconds=5.7
+Epoch 15/20: train_loss=0.4101, val_loss=0.6188, val_macro_auroc=0.9195535243285873, val_macro_f1=0.7162, seconds=5.4
+Early stopping after 15 epochs; best epoch was 10.
+Best checkpoint: D:\MyProject\college\ecg1\outputs\cross_validation\fold_4\inception_global\checkpoint\inception1d_best.pt
+Validation thresholds: {'NORM': 0.45000000000000007, 'MI': 0.6500000000000001, 'STTC': 0.40000000000000013, 'CD': 0.8000000000000002, 'HYP': 0.7500000000000002}
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\validation_full_731016ac6e1ca015.npy
+Using existing cv_holdout_4 cache: D:\MyProject\college\ecg1\outputs\cross_validation\cache\cv_holdout_4_d25ab86f4c67869b.npy
+DONE CV 4 inception_global: F1=0.746257, AUC=0.933697, HYP F1=0.616034
+COMPLETE 12/12; winner=resnet_global
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cache\train_full_948144871fc7b5c0.npy
+Using existing train_full cache: D:\MyProject\college\ecg1\outputs\cache\train_full_6552ec0f256cf449.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cache\validation_full_e683478f1d5648f8.npy
+Using existing validation_full cache: D:\MyProject\college\ecg1\outputs\cache\validation_full_0e92be0e67d96333.npy
+SKIP completed 1/resnet_original
+SKIP completed 1/resnet_global
+SKIP completed 1/inception_global
+SKIP completed 2/resnet_original
+SKIP completed 2/resnet_global
+SKIP completed 2/inception_global
+SKIP completed 3/resnet_original
+SKIP completed 3/resnet_global
+SKIP completed 3/inception_global
+SKIP completed 4/resnet_original
+SKIP completed 4/resnet_global
+SKIP completed 4/inception_global
+COMPLETE 12/12; winner=resnet_global

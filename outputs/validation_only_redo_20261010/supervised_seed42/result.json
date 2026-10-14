@@ -1,0 +1,122 @@
+{
+  "name": "supervised_seed42",
+  "arm": "supervised",
+  "seed": 42,
+  "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\validation_only_redo_20261010\\supervised_seed42\\checkpoint\\cnn1d_best.pt",
+  "checkpoint_sha256": "fa2bd87a00e65d8cef1aa36b34f7a5b0ceefd359d2821700d239c442b055cdd6",
+  "epoch": 10,
+  "thresholds": [
+    0.49,
+    0.58,
+    0.72,
+    0.56,
+    0.74
+  ],
+  "validation": {
+    "records": 2146,
+    "per_class": {
+      "NORM": {
+        "support": 955,
+        "threshold": 0.49,
+        "auroc": 0.9428611620311147,
+        "precision": 0.8178403755868544,
+        "recall": 0.912041884816754,
+        "f1": 0.8623762376237624,
+        "confusion_matrix": [
+          [
+            997,
+            194
+          ],
+          [
+            84,
+            871
+          ]
+        ],
+        "auprc": 0.9271350964209136
+      },
+      "MI": {
+        "support": 540,
+        "threshold": 0.58,
+        "auroc": 0.9237385268207187,
+        "precision": 0.6962843295638126,
+        "recall": 0.7981481481481482,
+        "f1": 0.7437446074201898,
+        "confusion_matrix": [
+          [
+            1418,
+            188
+          ],
+          [
+            109,
+            431
+          ]
+        ],
+        "auprc": 0.8292193696952701
+      },
+      "STTC": {
+        "support": 528,
+        "threshold": 0.72,
+        "auroc": 0.9302531651496422,
+        "precision": 0.7123966942148761,
+        "recall": 0.8162878787878788,
+        "f1": 0.7608120035304501,
+        "confusion_matrix": [
+          [
+            1444,
+            174
+          ],
+          [
+            97,
+            431
+          ]
+        ],
+        "auprc": 0.7814456915830621
+      },
+      "CD": {
+        "support": 495,
+        "threshold": 0.56,
+        "auroc": 0.9327227453211705,
+        "precision": 0.7724550898203593,
+        "recall": 0.7818181818181819,
+        "f1": 0.7771084337349398,
+        "confusion_matrix": [
+          [
+            1537,
+            114
+          ],
+          [
+            108,
+            387
+          ]
+        ],
+        "auprc": 0.8612078731044861
+      },
+      "HYP": {
+        "support": 268,
+        "threshold": 0.74,
+        "auroc": 0.9085979845183031,
+        "precision": 0.6132404181184669,
+        "recall": 0.6567164179104478,
+        "f1": 0.6342342342342342,
+        "confusion_matrix": [
+          [
+            1767,
+            111
+          ],
+          [
+            92,
+            176
+          ]
+        ],
+        "auprc": 0.6601488392293472
+      }
+    },
+    "macro_auroc": 0.9276347167681898,
+    "macro_precision": 0.7224433814608738,
+    "macro_recall": 0.7930025022962821,
+    "macro_f1": 0.7556551033087151,
+    "classes_with_defined_auroc": 5,
+    "macro_auprc": 0.8118313740066159
+  },
+  "epochs_completed": 18
+}

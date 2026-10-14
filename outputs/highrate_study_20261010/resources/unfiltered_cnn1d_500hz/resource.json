@@ -1,0 +1,291 @@
+{
+  "model": "cnn1d",
+  "fs": 500,
+  "training_cohort": "unfiltered",
+  "checkpoint_sha256": "cbb5432710afef92160f2a470354be04fe5d057edf1bc5d970101967d4c3a206",
+  "onnx_max_logits_error": 3.814697265625e-06,
+  "calibration_records": 128,
+  "calibration_folds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "resources": {
+    "float32": {
+      "conversion_success": true,
+      "weights_bytes": 444820,
+      "activations_bytes": 480000,
+      "macc": 73866133,
+      "memory_footprint": {
+        "activations": 480000,
+        "io": [
+          0,
+          0
+        ],
+        "kernel_flash": null,
+        "kernel_ram": null,
+        "series": "generic",
+        "toolchain": null,
+        "toolchain_flash": null,
+        "toolchain_ram": null,
+        "weights": 444820
+      },
+      "estimated_complete_flash": 491420,
+      "estimated_complete_main_sram": 499672,
+      "overhead_source": "old CNN seed44 link map; estimates only, no new firmware",
+      "fits_f407ve_flash_estimate": true,
+      "fits_f407vg_flash_estimate": true,
+      "fits_main_sram_estimate": false
+    },
+    "int8": {
+      "conversion_success": true,
+      "weights_bytes": 112276,
+      "activations_bytes": 120000,
+      "macc": 73586207,
+      "memory_footprint": {
+        "activations": 120000,
+        "io": [
+          0,
+          0
+        ],
+        "kernel_flash": null,
+        "kernel_ram": null,
+        "series": "generic",
+        "toolchain": null,
+        "toolchain_flash": null,
+        "toolchain_ram": null,
+        "weights": 112276
+      },
+      "estimated_complete_flash": 158876,
+      "estimated_complete_main_sram": 139672,
+      "overhead_source": "old CNN seed44 link map; estimates only, no new firmware",
+      "fits_f407ve_flash_estimate": true,
+      "fits_f407vg_flash_estimate": true,
+      "fits_main_sram_estimate": false
+    }
+  },
+  "int8_validation": {
+    "filtered": {
+      "records": 2146,
+      "per_class": {
+        "NORM": {
+          "support": 955,
+          "threshold": 0.46,
+          "auroc": 0.9415564376805096,
+          "precision": 0.8170616113744076,
+          "recall": 0.9026178010471204,
+          "f1": 0.8577114427860697,
+          "confusion_matrix": [
+            [
+              998,
+              193
+            ],
+            [
+              93,
+              862
+            ]
+          ],
+          "auprc": 0.9239648588966407
+        },
+        "MI": {
+          "support": 540,
+          "threshold": 0.78,
+          "auroc": 0.9320067109450672,
+          "precision": 0.744954128440367,
+          "recall": 0.7518518518518519,
+          "f1": 0.7483870967741936,
+          "confusion_matrix": [
+            [
+              1467,
+              139
+            ],
+            [
+              134,
+              406
+            ]
+          ],
+          "auprc": 0.8303191660682733
+        },
+        "STTC": {
+          "support": 528,
+          "threshold": 0.62,
+          "auroc": 0.9277142562834775,
+          "precision": 0.6960629921259842,
+          "recall": 0.8371212121212122,
+          "f1": 0.7601031814273431,
+          "confusion_matrix": [
+            [
+              1425,
+              193
+            ],
+            [
+              86,
+              442
+            ]
+          ],
+          "auprc": 0.7701659344533278
+        },
+        "CD": {
+          "support": 495,
+          "threshold": 0.67,
+          "auroc": 0.9292800812485852,
+          "precision": 0.7456647398843931,
+          "recall": 0.7818181818181819,
+          "f1": 0.7633136094674556,
+          "confusion_matrix": [
+            [
+              1519,
+              132
+            ],
+            [
+              108,
+              387
+            ]
+          ],
+          "auprc": 0.8413343193543958
+        },
+        "HYP": {
+          "support": 268,
+          "threshold": 0.83,
+          "auroc": 0.9080098707739259,
+          "precision": 0.5714285714285714,
+          "recall": 0.6716417910447762,
+          "f1": 0.6174957118353345,
+          "confusion_matrix": [
+            [
+              1743,
+              135
+            ],
+            [
+              88,
+              180
+            ]
+          ],
+          "auprc": 0.649761434715658
+        }
+      },
+      "macro_auroc": 0.9277134713863131,
+      "macro_precision": 0.7150344086507447,
+      "macro_recall": 0.7890101675766286,
+      "macro_f1": 0.7494022084580794,
+      "classes_with_defined_auroc": 5,
+      "macro_auprc": 0.8031091426976591
+    },
+    "unfiltered": {
+      "records": 2183,
+      "per_class": {
+        "NORM": {
+          "support": 955,
+          "threshold": 0.46,
+          "auroc": 0.9417091597455531,
+          "precision": 0.8147448015122873,
+          "recall": 0.9026178010471204,
+          "f1": 0.8564331843020367,
+          "confusion_matrix": [
+            [
+              1032,
+              196
+            ],
+            [
+              93,
+              862
+            ]
+          ],
+          "auprc": 0.9209943746886441
+        },
+        "MI": {
+          "support": 540,
+          "threshold": 0.78,
+          "auroc": 0.9307353305831698,
+          "precision": 0.7368421052631579,
+          "recall": 0.7518518518518519,
+          "f1": 0.7442713107241063,
+          "confusion_matrix": [
+            [
+              1498,
+              145
+            ],
+            [
+              134,
+              406
+            ]
+          ],
+          "auprc": 0.8241267958616646
+        },
+        "STTC": {
+          "support": 528,
+          "threshold": 0.62,
+          "auroc": 0.9278855396868991,
+          "precision": 0.6927899686520376,
+          "recall": 0.8371212121212122,
+          "f1": 0.758147512864494,
+          "confusion_matrix": [
+            [
+              1459,
+              196
+            ],
+            [
+              86,
+              442
+            ]
+          ],
+          "auprc": 0.7654464187731812
+        },
+        "CD": {
+          "support": 495,
+          "threshold": 0.67,
+          "auroc": 0.9266150844942314,
+          "precision": 0.730188679245283,
+          "recall": 0.7818181818181819,
+          "f1": 0.7551219512195122,
+          "confusion_matrix": [
+            [
+              1545,
+              143
+            ],
+            [
+              108,
+              387
+            ]
+          ],
+          "auprc": 0.8303681959566835
+        },
+        "HYP": {
+          "support": 268,
+          "threshold": 0.83,
+          "auroc": 0.9082401309379992,
+          "precision": 0.569620253164557,
+          "recall": 0.6716417910447762,
+          "f1": 0.6164383561643836,
+          "confusion_matrix": [
+            [
+              1779,
+              136
+            ],
+            [
+              88,
+              180
+            ]
+          ],
+          "auprc": 0.6432672829512536
+        }
+      },
+      "macro_auroc": 0.9270370490895706,
+      "macro_precision": 0.7088371615674645,
+      "macro_recall": 0.7890101675766286,
+      "macro_f1": 0.7460824630549066,
+      "classes_with_defined_auroc": 5,
+      "macro_auprc": 0.7968406136462853
+    }
+  },
+  "int8_thresholds_retuned": false,
+  "new_firmware_compiled": false,
+  "physical_board_validated": false,
+  "serial_fp32_115200_min_seconds": 20.833333333333332,
+  "serial_int8_115200_min_seconds": 5.208333333333333
+}

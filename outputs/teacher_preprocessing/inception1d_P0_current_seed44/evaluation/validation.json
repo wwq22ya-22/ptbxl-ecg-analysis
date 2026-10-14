@@ -1,0 +1,111 @@
+{
+  "metrics": {
+    "records": 2146,
+    "per_class": {
+      "NORM": {
+        "support": 955,
+        "threshold": 0.30000000000000004,
+        "auroc": 0.9399334449910102,
+        "precision": 0.7926391382405745,
+        "recall": 0.9246073298429319,
+        "f1": 0.8535524407926535,
+        "confusion_matrix": [
+          [
+            960,
+            231
+          ],
+          [
+            72,
+            883
+          ]
+        ],
+        "auprc": 0.9222898597492178
+      },
+      "MI": {
+        "support": 540,
+        "threshold": 0.5000000000000001,
+        "auroc": 0.9317616807342834,
+        "precision": 0.726643598615917,
+        "recall": 0.7777777777777778,
+        "f1": 0.7513416815742398,
+        "confusion_matrix": [
+          [
+            1448,
+            158
+          ],
+          [
+            120,
+            420
+          ]
+        ],
+        "auprc": 0.8420123199214404
+      },
+      "STTC": {
+        "support": 528,
+        "threshold": 0.6500000000000001,
+        "auroc": 0.9313850807206802,
+        "precision": 0.7312925170068028,
+        "recall": 0.8143939393939394,
+        "f1": 0.7706093189964157,
+        "confusion_matrix": [
+          [
+            1460,
+            158
+          ],
+          [
+            98,
+            430
+          ]
+        ],
+        "auprc": 0.7979791880760352
+      },
+      "CD": {
+        "support": 495,
+        "threshold": 0.8500000000000002,
+        "auroc": 0.9268885095656749,
+        "precision": 0.6959578207381371,
+        "recall": 0.8,
+        "f1": 0.7443609022556391,
+        "confusion_matrix": [
+          [
+            1478,
+            173
+          ],
+          [
+            99,
+            396
+          ]
+        ],
+        "auprc": 0.8405471111419498
+      },
+      "HYP": {
+        "support": 268,
+        "threshold": 0.6500000000000001,
+        "auroc": 0.9106961200387839,
+        "precision": 0.6283524904214559,
+        "recall": 0.6119402985074627,
+        "f1": 0.6200378071833649,
+        "confusion_matrix": [
+          [
+            1781,
+            97
+          ],
+          [
+            104,
+            164
+          ]
+        ],
+        "auprc": 0.6686313674185582
+      }
+    },
+    "macro_auroc": 0.9281329672100865,
+    "macro_precision": 0.7149771130045774,
+    "macro_recall": 0.7857438691044225,
+    "macro_f1": 0.7479804301604627,
+    "classes_with_defined_auroc": 5,
+    "macro_auprc": 0.8142919692614402
+  },
+  "checkpoint_sha256": "3fbed91364493b54f5d9bae7d327b03d72b796c765f31c20322ed809ef3ba027",
+  "cache": "D:\\MyProject\\college\\ecg1\\outputs\\cache\\validation_full_f2bdba82fbf64151.npy",
+  "inference": "FP32; thresholds fitted on validation only"
+}

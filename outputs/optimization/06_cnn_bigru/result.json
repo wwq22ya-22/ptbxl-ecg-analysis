@@ -1,0 +1,287 @@
+{
+  "validation": {
+    "records": 2183,
+    "per_class": {
+      "NORM": {
+        "support": 955,
+        "threshold": 0.6000000000000002,
+        "auroc": 0.9409980046728175,
+        "precision": 0.8356573705179283,
+        "recall": 0.8785340314136125,
+        "f1": 0.8565594691168964,
+        "confusion_matrix": [
+          [
+            1063,
+            165
+          ],
+          [
+            116,
+            839
+          ]
+        ]
+      },
+      "MI": {
+        "support": 540,
+        "threshold": 0.6000000000000002,
+        "auroc": 0.9176540204233448,
+        "precision": 0.6929530201342282,
+        "recall": 0.7648148148148148,
+        "f1": 0.727112676056338,
+        "confusion_matrix": [
+          [
+            1460,
+            183
+          ],
+          [
+            127,
+            413
+          ]
+        ]
+      },
+      "STTC": {
+        "support": 528,
+        "threshold": 0.6000000000000002,
+        "auroc": 0.9292685159754646,
+        "precision": 0.697560975609756,
+        "recall": 0.8125,
+        "f1": 0.7506561679790026,
+        "confusion_matrix": [
+          [
+            1469,
+            186
+          ],
+          [
+            99,
+            429
+          ]
+        ]
+      },
+      "CD": {
+        "support": 495,
+        "threshold": 0.7500000000000002,
+        "auroc": 0.9328151180046915,
+        "precision": 0.7926565874730022,
+        "recall": 0.7414141414141414,
+        "f1": 0.7661795407098121,
+        "confusion_matrix": [
+          [
+            1592,
+            96
+          ],
+          [
+            128,
+            367
+          ]
+        ]
+      },
+      "HYP": {
+        "support": 268,
+        "threshold": 0.6000000000000002,
+        "auroc": 0.8337555044620241,
+        "precision": 0.4318840579710145,
+        "recall": 0.5559701492537313,
+        "f1": 0.48613376835236544,
+        "confusion_matrix": [
+          [
+            1719,
+            196
+          ],
+          [
+            119,
+            149
+          ]
+        ]
+      }
+    },
+    "macro_auroc": 0.9108982327076685,
+    "macro_precision": 0.6901424023411857,
+    "macro_recall": 0.75064662737926,
+    "macro_f1": 0.7173283244428829,
+    "classes_with_defined_auroc": 5
+  },
+  "validation_fine": {
+    "records": 2183,
+    "per_class": {
+      "NORM": {
+        "support": 955,
+        "threshold": 0.5930391550064087,
+        "auroc": 0.9409980046728175,
+        "precision": 0.8344895936570862,
+        "recall": 0.881675392670157,
+        "f1": 0.8574338085539714,
+        "confusion_matrix": [
+          [
+            1061,
+            167
+          ],
+          [
+            113,
+            842
+          ]
+        ]
+      },
+      "MI": {
+        "support": 540,
+        "threshold": 0.6256968379020691,
+        "auroc": 0.9176540204233448,
+        "precision": 0.7065972222222222,
+        "recall": 0.7537037037037037,
+        "f1": 0.7293906810035843,
+        "confusion_matrix": [
+          [
+            1474,
+            169
+          ],
+          [
+            133,
+            407
+          ]
+        ]
+      },
+      "STTC": {
+        "support": 528,
+        "threshold": 0.6864073276519775,
+        "auroc": 0.9292685159754646,
+        "precision": 0.7404718693284936,
+        "recall": 0.7727272727272727,
+        "f1": 0.7562557924003707,
+        "confusion_matrix": [
+          [
+            1512,
+            143
+          ],
+          [
+            120,
+            408
+          ]
+        ]
+      },
+      "CD": {
+        "support": 495,
+        "threshold": 0.7826709151268005,
+        "auroc": 0.9328151180046915,
+        "precision": 0.8088888888888889,
+        "recall": 0.7353535353535353,
+        "f1": 0.7703703703703704,
+        "confusion_matrix": [
+          [
+            1602,
+            86
+          ],
+          [
+            131,
+            364
+          ]
+        ]
+      },
+      "HYP": {
+        "support": 268,
+        "threshold": 0.5834380984306335,
+        "auroc": 0.8337555044620241,
+        "precision": 0.4258241758241758,
+        "recall": 0.5783582089552238,
+        "f1": 0.49050632911392406,
+        "confusion_matrix": [
+          [
+            1706,
+            209
+          ],
+          [
+            113,
+            155
+          ]
+        ]
+      }
+    },
+    "macro_auroc": 0.9108982327076685,
+    "macro_precision": 0.7032543499841732,
+    "macro_recall": 0.7443636226819785,
+    "macro_f1": 0.7207913962884441,
+    "classes_with_defined_auroc": 5
+  },
+  "fine_thresholds": [
+    0.5930391550064087,
+    0.6256968379020691,
+    0.6864073276519775,
+    0.7826709151268005,
+    0.5834380984306335
+  ],
+  "epoch": 11,
+  "parameters": 114693,
+  "name": "06_cnn_bigru",
+  "description": "只换CNN+双向GRU，平均+最大池化",
+  "checkpoint": "D:\\MyProject\\college\\ecg1\\outputs\\optimization\\06_cnn_bigru\\checkpoint\\cnn_bigru_best.pt",
+  "seconds": 58.81445219999978,
+  "config": {
+    "project": {
+      "name": "ptbxl-ecg-system",
+      "random_seed": 42
+    },
+    "dataset": {
+      "root": "D:/datasets/ptb-xl",
+      "sampling_rate_hz": 100,
+      "train_folds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "validation_fold": 9,
+      "test_fold": 10
+    },
+    "signal_processing": {
+      "baseline_windows_s": [
+        0.2,
+        0.6
+      ],
+      "lowcut_hz": 0.5,
+      "highcut_hz": 40.0,
+      "bandpass_order": 4,
+      "notch_hz": null,
+      "notch_quality_factor": 30.0,
+      "normalization": "zscore",
+      "rpeak_minimum_rr_s": 0.25,
+      "rpeak_integration_window_s": 0.12,
+      "rpeak_t_wave_window_s": 0.36,
+      "rpeak_t_wave_max_ratio": 0.75,
+      "rr_min_valid_s": 0.3,
+      "rr_max_valid_s": 2.0
+    },
+    "labels": {
+      "superclasses": [
+        "NORM",
+        "MI",
+        "STTC",
+        "CD",
+        "HYP"
+      ],
+      "default_threshold": 0.5
+    },
+    "model": {
+      "type": "cnn_bigru",
+      "dropout": 0.2
+    },
+    "training": {
+      "epochs": 20,
+      "batch_size": 32,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "early_stopping_patience": 5,
+      "num_workers": 0,
+      "use_amp": true,
+      "random_seed": 42
+    },
+    "outputs": {
+      "split_dir": "outputs/splits",
+      "figure_dir": "outputs/optimization/06_cnn_bigru/figure",
+      "cache_dir": "outputs/cache",
+      "checkpoint_dir": "outputs/optimization/06_cnn_bigru/checkpoint",
+      "metrics_dir": "outputs/optimization/06_cnn_bigru/metrics",
+      "predictions_dir": "outputs/optimization/06_cnn_bigru/predictions"
+    }
+  }
+}

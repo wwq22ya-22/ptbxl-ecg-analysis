@@ -1,0 +1,9 @@
+{
+  "model": "inception_time1d",
+  "fs": 500,
+  "training_cohort": "filtered",
+  "reason": "User requested fewer500-Hz models; cancelled without a completed training epoch",
+  "completed_epochs": 0,
+  "checkpoint_created": false,
+  "initialization_started": true
+}

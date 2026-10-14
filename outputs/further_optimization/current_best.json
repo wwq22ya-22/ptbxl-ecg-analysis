@@ -1,0 +1,6 @@
+{
+  "type": "probability_ensemble",
+  "manifest": "D:\\MyProject\\college\\ecg1\\outputs\\further_optimization\\threshold_refinement\\ensemble_manifest.json",
+  "test_metrics": "D:\\MyProject\\college\\ecg1\\outputs\\further_optimization\\threshold_refinement\\test_metrics.json",
+  "previous_ensemble_version_preserved": "D:\\MyProject\\college\\ecg1\\outputs\\further_optimization\\final_test.json"
+}

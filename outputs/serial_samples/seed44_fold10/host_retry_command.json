@@ -1,0 +1,12 @@
+{
+  "workspace": "outputs/f10host_retry",
+  "output": "outputs\\serial_samples\\seed44_fold10\\host_validation",
+  "valinput": "outputs\\serial_samples\\seed44_fold10\\host_input.npy",
+  "model": "outputs/distillation/distilled_export/ptbxl_cnn1d_int8.onnx",
+  "mode": "host",
+  "io_only": true,
+  "returncode": 0,
+  "log": "outputs\\serial_samples\\seed44_fold10\\host_validate_retry.log",
+  "initial_attempt_failed": "LOAD ERROR: Unable to update the workspace",
+  "physical_board_test": false
+}

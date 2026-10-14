@@ -1,0 +1,34 @@
+{
+  "models": 26,
+  "metric_sets_verified": 416,
+  "full_cohort_ids_and_targets_verified": true,
+  "freeze_precedes_test_prediction_files": true,
+  "all_saved_decisions_verified": true,
+  "original_artifacts_unchanged": true,
+  "filtered_INT8_score_parity": [
+    {
+      "model": "original_seed44_int8",
+      "split": "validation",
+      "kept_records": 2146,
+      "max_probability_error": 0.0
+    },
+    {
+      "model": "original_seed44_int8",
+      "split": "test",
+      "kept_records": 2158,
+      "max_probability_error": 0.0
+    },
+    {
+      "model": "ensemble_kd_seed42_int8",
+      "split": "validation",
+      "kept_records": 2146,
+      "max_probability_error": 0.0
+    },
+    {
+      "model": "ensemble_kd_seed42_int8",
+      "split": "test",
+      "kept_records": 2158,
+      "max_probability_error": 0.0
+    }
+  ]
+}

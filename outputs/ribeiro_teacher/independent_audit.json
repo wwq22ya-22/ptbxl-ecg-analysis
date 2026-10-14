@@ -1,0 +1,12 @@
+{
+  "models": 9,
+  "metric_sets_verified": 36,
+  "patient_isolation_verified": true,
+  "cohort_ids_labels_and_train_filter_verified": true,
+  "frozen_train_normalization_verified": true,
+  "validation_thresholds_and_selection_verified": true,
+  "new_test_predictions_follow_freeze": true,
+  "new_model_source_unchanged": true,
+  "original_models_ONNX_HEX_unchanged": true,
+  "selected_copy_weights_and_thresholds_verified": true
+}

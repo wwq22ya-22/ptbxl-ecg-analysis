@@ -1,0 +1,6 @@
+{
+  "single_record_batch_and_thresholds_consistent": true,
+  "test_metrics_recomputed": true,
+  "manifest_frozen_before_test": true,
+  "all_cv_solver_results_optimal": true
+}

@@ -1,16 +1,29 @@
-# PTB-XL 数据
+# PTB-XL数据位置、版本与检查
 
-PTB-XL 1.0.3 数据集存放在 `D:\datasets\ptb-xl`，位于 Obsidian 仓库之外，避免 Obsidian 扫描数万条波形文件。项目通过被 Git 忽略的 `configs/local.yaml` 指向本机数据位置。100 Hz 流程至少需要：
+更新：2026-10-10。数据固定为PTB-XL **v1.0.3**，存放在`D:/datasets/ptb-xl`，不复制到项目或Obsidian库中。本机路径由被Git忽略的`configs/local.yaml`配置；其他机器自行修改。
 
 ```text
-D:\datasets\ptb-xl\
+D:/datasets/ptb-xl/
 ├── ptbxl_database.csv
 ├── scp_statements.csv
-└── records100/
+└── records100/  （元数据引用的 .hea/.dat）
 ```
 
-从项目根目录执行 `python scripts/download_ptbxl.py --workers 64`，可从官方公开存储下载 100 Hz 子集，并用官方 `SHA256SUMS.txt` 逐文件校验；默认位置取自 `configs/local.yaml` 或 `configs/default.yaml`。下载脚本可重复运行，已验证的文件会跳过。随后执行 `python scripts/prepare_data.py` 生成官方 fold 清单，并用 `python scripts/inspect_record.py --ecg-id 1` 查看一条记录的波形和信号分析图。
+本地元数据为21799条记录、18869名患者，100 Hz波形引用43598个`.hea/.dat`文件。历史下载按官方SHA-256核对；后续精确重复审计遍历的是元数据引用的21799个`.dat`，不能将目录里旧版遗留文件作为额外训练样本。
 
-当前工作区已下载 PTB-XL 1.0.3 的完整 `records100`：21,799 条记录、43,598 个波形文件，逐文件 SHA-256 校验通过。数据现位于 `D:\datasets\ptb-xl`。原始数据、SHA 清单和生成的图不会加入 Git；在其他机器克隆项目后，需要重新下载或复制数据，并按本机位置设置 `configs/local.yaml`。
+```powershell
+.venv/Scripts/python.exe scripts/prepare_data.py --dataset-root D:/datasets/ptb-xl
+.venv/Scripts/python.exe scripts/inspect_record.py --ecg-id 1
+```
 
-程序也会尝试识别 `data/ptbxl/` 以及数据目录下的一层标准解压子目录。默认使用 100 Hz；如需 500 Hz，需同时提供 `records500/` 并用 `--sampling-rate 500`。官方数据页：[PTB-XL v1.0.3](https://physionet.org/content/ptb-xl/1.0.3/)。数据文件采用 CC BY 4.0；使用或再分发时请遵循 PhysioNet 页面列出的许可与引用要求。
+仅在缺少数据时运行`.venv/Scripts/python.exe scripts/download_ptbxl.py --workers 8`；该脚本按配置确定目录并校验已存在文件，可重复运行。100 Hz流程使用`filename_lr`。程序支持500 Hz读取不等于已完成500 Hz模型实验，当前固定输入仍是十二导联100 Hz、10秒。
+
+| 官方集合 | 原始记录 | 当前剔除五类全零后 |
+|---|---:|---:|
+| folds1–8训练 | 17418 | 17084 |
+| fold9验证 | 2183 | 2146 |
+| fold10历史测试 | 2198 | 2158 |
+
+先按官方患者划分，再应用标签纳入规则；全零不自动补正常或起搏器。标准化、类别权重和量化校准只使用训练集；阈值和候选选择只使用折9。折10历史反复使用，不作为新的独立盲测。
+
+详细选择理由、分布/共现、质量、标签映射和划分见[完整实验流程](../md/模型训练与优化.md#step-02)。数据不加入Git，下载或复制后核对版本、元数据与波形。官方来源：[PTB-XL v1.0.3](https://physionet.org/content/ptb-xl/1.0.3/)，许可CC BY 4.0，引用与归属见[项目README](../README.md)。

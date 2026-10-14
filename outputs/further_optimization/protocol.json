@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "seed": 42,
+  "cases": {
+    "resnet_small_lr": [
+      "resnet1d",
+      {
+        "learning_rate": 0.0003,
+        "epochs": 30,
+        "early_stopping_patience": 8
+      }
+    ],
+    "resnet_mixup": [
+      "resnet1d",
+      {
+        "mixup_alpha": 0.2,
+        "mixup_probability": 0.5
+      }
+    ],
+    "resnet_mild_aug": [
+      "resnet1d",
+      {
+        "augmentation_gain": 0.1,
+        "augmentation_noise": 0.01
+      }
+    ],
+    "resnet_asl4": [
+      "resnet1d",
+      {
+        "loss": "asl",
+        "asl_gamma_negative": 4,
+        "asl_gamma_positive": 1,
+        "asl_clip": 0.05
+      }
+    ],
+    "resnet_asl2": [
+      "resnet1d",
+      {
+        "loss": "asl",
+        "asl_gamma_negative": 2,
+        "asl_gamma_positive": 0,
+        "asl_clip": 0.05
+      }
+    ],
+    "resnet_avgmax": [
+      "resnet_avgmax",
+      {}
+    ],
+    "inception_mixup": [
+      "inception1d",
+      {
+        "mixup_alpha": 0.2,
+        "mixup_probability": 0.5
+      }
+    ]
+  },
+  "ensemble_weights": [
+    0.5,
+    0.5
+  ],
+  "heldout_groups": [
+    [
+      1,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      7,
+      8
+    ]
+  ],
+  "threshold_fold": 9,
+  "test_fold_excluded_from_selection": 10
+}

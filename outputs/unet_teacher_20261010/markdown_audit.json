@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "links_checked": 157,
+  "explicit_anchor_links_checked": 66,
+  "tables_checked": 90,
+  "historical_table_rows_preserved": {
+    "md/各模型整体与逐类指标总表.md": 1345,
+    "md/STM32部署与串口验证.md": 88,
+    "md/Chapman_冻结模型外部验证总结.md": 70
+  },
+  "problems": [],
+  "documents": {
+    "README.md": "3f7358dc1f8a9cd63ce77df5732cf4ea5adc093cdcc1c9704891676fe734e4a1",
+    "data/README.md": "0fcf4eb729bbd71483561ba94caf577d8f559408b83443b318801ee1430f4bf4",
+    "md/Chapman_冻结模型外部验证总结.md": "7cadb69bd464171d9520b57ff32bb8692194f52047b1f062291866b7a86b2c52",
+    "md/README.md": "15b0669a4245832df2c143df3e95bc645b2fb7e8c301ad85da594f12891346bb",
+    "md/STM32部署与串口验证.md": "2742824da6bb9fc645b48b751f30991c3f04d90ace85e2f6392ffa2d0a1dd2ff",
+    "md/各模型整体与逐类指标总表.md": "8a4862dc238f9a3b49562c8926b09b6b23160f8228add9d88f8f339d7c52493d",
+    "md/模型训练与优化.md": "5c86b5f1fa6fb9e8b223f3ecd52397f7809a8aaf052bc1bb70a16050848a61de"
+  }
+}

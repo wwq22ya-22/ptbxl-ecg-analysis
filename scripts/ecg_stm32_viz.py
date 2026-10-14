@@ -12,22 +12,12 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from scripts.prepare_stm32 import digest
-from src.inference.serial_link import STM32Link, load_serial_manifest
+from src.inference.serial_link import link_for, load_serial_manifest
+from src.inference.serial_samples import FOLD_CHOICES, read_samples, result_metadata
 
-
-def read_samples(manifest, directory):
-    path = directory / manifest["sample_file"]
-    if digest(path) != manifest["sample_sha256"]: raise ValueError("验证波形包已变化，请重新生成部署包。")
-    with np.load(path, allow_pickle=False) as data:
-        samples = {name: data[name].copy() for name in data.files}
-    n = len(samples["ecg_id"])
-    for key in ("ecg", "raw_mv"):
-        if samples[key].shape != (n, 12, 1000) or not np.isfinite(samples[key]).all():
-            raise ValueError(f"波形 {key} 形状或数值不正确。")
-    if samples["targets"].shape != (n, 5) or not np.isin(samples["targets"], [0, 1]).all():
-        raise ValueError("标签数组无效。")
-    return samples
+def transmission_sample(manifest, samples, index):
+    key = 'raw_mv' if manifest.get('preprocessing_location') == 'board' else 'ecg'
+    return samples[key][index]
 
 
 def transport_for(args, manifest, directory):
@@ -44,10 +34,11 @@ def headless(args, manifest, samples, directory):
     if not 0 <= args.sample < len(samples["ecg_id"]): raise ValueError("样本索引超出范围。")
     transport = transport_for(args, manifest, directory)
     try:
-        link = STM32Link(transport, manifest)
+        link = link_for(transport, manifest)
         link.handshake()
         start = time.monotonic()
-        result = link.predict(samples["ecg"][args.sample])
+        result = link.predict(transmission_sample(manifest, samples, args.sample))
+        result.update(result_metadata(manifest, samples, args.sample))
         result.update(mode="simulation" if args.simulate else "physical_serial",
                       ecg_id=int(samples["ecg_id"][args.sample]),
                       total_seconds=time.monotonic() - start,
@@ -76,7 +67,9 @@ def launch_gui(args, manifest, samples, directory):
     class App:
         def __init__(self):
             self.root = tk.Tk()
-            self.root.title("ECG 五类 STM32 串口验证")
+            board_preprocess = manifest.get('preprocessing_location') == 'board'
+            self.root.title("ECG 五类 · " + ("板端预处理＋推理" if board_preprocess else
+                            "A仅推理·二进制INT8" if manifest['protocol'] == 3 else "A仅推理·文本"))
             self.root.geometry("1120x830")
             self.messages = queue.Queue()
             self.transport = None
@@ -84,6 +77,10 @@ def launch_gui(args, manifest, samples, directory):
             self.busy = False
             self.closing = False
             self.index = args.sample
+            self.samples = samples
+            self.sample_sets = {samples['_metadata']['fold']: samples}
+            self.fold = tk.StringVar(value=next(name for name, fold in FOLD_CHOICES.items()
+                                               if fold == samples['_metadata']['fold']))
             self.results = []
             self.mode = tk.StringVar(value="模拟验证" if args.simulate else "真实串口")
             self.port = tk.StringVar(value=args.port or "")
@@ -104,7 +101,8 @@ def launch_gui(args, manifest, samples, directory):
             self.refresh_button.pack(side="left", padx=6)
             ttk.Label(controls, text="波特率").pack(side="left")
             self.baud_box = ttk.Combobox(controls, textvariable=self.baud,
-                                        values=[115200, 230400, 460800, 921600], width=9, state="readonly")
+                                        values=[115200] if manifest['protocol'] == 3 else
+                                               [115200, 230400, 460800, 921600], width=9, state="readonly")
             self.baud_box.pack(side="left", padx=6)
             self.connect_button = ttk.Button(controls, text="连接", command=self.connect)
             self.connect_button.pack(side="left", padx=6)
@@ -112,12 +110,19 @@ def launch_gui(args, manifest, samples, directory):
                       font=("Microsoft YaHei", 13, "bold")).pack(anchor="w", pady=(16, 6))
             self.record_label = ttk.Label(outer, text=""); self.record_label.pack(anchor="w")
             lead_controls = ttk.Frame(outer); lead_controls.pack(fill="x", pady=8)
+            ttk.Label(lead_controls, text="波形来源").pack(side="left")
+            self.fold_selector = ttk.Combobox(lead_controls, name='fold_selector', textvariable=self.fold,
+                                              values=list(FOLD_CHOICES), state='readonly', width=18)
+            self.fold_selector.pack(side='left', padx=6)
+            self.fold_selector.bind('<<ComboboxSelected>>', self.select_fold)
             ttk.Label(lead_controls, text="显示导联").pack(side="left")
             selector = ttk.Combobox(lead_controls, textvariable=self.lead,
                                     values=manifest["lead_order"], state="readonly", width=8)
             selector.pack(side="left", padx=6)
             selector.bind("<<ComboboxSelected>>", lambda _: self.draw_waveform())
-            ttk.Label(lead_controls, text="图中显示原始 mV 波形；发送的是训练流程预处理后的 12 导联信号。"
+            ttk.Label(lead_controls, text=("发送原始mV波形，由芯片完成预处理和分类。" if board_preprocess else
+                      "图中显示原始mV波形；发送预处理后的INT8数据，芯片仅推理。" if manifest['protocol'] == 3 else
+                      "图中显示原始mV波形；发送预处理后的信号，芯片仅推理。")
                       ).pack(side="left", padx=8)
             self.figure = Figure(figsize=(10, 3), dpi=100)
             self.axis = self.figure.add_subplot(111)
@@ -149,14 +154,31 @@ def launch_gui(args, manifest, samples, directory):
             self.root.protocol("WM_DELETE_WINDOW", self.close)
             self.refresh_ports()
             self.change(self.index)
-            self.root.after(50, self.poll)
+            self.poll_id = self.root.after(50, self.poll)
 
         def refresh_ports(self):
             ports = [port.device for port in serial.tools.list_ports.comports()]
             self.port_box["values"] = ports
             if not self.port.get() and ports: self.port.set(ports[0])
 
+        def select_fold(self, _event=None):
+            old_fold = self.samples['_metadata']['fold']
+            if self.busy:
+                self.fold.set(next(name for name, fold in FOLD_CHOICES.items() if fold == old_fold))
+                return
+            try:
+                fold = FOLD_CHOICES[self.fold.get()]
+                if fold not in self.sample_sets:
+                    self.sample_sets[fold] = read_samples(manifest, directory, fold)
+                self.samples = self.sample_sets[fold]
+                self.change(0)
+                self.status.set(f"已切换到{self.samples['_metadata']['source_label']}，共{len(self.samples['ecg_id'])}条。")
+            except (ValueError, OSError, KeyError) as error:
+                self.fold.set(next(name for name, fold in FOLD_CHOICES.items() if fold == old_fold))
+                messagebox.showerror('波形包不可用', str(error))
+
         def draw_waveform(self):
+            samples = self.samples
             lead = manifest["lead_order"].index(self.lead.get())
             self.axis.clear()
             self.axis.plot(np.arange(1000) / 100, samples["raw_mv"][self.index, lead], color="#176b89", linewidth=1)
@@ -166,11 +188,12 @@ def launch_gui(args, manifest, samples, directory):
             self.canvas.draw_idle()
 
         def change(self, index):
+            samples = self.samples
             if self.busy or not 0 <= index < len(samples["ecg_id"]): return
             self.index = index; self.jump.set(str(index))
             truth = [name for name, hit in zip(manifest["labels"], samples["targets"][index]) if hit]
             label_text = '、'.join(truth) if truth else '未标注这五类诊断标签（不代表正常）'
-            self.record_label["text"] = f"样本 {index} / {len(samples['ecg_id'])-1}　记录 {samples['ecg_id'][index]}　真实标签：{label_text}　来源：验证折 9"
+            self.record_label["text"] = f"样本 {index} / {len(samples['ecg_id'])-1}　记录 {samples['ecg_id'][index]}　真实标签：{label_text}　来源：{samples['_metadata']['source_label']}"
             for i, name in enumerate(manifest["labels"]):
                 target_text = ('阳性' if samples['targets'][index, i] else '阴性') if truth else '未标注'
                 self.table.item(name, values=(target_text,
@@ -180,6 +203,7 @@ def launch_gui(args, manifest, samples, directory):
             self.draw_waveform()
 
         def jump_to(self):
+            samples = self.samples
             try:
                 value = int(self.jump.get())
                 if not 0 <= value < len(samples["ecg_id"]): raise ValueError()
@@ -195,6 +219,7 @@ def launch_gui(args, manifest, samples, directory):
             for widget in (self.mode_box, self.port_box, self.baud_box):
                 widget["state"] = "disabled" if busy or connected else "readonly"
             self.refresh_button["state"] = "disabled" if busy or connected else "normal"
+            self.fold_selector['state'] = 'disabled' if busy else 'readonly'
 
         def connect(self):
             if self.transport:
@@ -209,7 +234,7 @@ def launch_gui(args, manifest, samples, directory):
                     from argparse import Namespace
                     config = Namespace(simulate=mode == "模拟验证", port=port, baudrate=int(baud))
                     transport = transport_for(config, manifest, directory)
-                    link = STM32Link(transport, manifest); link.handshake()
+                    link = link_for(transport, manifest); link.handshake()
                     if self.closing: transport.close(); return
                     self.messages.put(("connected", (transport, link, mode)))
                 except Exception as error:
@@ -220,19 +245,18 @@ def launch_gui(args, manifest, samples, directory):
         def send(self):
             if not self.link or self.busy: return
             index = self.index; mode = self.mode.get(); link = self.link
+            active_samples = self.samples
             self.set_busy(True); self.status.set("正在分块发送波形，完成后等待芯片分类…")
             self.result_label["text"] = "等待分类结果…"
             def work():
                 try:
                     start = time.monotonic()
-                    result = link.predict(samples["ecg"][index], progress=lambda x: self.messages.put(("progress", x)))
-                    result.update(ecg_id=int(samples["ecg_id"][index]), sample_index=index,
-                                  mode="simulation" if mode == "模拟验证" else "physical_serial",
+                    result = link.predict(transmission_sample(manifest, active_samples, index), progress=lambda x: self.messages.put(("progress", x)))
+                    result.update(result_metadata(manifest, active_samples, index))
+                    result.update(mode="simulation" if mode == "模拟验证" else "physical_serial",
                                   total_seconds=time.monotonic() - start,
-                                  truth=[name for name, hit in zip(manifest["labels"], samples["targets"][index]) if hit],
-                                  host_c_reference_probabilities=samples["reference_probabilities"][index].tolist(),
                                   max_probability_difference_from_host_c=float(np.max(np.abs(
-                                      np.asarray(result["probabilities"]) - samples["reference_probabilities"][index]))))
+                                      np.asarray(result["probabilities"]) - active_samples["reference_probabilities"][index]))))
                     self.messages.put(("result", result))
                 except Exception as error: self.messages.put(("error", str(error)))
             threading.Thread(target=work, daemon=True).start()
@@ -260,21 +284,29 @@ def launch_gui(args, manifest, samples, directory):
                     labels = "、".join(value["positive_labels"]) or "无标签达到阈值"
                     simulated = value["mode"] == "simulation"
                     self.result_label["text"] = ("模拟结果：" if simulated else "芯片结果：") + labels
-                    difference = np.max(np.abs(np.asarray(value["probabilities"]) - samples["reference_probabilities"][value["sample_index"]]))
-                    timing = "模拟模式不测量芯片耗时" if simulated else f"芯片推理 {value['inference_ms']} ms"
-                    self.status.set(f"{timing}；收发总耗时 {value['total_seconds']:.2f} s；与电脑 C 模型最大概率差 {difference:.6f}。")
+                    difference = value['max_probability_difference_from_host_c']
+                    timing = "模拟模式不测量芯片耗时" if simulated else (
+                        (f"芯片预处理 {value['preprocessing_ms']} ms；" if 'preprocessing_ms' in value else '')
+                        + f"芯片推理 {value['inference_ms']} ms")
+                    upload = f"；波形上传 {value['upload_seconds']:.2f} s" if 'upload_seconds' in value else ''
+                    self.status.set(f"{timing}{upload}；收发总耗时 {value['total_seconds']:.2f} s；与电脑 C 模型最大概率差 {difference:.3e}。")
                     self.set_busy(False)
-            self.root.after(50, self.poll)
+            self.poll_id = self.root.after(50, self.poll)
 
         def save_results(self):
             if not self.results: messagebox.showinfo("暂无记录", "先发送一条波形完成验证。"); return
-            path = ROOT / "outputs/cubeai/serial_validation_log.json"
-            path.write_text(json.dumps({"model_sha256": manifest["model_sha256"], "results": self.results},
+            path = directory / "serial_validation_log.json"
+            path.write_text(json.dumps({"model_sha256": manifest["model_sha256"],
+                                        "protocol": manifest["protocol"],
+                                        "preprocessing_location": manifest.get("preprocessing_location", "host"),
+                                        "preprocessing_sha256": manifest.get("preprocessing_sha256"),
+                                        "results": self.results},
                                         ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             self.status.set(f"验证记录已保存：{path}")
 
         def close(self):
             self.closing = True
+            self.root.after_cancel(self.poll_id)
             if self.transport: self.transport.close()
             self.root.destroy()
 
@@ -282,26 +314,31 @@ def launch_gui(args, manifest, samples, directory):
     if args.smoke_test:
         window.root.update()
         window.canvas.draw()
-        window.figure.savefig(ROOT / "outputs/cubeai/serial_waveform_preview.png")
+        window.figure.savefig(directory / "serial_waveform_preview.png")
         window.close()
         print("GUI initialization and waveform rendering passed.")
     else: window.root.mainloop()
 
 
-def main():
+def main(default_manifest=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--manifest", type=Path, default=ROOT / "outputs/cubeai/resnet/serial_manifest.json")
+    parser.add_argument("--manifest", type=Path,
+                        default=default_manifest or ROOT / "outputs/distillation/distilled_export/serial_manifest.json")
     parser.add_argument("--port")
     parser.add_argument("--baudrate", type=int, default=115200)
     parser.add_argument("--sample", type=int, default=0)
+    parser.add_argument('--fold', type=int, choices=[9, 10], default=9,
+                        help='波形来源：9为原联调包，10为完整历史测试包。')
     parser.add_argument("--simulate", action="store_true")
     parser.add_argument("--headless", action="store_true")
     parser.add_argument("--smoke-test", action="store_true")
     parser.add_argument("--result-file", type=Path)
     args = parser.parse_args()
     manifest = load_serial_manifest(args.manifest)
+    if manifest['protocol'] == 3 and args.baudrate != 115200:
+        raise ValueError('A快速固件当前使用115200波特率，请选择115200。')
     directory = args.manifest.resolve().parent
-    samples = read_samples(manifest, directory)
+    samples = read_samples(manifest, directory, args.fold)
     if not 0 <= args.sample < len(samples["ecg_id"]): raise ValueError("样本索引超出范围。")
     if args.headless: headless(args, manifest, samples, directory)
     else: launch_gui(args, manifest, samples, directory)

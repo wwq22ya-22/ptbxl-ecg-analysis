@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-09",
+  "model": "ribeiro_resnet100",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "reference": "https://github.com/antonior92/automatic-ecg-diagnosis/blob/master/model.py",
+  "architecture": {
+    "kernel": 5,
+    "strides": [
+      4,
+      4,
+      2,
+      2
+    ],
+    "channels": [
+      64,
+      128,
+      196,
+      256,
+      320
+    ],
+    "head": "Flatten 5120 -> five logits",
+    "raw_shortcut_stream": true,
+    "bn_epsilon": 0.001,
+    "bn_torch_momentum": 0.01
+  },
+  "parameters": 2139109,
+  "training": {
+    "epochs": 30,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "early_stopping_patience": 8,
+    "num_workers": 0,
+    "use_amp": true,
+    "random_seed": 42,
+    "loss": "bce",
+    "pos_weight_power": 1.0,
+    "scheduler": "none"
+  },
+  "preprocessing": {
+    "baseline_windows_s": [
+      0.2,
+      0.6
+    ],
+    "lowcut_hz": 0.5,
+    "highcut_hz": 40.0,
+    "bandpass_order": 4,
+    "notch_hz": null,
+    "notch_quality_factor": 30.0,
+    "normalization": "train_global",
+    "rpeak_minimum_rr_s": 0.25,
+    "rpeak_integration_window_s": 0.12,
+    "rpeak_t_wave_window_s": 0.36,
+    "rpeak_t_wave_max_ratio": 0.75,
+    "rr_min_valid_s": 0.3,
+    "rr_max_valid_s": 2.0,
+    "baseline_removal": true,
+    "training_mean": [
+      -8.29980455279083e-05,
+      -9.471457418735513e-05,
+      -1.8573451129833478e-06,
+      8.873225927876774e-05,
+      -3.922448620534397e-05,
+      -4.691987649332625e-05,
+      0.00010763294833339956,
+      0.00014846208986115213,
+      9.36026388655544e-05,
+      -1.7562160201324448e-05,
+      -0.00012476339082697792,
+      -0.00020475601327742585
+    ],
+    "training_std": [
+      0.1459681383239733,
+      0.14441239225980662,
+      0.13670085900657417,
+      0.12810973935669523,
+      0.12155112496707875,
+      0.12015464814185506,
+      0.20399021099509676,
+      0.3152158397676448,
+      0.3045114305595777,
+      0.2737368427568455,
+      0.24054999705506647,
+      0.19192188594533216
+    ]
+  },
+  "training_records": 17084,
+  "validation_counts": [
+    2146,
+    2183
+  ],
+  "test_counts": [
+    2158,
+    2198
+  ],
+  "selection": "filtered validation macro F1 at 0.01 then AUROC; checkpoint epoch by training AMP AUROC",
+  "protected_sha256": {
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception1d_P0_current_seed42\\checkpoint\\inception1d_best.pt": "687c897c8d0093d06d0b26d88bdda1adc840cd3531c053728b8af787c2c707d8",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception_time1d_P0_current_seed42\\checkpoint\\inception_time1d_best.pt": "449ffa3825cb485e4be0997fe4111fdcd1d840c6226d1d7ac3b7662cadc854dd",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception1d_P0_current_seed43\\checkpoint\\inception1d_best.pt": "d57af627fdb12c380056f8576be2a48de8994d6bc2ea5b20eb64cb1cf8012481",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception_time1d_P0_current_seed43\\checkpoint\\inception_time1d_best.pt": "19aa7c03dc89b740e7ff8cd40fee469424457c27953ef0f86286ac4e10e1d258",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception1d_P0_current_seed44\\checkpoint\\inception1d_best.pt": "3fbed91364493b54f5d9bae7d327b03d72b796c765f31c20322ed809ef3ba027",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_preprocessing\\inception_time1d_P0_current_seed44\\checkpoint\\inception_time1d_best.pt": "b2e2c71b980dd92844ab88a432f679d0f5f69f5ee50d723e964dae360d51f052",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_seed44\\checkpoint\\cnn1d_best.pt": "857ed01b867ec8342c6162bd819875f72e4d090a20d3c9effb6fbdab6509a08e",
+    "D:\\MyProject\\college\\ecg1\\outputs\\distillation\\distilled_export\\ptbxl_cnn1d_int8.onnx": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+    "D:\\MyProject\\college\\ecg1\\outputs\\teacher_distillation\\selected_export\\ptbxl_cnn1d_int8.onnx": "4038712961f1079efc5dae5d3a78b55be2e1aa73e6206d0ae42023c4f116a6e4",
+    "D:\\MyProject\\college\\ecg1\\outputs\\board_release\\seed44_int8_stm32f407ve\\ECG_Student_INT8_STM32F407VE.hex": "57d255b4dc08cce3ff8e7879ab3c37143865b384e93a31a1f182df4a959134b6"
+  },
+  "model_source_sha256": "7d122dbcd7d41b066c744edc133475759b475947a5e000d0b04eeffdc9acd013",
+  "test_used_for_selection": false,
+  "test_previously_reused": true,
+  "original_paper_reproduction": false
+}

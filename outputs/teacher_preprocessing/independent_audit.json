@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "prediction_sets_independently_verified": 18,
+  "raw_preprocessing_records_rechecked": 12,
+  "normalization_independently_recomputed": 3,
+  "validation_selection_replayed": true,
+  "patient_isolation_verified": true,
+  "protected_artifacts_unchanged": true
+}

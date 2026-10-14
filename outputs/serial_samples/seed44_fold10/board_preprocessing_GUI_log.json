@@ -1,0 +1,102 @@
+{
+  "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+  "protocol": 2,
+  "preprocessing_location": "board",
+  "preprocessing_sha256": "121588eb2f65e4f7127ee880cff67b6a3959775b59b1bf3abdc86d4da12fcfa8",
+  "results": [
+    {
+      "type": "result",
+      "seq": 1,
+      "probabilities": [
+        0.947944582,
+        0.0323120207,
+        0.0103510218,
+        0.171452999,
+        0.0030064818
+      ],
+      "mask": 1,
+      "inference_ms": 0,
+      "preprocessing_ms": 0,
+      "positive_labels": [
+        "NORM"
+      ],
+      "ecg_id": 9,
+      "sample_index": 0,
+      "fold": 10,
+      "sample_source": "PTB-XL historical test fold 10",
+      "sample_sha256": "2e2687d21a05fb6ba940f090ce39830488f2c365316eb16c4bb4a26b4d1f5f8f",
+      "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+      "protocol": 2,
+      "preprocessing_location": "board",
+      "preprocessing_sha256": "121588eb2f65e4f7127ee880cff67b6a3959775b59b1bf3abdc86d4da12fcfa8",
+      "thresholds": [
+        0.5500000000000002,
+        0.6000000000000002,
+        0.5500000000000002,
+        0.7500000000000002,
+        0.6500000000000001
+      ],
+      "truth": [
+        "NORM"
+      ],
+      "host_c_reference_probabilities": [
+        0.9479445815086365,
+        0.032312020659446716,
+        0.010351022705435753,
+        0.17145301401615143,
+        0.003006481798365712
+      ],
+      "reference": "Cube.AI host C-model with exact firmware INT8 inputs; not physical-board outputs",
+      "mode": "simulation",
+      "total_seconds": 0.011359199999787961,
+      "max_probability_difference_from_host_c": 1.5016151433400182e-08
+    },
+    {
+      "type": "result",
+      "seq": 2,
+      "probabilities": [
+        0.989648938,
+        0.0049348278,
+        0.00535914907,
+        0.044454556,
+        0.00198818394
+      ],
+      "mask": 1,
+      "inference_ms": 0,
+      "preprocessing_ms": 0,
+      "positive_labels": [
+        "NORM"
+      ],
+      "ecg_id": 47,
+      "sample_index": 0,
+      "fold": 9,
+      "sample_source": "PTB-XL validation fold 9",
+      "sample_sha256": "6d153d0567ade0524dd60cf1a2b3adacdef9ef963705ec6bfc0e4f8a3098a6b3",
+      "model_sha256": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+      "protocol": 2,
+      "preprocessing_location": "board",
+      "preprocessing_sha256": "121588eb2f65e4f7127ee880cff67b6a3959775b59b1bf3abdc86d4da12fcfa8",
+      "thresholds": [
+        0.5500000000000002,
+        0.6000000000000002,
+        0.5500000000000002,
+        0.7500000000000002,
+        0.6500000000000001
+      ],
+      "truth": [
+        "NORM"
+      ],
+      "host_c_reference_probabilities": [
+        0.9896489381790161,
+        0.004934827797114849,
+        0.005359149072319269,
+        0.044454559683799744,
+        0.0019881839398294687
+      ],
+      "reference": "Existing seed44 host C-model on host-preprocessed ECG; not board outputs",
+      "mode": "simulation",
+      "total_seconds": 0.013956100000541483,
+      "max_probability_difference_from_host_c": 3.683799744413907e-09
+    }
+  ]
+}

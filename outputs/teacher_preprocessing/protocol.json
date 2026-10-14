@@ -1,0 +1,61 @@
+{
+  "experiment": "teacher_preprocessing_20261007",
+  "cohort": {
+    "train": 17084,
+    "validation": 2146,
+    "test": 2158
+  },
+  "preprocessing": {
+    "P0_current": {
+      "baseline_removal": true,
+      "lowcut_hz": 0.5
+    },
+    "P1_bandpass_only": {
+      "baseline_removal": false,
+      "lowcut_hz": 0.5
+    },
+    "P2_gentle_bandpass": {
+      "baseline_removal": false,
+      "lowcut_hz": 0.1
+    }
+  },
+  "teacher_models": [
+    "se_resnet18",
+    "inception_time1d"
+  ],
+  "screen_seed": 42,
+  "replication_seeds": [
+    42,
+    43,
+    44
+  ],
+  "training": {
+    "epochs": 30,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "early_stopping_patience": 8,
+    "num_workers": 0,
+    "use_amp": true,
+    "random_seed": 42,
+    "loss": "bce",
+    "pos_weight_power": 1.0,
+    "scheduler": "none"
+  },
+  "checkpoint_selection": "validation AUROC",
+  "thresholds": "original coarse grid, FP32 validation F1",
+  "selection": "validation macro F1; validation AUROC tie break",
+  "test_used_for_selection": false,
+  "test_previously_reused": true,
+  "protected_artifacts": {
+    "outputs\\distillation\\distilled_seed44\\checkpoint\\cnn1d_best.pt": "857ed01b867ec8342c6162bd819875f72e4d090a20d3c9effb6fbdab6509a08e",
+    "outputs\\optimization\\optimized_best.pt": "29ffa3ad10e2081fd3749679e195e894edcda40a4851c8db3dc9081f6762a717",
+    "outputs\\distillation\\distilled_export\\ptbxl_cnn1d_int8.onnx": "ef31602cf10e211c13b1dd99597fd4750d8d2c7e1032dbc9e1a756d9cdf3f610",
+    "outputs\\board_release\\seed44_int8_stm32f407ve\\ECG_Student_INT8_STM32F407VE.hex": "57d255b4dc08cce3ff8e7879ab3c37143865b384e93a31a1f182df4a959134b6"
+  },
+  "source_sha256": {
+    "scripts\\run_teacher_preprocessing.py": "fe42c2ad229272c7916a76e50243e17820f9c14cdcba57accc9cd680c1834bf8",
+    "src\\models\\teachers.py": "74bc1b50f5d08d03ea240c9c353751669ec6c44cbcb0bae62f6b408f7bf3df90",
+    "src\\training\\train.py": "7ac64d68b38f80832a224b6e401f838a7491cfc8e2541f01c885d60f5628af87"
+  }
+}
